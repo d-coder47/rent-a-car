@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Istok Web";
+  src: local("Istok Web"),
+    url("./utils/fonts/Istok_Web/IstokWeb-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
