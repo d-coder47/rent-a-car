@@ -1,10 +1,10 @@
 import MuiTheme from "./MuiTheme";
-import Home from "./pages/Home";
+import AppRoutes from "./routes";
 
 function App() {
   return (
     <MuiTheme>
-      <Home />
+      <AppRoutes />
     </MuiTheme>
   );
 }
