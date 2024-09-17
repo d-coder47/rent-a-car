@@ -9,19 +9,21 @@ const PreHeader = () => {
         width: "100%",
         display: "flex",
         alignItems: "center",
+        background: "rgba(254, 158, 0, 0.55)",
       }}
     >
       <Box
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          width: "410px",
+          width: "490px",
           marginLeft: "60px",
         }}
       >
         <Box
           sx={{
             display: "flex",
+            alignItems: "center",
           }}
         >
           <EmailOutlined />
@@ -30,9 +32,10 @@ const PreHeader = () => {
               fontFamily: "Istok Web",
               fontStyle: "normal",
               fontWeight: "400",
-              fontSize: "16px",
+              fontSize: "18px",
               lineHeight: "23px",
               color: "#000000",
+              marginLeft: "4px",
             }}
           >
             vhinvestimentos20@gmail.com
@@ -41,10 +44,23 @@ const PreHeader = () => {
         <Box
           sx={{
             display: "flex",
+            alignItems: "center",
           }}
         >
           <PhoneAndroidOutlined />
-          <Typography>+238 593 55 35</Typography>
+          <Typography
+            sx={{
+              fontFamily: "Istok Web",
+              fontStyle: "normal",
+              fontWeight: "400",
+              fontSize: "18px",
+              lineHeight: "23px",
+              color: "#000000",
+              marginLeft: "4px",
+            }}
+          >
+            +238 593 55 35
+          </Typography>
         </Box>
       </Box>
     </Box>
