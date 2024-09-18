@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
+import React from "react";
 
-const Hero = () => {
+const Hero: React.FC = () => {
   return <Box>Hero</Box>;
 };
 

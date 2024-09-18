@@ -1,7 +1,8 @@
 import { Box, Typography } from "@mui/material";
 import { EmailOutlined, PhoneAndroidOutlined } from "@mui/icons-material";
+import React from "react";
 
-const PreHeader = () => {
+const PreHeader: React.FC = () => {
   return (
     <Box
       sx={{

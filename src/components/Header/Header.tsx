@@ -1,7 +1,9 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import Logo from "../../assets/logo.png";
+import LangSelector from "../LangSelector/LangSelector";
+import React from "react";
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <Box
       sx={{
@@ -34,7 +36,7 @@ const Header = () => {
             justifyContent: "space-between",
           }}
         >
-          <Typography
+          <Button
             sx={{
               fontFamily: "Istok Web",
               fontStyle: "normal",
@@ -42,13 +44,13 @@ const Header = () => {
               fontSize: "20px",
               lineHeight: "29px",
               textAlign: "right",
-
+              textTransform: "none",
               color: "#000000",
             }}
           >
             Exposição de veículos
-          </Typography>
-          <Typography
+          </Button>
+          <Button
             sx={{
               fontFamily: "Istok Web",
               fontStyle: "normal",
@@ -56,13 +58,13 @@ const Header = () => {
               fontSize: "20px",
               lineHeight: "29px",
               textAlign: "right",
-
+              textTransform: "none",
               color: "#000000",
             }}
           >
             Serviços
-          </Typography>
-          <Typography
+          </Button>
+          <Button
             sx={{
               fontFamily: "Istok Web",
               fontStyle: "normal",
@@ -70,26 +72,13 @@ const Header = () => {
               fontSize: "20px",
               lineHeight: "29px",
               textAlign: "right",
-
+              textTransform: "none",
               color: "#000000",
             }}
           >
             Contacto
-          </Typography>
-          <Typography
-            sx={{
-              fontFamily: "Istok Web",
-              fontStyle: "normal",
-              fontWeight: 700,
-              fontSize: "20px",
-              lineHeight: "29px",
-              textAlign: "right",
-
-              color: "#000000",
-            }}
-          >
-            Language
-          </Typography>
+          </Button>
+          <LangSelector />
         </Box>
       </Box>
     </Box>

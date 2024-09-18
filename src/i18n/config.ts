@@ -13,8 +13,16 @@ const resources = {
 };
 
 i18n.use(initReactI18next).init({
-  debug: false,
-  resources,
+  lng: "pt",
+
   fallbackLng: "pt",
+
+  debug: true,
+
+  interpolation: {
+    escapeValue: false,
+  },
+
+  resources,
 });
 export default i18n;
