@@ -1,5 +1,10 @@
 {
   "homepage": {
     "bookCar": "Reserva seu carro"
+  },
+  "menu": {
+    "exposicaoVeiculos": "Exposição de veículos",
+    "servicos": "Serviços",
+    "contacto": "Contacto"
   }
 }

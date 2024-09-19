@@ -2,8 +2,10 @@ import { Box, Button } from "@mui/material";
 import Logo from "../../assets/logo.png";
 import LangSelector from "../LangSelector/LangSelector";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Header: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <Box
       sx={{
@@ -48,7 +50,7 @@ const Header: React.FC = () => {
               color: "#000000",
             }}
           >
-            Exposição de veículos
+            {t("menu.exposicaoVeiculos")}
           </Button>
           <Button
             sx={{
@@ -62,7 +64,7 @@ const Header: React.FC = () => {
               color: "#000000",
             }}
           >
-            Serviços
+            {t("menu.servicos")}
           </Button>
           <Button
             sx={{
@@ -76,7 +78,7 @@ const Header: React.FC = () => {
               color: "#000000",
             }}
           >
-            Contacto
+            {t("menu.contacto")}
           </Button>
           <LangSelector />
         </Box>
