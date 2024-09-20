@@ -9,7 +9,7 @@ const resources = {
   en: { translation: English },
   pt: { translation: Portuguese },
   fr: { translation: French },
-  es: { translatoin: Spanish },
+  es: { translation: Spanish },
 };
 
 i18n.use(initReactI18next).init({

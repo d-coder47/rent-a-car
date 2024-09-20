@@ -7,9 +7,10 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import englandFlag from "../../assets/flags/inglaterra.png";
-import franceFlag from "../../assets/flags/franca.png";
-import portugalFlag from "../../assets/flags/portugal.png";
+import unitedKingdomFlag from "../../assets/flags/reino_unido.svg";
+import franceFlag from "../../assets/flags/franca.svg";
+import portugalFlag from "../../assets/flags/portugal.svg";
+import spanishFlag from "../../assets/flags/espanha.svg";
 
 const LangSelector: React.FC = () => {
   const { i18n } = useTranslation();
@@ -60,9 +61,9 @@ const LangSelector: React.FC = () => {
         }}
       >
         <Avatar
-          src={englandFlag}
-          alt="Bandeira Inglaterra"
-          sx={{ width: "1.6rem", height: "auto" }}
+          src={unitedKingdomFlag}
+          alt="england flag"
+          sx={{ width: "1.6rem", height: "auto", borderRadius: 0 }}
         />
         <Typography
           sx={{
@@ -70,11 +71,11 @@ const LangSelector: React.FC = () => {
           }}
           fontWeight="bold"
         >
-          EN
+          EN (UK)
         </Typography>
       </MenuItem>
       <MenuItem
-        value={"pt"}
+        value={"es"}
         sx={{
           display: "flex",
           gap: ".5rem",
@@ -82,9 +83,9 @@ const LangSelector: React.FC = () => {
         }}
       >
         <Avatar
-          src={portugalFlag}
-          alt="Bandeira Portugal"
-          sx={{ width: "1.6rem", height: "auto" }}
+          src={spanishFlag}
+          alt="spanish flag"
+          sx={{ width: "1.6rem", height: "auto", borderRadius: 0 }}
         />
         <Typography
           sx={{
@@ -92,7 +93,7 @@ const LangSelector: React.FC = () => {
           }}
           fontWeight="bold"
         >
-          PT
+          ES
         </Typography>
       </MenuItem>
       <MenuItem
@@ -106,7 +107,7 @@ const LangSelector: React.FC = () => {
         <Avatar
           src={franceFlag}
           alt="Bandeira França"
-          sx={{ width: "1.6rem", height: "auto" }}
+          sx={{ width: "1.6rem", height: "auto", borderRadius: 0 }}
         />{" "}
         <Typography
           sx={{
@@ -115,6 +116,28 @@ const LangSelector: React.FC = () => {
           fontWeight="bold"
         >
           FR
+        </Typography>
+      </MenuItem>
+      <MenuItem
+        value={"pt"}
+        sx={{
+          display: "flex",
+          gap: ".5rem",
+          alignItems: "center",
+        }}
+      >
+        <Avatar
+          src={portugalFlag}
+          alt="Bandeira Portugal"
+          sx={{ width: "1.6rem", height: "auto", borderRadius: 0 }}
+        />
+        <Typography
+          sx={{
+            fontFamily: "Istok Web",
+          }}
+          fontWeight="bold"
+        >
+          PT
         </Typography>
       </MenuItem>
     </Select>
