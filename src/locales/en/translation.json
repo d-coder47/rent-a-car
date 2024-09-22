@@ -1,6 +1,11 @@
 {
   "homepage": {
-    "bookCar": "Book your car"
+    "bookCar": "Book your car",
+    "hero": {
+      "headline": "From daily drives to weekend getaways - we've got everything you need!",
+      "subheadline": "Here at V&H Investimentos, we have vehicles for all occasions. Click the button below to make your reservation with comfort, speed, and the guarantee of an unbeatable experience.",
+      "cta": "Choose your vehicle now!"
+    }
   },
 
   "menu": {

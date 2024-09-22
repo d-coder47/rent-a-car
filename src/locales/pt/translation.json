@@ -1,6 +1,11 @@
 {
   "homepage": {
-    "bookCar": "Reserva seu carro"
+    "bookCar": "Reserva seu carro",
+    "hero": {
+      "headline": "Desde passeios diários a escapadelas de fim de semana - temos tudo o que precisa!",
+      "subheadline": "Aqui na V&H Investimentos, temos veículos para todas as ocasiões. Clique no botão abaixo para fazer a sua reserva com conforto, rapidez e a garantia de uma experiencia inabalavel.",
+      "cta": "Escolha o seu veículo agora!"
+    }
   },
   "menu": {
     "exposicaoVeiculos": "Exposição de veículos",

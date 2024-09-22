@@ -1,7 +1,9 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Hero: React.FC = () => {
+  const { t } = useTranslation();
   const typographyStyle = {
     headline: {
       fontFamily: "Istok Web",
@@ -82,18 +84,15 @@ const Hero: React.FC = () => {
           }}
         >
           <Typography sx={typographyStyle.headline}>
-            Desde passeios diários a escapadelas de fim de semana - temos tudo o
-            que precisa!
+            {t("homepage.hero.headline")}
           </Typography>
 
           <Typography sx={typographyStyle.subheadline}>
-            Aqui na V&H Investimentos, temos veículos para todas as ocasiões.
-            Clique no botão abaixo para fazer a sua reserva com conforto,
-            rapidez e a garantia de uma experiencia inabalavel.
+            {t("homepage.hero.subheadline")}
           </Typography>
 
           <Button variant="contained" sx={typographyStyle.cta}>
-            Escolha o seu veículo agora!
+            {t("homepage.hero.cta")}
           </Button>
         </Box>
       </Box>
