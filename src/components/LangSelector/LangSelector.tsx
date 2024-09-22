@@ -33,11 +33,11 @@ const LangSelector: React.FC = () => {
     fontStyle: "normal",
     fontWeight: 700,
     fontSize: {
-      xs: "17px",
-      sm: "17px",
+      xs: "13px",
+      sm: "13px",
       md: "13px",
       lg: "17px",
-      xl: "20px",
+      xl: "17px",
     },
     lineHeight: "29px",
     textAlign: "right",
@@ -80,7 +80,7 @@ const LangSelector: React.FC = () => {
       <MenuItem value={"en"} sx={menuItemStyles}>
         <Avatar src={unitedKingdomFlag} alt="england flag" sx={avatarStyle} />
         <Typography sx={typographyStyles} fontWeight="bold">
-          EN (UK)
+          EN
         </Typography>
       </MenuItem>
       <MenuItem value={"es"} sx={menuItemStyles}>
