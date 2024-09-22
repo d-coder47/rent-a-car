@@ -71,6 +71,12 @@ const BurguerMenu: React.FC = () => {
             </ListItemButton>
           </ListItem>
         ))}
+
+        <ListItem disablePadding>
+          <ListItemButton>
+            <LangSelector />
+          </ListItemButton>
+        </ListItem>
       </List>
       <Divider
         sx={{

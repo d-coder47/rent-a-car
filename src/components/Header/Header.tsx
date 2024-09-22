@@ -111,7 +111,6 @@ const Header: React.FC = () => {
             alignItems: "center",
           }}
         >
-          <LangSelector />
           <BurguerMenu />
         </Box>
       </Box>
