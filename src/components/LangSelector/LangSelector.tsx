@@ -22,6 +22,31 @@ const LangSelector: React.FC = () => {
     setLanguage(e.target.value);
   };
 
+  const menuItemStyles = {
+    display: "flex",
+    gap: ".5rem",
+    alignItems: "center",
+  };
+
+  const typographyStyles = {
+    fontFamily: "Istok Web",
+    fontStyle: "normal",
+    fontWeight: 700,
+    fontSize: {
+      xs: "17px",
+      sm: "17px",
+      md: "13px",
+      lg: "17px",
+      xl: "20px",
+    },
+    lineHeight: "29px",
+    textAlign: "right",
+    textTransform: "none",
+    color: "#000000",
+  };
+
+  const avatarStyle = { width: "1.6rem", height: "auto", borderRadius: 0 };
+
   return (
     <Select
       labelId="internationalization-label"
@@ -52,91 +77,27 @@ const LangSelector: React.FC = () => {
         },
       }}
     >
-      <MenuItem
-        value={"en"}
-        sx={{
-          display: "flex",
-          gap: ".5rem",
-          alignItems: "center",
-        }}
-      >
-        <Avatar
-          src={unitedKingdomFlag}
-          alt="england flag"
-          sx={{ width: "1.6rem", height: "auto", borderRadius: 0 }}
-        />
-        <Typography
-          sx={{
-            fontFamily: "Istok Web",
-          }}
-          fontWeight="bold"
-        >
+      <MenuItem value={"en"} sx={menuItemStyles}>
+        <Avatar src={unitedKingdomFlag} alt="england flag" sx={avatarStyle} />
+        <Typography sx={typographyStyles} fontWeight="bold">
           EN (UK)
         </Typography>
       </MenuItem>
-      <MenuItem
-        value={"es"}
-        sx={{
-          display: "flex",
-          gap: ".5rem",
-          alignItems: "center",
-        }}
-      >
-        <Avatar
-          src={spanishFlag}
-          alt="spanish flag"
-          sx={{ width: "1.6rem", height: "auto", borderRadius: 0 }}
-        />
-        <Typography
-          sx={{
-            fontFamily: "Istok Web",
-          }}
-          fontWeight="bold"
-        >
+      <MenuItem value={"es"} sx={menuItemStyles}>
+        <Avatar src={spanishFlag} alt="spanish flag" sx={avatarStyle} />
+        <Typography sx={typographyStyles} fontWeight="bold">
           ES
         </Typography>
       </MenuItem>
-      <MenuItem
-        value={"fr"}
-        sx={{
-          display: "flex",
-          gap: ".5rem",
-          alignItems: "center",
-        }}
-      >
-        <Avatar
-          src={franceFlag}
-          alt="Bandeira França"
-          sx={{ width: "1.6rem", height: "auto", borderRadius: 0 }}
-        />{" "}
-        <Typography
-          sx={{
-            fontFamily: "Istok Web",
-          }}
-          fontWeight="bold"
-        >
+      <MenuItem value={"fr"} sx={menuItemStyles}>
+        <Avatar src={franceFlag} alt="Bandeira França" sx={avatarStyle} />{" "}
+        <Typography sx={typographyStyles} fontWeight="bold">
           FR
         </Typography>
       </MenuItem>
-      <MenuItem
-        value={"pt"}
-        sx={{
-          display: "flex",
-          gap: ".5rem",
-          alignItems: "center",
-        }}
-      >
-        <Avatar
-          src={portugalFlag}
-          alt="Bandeira Portugal"
-          sx={{ width: "1.6rem", height: "auto", borderRadius: 0 }}
-        />
-        <Typography
-          sx={{
-            fontFamily: "Istok Web",
-          }}
-          fontWeight="bold"
-        >
+      <MenuItem value={"pt"} sx={menuItemStyles}>
+        <Avatar src={portugalFlag} alt="Bandeira Portugal" sx={avatarStyle} />
+        <Typography sx={typographyStyles} fontWeight="bold">
           PT
         </Typography>
       </MenuItem>
