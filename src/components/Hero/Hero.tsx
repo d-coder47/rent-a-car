@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
         sm: "32px ",
         md: "32px ",
         lg: "36px ",
-        xl: "45px",
+        xl: "48px",
       },
       lineHeight: "58px",
       textAlign: "justify",
@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
       lineHeight: "36px",
       textAlign: "justify",
       color: "#000000",
-      marginTop: "20px",
+      marginTop: "36px",
     },
     cta: {
       height: "50px",
@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
       lineHeight: "28px",
       textAlign: "justify",
       color: "#000000",
-      marginTop: "20px",
+      marginTop: "50px",
       textTransform: "none",
     },
   };
@@ -81,6 +81,7 @@ const Hero: React.FC = () => {
         <Box
           sx={{
             marginLeft: "60px",
+            width: "75%",
           }}
         >
           <Typography sx={typographyStyle.headline}>
