@@ -11,6 +11,7 @@ import {
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Menu, Close } from "@mui/icons-material";
+import LangSelector from "../LangSelector/LangSelector";
 
 const BurguerMenu: React.FC = () => {
   const { t } = useTranslation();

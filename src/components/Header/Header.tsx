@@ -4,8 +4,11 @@ import LangSelector from "../LangSelector/LangSelector";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import BurguerMenu from "../BurguerMenu/BurguerMenu";
+import { useNavigate } from "react-router-dom";
 
 const Header: React.FC = () => {
+  let navigate = useNavigate();
+
   const menuItensStyle = {
     fontFamily: "Istok Web",
     fontStyle: "normal",
@@ -53,6 +56,9 @@ const Header: React.FC = () => {
           <Avatar
             alt="logo"
             src={Logo}
+            onClick={() => {
+              navigate("/");
+            }}
             sx={{
               width: {
                 xs: "70%",
@@ -63,6 +69,7 @@ const Header: React.FC = () => {
               },
               height: "auto",
               borderRadius: "0px",
+              cursor: "pointer",
             }}
           />
         </Box>
@@ -101,8 +108,10 @@ const Header: React.FC = () => {
               lg: "none",
               xl: "none",
             },
+            alignItems: "center",
           }}
         >
+          <LangSelector />
           <BurguerMenu />
         </Box>
       </Box>

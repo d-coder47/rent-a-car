@@ -67,13 +67,13 @@ const Hero: React.FC = () => {
       <Box
         sx={{
           width: "100%",
-          background: {
-            xs: "red",
-            sm: "blue",
-            md: "green",
-            lg: "yellow",
-            xl: "violet",
-          },
+          // background: {
+          //   xs: "red",
+          //   sm: "blue",
+          //   md: "green",
+          //   lg: "yellow",
+          //   xl: "violet",
+          // },
         }}
       >
         <Box
