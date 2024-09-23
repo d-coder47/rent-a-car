@@ -49,7 +49,7 @@ const About: React.FC = () => {
       },
       lineHeight: "36px",
       textAlign: "justify",
-      color: "#4f4c4c",
+      color: "#000",
       marginTop: "36px",
     },
     cta: {

@@ -2,6 +2,7 @@ import { Avatar, Box, Button, Typography, useTheme } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import bubbles from "../../assets/bubbles.png";
+import carImage from "../../assets/car.png";
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
@@ -168,10 +169,39 @@ const Hero: React.FC = () => {
             xl: "flex",
           },
           justifyContent: "center",
-          width: "65%",
+          width: {
+            xs: "73%",
+            sm: "73%",
+            md: "73%",
+            lg: "76%",
+            xl: "76%",
+          },
+          overflow: "hidden",
         }}
       >
-        image
+        <Avatar
+          alt="car image"
+          src={carImage}
+          sx={{
+            width: "auto",
+            height: {
+              xs: "50%",
+              sm: "50%",
+              md: "50%",
+              lg: "80%",
+              xl: "80%",
+            },
+            borderRadius: "0px",
+            objectFit: "cover",
+            marginLeft: {
+              xs: "30%",
+              sm: "30%",
+              md: "30%",
+              lg: "50%",
+              xl: "30%",
+            },
+          }}
+        />
       </Box>
     </Box>
   );
