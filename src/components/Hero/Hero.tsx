@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
       },
       lineHeight: "36px",
       textAlign: "justify",
-      color: "#000000",
+      color: "#4f4c4c",
       marginTop: "36px",
     },
     cta: {
