@@ -1,6 +1,7 @@
-import { Box, Button, Typography, useTheme } from "@mui/material";
+import { Avatar, Box, Button, Typography, useTheme } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import bubbles from "../../assets/bubbles.png";
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
@@ -139,6 +140,22 @@ const Hero: React.FC = () => {
           >
             {t("homepage.hero.cta")}
           </Button>
+
+          <Box
+            sx={{
+              marginTop: "7%",
+            }}
+          >
+            <Avatar
+              alt="bubbles images"
+              src={bubbles}
+              sx={{
+                width: "100%",
+                height: "100%",
+                borderRadius: "0",
+              }}
+            />
+          </Box>
         </Box>
       </Box>
       <Box
