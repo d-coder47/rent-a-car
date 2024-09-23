@@ -59,7 +59,6 @@ const Hero: React.FC = () => {
   return (
     <Box
       sx={{
-        height: "922px",
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
@@ -80,11 +79,10 @@ const Hero: React.FC = () => {
       >
         <Box
           sx={{
-            marginLeft: "60px",
             width: "75%",
           }}
         >
-          <Typography sx={typographyStyle.headline}>
+          <Typography variant="h1" sx={typographyStyle.headline}>
             {t("homepage.hero.headline")}
           </Typography>
 
