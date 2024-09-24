@@ -1,7 +1,6 @@
 import { Avatar, Box, Button, Typography, useTheme } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import bubbles from "../../assets/bubbles.png";
 import carImage from "../../assets/car.png";
 
 const Hero: React.FC = () => {
@@ -89,12 +88,13 @@ const Hero: React.FC = () => {
           lg: "space-between",
           xl: "space-between",
         },
+
         marginTop: "5%",
       }}
     >
       <Box
         sx={{
-          width: "100%",
+          width: "75%",
           display: {
             xs: "flex",
             sm: "flex",
@@ -114,7 +114,6 @@ const Hero: React.FC = () => {
               lg: "60px",
               xl: "60px",
             },
-            width: "75%",
             display: {
               xs: "flex",
               sm: "flex",
@@ -141,22 +140,6 @@ const Hero: React.FC = () => {
           >
             {t("homepage.hero.cta")}
           </Button>
-
-          <Box
-            sx={{
-              marginTop: "7%",
-            }}
-          >
-            <Avatar
-              alt="bubbles images"
-              src={bubbles}
-              sx={{
-                width: "100%",
-                height: "100%",
-                borderRadius: "0",
-              }}
-            />
-          </Box>
         </Box>
       </Box>
       <Box
@@ -174,7 +157,7 @@ const Hero: React.FC = () => {
             sm: "73%",
             md: "73%",
             lg: "76%",
-            xl: "76%",
+            xl: "100%",
           },
           overflow: "hidden",
         }}
@@ -188,18 +171,11 @@ const Hero: React.FC = () => {
               xs: "50%",
               sm: "50%",
               md: "50%",
-              lg: "80%",
-              xl: "80%",
+              lg: "50%",
+              xl: "66%",
             },
             borderRadius: "0px",
             objectFit: "cover",
-            marginLeft: {
-              xs: "30%",
-              sm: "30%",
-              md: "30%",
-              lg: "50%",
-              xl: "30%",
-            },
           }}
         />
       </Box>
