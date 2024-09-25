@@ -126,14 +126,14 @@ const About: React.FC = () => {
             margin: "30px 20px 20px 50px",
           }}
         >
-          <Typography sx={typographyStyle.headline}>Sobre nós</Typography>
-          <Typography sx={typographyStyle.subheadline}>
-            A V&H investimentos é uma empresa jovem e dinâmica sediada em São
-            Vicente, Cabo Verde. Fundada com o objetivo de oferecer soluções de
-            mobilidade de excelência, a V&H investimentos se destaca por sua
-            frota de veículos aliando conforto, segurança e estilo.
+          <Typography sx={typographyStyle.headline}>
+            {" "}
+            {t("homepage.about.headline")}
           </Typography>
-          <Button sx={typographyStyle.cta}>Venha nos conhecer</Button>
+          <Typography sx={typographyStyle.subheadline}>
+            {t("homepage.about.subheadline")}
+          </Typography>
+          <Button sx={typographyStyle.cta}> {t("homepage.about.cta")}</Button>
         </Box>
       </Box>
     </Box>
