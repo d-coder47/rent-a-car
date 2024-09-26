@@ -69,7 +69,13 @@ const About: React.FC = () => {
       lineHeight: "28px",
       textAlign: "justify",
       color: "#ffffff",
-      marginTop: "50px",
+      marginTop: {
+        xs: "30px",
+        sm: "30px",
+        md: "30px",
+        lg: "50px",
+        xl: "50px",
+      },
       textTransform: "none",
       background: theme.palette.secondary.main,
       "&:hover": {
@@ -106,9 +112,9 @@ const About: React.FC = () => {
         },
 
         marginTop: {
-          xs: "0%",
-          sm: "0%",
-          md: "0%",
+          xs: "5%",
+          sm: "5%",
+          md: "5%",
           lg: "0%",
           xl: "5%",
         },
@@ -119,7 +125,7 @@ const About: React.FC = () => {
           width: {
             xs: "100%",
             sm: "100%",
-            md: "70%",
+            md: "100%",
             lg: "55%",
             xl: "55%",
           },
@@ -142,14 +148,50 @@ const About: React.FC = () => {
         sx={{
           background: theme.palette.primary.main,
           width: "100%",
+          height: {
+            xs: "480px",
+            sm: "380px",
+            md: "350px",
+            lg: "100%",
+            xl: "100%",
+          },
           display: "flex",
+          justifyContent: {
+            xs: "center",
+            sm: "center",
+            md: "center",
+            lg: "left",
+            xl: "left",
+          },
         }}
       >
         <Box
           sx={{
             width: "85%",
-            height: "80%",
-            margin: "30px 20px 20px 50px",
+            height: {
+              xs: "82%",
+              sm: "82%",
+              md: "82%",
+              lg: "80%",
+              xl: "80%",
+            },
+            margin: {
+              xs: "10px 0px 10px 0px",
+              sm: "10px 0px 10px 0px",
+              md: "10px 0px 10px 0px",
+              lg: "30px 20px 20px 50px",
+              xl: "30px 20px 20px 50px",
+            },
+            display: {
+              xs: "flex",
+              sm: "flex",
+              md: "flex",
+              lg: "block",
+              xl: "block",
+            },
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
           }}
         >
           <Typography sx={typographyStyle.headline}>
