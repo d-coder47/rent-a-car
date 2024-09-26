@@ -82,9 +82,21 @@ const About: React.FC = () => {
   return (
     <Box
       sx={{
-        height: "460px",
+        height: {
+          xs: "100%",
+          sm: "100%",
+          md: "100%",
+          lg: "460px",
+          xl: "460px",
+        },
         display: "flex",
-        flexDirection: "row",
+        flexDirection: {
+          xs: "column",
+          sm: "column",
+          md: "column",
+          lg: "row",
+          xl: "row",
+        },
         justifyContent: {
           xs: "center",
           sm: "center",
@@ -92,6 +104,7 @@ const About: React.FC = () => {
           lg: "space-between",
           xl: "space-between",
         },
+
         marginTop: {
           xs: "0%",
           sm: "0%",
@@ -103,7 +116,20 @@ const About: React.FC = () => {
     >
       <Box
         sx={{
-          width: "55%",
+          width: {
+            xs: "100%",
+            sm: "100%",
+            md: "70%",
+            lg: "55%",
+            xl: "55%",
+          },
+          height: {
+            xs: "100%",
+            sm: "100%",
+            md: "400px",
+            lg: "100%",
+            xl: "100%",
+          },
         }}
       >
         <Avatar
