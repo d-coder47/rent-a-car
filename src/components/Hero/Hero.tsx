@@ -10,23 +10,6 @@ const Hero: React.FC = () => {
 
   const typographyStyle = {
     headline: {
-      fontFamily: "Istok Web",
-      fontStyle: "normal",
-      fontWeight: 700,
-      fontSize: {
-        xs: "22px",
-        sm: "22px",
-        md: "32px ",
-        lg: "36px ",
-        xl: "48px",
-      },
-      lineHeight: {
-        xs: "32px",
-        sm: "32px",
-        md: "58px",
-        lg: "58px",
-        xl: "58px",
-      },
       textAlign: {
         xs: "center",
         sm: "center",
@@ -37,17 +20,6 @@ const Hero: React.FC = () => {
       color: "#000000",
     },
     subheadline: {
-      fontFamily: "Istok Web",
-      fontStyle: "normal",
-      fontWeight: 400,
-      fontSize: {
-        xs: "16px",
-        sm: "16px",
-        md: "18px",
-        lg: "20px",
-        xl: "24px",
-      },
-      lineHeight: "36px",
       textAlign: {
         xs: "center",
         sm: "center",
@@ -61,17 +33,6 @@ const Hero: React.FC = () => {
     cta: {
       height: "50px",
       borderRadius: "12px",
-      fontFamily: "Istok Web",
-      fontStyle: "normal",
-      fontWeight: 600,
-      fontSize: {
-        xs: "16px",
-        sm: "16px",
-        md: "16px",
-        lg: "18px",
-        xl: "20px",
-      },
-      lineHeight: "28px",
       textAlign: "justify",
       color: "#000000",
       marginTop: "30px",
@@ -135,7 +96,7 @@ const Hero: React.FC = () => {
             {t("homepage.hero.headline")}
           </Typography>
 
-          <Typography sx={typographyStyle.subheadline}>
+          <Typography variant="subtitle1" sx={typographyStyle.subheadline}>
             {t("homepage.hero.subheadline")}
           </Typography>
 
@@ -144,7 +105,7 @@ const Hero: React.FC = () => {
             sx={typographyStyle.cta}
             disableElevation={true}
           >
-            {t("homepage.hero.cta")}
+            <Typography variant="h3">{t("homepage.hero.cta")}</Typography>
           </Button>
         </Box>
       </Box>

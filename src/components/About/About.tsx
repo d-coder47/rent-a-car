@@ -10,23 +10,6 @@ const About: React.FC = () => {
 
   const typographyStyle = {
     headline: {
-      fontFamily: "Istok Web",
-      fontStyle: "normal",
-      fontWeight: 700,
-      fontSize: {
-        xs: "22px",
-        sm: "22px",
-        md: "32px ",
-        lg: "36px ",
-        xl: "48px",
-      },
-      lineHeight: {
-        xs: "32px",
-        sm: "32px",
-        md: "58px",
-        lg: "58px",
-        xl: "58px",
-      },
       textAlign: {
         xs: "center",
         sm: "center",
@@ -37,17 +20,6 @@ const About: React.FC = () => {
       color: "#000000",
     },
     subheadline: {
-      fontFamily: "Istok Web",
-      fontStyle: "normal",
-      fontWeight: 400,
-      fontSize: {
-        xs: "16px",
-        sm: "16px",
-        md: "18px",
-        lg: "20px",
-        xl: "24px",
-      },
-      lineHeight: "36px",
       textAlign: "justify",
       color: "#000",
       marginTop: "36px",
@@ -56,17 +28,6 @@ const About: React.FC = () => {
       height: "50px",
       width: "250px",
       borderRadius: "12px",
-      fontFamily: "Istok Web",
-      fontStyle: "normal",
-      fontWeight: 600,
-      fontSize: {
-        xs: "16px",
-        sm: "16px",
-        md: "16px",
-        lg: "18px",
-        xl: "20px",
-      },
-      lineHeight: "28px",
       textAlign: "justify",
       color: "#ffffff",
       marginTop: {
@@ -194,14 +155,16 @@ const About: React.FC = () => {
             flexDirection: "column",
           }}
         >
-          <Typography sx={typographyStyle.headline}>
+          <Typography sx={typographyStyle.headline} variant="h1">
             {" "}
             {t("homepage.about.headline")}
           </Typography>
-          <Typography sx={typographyStyle.subheadline}>
+          <Typography sx={typographyStyle.subheadline} variant="subtitle1">
             {t("homepage.about.subheadline")}
           </Typography>
-          <Button sx={typographyStyle.cta}> {t("homepage.about.cta")}</Button>
+          <Button sx={typographyStyle.cta}>
+            <Typography variant="h3">{t("homepage.about.cta")}</Typography>
+          </Button>
         </Box>
       </Box>
     </Box>
