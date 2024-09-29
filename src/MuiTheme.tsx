@@ -8,98 +8,53 @@ interface MUIThemeInterface {
 
 const MuiTheme = ({ children }: MUIThemeInterface) => {
   const breakpoints = createBreakpoints({});
+
   const theme = createTheme({
     palette: {
-      primary: {
-        main: "#FE9E00",
-      },
-      secondary: {
-        main: "#0C666E",
-      },
+      primary: { main: "#FE9E00" },
+      secondary: { main: "#0C666E" },
     },
 
     typography: {
       fontFamily: "Istok Web, Roboto, Arial, sans-serif",
+
       h1: {
-        fontSize: "48px",
         fontWeight: 700,
         lineHeight: 1.2,
         fontStyle: "normal",
         color: "#000",
-
-        [breakpoints.down("xs")]: {
-          fontSize: "22px",
-        },
-        [breakpoints.up("xs")]: {
-          fontSize: "22px",
-        },
-        [breakpoints.up("sm")]: {
-          fontSize: "32px ",
-        },
-        [breakpoints.up("md")]: {
-          fontSize: "36px ",
-        },
-        [breakpoints.up("lg")]: {
-          fontSize: "36px",
-        },
-
-        [breakpoints.up("xl")]: {
-          fontSize: "48px",
-        },
+        fontSize: "48px",
+        [breakpoints.down("sm")]: { fontSize: "22px" },
+        [breakpoints.between("sm", "md")]: { fontSize: "32px" },
+        [breakpoints.between("md", "lg")]: { fontSize: "36px" },
       },
+
       h2: {
-        fontSize: "24px",
-        fontWeight: 400,
+        fontWeight: 500,
+        lineHeight: 1.3,
+        color: "#000",
+        fontSize: "40px",
+        [breakpoints.down("sm")]: { fontSize: "20px" },
+        [breakpoints.between("sm", "md")]: { fontSize: "28px" },
+        [breakpoints.between("md", "lg")]: { fontSize: "34px" },
       },
       h3: {
         fontStyle: "normal",
         fontWeight: 600,
         lineHeight: "28px",
-        [breakpoints.down("xs")]: {
-          fontSize: "16px",
-        },
-        [breakpoints.up("xs")]: {
-          fontSize: "16px",
-        },
-        [breakpoints.up("sm")]: {
-          fontSize: "16px",
-        },
-        [breakpoints.up("md")]: {
-          fontSize: "16px",
-        },
-        [breakpoints.up("lg")]: {
-          fontSize: "18px",
-        },
-
-        [breakpoints.up("xl")]: {
-          fontSize: "20px",
-        },
+        fontSize: "20px",
+        [breakpoints.down("md")]: { fontSize: "16px" },
+        [breakpoints.between("lg", "xl")]: { fontSize: "18px" },
       },
+
       subtitle1: {
-        fontSize: "16px",
         fontStyle: "normal",
         fontWeight: 400,
         lineHeight: "36px",
         color: "#4f4c4c",
-        [breakpoints.down("xs")]: {
-          fontSize: "16px",
-        },
-        [breakpoints.up("xs")]: {
-          fontSize: "16px",
-        },
-        [breakpoints.up("sm")]: {
-          fontSize: "18px",
-        },
-        [breakpoints.up("md")]: {
-          fontSize: "20px",
-        },
-        [breakpoints.up("lg")]: {
-          fontSize: "24px",
-        },
-
-        [breakpoints.up("xl")]: {
-          fontSize: "24px",
-        },
+        fontSize: "24px",
+        [breakpoints.down("sm")]: { fontSize: "16px" },
+        [breakpoints.between("sm", "lg")]: { fontSize: "20px" },
       },
     },
   });

@@ -155,7 +155,7 @@ const About: React.FC = () => {
             flexDirection: "column",
           }}
         >
-          <Typography sx={typographyStyle.headline} variant="h1">
+          <Typography sx={typographyStyle.headline} variant="h2">
             {" "}
             {t("homepage.about.headline")}
           </Typography>
