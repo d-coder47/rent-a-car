@@ -33,10 +33,10 @@ const MuiTheme = ({ children }: MUIThemeInterface) => {
         fontWeight: 500,
         lineHeight: 1.3,
         color: "#000",
-        fontSize: "40px",
+        fontSize: "36px",
         [breakpoints.down("sm")]: { fontSize: "20px" },
         [breakpoints.between("sm", "md")]: { fontSize: "28px" },
-        [breakpoints.between("md", "lg")]: { fontSize: "34px" },
+        [breakpoints.between("md", "lg")]: { fontSize: "32px" },
       },
       h3: {
         fontStyle: "normal",
@@ -46,7 +46,15 @@ const MuiTheme = ({ children }: MUIThemeInterface) => {
         [breakpoints.down("md")]: { fontSize: "16px" },
         [breakpoints.between("lg", "xl")]: { fontSize: "18px" },
       },
-
+      body1: {
+        fontStyle: "normal",
+        fontWeight: 400,
+        lineHeight: "26px",
+        color: "#4f4c4c",
+        fontSize: "16px",
+        [breakpoints.down("sm")]: { fontSize: "14px" },
+        [breakpoints.between("sm", "lg")]: { fontSize: "16px" },
+      },
       subtitle1: {
         fontStyle: "normal",
         fontWeight: 400,
