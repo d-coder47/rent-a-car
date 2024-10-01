@@ -1,4 +1,4 @@
-import { Grid2, Typography } from "@mui/material";
+import { Box, Grid2, Typography } from "@mui/material";
 import ServiceCard from "./ServiceCard";
 import { SERVICES } from "../../constants";
 
@@ -10,11 +10,11 @@ const Services = () => {
       flexDirection="column"
       sx={{
         margin: {
-          xs: "0px 10px 0px 10px",
-          sm: "0px 10px 0px 10px",
-          md: "0px 10px 0px 10px",
-          lg: "80px 60px 80px 60px",
-          xl: "80px 60px 80px 60px",
+          xs: "30px 2rem",
+          sm: "30px 4rem",
+          md: "30px 4rem",
+          lg: "80px 60px",
+          xl: "80px 60px",
         },
       }}
     >
@@ -25,16 +25,34 @@ const Services = () => {
         escolha ideal para lhe proporcionar conforto, segurança e satisfação ao
         conduzir um veículo.
       </Typography>
-      <Grid2 display="flex" gap="1rem" mx="4rem" mt="6rem">
+      <Grid2
+        display="flex"
+        flexWrap="wrap"
+        gap="1rem"
+        mx="4rem"
+        mt="6rem"
+        sx={{
+          flexDirection: {
+            xs: "column",
+            sm: "column",
+            md: "row",
+            lg: "row",
+            xl: "row",
+          },
+        }}
+      >
         {SERVICES.map((service) => {
           return (
-            <Grid2 size={{ xs: 3 }}>
+            <Box
+              display="flex"
+              sx={{ width: { xs: "100%", sm: "100%", md: "48%", lg: "31%" } }}
+            >
               <ServiceCard
                 title={service.title}
                 description={service.description}
                 icon={service.icon}
               />
-            </Grid2>
+            </Box>
           );
         })}
       </Grid2>

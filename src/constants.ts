@@ -12,7 +12,7 @@ export const SERVICES = [
     icon: "/assets/servicos/carro.svg",
   },
   {
-    title: "Recolha e Entrega",
+    title: "Aluguer Personalizado",
     description:
       "Poupe tempo e preocupações. Vamos onde estiver, entregamos e recolhemos o veículo no local da sua preferência, de forma rápida e segura. Seja para aluguer ou compra, garantimos uma experiência sem complicações.",
     icon: "/assets/servicos/carro.svg",

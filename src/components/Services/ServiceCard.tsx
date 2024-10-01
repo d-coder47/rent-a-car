@@ -1,20 +1,18 @@
-import { Avatar, Grid2, Typography } from "@mui/material";
-import React from "react";
+import { Avatar, Box, Typography } from "@mui/material";
 import car from "../../assets/servicos/carro.svg";
 import { IService } from "../../interfaces";
 
 const ServiceCard = ({ title, description, icon }: IService) => {
   return (
-    <Grid2
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      gap=".5rem"
-    >
+    <Box display="flex" flexDirection="column" alignItems="center" gap=".5rem">
       <Avatar src={car} />
-      <Typography variant="h2">{title}</Typography>
-      <Typography variant="body1">{description}</Typography>
-    </Grid2>
+      <Typography variant="h2" textAlign="center">
+        {title}
+      </Typography>
+      <Typography variant="body1" textAlign="justify">
+        {description}
+      </Typography>
+    </Box>
   );
 };
 
