@@ -5,6 +5,7 @@ import Header from "../components/Header/Header";
 import Services from "../components/Services/Services";
 import About from "../components/About/About";
 import Testimonials from "../components/Testimonials/Testimonials";
+import FAQs from "../components/FAQs/FAQs";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <About />
       <Services />
       <Testimonials />
+      <FAQs />
     </Box>
   );
 };

@@ -18,3 +18,31 @@ export const SERVICES = [
     icon: "/assets/servicos/carro.svg",
   },
 ];
+
+export const FAQs = [
+  {
+    title: "O que é preciso para alugar um veículo?",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.",
+  },
+  {
+    title: "Preciso do meu próprio seguro?",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.",
+  },
+  {
+    title: "Outras pessoas podem dirigir o veículo que eu aluguei?",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.",
+  },
+  {
+    title: "Como funciona a política de cancelamento?",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.",
+  },
+  {
+    title: "O que acontece se eu tiver um acidente?",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.",
+  },
+];

@@ -41,9 +41,10 @@ const Services = () => {
           },
         }}
       >
-        {SERVICES.map((service) => {
+        {SERVICES.map((service, index) => {
           return (
             <Box
+              key={index}
               display="flex"
               sx={{ width: { xs: "100%", sm: "100%", md: "48%", lg: "31%" } }}
             >
