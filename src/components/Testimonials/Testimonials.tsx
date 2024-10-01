@@ -23,7 +23,7 @@ const Testimonials: React.FC = () => {
     cssEase: "linear",
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1090,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -33,11 +33,13 @@ const Testimonials: React.FC = () => {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 800,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          autoplaySpeed: 500,
+          dots: true,
         },
       },
       {
@@ -45,6 +47,9 @@ const Testimonials: React.FC = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          infinite: true,
+          autoplaySpeed: 500,
+          dots: true,
         },
       },
     ],
@@ -99,7 +104,7 @@ const Testimonials: React.FC = () => {
         }}
         variant="h2"
       >
-        O que nossos clientes dizem
+        {t("homepage.testimonials.title")}
       </Typography>
 
       <Box
@@ -109,8 +114,20 @@ const Testimonials: React.FC = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          marginTop: "150px",
-          marginBottom: "200px",
+          marginTop: {
+            xs: "20px",
+            sm: "60px",
+            md: "70px",
+            lg: "100px",
+            xl: "110px",
+          },
+          marginBottom: {
+            xs: "40px",
+            sm: "110px",
+            md: "120px",
+            lg: "110px",
+            xl: "150px",
+          },
         }}
       >
         <Box
@@ -132,14 +149,6 @@ const Testimonials: React.FC = () => {
                   justifyContent: "center",
                 }}
               >
-                {/* <Typography
-                  variant="h3"
-                  sx={{
-                    marginBottom: "30px",
-                  }}
-                >
-                  {item.name}
-                </Typography> */}
                 <FormatQuote
                   fontSize="large"
                   sx={{
