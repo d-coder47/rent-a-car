@@ -133,7 +133,7 @@ const Testimonials: React.FC = () => {
         <Box
           className="slider-container"
           sx={{
-            width: "70%",
+            width: "90%",
           }}
         >
           <Slider {...settings}>
