@@ -61,7 +61,7 @@ const MuiTheme = ({ children }: MUIThemeInterface) => {
         lineHeight: "36px",
         color: "#4f4c4c",
         fontSize: "24px",
-        [breakpoints.down("sm")]: { fontSize: "16px" },
+        [breakpoints.down("sm")]: { fontSize: "12px", lineHeight: "26px" },
         [breakpoints.between("sm", "lg")]: { fontSize: "20px" },
       },
     },

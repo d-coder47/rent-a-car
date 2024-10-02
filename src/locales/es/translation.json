@@ -13,6 +13,12 @@
     },
     "testimonials": {
       "title": "Lo que dicen nuestros clientes"
+    },
+    "engagement": {
+      "title": "¡Alquila tu vehículo ahora!",
+      "subheadline": "¿Listo para encontrar el vehículo de alquiler perfecto para tus necesidades? En V&H Inversiones, estamos aquí para ayudarte en cada paso. Solicita tu vehículo hoy mismo o contáctanos para saber más sobre nuestros servicios. Nos enorgullece ofrecer vehículos de alta calidad y un servicio excepcional a precios accesibles. No esperes, ¡comencemos ya!",
+      "cta": "Reserva tu vehículo",
+      "startConversation": "o inicia una conversación"
     }
   },
   "menu": {

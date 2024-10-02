@@ -13,6 +13,12 @@
     },
     "testimonials": {
       "title": "Ce que disent nos clients"
+    },
+    "engagement": {
+      "title": "Louez votre véhicule maintenant !",
+      "subheadline": "Prêt à trouver le véhicule de location parfait pour vos besoins ? Chez V&H Investissements, nous sommes là pour vous aider à chaque étape. Demandez votre véhicule dès aujourd'hui ou contactez-nous pour en savoir plus sur nos services. Nous sommes fiers d'offrir des véhicules de haute qualité et un service exceptionnel à des prix abordables. N'attendez pas – commençons dès maintenant !",
+      "cta": "Réservez votre véhicule",
+      "startConversation": "ou commencez une conversation"
     }
   },
   "menu": {

@@ -13,6 +13,12 @@
     },
     "testimonials": {
       "title": "What our clients say"
+    },
+    "engagement": {
+      "title": "Rent Your Vehicle Now!",
+      "subheadline": "Ready to find the perfect rental vehicle for your needs? At V&H Investments, we are here to help you every step of the way. Request your vehicle today or contact us to learn more about our services. We take pride in offering high-quality vehicles and exceptional service at affordable prices. Don’t wait – let's get started!",
+      "cta": "Book Your Vehicle",
+      "startConversation": "or start a conversation"
     }
   },
 

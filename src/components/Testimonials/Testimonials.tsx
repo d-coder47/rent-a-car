@@ -118,15 +118,15 @@ const Testimonials: React.FC = () => {
             xs: "20px",
             sm: "60px",
             md: "70px",
-            lg: "100px",
-            xl: "110px",
+            lg: "70px",
+            xl: "80px",
           },
           marginBottom: {
             xs: "40px",
             sm: "110px",
             md: "120px",
-            lg: "110px",
-            xl: "150px",
+            lg: "100px",
+            xl: "120px",
           },
         }}
       >
