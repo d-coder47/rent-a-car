@@ -7,6 +7,7 @@ import About from "../components/About/About";
 import Testimonials from "../components/Testimonials/Testimonials";
 import FAQs from "../components/FAQs/FAQs";
 import Engagement from "../components/Engagement/Engagement";
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <Testimonials />
       <FAQs />
       <Engagement />
+      <Footer />
     </Box>
   );
 };
