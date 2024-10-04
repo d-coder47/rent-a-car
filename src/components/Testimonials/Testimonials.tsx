@@ -17,7 +17,7 @@ const Testimonials: React.FC = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 2000,
+    speed: 4000,
     arrows: false,
     autoplaySpeed: 500,
     cssEase: "linear",
