@@ -14,11 +14,20 @@
     "testimonials": {
       "title": "O que nossos clientes dizem"
     },
+    "faq": {
+      "title": "Perguntas frequentes"
+    },
     "engagement": {
       "title": "Aluga seu veículo agora!",
       "subheadline": "Pronto para encontrar o veículo de aluguel perfeito para as suas necessidades? Na V&H Investimentos, estamos aqui para ajudar você em cada etapa. Solicite seu veículo hoje mesmo ou entre em contato para saber mais sobre os nossos serviços. Temos orgulho em oferecer veículos de alta qualidade e um serviço excepcional a preços acessíveis. Não espere – vamos começar!",
       "cta": "Reserva seu veículo",
       "startConversation": "ou inicie uma conversa"
+    },
+    "footer": {
+      "linksRapidos": "Links rápidos",
+      "entreEmContato": " Entre em contato",
+      "copyright": "© Copyright 2024 V&H Investimentos",
+      "home": "Início"
     }
   },
   "menu": {

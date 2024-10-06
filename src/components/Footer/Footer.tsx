@@ -15,11 +15,11 @@ const Footer: React.FC = () => {
 
   const sections = [
     {
-      section: "Home",
+      section: t("homepage.footer.home"),
       link: "dummy",
     },
     {
-      section: "Sobre nós",
+      section: t("homepage.about.headline"),
       link: "dummy",
     },
     {
@@ -27,15 +27,15 @@ const Footer: React.FC = () => {
       link: "dummy",
     },
     {
-      section: "O que nossos clientes dizem",
+      section: t("homepage.testimonials.title"),
       link: "dummy",
     },
     {
-      section: "Perguntas frequentes",
+      section: t("homepage.faq.title"),
       link: "dummy",
     },
     {
-      section: "Escolha o seu veículo",
+      section: t("homepage.engagement.title"),
       link: "dummy",
     },
   ];
@@ -130,7 +130,7 @@ const Footer: React.FC = () => {
                 marginBottom: "20px",
               }}
             >
-              Links rápidos
+              {t("homepage.footer.linksRapidos")}
             </Typography>
             {sections.map((item) => (
               <Typography
@@ -186,7 +186,7 @@ const Footer: React.FC = () => {
                 marginBottom: "20px",
               }}
             >
-              Entre em contato
+              {t("homepage.footer.entreEmContato")}
             </Typography>
             {contacts.map((item) => (
               <Box
@@ -236,9 +236,7 @@ const Footer: React.FC = () => {
             marginTop: "50px",
           }}
         >
-          <Typography variant="h3">
-            © Copyright 2024 V&H Investimentos
-          </Typography>
+          <Typography variant="h3">{t("homepage.footer.copyright")}</Typography>
         </Box>
       </Box>
       <Box
@@ -255,7 +253,7 @@ const Footer: React.FC = () => {
           marginTop: "50px",
         }}
       >
-        <Typography variant="h3">© Copyright 2024 V&H Investimentos</Typography>
+        <Typography variant="h3">{t("homepage.footer.copyright")}</Typography>
       </Box>
     </Box>
   );
