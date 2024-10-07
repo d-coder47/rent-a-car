@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
         lg: "justify",
         xl: "justify",
       },
-      color: "#4f4c4c",
+      color: "#000000",
       marginTop: "36px",
     },
     cta: {
@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
       textTransform: "none",
       "&:hover": {
         backgroundColor: theme.palette.secondary.main,
-        color: "#FFFFFF",
+        color: "#ffffff !important",
       },
     },
   };
@@ -105,7 +105,7 @@ const Hero: React.FC = () => {
             sx={typographyStyle.cta}
             disableElevation={true}
           >
-            <Typography variant="h3">{t("homepage.hero.cta")}</Typography>
+            <Typography variant="body1">{t("homepage.hero.cta")}</Typography>
           </Button>
         </Box>
       </Box>

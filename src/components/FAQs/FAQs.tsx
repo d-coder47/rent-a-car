@@ -18,10 +18,10 @@ const FAQs = () => {
         },
       }}
     >
-      <Typography variant="h1" textAlign="center">
+      <Typography variant="h2" textAlign="center">
         Perguntas Frequentes
       </Typography>
-      <Typography variant="subtitle1" textAlign="justify">
+      <Typography variant="body1" textAlign="justify">
         Procurando respostas sobre nossos serviços de aluguel de veículos? Na
         V&H Investimentos, entendemos que o processo de aluguel de veículos
         pode, por vezes, ser complicado. Por isso, compilamos uma lista

@@ -124,7 +124,7 @@ const Footer: React.FC = () => {
             }}
           >
             <Typography
-              variant="h2"
+              variant="h3"
               sx={{
                 marginTop: "80px",
                 marginBottom: "20px",
@@ -134,7 +134,7 @@ const Footer: React.FC = () => {
             </Typography>
             {sections.map((item) => (
               <Typography
-                variant="h3"
+                variant="body1"
                 sx={{
                   marginBottom: "20px",
                 }}
@@ -180,7 +180,7 @@ const Footer: React.FC = () => {
             }}
           >
             <Typography
-              variant="h2"
+              variant="h3"
               sx={{
                 marginTop: "80px",
                 marginBottom: "20px",
@@ -197,7 +197,7 @@ const Footer: React.FC = () => {
               >
                 {item.icon}
                 <Typography
-                  variant="h3"
+                  variant="body1"
                   sx={{
                     marginBottom: "20px",
                     marginLeft: "10px",
@@ -236,7 +236,9 @@ const Footer: React.FC = () => {
             marginTop: "50px",
           }}
         >
-          <Typography variant="h3">{t("homepage.footer.copyright")}</Typography>
+          <Typography variant="body1">
+            {t("homepage.footer.copyright")}
+          </Typography>
         </Box>
       </Box>
       <Box
@@ -253,7 +255,9 @@ const Footer: React.FC = () => {
           marginTop: "50px",
         }}
       >
-        <Typography variant="h3">{t("homepage.footer.copyright")}</Typography>
+        <Typography variant="body1">
+          {t("homepage.footer.copyright")}
+        </Typography>
       </Box>
     </Box>
   );

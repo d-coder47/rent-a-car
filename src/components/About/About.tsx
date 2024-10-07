@@ -159,11 +159,11 @@ const About: React.FC = () => {
             {" "}
             {t("homepage.about.headline")}
           </Typography>
-          <Typography sx={typographyStyle.subheadline} variant="subtitle1">
+          <Typography sx={typographyStyle.subheadline} variant="body1">
             {t("homepage.about.subheadline")}
           </Typography>
           <Button sx={typographyStyle.cta}>
-            <Typography variant="h3">{t("homepage.about.cta")}</Typography>
+            <Typography variant="body1">{t("homepage.about.cta")}</Typography>
           </Button>
         </Box>
       </Box>

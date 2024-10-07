@@ -33,7 +33,7 @@ const Engagement: React.FC = () => {
         }}
       >
         <Typography
-          variant="subtitle1"
+          variant="body1"
           sx={{
             color: "#000",
             textAlign: "center",
@@ -65,16 +65,11 @@ const Engagement: React.FC = () => {
           },
         }}
       >
-        <Typography variant="h3">{t("homepage.engagement.cta")}</Typography>
+        <Typography variant="body1">{t("homepage.engagement.cta")}</Typography>
       </Button>
       <Typography
-        variant="h3"
+        variant="body1"
         sx={{
-          fontFamily: "Istok Web",
-          fontStyle: "normal",
-          fontWeight: 700,
-          fontSize: "24px",
-          lineHeight: "35px",
           textAlign: "center",
           textDecoration: "underline",
           color: "#000000",

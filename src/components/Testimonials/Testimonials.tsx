@@ -99,10 +99,10 @@ const Testimonials: React.FC = () => {
       }}
     >
       <Typography
+        variant="h2"
         sx={{
           marginTop: "35px",
         }}
-        variant="h2"
       >
         {t("homepage.testimonials.title")}
       </Typography>
@@ -157,7 +157,7 @@ const Testimonials: React.FC = () => {
                   }}
                 />
                 <Typography
-                  variant="h3"
+                  variant="body1"
                   sx={{
                     marginBottom: "30px",
                     textAlign: "center",
