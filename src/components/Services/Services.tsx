@@ -18,7 +18,14 @@ const Services = () => {
         },
       }}
     >
-      <Typography variant="h2">Serviços</Typography>
+      <Typography
+        variant="h2"
+        sx={{
+          marginBottom: "36px",
+        }}
+      >
+        Serviços
+      </Typography>
       <Typography variant="body1">
         Com uma equipe altamente qualificada e um compromisso inabalável com a
         satisfação do cliente, <br /> a V&H Investimentos se posiciona como a

@@ -126,7 +126,13 @@ const Footer: React.FC = () => {
             <Typography
               variant="h3"
               sx={{
-                marginTop: "80px",
+                marginTop: {
+                  xs: "30px",
+                  sm: "30px",
+                  md: "30px",
+                  lg: "80px",
+                  xl: "80px",
+                },
                 marginBottom: "20px",
               }}
             >
@@ -182,7 +188,13 @@ const Footer: React.FC = () => {
             <Typography
               variant="h3"
               sx={{
-                marginTop: "80px",
+                marginTop: {
+                  xs: "30px",
+                  sm: "30px",
+                  md: "30px",
+                  lg: "80px",
+                  xl: "80px",
+                },
                 marginBottom: "20px",
               }}
             >

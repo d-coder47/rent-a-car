@@ -19,7 +19,14 @@ const Engagement: React.FC = () => {
     >
       <Typography
         sx={{
-          marginTop: "35px",
+          marginTop: {
+            xs: "30px",
+            sm: "30px",
+            md: "30px",
+            lg: "80px",
+            xl: "80px",
+          },
+          marginBottom: "36px",
         }}
         variant="h2"
       >
@@ -29,7 +36,6 @@ const Engagement: React.FC = () => {
       <Box
         sx={{
           width: "90%",
-          marginTop: "36px",
         }}
       >
         <Typography

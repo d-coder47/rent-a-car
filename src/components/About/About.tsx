@@ -18,6 +18,13 @@ const About: React.FC = () => {
         xl: "justify",
       },
       color: "#000000",
+      marginTop: {
+        xs: "30px",
+        sm: "30px",
+        md: "30px",
+        lg: "0px",
+        xl: "0px",
+      },
     },
     subheadline: {
       textAlign: "justify",
@@ -110,8 +117,8 @@ const About: React.FC = () => {
           background: theme.palette.primary.main,
           width: "100%",
           height: {
-            xs: "480px",
-            sm: "380px",
+            xs: "350px",
+            sm: "350px",
             md: "350px",
             lg: "100%",
             xl: "100%",
@@ -130,19 +137,20 @@ const About: React.FC = () => {
           sx={{
             width: "85%",
             height: {
-              xs: "82%",
-              sm: "82%",
-              md: "82%",
+              xs: "100%",
+              sm: "100%",
+              md: "100%",
               lg: "80%",
               xl: "80%",
             },
             margin: {
-              xs: "10px 0px 10px 0px",
-              sm: "10px 0px 10px 0px",
-              md: "10px 0px 10px 0px",
-              lg: "30px 20px 20px 50px",
-              xl: "30px 20px 20px 50px",
+              xs: "0px 0px 10px 0px",
+              sm: "0px 0px 10px 0px",
+              md: "0px 0px 10px 0px",
+              lg: "80px 20px 20px 50px",
+              xl: "80px 20px 20px 50px",
             },
+
             display: {
               xs: "flex",
               sm: "flex",
@@ -150,7 +158,7 @@ const About: React.FC = () => {
               lg: "block",
               xl: "block",
             },
-            justifyContent: "center",
+            justifyContent: "flex-start",
             alignItems: "center",
             flexDirection: "column",
           }}

@@ -101,7 +101,13 @@ const Testimonials: React.FC = () => {
       <Typography
         variant="h2"
         sx={{
-          marginTop: "35px",
+          marginTop: {
+            xs: "30px",
+            sm: "30px",
+            md: "30px",
+            lg: "80px",
+            xl: "80px",
+          },
         }}
       >
         {t("homepage.testimonials.title")}

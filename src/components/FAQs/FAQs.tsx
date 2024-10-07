@@ -18,7 +18,7 @@ const FAQs = () => {
         },
       }}
     >
-      <Typography variant="h2" textAlign="center">
+      <Typography variant="h2" textAlign="center" sx={{ marginBottom: "36px" }}>
         Perguntas Frequentes
       </Typography>
       <Typography variant="body1" textAlign="justify">
