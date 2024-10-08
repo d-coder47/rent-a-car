@@ -6,10 +6,10 @@ const ServiceCard = ({ title, description, icon }: IService) => {
   return (
     <Box display="flex" flexDirection="column" alignItems="center" gap=".5rem">
       <Avatar src={car} />
-      <Typography variant="h2" textAlign="center">
+      <Typography variant="h3" textAlign="center">
         {title}
       </Typography>
-      <Typography variant="body1" textAlign="justify">
+      <Typography variant="body2" textAlign="justify">
         {description}
       </Typography>
     </Box>

@@ -23,22 +23,14 @@ const FAQs = () => {
         sx={{
           margin: {
             xs: "30px 4rem",
-            sm: "30px 8rem",
+            sm: "30px 4rem",
             md: "30px 12rem",
             lg: "80px 20rem",
             xl: "80px 28rem",
           },
         }}
       >
-        <Typography
-          variant="h1"
-          textAlign="center"
-          sx={{
-            wordWrap: "revert",
-            textDecoration: "underline",
-            textDecorationColor: "#FE9E00",
-          }}
-        >
+        <Typography variant="h2" textAlign="center">
           Perguntas Frequentes
         </Typography>
 

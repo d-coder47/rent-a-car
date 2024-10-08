@@ -17,7 +17,7 @@ const Testimonials: React.FC = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 2000,
+    speed: 4000,
     arrows: false,
     autoplaySpeed: 500,
     cssEase: "linear",
@@ -99,10 +99,16 @@ const Testimonials: React.FC = () => {
       }}
     >
       <Typography
-        sx={{
-          marginTop: "35px",
-        }}
         variant="h2"
+        sx={{
+          marginTop: {
+            xs: "30px",
+            sm: "30px",
+            md: "30px",
+            lg: "80px",
+            xl: "80px",
+          },
+        }}
       >
         {t("homepage.testimonials.title")}
       </Typography>
@@ -118,22 +124,22 @@ const Testimonials: React.FC = () => {
             xs: "20px",
             sm: "60px",
             md: "70px",
-            lg: "100px",
-            xl: "110px",
+            lg: "70px",
+            xl: "80px",
           },
           marginBottom: {
             xs: "40px",
             sm: "110px",
             md: "120px",
-            lg: "110px",
-            xl: "150px",
+            lg: "100px",
+            xl: "120px",
           },
         }}
       >
         <Box
           className="slider-container"
           sx={{
-            width: "70%",
+            width: "90%",
           }}
         >
           <Slider {...settings}>
@@ -157,7 +163,7 @@ const Testimonials: React.FC = () => {
                   }}
                 />
                 <Typography
-                  variant="h3"
+                  variant="body1"
                   sx={{
                     marginBottom: "30px",
                     textAlign: "center",
