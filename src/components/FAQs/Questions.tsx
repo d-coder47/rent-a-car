@@ -28,19 +28,12 @@ export default function Questions() {
         >
           <AccordionSummary
             expandIcon={
-              expanded === index + 1 ? (
-                <ArrowDropUp
-                  sx={{
-                    color: "#FE9E00",
-                  }}
-                />
-              ) : (
-                <ArrowDropDown
-                  sx={{
-                    color: "#FE9E00",
-                  }}
-                />
-              )
+              <ArrowDropDown
+                sx={{
+                  color: "#FE9E00",
+                  fontSize: "2rem",
+                }}
+              />
             }
             aria-controls={`panel${index + 1}-content`}
             id={`panel${index + 1}-header`}
