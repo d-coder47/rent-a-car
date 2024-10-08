@@ -8,6 +8,7 @@ const Services = () => {
       container
       display="flex"
       flexDirection="column"
+      alignItems="center"
       sx={{
         margin: {
           xs: "30px 2rem",
@@ -36,7 +37,13 @@ const Services = () => {
         display="flex"
         flexWrap="wrap"
         gap="1rem"
-        mx="4rem"
+        mx={{
+          xs: "0rem",
+          sm: "0rem",
+          md: "4rem",
+          lg: "4rem",
+          xl: "4rem",
+        }}
         mt="6rem"
         sx={{
           flexDirection: {
