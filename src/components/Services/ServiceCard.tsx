@@ -4,7 +4,18 @@ import { IService } from "../../interfaces";
 
 const ServiceCard = ({ title, description, icon }: IService) => {
   return (
-    <Box display="flex" flexDirection="column" alignItems="center" gap=".5rem">
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems={{
+        xs: "flex-start",
+        sm: "flex-start",
+        md: "center",
+        lg: "center",
+        xl: "center",
+      }}
+      gap=".5rem"
+    >
       <Avatar src={car} />
       <Typography variant="h3" textAlign="center">
         {title}
