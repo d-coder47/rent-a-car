@@ -8,7 +8,6 @@ import Testimonials from "../components/Testimonials/Testimonials";
 import FAQs from "../components/FAQs/FAQs";
 import Engagement from "../components/Engagement/Engagement";
 import Footer from "../components/Footer/Footer";
-import Contact from "../components/Contact/Contact";
 
 const Home = () => {
   return (
@@ -20,7 +19,6 @@ const Home = () => {
       <Services />
       <Testimonials />
       <FAQs />
-      <Contact />
       <Engagement />
       <Footer />
     </Box>
