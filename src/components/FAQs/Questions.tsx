@@ -2,7 +2,7 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import { FAQs } from "../../constants";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useCallback, useState } from "react";
 import { ArrowDropDown, ArrowDropUp } from "@mui/icons-material";
 
@@ -39,15 +39,11 @@ export default function Questions() {
             id={`panel${index + 1}-header`}
             sx={{
               color: "#191945",
-              fontFamily: "Istok Web",
-              fontSize: "18px",
-              fontWeight: "700",
-              lineHeight: "26px",
               textAlign: "left",
               padding: { xs: "8px 0px ", md: "8px 16px" },
             }}
           >
-            {item.title}
+            <Typography variant="h5">{item.title}</Typography>
           </AccordionSummary>
           <AccordionDetails
             sx={{ padding: { xs: "8px 0px 20px ", md: "8px 16px 16px" } }}
@@ -55,15 +51,12 @@ export default function Questions() {
             <Box
               sx={{
                 width: "90%",
-                color: "#666666",
-                fontFamily: "Istok Web",
-                fontSize: "16px",
-                fontWeight: "400",
-                lineHeight: "24px",
                 textAlign: "left",
               }}
             >
-              {item.description}
+              <Typography variant="subtitle1" sx={{ color: "#666666" }}>
+                {item.description}
+              </Typography>
             </Box>
           </AccordionDetails>
         </Accordion>

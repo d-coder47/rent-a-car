@@ -29,9 +29,9 @@ const Services = () => {
       </Typography>
       <Typography variant="body1">
         Com uma equipe altamente qualificada e um compromisso inabalável com a
-        satisfação do cliente, <br /> a V&H Investimentos se posiciona como a
-        escolha ideal para lhe proporcionar conforto, segurança e satisfação ao
-        conduzir um veículo.
+        satisfação do cliente, a V&H Investimentos se posiciona como a escolha
+        ideal para lhe proporcionar conforto, segurança e satisfação ao conduzir
+        um veículo.
       </Typography>
       <Grid2
         display="flex"

@@ -22,11 +22,11 @@ const FAQs = () => {
         gap="1.5rem"
         sx={{
           margin: {
-            xs: "30px 4rem",
+            xs: "30px 2rem",
             sm: "30px 4rem",
-            md: "30px 12rem",
-            lg: "80px 20rem",
-            xl: "80px 28rem",
+            md: "30px 4rem",
+            lg: "80px 60px",
+            xl: "80px 60px",
           },
         }}
       >
