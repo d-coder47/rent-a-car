@@ -2,7 +2,7 @@ import { Avatar, Box, Typography } from "@mui/material";
 import car from "../../assets/servicos/carro.svg";
 import { IService } from "../../interfaces";
 
-const ServiceCard = ({ title, description, icon }: IService) => {
+const ServiceCard = ({ title, description }: IService) => {
   return (
     <Box
       display="flex"

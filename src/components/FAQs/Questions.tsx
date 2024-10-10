@@ -3,8 +3,8 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import { FAQs } from "../../constants";
 import { Box, Typography } from "@mui/material";
-import { useCallback, useState } from "react";
-import { ArrowDropDown, ArrowDropUp } from "@mui/icons-material";
+import { useState } from "react";
+import { ArrowDropDown } from "@mui/icons-material";
 
 export default function Questions() {
   const [expanded, setExpanded] = useState<number | false>(false);

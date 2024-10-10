@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { createBreakpoints } from "@mui/system";
 
