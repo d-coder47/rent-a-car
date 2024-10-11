@@ -3,18 +3,7 @@ import Questions from "./Questions";
 
 const FAQs = () => {
   return (
-    <Box
-      sx={{
-        backgroundImage: {
-          xs: "unset",
-          sm: "unset",
-          md: "unset",
-          lg: 'url("/src/assets/faqs-background.png")',
-          xl: 'url("/src/assets/faqs-background.png")',
-        },
-        backgroundSize: "cover",
-      }}
-    >
+    <Box>
       <Grid2
         container
         display="flex"
