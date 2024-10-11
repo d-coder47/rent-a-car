@@ -1,4 +1,10 @@
-import { Avatar, MenuItem, Select, SelectChangeEvent } from "@mui/material";
+import {
+  Avatar,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  Typography,
+} from "@mui/material";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import unitedKingdomFlag from "../../assets/flags/reino_unido.svg";
