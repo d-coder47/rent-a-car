@@ -1,7 +1,7 @@
-import { Box, Button, Typography, useTheme } from "@mui/material";
+import { Avatar, Box, Button, Typography, useTheme } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import Header from "../Header/Header";
+import carImage from "../../assets/car.png";
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
         lg: "justify",
         xl: "justify",
       },
-      color: "#ffffff",
+      color: "#000000",
     },
     subheadline: {
       textAlign: {
@@ -27,15 +27,14 @@ const Hero: React.FC = () => {
         lg: "justify",
         xl: "justify",
       },
-      color: "#ffffff",
+      color: "#000000",
       marginTop: "36px",
-      fontWeight: 700,
     },
     cta: {
       height: "50px",
       borderRadius: "12px",
       textAlign: "justify",
-      color: "#ffffff",
+      color: "#000000",
       marginTop: "30px",
 
       textTransform: "none",
@@ -49,41 +48,41 @@ const Hero: React.FC = () => {
   return (
     <Box
       sx={{
-        backgroundImage: 'url("/src/assets/car.jpg")',
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: {
-          xs: "600px",
-          sm: "700px",
-          md: "800px",
-          lg: "700px",
-          xl: "880px",
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: {
+          xs: "center",
+          sm: "center",
+          md: "center",
+          lg: "space-between",
+          xl: "space-between",
         },
-        width: "100%",
 
-        boxShadow: "inset 0 0 0 2000px rgb(0, 0, 0, 0.7)",
+        marginTop: "5%",
       }}
     >
-      <Header />
       <Box
         sx={{
-          display: "flex",
-          flexDirection: "row",
-          height: "100%",
-          justifyContent: {
-            xs: "center",
-            sm: "center",
-            md: "center",
-            lg: "center",
-            xl: "center",
+          width: "75%",
+          display: {
+            xs: "flex",
+            sm: "flex",
+            md: "flex",
+            lg: "block",
+            xl: "block",
           },
-          marginTop: "7%",
+          justifyContent: "center",
         }}
       >
         <Box
           sx={{
-            width: "75%",
-
+            marginLeft: {
+              xs: "0px",
+              sm: "0px",
+              md: "0px",
+              lg: "60px",
+              xl: "60px",
+            },
             display: {
               xs: "flex",
               sm: "flex",
@@ -91,53 +90,63 @@ const Hero: React.FC = () => {
               lg: "block",
               xl: "block",
             },
-            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
           }}
         >
-          <Box
-            sx={{
-              marginLeft: {
-                xs: "0px",
-                sm: "0px",
-                md: "0px",
-                lg: "60px",
-                xl: "60px",
-              },
-              display: {
-                xs: "flex",
-                sm: "flex",
-                md: "flex",
-                lg: "block",
-                xl: "block",
-              },
-              alignItems: "center",
-              flexDirection: "column",
-            }}
+          <Typography variant="h1" sx={typographyStyle.headline}>
+            {t("homepage.hero.headline")}
+          </Typography>
+
+          <Typography variant="subtitle1" sx={typographyStyle.subheadline}>
+            {t("homepage.hero.subheadline")}
+          </Typography>
+
+          <Button
+            variant="contained"
+            sx={typographyStyle.cta}
+            disableElevation={true}
           >
-            <Typography variant="h1" sx={typographyStyle.headline}>
-              {t("homepage.hero.headline")}
-            </Typography>
-
-            <Typography variant="subtitle1" sx={typographyStyle.subheadline}>
-              {t("homepage.hero.subheadline")}
-            </Typography>
-
-            <Button
-              variant="contained"
-              sx={typographyStyle.cta}
-              disableElevation={true}
-            >
-              <Typography
-                variant="body1"
-                sx={{
-                  fontWeight: 700,
-                }}
-              >
-                {t("homepage.hero.cta")}
-              </Typography>
-            </Button>
-          </Box>
+            <Typography variant="body1">{t("homepage.hero.cta")}</Typography>
+          </Button>
         </Box>
+      </Box>
+      <Box
+        sx={{
+          display: {
+            xs: "none",
+            sm: "none",
+            md: "none",
+            lg: "flex",
+            xl: "flex",
+          },
+          justifyContent: "center",
+          width: {
+            xs: "73%",
+            sm: "73%",
+            md: "73%",
+            lg: "76%",
+            xl: "100%",
+          },
+          overflow: "hidden",
+        }}
+      >
+        <Avatar
+          alt="car image"
+          src={carImage}
+          sx={{
+            width: "auto",
+            height: {
+              xs: "50%",
+              sm: "50%",
+              md: "50%",
+              lg: "58%",
+              xl: "75%",
+            },
+            borderRadius: "0px",
+            objectFit: "cover",
+          }}
+        />
       </Box>
     </Box>
   );

@@ -8,11 +8,13 @@ import FAQs from "../components/FAQs/FAQs";
 import Engagement from "../components/Engagement/Engagement";
 import Footer from "../components/Footer/Footer";
 import Contact from "../components/Contact/Contact";
+import Header from "../components/Header/Header";
 
 const Home = () => {
   return (
     <Box display="flex" flexDirection="column">
       <PreHeader />
+      <Header />
       <Hero />
       <About />
       <Services />

@@ -8,7 +8,7 @@ const FAQs = () => {
         container
         display="flex"
         flexDirection="column"
-        gap="1.5rem"
+        // gap="1.5rem"
         sx={{
           margin: {
             xs: "30px 2rem",
@@ -19,11 +19,23 @@ const FAQs = () => {
           },
         }}
       >
-        <Typography variant="h2" textAlign="center">
+        <Typography
+          variant="h2"
+          textAlign="center"
+          sx={{
+            marginBottom: "36px",
+          }}
+        >
           Perguntas Frequentes
         </Typography>
 
-        <Typography variant="subtitle1" textAlign="justify">
+        <Typography
+          variant="subtitle1"
+          textAlign="justify"
+          sx={{
+            marginBottom: "36px",
+          }}
+        >
           Procurando respostas sobre nossos serviços de aluguel de veículos? Na
           V&H Investimentos, entendemos que o processo de aluguel de veículos
           pode, por vezes, ser complicado. Por isso, compilamos uma lista
