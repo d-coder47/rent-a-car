@@ -78,14 +78,6 @@ const About: React.FC = () => {
           lg: "space-between",
           xl: "space-between",
         },
-
-        marginTop: {
-          xs: "5%",
-          sm: "5%",
-          md: "5%",
-          lg: "0%",
-          xl: "5%",
-        },
       }}
     >
       <Box
