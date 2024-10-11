@@ -1,10 +1,4 @@
-import {
-  Avatar,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-  Typography,
-} from "@mui/material";
+import { Avatar, MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import unitedKingdomFlag from "../../assets/flags/reino_unido.svg";
@@ -14,6 +8,13 @@ import spanishFlag from "../../assets/flags/espanha.svg";
 
 const LangSelector: React.FC = () => {
   const { i18n } = useTranslation();
+
+  const languages = [
+    { key: "EN", value: "en", flag: unitedKingdomFlag },
+    { key: "ES", value: "es", flag: spanishFlag },
+    { key: "FR", value: "fr", flag: franceFlag },
+    { key: "PT", value: "pt", flag: portugalFlag },
+  ];
 
   const [language, setLanguage] = useState<string>(i18n.language || "pt");
 
@@ -26,9 +27,6 @@ const LangSelector: React.FC = () => {
     display: "flex",
     gap: ".5rem",
     alignItems: "center",
-  };
-
-  const typographyStyles = {
     fontFamily: "Istok Web",
     fontStyle: "normal",
     fontWeight: 700,
@@ -42,7 +40,7 @@ const LangSelector: React.FC = () => {
     lineHeight: "29px",
     textAlign: "right",
     textTransform: "none",
-    color: "#000000",
+    color: "#000",
   };
 
   const avatarStyle = { width: "1.6rem", height: "auto", borderRadius: 0 };
@@ -63,6 +61,20 @@ const LangSelector: React.FC = () => {
           lg: "2rem",
           xl: "2rem",
         },
+        fontFamily: "Istok Web",
+        fontStyle: "normal",
+        fontWeight: 700,
+        fontSize: {
+          xs: "13px",
+          sm: "13px",
+          md: "13px",
+          lg: "17px",
+          xl: "17px",
+        },
+        lineHeight: "29px",
+        textAlign: "right",
+        textTransform: "none",
+        color: "#ffffff",
 
         ".MuiOutlinedInput-input": {
           display: "flex",
@@ -74,33 +86,21 @@ const LangSelector: React.FC = () => {
           alignItems: "center",
           gap: ".5rem",
           fontFamily: "Istok Web",
+          width: "60px",
+        },
+
+        ".MuiSelect-icon": {
+          fill: "#ffffff",
+          fontSize: "34px",
         },
       }}
     >
-      <MenuItem value={"en"} sx={menuItemStyles}>
-        <Avatar src={unitedKingdomFlag} alt="england flag" sx={avatarStyle} />
-        <Typography sx={typographyStyles} fontWeight="bold">
-          EN
-        </Typography>
-      </MenuItem>
-      <MenuItem value={"es"} sx={menuItemStyles}>
-        <Avatar src={spanishFlag} alt="spanish flag" sx={avatarStyle} />
-        <Typography sx={typographyStyles} fontWeight="bold">
-          ES
-        </Typography>
-      </MenuItem>
-      <MenuItem value={"fr"} sx={menuItemStyles}>
-        <Avatar src={franceFlag} alt="Bandeira França" sx={avatarStyle} />{" "}
-        <Typography sx={typographyStyles} fontWeight="bold">
-          FR
-        </Typography>
-      </MenuItem>
-      <MenuItem value={"pt"} sx={menuItemStyles}>
-        <Avatar src={portugalFlag} alt="Bandeira Portugal" sx={avatarStyle} />
-        <Typography sx={typographyStyles} fontWeight="bold">
-          PT
-        </Typography>
-      </MenuItem>
+      {languages.map((item, index) => (
+        <MenuItem value={item.value} key={index} sx={menuItemStyles}>
+          <Avatar src={item.flag} alt="flag" sx={avatarStyle} />
+          {item.key}
+        </MenuItem>
+      ))}
     </Select>
   );
 };

@@ -36,13 +36,13 @@ const Services = () => {
       <Grid2
         display="flex"
         flexWrap="wrap"
-        gap="1rem"
+        gap="3rem"
         mx={{
           xs: "0rem",
           sm: "0rem",
-          md: "4rem",
-          lg: "4rem",
-          xl: "4rem",
+          md: "1rem",
+          lg: "1rem",
+          xl: "1rem",
         }}
         mt="6rem"
         sx={{

@@ -23,7 +23,7 @@ const Header: React.FC = () => {
     lineHeight: "29px",
     textAlign: "right",
     textTransform: "none",
-    color: "#000000",
+    color: "#ffffff",
   };
   const { t } = useTranslation();
   return (
