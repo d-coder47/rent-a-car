@@ -1,7 +1,6 @@
-import { Avatar, Box, Button, Typography, useTheme } from "@mui/material";
+import { Box, Button, Typography, useTheme } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import carImage from "../../assets/car.png";
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
@@ -48,41 +47,30 @@ const Hero: React.FC = () => {
   return (
     <Box
       sx={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: {
-          xs: "center",
-          sm: "center",
-          md: "center",
-          lg: "space-between",
-          xl: "space-between",
+        height: {
+          xs: "700px",
+          sm: "700px",
+          md: "700px",
+          lg: "783px",
+          xl: "783px",
         },
-
-        marginTop: "5%",
+        width: "100%",
+        backgroundImage: {
+          xs: "none",
+          sm: "none",
+          md: "none",
+          lg: 'url("/src/assets/heroBackground.png")',
+          xl: 'url("/src/assets/heroBackground.png")',
+        },
+        backgroundSize: "cover",
+        backgroundPosition: "bottom",
+        backgroundRepeat: "no-repeat",
       }}
     >
-      <Box
-        sx={{
-          width: "75%",
-          display: {
-            xs: "flex",
-            sm: "flex",
-            md: "flex",
-            lg: "block",
-            xl: "block",
-          },
-          justifyContent: "center",
-        }}
-      >
+      <Box>
         <Box
           sx={{
-            marginLeft: {
-              xs: "0px",
-              sm: "0px",
-              md: "0px",
-              lg: "60px",
-              xl: "60px",
-            },
+            width: "50%",
             display: {
               xs: "flex",
               sm: "flex",
@@ -90,63 +78,46 @@ const Hero: React.FC = () => {
               lg: "block",
               xl: "block",
             },
-            alignItems: "center",
-            flexDirection: "column",
+            justifyContent: "center",
           }}
         >
-          <Typography variant="h1" sx={typographyStyle.headline}>
-            {t("homepage.hero.headline")}
-          </Typography>
-
-          <Typography variant="subtitle1" sx={typographyStyle.subheadline}>
-            {t("homepage.hero.subheadline")}
-          </Typography>
-
-          <Button
-            variant="contained"
-            sx={typographyStyle.cta}
-            disableElevation={true}
+          <Box
+            sx={{
+              marginLeft: {
+                xs: "0px",
+                sm: "0px",
+                md: "0px",
+                lg: "60px",
+                xl: "60px",
+              },
+              display: {
+                xs: "flex",
+                sm: "flex",
+                md: "flex",
+                lg: "block",
+                xl: "block",
+              },
+              alignItems: "center",
+              flexDirection: "column",
+            }}
           >
-            <Typography variant="body1">{t("homepage.hero.cta")}</Typography>
-          </Button>
+            <Typography variant="h1" sx={typographyStyle.headline}>
+              {t("homepage.hero.headline")}
+            </Typography>
+
+            <Typography variant="subtitle1" sx={typographyStyle.subheadline}>
+              {t("homepage.hero.subheadline")}
+            </Typography>
+
+            <Button
+              variant="contained"
+              sx={typographyStyle.cta}
+              disableElevation={true}
+            >
+              <Typography variant="body1">{t("homepage.hero.cta")}</Typography>
+            </Button>
+          </Box>
         </Box>
-      </Box>
-      <Box
-        sx={{
-          display: {
-            xs: "none",
-            sm: "none",
-            md: "none",
-            lg: "flex",
-            xl: "flex",
-          },
-          justifyContent: "center",
-          width: {
-            xs: "73%",
-            sm: "73%",
-            md: "73%",
-            lg: "76%",
-            xl: "100%",
-          },
-          overflow: "hidden",
-        }}
-      >
-        <Avatar
-          alt="car image"
-          src={carImage}
-          sx={{
-            width: "auto",
-            height: {
-              xs: "50%",
-              sm: "50%",
-              md: "50%",
-              lg: "58%",
-              xl: "75%",
-            },
-            borderRadius: "0px",
-            objectFit: "cover",
-          }}
-        />
       </Box>
     </Box>
   );
