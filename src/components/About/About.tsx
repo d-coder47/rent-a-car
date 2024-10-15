@@ -83,7 +83,7 @@ const About: React.FC = () => {
           sm: "5%",
           md: "5%",
           lg: "0%",
-          xl: "5%",
+          xl: "0%",
         },
       }}
     >
@@ -113,7 +113,7 @@ const About: React.FC = () => {
       </Box>
       <Box
         sx={{
-          background: theme.palette.primary.main,
+          background: "#F4F4F4",
           width: "100%",
           height: {
             xs: "350px",
