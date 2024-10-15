@@ -42,7 +42,7 @@ const Engagement: React.FC = () => {
           variant="body1"
           sx={{
             color: "#000",
-            textAlign: "center",
+            textAlign: "justify",
           }}
         >
           {t("homepage.engagement.subheadline")}
