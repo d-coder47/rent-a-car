@@ -9,6 +9,7 @@ import Engagement from "../components/Engagement/Engagement";
 import Footer from "../components/Footer/Footer";
 import Contact from "../components/Contact/Contact";
 import Header from "../components/Header/Header";
+import Gallery from "../components/CarGallery/GallerySection";
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
       <Services />
       <Testimonials />
       <FAQs />
+      <Gallery />
       <Contact />
       <Engagement />
       <Footer />
