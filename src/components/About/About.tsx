@@ -1,11 +1,9 @@
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 const About: React.FC = () => {
   const { t } = useTranslation();
-
-  const theme = useTheme();
 
   const typographyStyle = {
     headline: {
