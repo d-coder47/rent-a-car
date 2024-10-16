@@ -1,34 +1,50 @@
 import {
+  Avatar,
+  Box,
   Button,
   Card,
   CardActions,
   CardContent,
+  CardHeader,
+  CardMedia,
   Typography,
 } from "@mui/material";
 import React from "react";
-import { CarCardProps } from "../../interfaces";
+import { ICarCard } from "../../interfaces";
+import { LocalGasStation } from "@mui/icons-material";
 
-const CarCard: React.FC<CarCardProps> = ({ cars }) => {
+const CarCard: React.FC<ICarCard> = ({ car }) => {
   return (
     <Card sx={{ minWidth: 275 }}>
+      <CardHeader title={car.name} subheader="Sport" />
+      <CardMedia
+        component="img"
+        height="194"
+        image={car.image_path}
+        alt={car.name}
+      />
       <CardContent>
-        <Typography gutterBottom sx={{ color: "text.secondary", fontSize: 14 }}>
-          Word of the Day
-        </Typography>
-        <Typography variant="h5" component="div">
-          be•nev•o•lent
-        </Typography>
-        <Typography sx={{ color: "text.secondary", mb: 1.5 }}>
-          adjective
-        </Typography>
-        <Typography variant="body2">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
-        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "flex-end",
+            width: "50px",
+            background: "red",
+          }}
+        >
+          <LocalGasStation />
+          <Typography
+            gutterBottom
+            sx={{ color: "text.secondary", fontSize: 14 }}
+          >
+            90L
+          </Typography>
+        </Box>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button size="small">Reservar agora</Button>
       </CardActions>
     </Card>
   );

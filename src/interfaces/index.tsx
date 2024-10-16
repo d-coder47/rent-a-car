@@ -4,11 +4,11 @@ export interface IService {
   icon?: string;
 }
 
-export interface CarGalleryProps {
+export interface ICarGallery {
   type: string;
 }
 
-export interface Car {
+export interface ICar {
   name: string;
   image_path: string;
   fuel_type: string;
@@ -16,6 +16,6 @@ export interface Car {
   cambio_type: string;
 }
 
-export interface CarCardProps {
-  cars: Car[];
+export interface ICarCard {
+  car: ICar;
 }

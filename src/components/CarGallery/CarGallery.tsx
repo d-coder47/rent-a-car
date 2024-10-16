@@ -1,11 +1,10 @@
-import { Typography } from "@mui/material";
 import React from "react";
 import CarCard from "./CarCard";
 import car1 from "../../assets/cars/car1.png";
 import car2 from "../../assets/cars/car2.png";
 import car3 from "../../assets/cars/car3.png";
 import car4 from "../../assets/cars/car4.png";
-import { CarGalleryProps } from "../../interfaces";
+import { ICarGallery } from "../../interfaces";
 
 const cars = [
   {
@@ -44,8 +43,8 @@ const cars = [
     cambio_type: "Manual",
   },
 ];
-const CarGallery: React.FC<CarGalleryProps> = ({ type }) => {
-  return <CarCard cars={cars} />;
+const CarGallery: React.FC<ICarGallery> = ({ type }) => {
+  return <CarCard car={cars[0]} />;
 };
 
 export default CarGallery;
