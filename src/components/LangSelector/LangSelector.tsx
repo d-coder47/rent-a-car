@@ -4,6 +4,7 @@ import {
   Select,
   SelectChangeEvent,
   Typography,
+  useTheme,
 } from "@mui/material";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -14,6 +15,8 @@ import spanishFlag from "../../assets/flags/espanha.svg";
 
 const LangSelector: React.FC = () => {
   const { i18n } = useTranslation();
+
+  const theme = useTheme();
 
   const languages = [
     { key: "EN", value: "en", flag: unitedKingdomFlag },
@@ -80,7 +83,7 @@ const LangSelector: React.FC = () => {
         lineHeight: "29px",
         textAlign: "right",
         textTransform: "none",
-        color: "#ffffff",
+        color: "#000000",
 
         ".MuiOutlinedInput-input": {
           display: "flex",
@@ -96,7 +99,7 @@ const LangSelector: React.FC = () => {
         },
 
         ".MuiSelect-icon": {
-          fill: "#ffffff",
+          fill: theme.palette.primary.main,
           fontSize: "34px",
         },
       }}
