@@ -3,7 +3,7 @@ import EmailForm from "./EmailForm";
 
 const Contact = () => {
   return (
-    <Grid2 display="flex" flexWrap="wrap">
+    <Grid2 id="contact" display="flex" flexWrap="wrap">
       <Box display="flex" justifyContent="center" width={{ xs: "100%" }}>
         <Typography variant="h2">Entre em contacto connosco</Typography>
       </Box>
