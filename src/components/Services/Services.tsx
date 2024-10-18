@@ -5,6 +5,7 @@ import { SERVICES } from "../../constants";
 const Services = () => {
   return (
     <Grid2
+      id="services"
       container
       display="flex"
       flexDirection="column"

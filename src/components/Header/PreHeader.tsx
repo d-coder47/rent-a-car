@@ -31,7 +31,7 @@ const PreHeader: React.FC = () => {
           xl: "flex",
         },
         alignItems: "center",
-        background: "rgba(254, 158, 0, 0.55)",
+        background: "#FE9E00",
       }}
     >
       <Box
