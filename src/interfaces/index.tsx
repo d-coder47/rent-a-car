@@ -14,6 +14,8 @@ export interface ICar {
   fuel_type: string;
   tank_capacity: string;
   cambio_type: string;
+  people_number: number;
+  price: number;
 }
 
 export interface ICarCard {

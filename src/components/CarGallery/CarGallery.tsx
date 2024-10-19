@@ -5,6 +5,7 @@ import car2 from "../../assets/cars/car2.png";
 import car3 from "../../assets/cars/car3.png";
 import car4 from "../../assets/cars/car4.png";
 import { ICarGallery } from "../../interfaces";
+import { Box } from "@mui/material";
 
 const cars = [
   {
@@ -13,6 +14,8 @@ const cars = [
     fuel_type: "gasolina",
     tank_capacity: "90L",
     cambio_type: "Manual",
+    people_number: 4,
+    price: 99.0,
   },
   {
     name: "car1",
@@ -20,6 +23,8 @@ const cars = [
     fuel_type: "gasolina",
     tank_capacity: "90L",
     cambio_type: "Manual",
+    people_number: 4,
+    price: 99.0,
   },
   {
     name: "car2",
@@ -27,6 +32,8 @@ const cars = [
     fuel_type: "gasolina",
     tank_capacity: "90L",
     cambio_type: "Manual",
+    people_number: 4,
+    price: 99.0,
   },
   {
     name: "car3",
@@ -34,17 +41,24 @@ const cars = [
     fuel_type: "gasolina",
     tank_capacity: "90L",
     cambio_type: "Manual",
-  },
-  {
-    name: "car4",
-    image_path: car4,
-    fuel_type: "gasolina",
-    tank_capacity: "90L",
-    cambio_type: "Manual",
+    people_number: 4,
+    price: 99.0,
   },
 ];
 const CarGallery: React.FC<ICarGallery> = ({ type }) => {
-  return <CarCard car={cars[0]} />;
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+      }}
+    >
+      {cars.map((car, index) => (
+        <CarCard key={index} car={car} />
+      ))}
+    </Box>
+  );
 };
 
 export default CarGallery;
