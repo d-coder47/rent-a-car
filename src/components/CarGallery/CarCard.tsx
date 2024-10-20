@@ -21,8 +21,8 @@ const CarCard: React.FC<ICarCard> = ({ car }) => {
   return (
     <Card
       sx={{
-        minWidth: 275,
         width: "290px",
+        height: "325px",
       }}
     >
       <CardHeader
@@ -35,6 +35,7 @@ const CarCard: React.FC<ICarCard> = ({ car }) => {
         component="img"
         sx={{
           width: "290px",
+          height: "115px",
           display: "flex",
           justifyContent: "center",
         }}
@@ -46,6 +47,7 @@ const CarCard: React.FC<ICarCard> = ({ car }) => {
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
+          marginTop: "25px",
         }}
       >
         <Stack direction="row" alignItems="center" gap={0.5}>

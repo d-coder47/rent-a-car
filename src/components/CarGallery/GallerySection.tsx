@@ -42,8 +42,22 @@ const Gallery: React.FC = () => {
       >
         <Typography variant="h2">{t("menu.exposicaoVeiculos")}</Typography>
       </Box>
-      <Box>
-        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+      <Box
+        sx={{
+          width: "90%",
+          marginBottom: "20px",
+        }}
+      >
+        <Box
+          sx={{
+            borderBottom: 1,
+            borderColor: "divider",
+            display: "flex",
+            justifyContent: "center",
+            marginBottom: "80px",
+            border: "none",
+          }}
+        >
           <Tabs
             value={value}
             onChange={handleChange}
@@ -55,7 +69,7 @@ const Gallery: React.FC = () => {
         </Box>
         <Box
           sx={{
-            display: value === 0 ? "block" : "none",
+            display: value === 0 ? "flex" : "none",
           }}
         >
           <CarGallery type="reservation" />
@@ -63,7 +77,7 @@ const Gallery: React.FC = () => {
 
         <Box
           sx={{
-            display: value === 1 ? "block" : "none",
+            display: value === 1 ? "flex" : "none",
           }}
         >
           <CarGallery type="buy" />
