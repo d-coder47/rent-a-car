@@ -1,7 +1,16 @@
-import { Avatar, Box, Button, Typography, useTheme } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Button,
+  Fade,
+  Slide,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import heroImage from "../../assets/heroImage.svg";
+import heroImage from "../../assets/heroImage.jpg";
+import heroCar from "../../assets/heroCar.png";
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
@@ -81,13 +90,31 @@ const Hero: React.FC = () => {
           },
         }}
       >
+        <Slide in={true} appear={true} timeout={2000} direction="left">
+          <Avatar
+            alt="car image"
+            src={heroCar}
+            sx={{
+              width: "800px",
+              height: "400px",
+              borderRadius: 0,
+              marginTop: "-12rem",
+              position: "absolute",
+              zIndex: 99,
+              left: 0,
+              right: 0,
+              margin: "-12rem auto 0 auto",
+            }}
+          />
+        </Slide>
         <Avatar
           alt="car image"
           src={heroImage}
           sx={{
             width: "100%",
-            height: "423px",
+            height: "258px",
             borderRadius: 0,
+            marginTop: "10rem",
           }}
         />
       </Box>
