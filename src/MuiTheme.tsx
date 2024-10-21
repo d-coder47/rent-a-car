@@ -38,8 +38,9 @@ const MuiTheme = ({ children }: MUIThemeInterface) => {
         lineHeight: 1.4,
         fontSize: "24px",
         [breakpoints.down("md")]: { fontSize: "20px" },
-        [breakpoints.down("lg")]: { fontSize: "22px" },
-        [breakpoints.between("lg", "xl")]: { fontSize: "22px" },
+        [breakpoints.down("lg")]: { fontSize: "20px" },
+        [breakpoints.down("xl")]: { fontSize: "20px" },
+        [breakpoints.up("xl")]: { fontSize: "22px" },
       },
       h5: {
         fontWeight: 600,

@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const Header: React.FC = () => {
   let navigate = useNavigate();
+  const { t } = useTranslation();
 
   const menuItensStyle = {
     fontFamily: "Istok Web",
@@ -25,7 +26,7 @@ const Header: React.FC = () => {
     textTransform: "none",
     color: "#000000",
   };
-  const { t } = useTranslation();
+
   return (
     <Box
       sx={{
