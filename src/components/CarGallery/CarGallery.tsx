@@ -1,17 +1,14 @@
 import React from "react";
 import CarCard from "./CarCard";
-import car1 from "../../assets/cars/car1.png";
-import car2 from "../../assets/cars/car2.png";
-import car3 from "../../assets/cars/car3.png";
-import car4 from "../../assets/cars/car4.png";
+import car_image from "../../assets/car_gallery/view5.jpg";
 import { ICarGallery } from "../../interfaces";
-import { Box } from "@mui/material";
+import { Box, Button, Typography, useTheme } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 
 const cars = [
   {
     name: "Carro 1",
-    image_path: car1,
+    image_path: car_image,
     fuel_type: "gasolina",
     tank_capacity: "90L",
     cambio_type: "Manual",
@@ -20,7 +17,7 @@ const cars = [
   },
   {
     name: "Carro 2",
-    image_path: car2,
+    image_path: car_image,
     fuel_type: "gasolina",
     tank_capacity: "90L",
     cambio_type: "Manual",
@@ -29,7 +26,7 @@ const cars = [
   },
   {
     name: "Carro 3",
-    image_path: car3,
+    image_path: car_image,
     fuel_type: "gasolina",
     tank_capacity: "90L",
     cambio_type: "Manual",
@@ -38,7 +35,7 @@ const cars = [
   },
   {
     name: "Carro 4",
-    image_path: car4,
+    image_path: car_image,
     fuel_type: "gasolina",
     tank_capacity: "90L",
     cambio_type: "Manual",
@@ -48,7 +45,7 @@ const cars = [
 
   {
     name: "Carro 5",
-    image_path: car1,
+    image_path: car_image,
     fuel_type: "gasolina",
     tank_capacity: "90L",
     cambio_type: "Manual",
@@ -57,7 +54,7 @@ const cars = [
   },
   {
     name: "Carro 6",
-    image_path: car2,
+    image_path: car_image,
     fuel_type: "gasolina",
     tank_capacity: "90L",
     cambio_type: "Manual",
@@ -66,7 +63,7 @@ const cars = [
   },
   {
     name: "Carro 7",
-    image_path: car3,
+    image_path: car_image,
     fuel_type: "gasolina",
     tank_capacity: "90L",
     cambio_type: "Manual",
@@ -75,7 +72,7 @@ const cars = [
   },
   {
     name: "Carro 8",
-    image_path: car4,
+    image_path: car_image,
     fuel_type: "gasolina",
     tank_capacity: "90L",
     cambio_type: "Manual",
@@ -85,51 +82,58 @@ const cars = [
 ];
 
 const CarGallery: React.FC<ICarGallery> = ({ type }) => {
+  const theme = useTheme();
   return (
-    <Box
-      sx={{
-        width: "100%",
-        background: {
-          xs: "red",
-          sm: "yellow",
-          md: "brown",
-          lg: "green",
-          xl: "rose",
-        },
-      }}
-    >
+    <Box sx={{ flexGrow: 1 }}>
       <Grid
         container
         spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 4, sm: 8, md: 12 }}
-        // columnSpacing={{
-        //   xs: 14,
-        //   sm: 23,
-        //   md: 8,
-        //   lg: 22,
-        //   xl: 14,
-        // }}
+        columns={12}
         rowSpacing={8}
+        columnSpacing={6}
       >
         {cars.map((car, index) => (
           <Grid
             key={index}
             size={{
-              xs: 6,
+              xs: 12,
               sm: 6,
               md: 4,
               lg: 4,
               xl: 3,
-            }}
-            sx={{
-              width: "290px",
-              height: "325px",
             }}
           >
             <CarCard key={index} car={car} />
           </Grid>
         ))}
       </Grid>
+
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "70px",
+          marginBottom: "30px",
+        }}
+      >
+        <Button
+          variant="contained"
+          sx={{
+            height: "40px",
+            textAlign: "center",
+            color: "#000000",
+
+            textTransform: "none",
+            "&:hover": {
+              backgroundColor: theme.palette.secondary.main,
+              color: "#ffffff !important",
+            },
+          }}
+          disableElevation={true}
+        >
+          <Typography variant="body1">Ver mais</Typography>
+        </Button>
+      </Box>
     </Box>
   );
 };

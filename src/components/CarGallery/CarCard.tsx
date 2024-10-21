@@ -21,21 +21,18 @@ const CarCard: React.FC<ICarCard> = ({ car }) => {
   return (
     <Card
       sx={{
-        width: "290px",
-        height: "325px",
+        height: "360px",
       }}
     >
       <CardHeader
         title={car.name}
-        // subheader="Sport"
         titleTypographyProps={{ variant: "h5" }}
         subheaderTypographyProps={{ variant: "body2" }}
       />
       <CardMedia
         component="img"
         sx={{
-          width: "290px",
-          height: "115px",
+          height: "150px",
           display: "flex",
           justifyContent: "center",
         }}
