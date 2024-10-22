@@ -1,11 +1,14 @@
 import { Box, Grid2, Typography } from "@mui/material";
 import EmailForm from "./EmailForm";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   return (
     <Grid2 id="contact" display="flex" flexWrap="wrap">
       <Box display="flex" justifyContent="center" width={{ xs: "100%" }}>
-        <Typography variant="h2">Entre em contacto connosco</Typography>
+        <Typography variant="h2">{t("homepage.contact.headline")}</Typography>
       </Box>
       <Box display="flex" p="4rem 0 0 0" width={{ xs: "100%" }}>
         <Box width={{ xs: "50%" }}>

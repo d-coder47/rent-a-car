@@ -58,6 +58,17 @@
         }
       ]
     },
+    "contact": {
+      "headline": "Contact us",
+      "subheadline": "",
+      "form": {
+        "title": "Guarantee your reservation by e-mail",
+        "name": "Enter your name*",
+        "email": "Enter a valid e-mail address*",
+        "message": "Enter your message*",
+        "button": "Send"
+      }
+    },
     "engagement": {
       "title": "Rent Your Vehicle Now",
       "subheadline": "Ready to find the perfect rental vehicle for your needs? At V&H Investimentos, we are here to help you every step of the way. Request your vehicle today or contact us to learn more about our services. We take pride in offering high-quality vehicles and exceptional service at affordable prices. Don’t wait – let's get started!",

@@ -58,6 +58,17 @@
         }
       ]
     },
+    "contact": {
+      "headline": "Contacte con nosotros",
+      "subheadline": "",
+      "form": {
+        "title": "Garantice su reserva por correo electrónico",
+        "name": "Introduzca su nombre*",
+        "email": "Introduzca un email válido*",
+        "message": "Introduzca su mensaje*",
+        "button": "Enviar"
+      }
+    },
     "engagement": {
       "title": "¡Alquila tu vehículo ahora",
       "subheadline": "¿Listo para encontrar el vehículo de alquiler perfecto para tus necesidades? En V&H Investimentos, estamos aquí para ayudarte en cada paso. Solicita tu vehículo hoy mismo o contáctanos para saber más sobre nuestros servicios. Nos enorgullece ofrecer vehículos de alta calidad y un servicio excepcional a precios accesibles. No esperes, ¡comencemos ya!",
