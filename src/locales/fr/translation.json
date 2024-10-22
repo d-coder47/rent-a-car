@@ -4,12 +4,30 @@
     "hero": {
       "headline": "Des trajets quotidiens aux escapades du week-end - nous avons tout ce qu'il vous faut !",
       "subheadline": "Ici, chez V&H Investimentos, nous avons des véhicules pour toutes les occasions. Cliquez sur le bouton ci-dessous pour faire votre réservation avec confort, rapidité et la garantie d'une expérience inégalable.",
-      "cta": "Choisissez votre véhicule maintenant!"
+      "cta": "Choisissez votre véhicule maintenant"
     },
     "about": {
       "headline": "À propos de nous",
       "subheadline": "V&H Investissements est une entreprise jeune et dynamique basée à São Vicente, Cap-Vert. Fondée dans le but d'offrir des solutions de mobilité d'excellence, V&H Investissements se distingue par sa flotte de véhicules alliant confort, sécurité et style.",
       "cta": "Venez nous rencontrer"
+    },
+    "services": {
+      "headline": "Services",
+      "subheadline": "Avec une équipe hautement qualifiée et un engagement inébranlable pour la satisfaction du client, V&H Investimentos se positionne comme le choix idéal pour vous apporter confort, sécurité et satisfaction lorsque vous conduisez un véhicule.",
+      "content": [
+        {
+          "title": "Location et vente de véhicules",
+          "description": "Que ce soit pour quelques jours ou pour toujours, V&H Investimentos vous propose la solution idéale. Avec une large flotte de véhicules de différents modèles et catégories, nous garantissons que vous trouverez la voiture idéale pour chaque occasion - toujours dans le confort et le style."
+        },
+        {
+          "title": "Vente et commande de pièces détachées",
+          "description": "Nous travaillons avec des pièces automobiles d'origine importées des États-Unis, ce qui garantit une qualité et une durabilité maximales pour votre véhicule. Trouvez ou commandez des pièces pour toutes les marques et tous les modèles, avec une garantie d'origine."
+        },
+        {
+          "title": "Location personnalisée",
+          "description": "Gagnez du temps et évitez les soucis. Nous venons à vous où que vous soyez, nous livrons et récupérons le véhicule à l'endroit de votre choix, rapidement et en toute sécurité. Que vous louiez ou achetiez, nous vous garantissons une expérience sans souci."
+        }
+      ]
     },
     "testimonials": {
       "title": "Ce que disent nos clients"
@@ -18,7 +36,7 @@
       "title": "Questions Fréquemment Posées"
     },
     "engagement": {
-      "title": "Louez votre véhicule maintenant !",
+      "title": "Louez votre véhicule maintenant",
       "subheadline": "Prêt à trouver le véhicule de location parfait pour vos besoins ? Chez V&H Investissements, nous sommes là pour vous aider à chaque étape. Demandez votre véhicule dès aujourd'hui ou contactez-nous pour en savoir plus sur nos services. Nous sommes fiers d'offrir des véhicules de haute qualité et un service exceptionnel à des prix abordables. N'attendez pas – commençons dès maintenant !",
       "cta": "Réservez votre véhicule",
       "startConversation": "ou commencez une conversation"

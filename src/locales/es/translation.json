@@ -4,12 +4,30 @@
     "hero": {
       "headline": "¡Desde paseos diarios hasta escapadas de fin de semana, tenemos todo lo que necesitas!",
       "subheadline": "Aquí en V&H Investimentos, tenemos vehículos para todas las ocasiones. Haz clic en el botón de abajo para hacer tu reserva con comodidad, rapidez y la garantía de una experiencia inigualable.",
-      "cta": "¡Elige tu vehículo ahora!"
+      "cta": "¡Elige tu vehículo ahora"
     },
     "about": {
       "headline": "Sobre nosotros",
       "subheadline": "V&H Inversiones es una empresa joven y dinámica con sede en São Vicente, Cabo Verde. Fundada con el objetivo de ofrecer soluciones de movilidad de excelencia, V&H Inversiones se destaca por su flota de vehículos que combinan confort, seguridad y estilo.",
       "cta": "Ven a conocernos"
+    },
+    "services": {
+      "headline": "Servicios",
+      "subheadline": "Con un equipo altamente cualificado y un compromiso inquebrantable con la satisfacción del cliente, V&H Investimentos se posiciona como la opción ideal para proporcionarle comodidad, seguridad y satisfacción a la hora de conducir un vehículo.",
+      "content": [
+        {
+          "title": "Alquiler y venta de vehículos",
+          "description": "Ya sea por unos días o para siempre, V&H Investimentos ofrece la solución perfecta para usted. Con una amplia flota de vehículos de varios modelos y categorías, le garantizamos que encontrará el coche ideal para cualquier ocasión, siempre con comodidad y estilo."
+        },
+        {
+          "title": "Venta y pedido de piezas",
+          "description": "Trabajamos con piezas de coche originales importadas de Estados Unidos, garantizando la máxima calidad y durabilidad para su vehículo. Encuentra o pide piezas para todas las marcas y modelos, con garantía de origen."
+        },
+        {
+          "title": "Alquiler a medida",
+          "description": "Ahorra tiempo y preocupaciones. Iremos donde estés, te entregaremos y recogeremos el vehículo en el lugar que elijas, de forma rápida y segura. Tanto si alquila como si compra, le garantizamos una experiencia sin complicaciones."
+        }
+      ]
     },
     "testimonials": {
       "title": "Lo que dicen nuestros clientes"
@@ -18,7 +36,7 @@
       "title": "Preguntas Frecuentes"
     },
     "engagement": {
-      "title": "¡Alquila tu vehículo ahora!",
+      "title": "¡Alquila tu vehículo ahora",
       "subheadline": "¿Listo para encontrar el vehículo de alquiler perfecto para tus necesidades? En V&H Inversiones, estamos aquí para ayudarte en cada paso. Solicita tu vehículo hoy mismo o contáctanos para saber más sobre nuestros servicios. Nos enorgullece ofrecer vehículos de alta calidad y un servicio excepcional a precios accesibles. No esperes, ¡comencemos ya!",
       "cta": "Reserva tu vehículo",
       "startConversation": "o inicia una conversación"

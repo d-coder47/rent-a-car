@@ -1,8 +1,11 @@
 import { Box, Grid2, Typography } from "@mui/material";
 import ServiceCard from "./ServiceCard";
 import { SERVICES } from "../../constants";
+import { useTranslation } from "react-i18next";
 
 const Services = () => {
+  const { t } = useTranslation();
+
   return (
     <Grid2
       id="services"
@@ -26,13 +29,10 @@ const Services = () => {
           marginBottom: "36px",
         }}
       >
-        Serviços
+        {t("homepage.services.headline")}
       </Typography>
       <Typography variant="body1">
-        Com uma equipe altamente qualificada e um compromisso inabalável com a
-        satisfação do cliente, a V&H Investimentos se posiciona como a escolha
-        ideal para lhe proporcionar conforto, segurança e satisfação ao conduzir
-        um veículo.
+        {t("homepage.services.subheadline")}
       </Typography>
       <Grid2
         display="flex"
@@ -71,8 +71,13 @@ const Services = () => {
               sx={{ width: { xs: "100%", sm: "100%", md: "48%", lg: "31%" } }}
             >
               <ServiceCard
-                title={service.title}
-                description={service.description}
+                title={
+                  t(`homepage.services.content.${index}.title`) || service.title
+                }
+                description={
+                  t(`homepage.services.content.${index}.description`) ||
+                  service.description
+                }
                 icon={service.icon}
               />
             </Box>

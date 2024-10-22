@@ -4,12 +4,30 @@
     "hero": {
       "headline": "From daily drives to weekend getaways - we've got everything you need!",
       "subheadline": "Here at V&H Investimentos, we have vehicles for all occasions. Click the button below to make your reservation with comfort, speed, and the guarantee of an unbeatable experience.",
-      "cta": "Choose your vehicle now!"
+      "cta": "Choose your vehicle now"
     },
     "about": {
       "headline": "About Us",
       "subheadline": "V&H Investments is a young and dynamic company based in São Vicente, Cape Verde. Founded with the aim of offering excellent mobility solutions, V&H Investments stands out for its fleet of vehicles that combine comfort, safety, and style.",
       "cta": "Come meet us"
+    },
+    "services": {
+      "headline": "Services",
+      "subheadline": "With a highly qualified team and an unwavering commitment to customer satisfaction, V&H Investimentos is positioned as the ideal choice to provide you with comfort, safety and satisfaction when driving a vehicle.",
+      "content": [
+        {
+          "title": "Renting and Selling of Vehicles",
+          "description": "Whether for a few days or forever, V&H Investimentos offers the perfect solution for you. With a large fleet of vehicles of various models and categories, we guarantee that you will find the ideal car for any occasion - always in comfort and style."
+        },
+        {
+          "title": "Selling and Ordering of Parts",
+          "description": "We work with original automotive parts imported from the United States, guaranteeing maximum quality and durability for your vehicle. Find or order parts for all makes and models, with a guarantee of origin."
+        },
+        {
+          "title": "Customized Rental",
+          "description": "Save time and worry. We'll come to you wherever you are, deliver and collect the vehicle at the location of your choice, quickly and safely. Whether you're renting or buying, we guarantee a hassle-free experience."
+        }
+      ]
     },
     "testimonials": {
       "title": "What our clients say"
@@ -18,7 +36,7 @@
       "title": "Frequently Asked Questions"
     },
     "engagement": {
-      "title": "Rent Your Vehicle Now!",
+      "title": "Rent Your Vehicle Now",
       "subheadline": "Ready to find the perfect rental vehicle for your needs? At V&H Investments, we are here to help you every step of the way. Request your vehicle today or contact us to learn more about our services. We take pride in offering high-quality vehicles and exceptional service at affordable prices. Don’t wait – let's get started!",
       "cta": "Book Your Vehicle",
       "startConversation": "or start a conversation"
