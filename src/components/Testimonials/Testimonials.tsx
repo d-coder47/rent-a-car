@@ -90,6 +90,7 @@ const Testimonials: React.FC = () => {
 
   return (
     <Box
+      id="testimonials"
       sx={{
         background: "#F4F4F4",
         height: "100%",

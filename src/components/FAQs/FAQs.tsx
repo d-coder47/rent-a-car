@@ -8,10 +8,10 @@ const FAQs = () => {
   return (
     <Box>
       <Grid2
+        id="faqs"
         container
         display="flex"
         flexDirection="column"
-        // gap="1.5rem"
         sx={{
           margin: {
             xs: "30px 2rem",
