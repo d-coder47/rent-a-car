@@ -4,6 +4,7 @@ import car_image from "../../assets/car_gallery/view5.jpg";
 import { ICarGallery } from "../../interfaces";
 import { Box, Button, Typography, useTheme } from "@mui/material";
 import Grid from "@mui/material/Grid2";
+import { useTranslation } from "react-i18next";
 
 const cars = [
   {
@@ -83,6 +84,8 @@ const cars = [
 
 const CarGallery: React.FC<ICarGallery> = ({ type }) => {
   const theme = useTheme();
+
+  const { t } = useTranslation();
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid
@@ -103,7 +106,7 @@ const CarGallery: React.FC<ICarGallery> = ({ type }) => {
               xl: 3,
             }}
           >
-            <CarCard key={index} car={car} />
+            <CarCard key={index} car={car} type={type} />
           </Grid>
         ))}
       </Grid>
@@ -131,7 +134,7 @@ const CarGallery: React.FC<ICarGallery> = ({ type }) => {
           }}
           disableElevation={true}
         >
-          <Typography variant="body1">Ver mais</Typography>
+          <Typography variant="body1">{t("homepage.cars.see_more")}</Typography>
         </Button>
       </Box>
     </Box>

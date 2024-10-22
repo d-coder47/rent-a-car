@@ -63,8 +63,28 @@ const Gallery: React.FC = () => {
             onChange={handleChange}
             aria-label="basic tabs example"
           >
-            <Tab label="Disponíveis para reserva" {...a11yProps(0)} />
-            <Tab label="Disponíveis para compra" {...a11yProps(1)} />
+            <Tab
+              sx={{
+                textTransform: "none",
+              }}
+              label={
+                <Typography variant="body1">
+                  {t("homepage.cars.avalailabe_to_reservation")}
+                </Typography>
+              }
+              {...a11yProps(0)}
+            />
+            <Tab
+              sx={{
+                textTransform: "none",
+              }}
+              label={
+                <Typography variant="body1">
+                  {t("homepage.cars.avalailabe_to_buy")}
+                </Typography>
+              }
+              {...a11yProps(1)}
+            />
           </Tabs>
         </Box>
         <Box

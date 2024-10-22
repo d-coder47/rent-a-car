@@ -15,9 +15,13 @@ import React from "react";
 import { ICarCard } from "../../interfaces";
 import { LocalGasStation, People } from "@mui/icons-material";
 import GearShift from "../../assets/gearshift.svg";
+import { useTranslation } from "react-i18next";
 
-const CarCard: React.FC<ICarCard> = ({ car }) => {
+const CarCard: React.FC<ICarCard> = ({ car, type }) => {
   const theme = useTheme();
+
+  const { t } = useTranslation();
+
   return (
     <Card
       sx={{
@@ -91,7 +95,7 @@ const CarCard: React.FC<ICarCard> = ({ car }) => {
                 marginLeft: "3px",
               }}
             >
-              people
+              {t("homepage.cars.people")}
             </Typography>
           </Box>
         </Stack>
@@ -120,26 +124,40 @@ const CarCard: React.FC<ICarCard> = ({ car }) => {
             >
               {"$" + car.price + "/"}
             </Typography>
-            <Typography variant="body1">day</Typography>
+            <Typography variant="body1"> {t("homepage.cars.day")}</Typography>
           </Box>
 
-          <Button
-            variant="contained"
-            sx={{
-              height: "35px",
-              textAlign: "center",
-              color: "#000000",
+          {type === "reservation" ? (
+            <Button
+              variant="contained"
+              sx={{
+                height: "35px",
+                textAlign: "center",
+                color: "#000000",
 
-              textTransform: "none",
-              "&:hover": {
-                backgroundColor: theme.palette.secondary.main,
-                color: "#ffffff !important",
-              },
-            }}
-            disableElevation={true}
-          >
-            <Typography variant="body2">Reservar</Typography>
-          </Button>
+                textTransform: "none",
+                "&:hover": {
+                  backgroundColor: theme.palette.secondary.main,
+                  color: "#ffffff !important",
+                },
+              }}
+              disableElevation={true}
+            >
+              <Typography variant="body2">
+                {t("homepage.cars.reservation")}
+              </Typography>
+            </Button>
+          ) : (
+            <Typography
+              variant="body1"
+              sx={{
+                color: theme.palette.primary.main,
+                fontWeight: 700,
+              }}
+            >
+              {t("homepage.cars.for_sale")}
+            </Typography>
+          )}
         </Box>
       </CardActions>
     </Card>

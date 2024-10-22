@@ -58,6 +58,15 @@
         }
       ]
     },
+    "cars": {
+      "avalailabe_to_reservation": "Available for reservation",
+      "avalailabe_to_buy": "Available for purchase",
+      "people": "people",
+      "reservation": "Book",
+      "for_sale": "For sale",
+      "day": "day",
+      "see_more": "See more"
+    },
     "contact": {
       "headline": "Contact us",
       "subheadline": "",

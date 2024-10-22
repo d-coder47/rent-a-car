@@ -20,4 +20,5 @@ export interface ICar {
 
 export interface ICarCard {
   car: ICar;
+  type: string;
 }

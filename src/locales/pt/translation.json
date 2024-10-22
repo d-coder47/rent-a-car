@@ -58,6 +58,15 @@
         }
       ]
     },
+    "cars": {
+      "avalailabe_to_reservation": "Disponíveis para reserva",
+      "avalailabe_to_buy": "Disponíveis para compra",
+      "people": "pessoas",
+      "reservation": "Reservar",
+      "for_sale": "Para venda",
+      "day": "dia",
+      "see_more": "Ver mais"
+    },
     "contact": {
       "headline": "Entre em contacto connosco",
       "subheadline": "",
