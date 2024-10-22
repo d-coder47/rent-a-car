@@ -5,6 +5,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import BurguerMenu from "../BurguerMenu/BurguerMenu";
 import { useNavigate } from "react-router-dom";
+import { scrollToView } from "../../constants";
 
 const Header: React.FC = () => {
   let navigate = useNavigate();
@@ -96,8 +97,12 @@ const Header: React.FC = () => {
           }}
         >
           <Button sx={menuItensStyle}>{t("menu.exposicaoVeiculos")}</Button>
-          <Button sx={menuItensStyle}>{t("menu.servicos")}</Button>
-          <Button sx={menuItensStyle}>{t("menu.contacto")}</Button>
+          <Button sx={menuItensStyle} onClick={() => scrollToView("services")}>
+            {t("menu.servicos")}
+          </Button>
+          <Button sx={menuItensStyle} onClick={() => scrollToView("contactus")}>
+            {t("menu.contacto")}
+          </Button>
           <LangSelector />
         </Box>
         <Box

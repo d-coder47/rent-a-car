@@ -46,3 +46,10 @@ export const FAQs = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus.",
   },
 ];
+
+export const scrollToView = (item: string) => {
+  const elementToScrollTo = document.getElementById(item);
+  if (elementToScrollTo) {
+    elementToScrollTo.scrollIntoView({ behavior: "smooth" });
+  }
+};

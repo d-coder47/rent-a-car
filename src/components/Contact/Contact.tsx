@@ -6,7 +6,7 @@ const Contact = () => {
   const { t } = useTranslation();
 
   return (
-    <Grid2 id="contact" display="flex" flexWrap="wrap">
+    <Grid2 id="contactus" display="flex" flexWrap="wrap">
       <Box display="flex" justifyContent="center" width={{ xs: "100%" }}>
         <Typography variant="h2">{t("homepage.contact.headline")}</Typography>
       </Box>

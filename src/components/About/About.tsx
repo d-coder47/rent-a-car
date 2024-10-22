@@ -27,6 +27,7 @@ const About: React.FC = () => {
 
   return (
     <Box
+      id="aboutus"
       sx={{
         background: "#F4F4F4",
 
