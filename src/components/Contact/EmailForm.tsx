@@ -1,7 +1,9 @@
 import { Box, Button, TextField, Typography, useTheme } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const EmailForm = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   return (
     <Box
@@ -23,12 +25,12 @@ const EmailForm = () => {
           width: { xs: "50%", xl: "45%" },
         }}
       >
-        <Typography variant="h3">Garanta a Sua Reserva por E-mail</Typography>
+        <Typography variant="h3">{t("homepage.contact.form.title")}</Typography>
 
         <TextField
           required
           id="name"
-          placeholder="Insira o seu nome*"
+          placeholder={t("homepage.contact.form.name")}
           size="small"
           sx={{
             width: "100%",
@@ -44,7 +46,7 @@ const EmailForm = () => {
         <TextField
           required
           id="email"
-          placeholder="Insira um e-mail válido*"
+          placeholder={t("homepage.contact.form.email")}
           size="small"
           sx={{
             width: "100%",
@@ -60,7 +62,7 @@ const EmailForm = () => {
         <TextField
           required
           id="message"
-          placeholder="Insira a sua mensagem*"
+          placeholder={t("homepage.contact.form.message")}
           size="small"
           multiline
           rows="5"
@@ -88,9 +90,12 @@ const EmailForm = () => {
             width: "40%",
             alignSelf: "start",
             marginTop: "1rem",
+            textTransform: "none",
           }}
         >
-          Enviar
+          <Typography variant="body1">
+            {t("homepage.contact.form.button")}
+          </Typography>
         </Button>
       </Box>
     </Box>

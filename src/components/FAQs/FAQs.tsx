@@ -1,14 +1,17 @@
 import { Box, Grid2, Typography } from "@mui/material";
 import Questions from "./Questions";
+import { useTranslation } from "react-i18next";
 
 const FAQs = () => {
+  const { t } = useTranslation();
+
   return (
     <Box>
       <Grid2
+        id="faqs"
         container
         display="flex"
         flexDirection="column"
-        // gap="1.5rem"
         sx={{
           margin: {
             xs: "30px 2rem",
@@ -26,7 +29,7 @@ const FAQs = () => {
             marginBottom: "36px",
           }}
         >
-          Perguntas Frequentes
+          {t("homepage.faq.headline")}
         </Typography>
 
         <Typography
@@ -36,11 +39,7 @@ const FAQs = () => {
             marginBottom: "36px",
           }}
         >
-          Procurando respostas sobre nossos serviços de aluguel de veículos? Na
-          V&H Investimentos, entendemos que o processo de aluguel de veículos
-          pode, por vezes, ser complicado. Por isso, compilamos uma lista
-          abrangente de perguntas frequentes para ajudá-lo a encontrar as
-          informações de que precisa.
+          {t("homepage.faq.subheadline")}
         </Typography>
         <Questions />
       </Grid2>

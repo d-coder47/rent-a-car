@@ -4,28 +4,80 @@
     "hero": {
       "headline": "Desde passeios diários a escapadelas de fim de semana - temos tudo o que precisa!",
       "subheadline": "Aqui na V&H Investimentos, temos veículos para todas as ocasiões. Clique no botão abaixo para fazer a sua reserva com conforto, rapidez e a garantia de uma experiencia inabalavel.",
-      "cta": "Escolha o seu veículo agora!"
+      "cta": "Escolha o seu veículo agora"
     },
     "about": {
       "headline": "Sobre nós",
       "subheadline": "A V&H investimentos é uma empresa jovem e dinâmica sediada em São Vicente, Cabo Verde. Fundada com o objetivo de oferecer soluções de mobilidade de excelência, a V&H investimentos se destaca por sua frota de veículos aliando conforto, segurança e estilo.",
       "cta": "Venha nos conhecer"
     },
+    "services": {
+      "headline": "Serviços",
+      "subheadline": "Com uma equipe altamente qualificada e um compromisso inabalável com a satisfação do cliente, a V&H Investimentos se posiciona como a escolha ideal para lhe proporcionar conforto, segurança e satisfação ao conduzir um veículo.",
+      "content": [
+        {
+          "title": "Aluguer e Venda de Veículos",
+          "description": "Seja por alguns dias ou para sempre, a V&H Investimentos oferece a solução perfeita para você. Com uma ampla frota de veículos de diversos modelos e categorias, garantimos que você encontrará o carro ideal para qualquer ocasião – sempre com conforto e estilo."
+        },
+        {
+          "title": "Venda e Encomenda de peças",
+          "description": "Trabalhamos com peças automotivas originais importadas dos Estados Unidos, garantindo máxima qualidade e durabilidade para o seu veículo. Encontre ou encomende peças para todas as marcas e modelos, com garantia de procedência."
+        },
+        {
+          "title": "Aluguer Personalizado",
+          "description": "Poupe tempo e preocupações. Vamos onde estiver, entregamos e recolhemos o veículo no local da sua preferência, de forma rápida e segura. Seja para aluguer ou compra, garantimos uma experiência sem complicações."
+        }
+      ]
+    },
     "testimonials": {
       "title": "O que nossos clientes dizem"
     },
     "faq": {
-      "title": "Perguntas frequentes"
+      "headline": "Perguntas frequentes",
+      "subheadline": "Procurando respostas sobre nossos serviços de aluguel de veículos? Na V&H Investimentos, entendemos que o processo de aluguel de veículos pode, por vezes, ser complicado. Por isso, compilamos uma lista abrangente de perguntas frequentes para ajudá-lo a encontrar as informações de que precisa.",
+      "content": [
+        {
+          "title": "O que é preciso para alugar um veículo?",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        },
+        {
+          "title": "Preciso do meu próprio seguro?",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        },
+        {
+          "title": "Outras pessoas podem dirigir o veículo que eu aluguei?",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        },
+        {
+          "title": "Como funciona a política de cancelamento?",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        },
+        {
+          "title": "O que acontece se eu tiver um acidente?",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        }
+      ]
+    },
+    "contact": {
+      "headline": "Entre em contacto connosco",
+      "subheadline": "",
+      "form": {
+        "title": "Garanta a Sua Reserva por E-mail",
+        "name": "Insira o seu nome*",
+        "email": "Insira um e-mail válido*",
+        "message": "Insira a sua mensagem*",
+        "button": "Enviar"
+      }
     },
     "engagement": {
-      "title": "Aluga seu veículo agora!",
+      "title": "Alugue seu veículo agora",
       "subheadline": "Pronto para encontrar o veículo de aluguel perfeito para as suas necessidades? Na V&H Investimentos, estamos aqui para ajudar você em cada etapa. Solicite seu veículo hoje mesmo ou entre em contato para saber mais sobre os nossos serviços. Temos orgulho em oferecer veículos de alta qualidade e um serviço excepcional a preços acessíveis. Não espere – vamos começar!",
       "cta": "Reserva seu veículo",
       "startConversation": "ou inicie uma conversa"
     },
     "footer": {
       "linksRapidos": "Links rápidos",
-      "entreEmContato": " Entre em contato",
+      "entreEmContato": "Entre em contato",
       "copyright": "© Copyright 2024 V&H Investimentos",
       "home": "Início"
     }

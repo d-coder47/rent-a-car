@@ -4,22 +4,74 @@
     "hero": {
       "headline": "From daily drives to weekend getaways - we've got everything you need!",
       "subheadline": "Here at V&H Investimentos, we have vehicles for all occasions. Click the button below to make your reservation with comfort, speed, and the guarantee of an unbeatable experience.",
-      "cta": "Choose your vehicle now!"
+      "cta": "Choose your vehicle now"
     },
     "about": {
       "headline": "About Us",
-      "subheadline": "V&H Investments is a young and dynamic company based in São Vicente, Cape Verde. Founded with the aim of offering excellent mobility solutions, V&H Investments stands out for its fleet of vehicles that combine comfort, safety, and style.",
+      "subheadline": "V&H Investimentos is a young and dynamic company based in São Vicente, Cape Verde. Founded with the aim of offering excellent mobility solutions, V&H Investimentos stands out for its fleet of vehicles that combine comfort, safety, and style.",
       "cta": "Come meet us"
+    },
+    "services": {
+      "headline": "Services",
+      "subheadline": "With a highly qualified team and an unwavering commitment to customer satisfaction, V&H Investimentos is positioned as the ideal choice to provide you with comfort, safety and satisfaction when driving a vehicle.",
+      "content": [
+        {
+          "title": "Renting and Selling of Vehicles",
+          "description": "Whether for a few days or forever, V&H Investimentos offers the perfect solution for you. With a large fleet of vehicles of various models and categories, we guarantee that you will find the ideal car for any occasion - always in comfort and style."
+        },
+        {
+          "title": "Selling and Ordering of Parts",
+          "description": "We work with original automotive parts imported from the United States, guaranteeing maximum quality and durability for your vehicle. Find or order parts for all makes and models, with a guarantee of origin."
+        },
+        {
+          "title": "Customized Rental",
+          "description": "Save time and worry. We'll come to you wherever you are, deliver and collect the vehicle at the location of your choice, quickly and safely. Whether you're renting or buying, we guarantee a hassle-free experience."
+        }
+      ]
     },
     "testimonials": {
       "title": "What our clients say"
     },
     "faq": {
-      "title": "Frequently Asked Questions"
+      "headline": "Frequently Asked Questions",
+      "subheadline": "Looking for answers about our car rental services? At V&H Investimentos, we understand that the car rental process can sometimes be complicated. That's why we've compiled a comprehensive list of frequently asked questions to help you find the information you need.",
+      "content": [
+        {
+          "title": "What do I need to rent a car?",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        },
+        {
+          "title": "Do I need my own insurance?",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        },
+        {
+          "title": "Can other people drive the vehicle I've rented?",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        },
+        {
+          "title": "How does the cancellation policy work?",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        },
+        {
+          "title": "What happens if I have an accident?",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        }
+      ]
+    },
+    "contact": {
+      "headline": "Contact us",
+      "subheadline": "",
+      "form": {
+        "title": "Guarantee your reservation by e-mail",
+        "name": "Enter your name*",
+        "email": "Enter a valid e-mail address*",
+        "message": "Enter your message*",
+        "button": "Send"
+      }
     },
     "engagement": {
-      "title": "Rent Your Vehicle Now!",
-      "subheadline": "Ready to find the perfect rental vehicle for your needs? At V&H Investments, we are here to help you every step of the way. Request your vehicle today or contact us to learn more about our services. We take pride in offering high-quality vehicles and exceptional service at affordable prices. Don’t wait – let's get started!",
+      "title": "Rent Your Vehicle Now",
+      "subheadline": "Ready to find the perfect rental vehicle for your needs? At V&H Investimentos, we are here to help you every step of the way. Request your vehicle today or contact us to learn more about our services. We take pride in offering high-quality vehicles and exceptional service at affordable prices. Don’t wait – let's get started!",
       "cta": "Book Your Vehicle",
       "startConversation": "or start a conversation"
     },

@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -9,6 +9,7 @@ import {
   WhatsApp,
   Instagram,
 } from "@mui/icons-material";
+import { scrollToView } from "../../constants";
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -16,27 +17,27 @@ const Footer: React.FC = () => {
   const sections = [
     {
       section: t("homepage.footer.home"),
-      link: "dummy",
+      link: "top",
     },
     {
       section: t("homepage.about.headline"),
-      link: "dummy",
+      link: "aboutus",
     },
     {
       section: "Seviços",
-      link: "dummy",
+      link: "services",
     },
     {
       section: t("homepage.testimonials.title"),
-      link: "dummy",
+      link: "testimonials",
     },
     {
-      section: t("homepage.faq.title"),
-      link: "dummy",
+      section: t("homepage.faq.headline"),
+      link: "faqs",
     },
     {
       section: t("homepage.engagement.title"),
-      link: "dummy",
+      link: "engagement",
     },
   ];
 
@@ -138,11 +139,17 @@ const Footer: React.FC = () => {
             >
               {t("homepage.footer.linksRapidos")}
             </Typography>
-            {sections.map((item) => (
+            {sections.map((item, index) => (
               <Typography
+                key={index}
                 variant="body1"
+                onClick={() => scrollToView(item.link)}
                 sx={{
                   marginBottom: "20px",
+                  cursor: "pointer",
+                  "&:hover": {
+                    textDecoration: "underline",
+                  },
                 }}
               >
                 {item.section}

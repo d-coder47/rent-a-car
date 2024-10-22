@@ -2,7 +2,6 @@ import {
   Avatar,
   Box,
   Button,
-  Fade,
   Slide,
   Typography,
   useTheme,
@@ -31,13 +30,12 @@ const Hero: React.FC = () => {
       height: "50px",
       borderRadius: "12px",
       textAlign: "justify",
-      color: "#000000",
+      color: "#ffffff",
       marginTop: "50px",
-
       textTransform: "none",
+      background: theme.palette.secondary.main,
       "&:hover": {
-        backgroundColor: theme.palette.secondary.main,
-        color: "#ffffff !important",
+        backgroundColor: theme.palette.secondary.dark,
       },
     },
   };
@@ -69,11 +67,7 @@ const Hero: React.FC = () => {
             {t("homepage.hero.subheadline")}
           </Typography>
 
-          <Button
-            variant="contained"
-            sx={typographyStyle.cta}
-            disableElevation={true}
-          >
+          <Button variant="contained" sx={typographyStyle.cta}>
             <Typography variant="body1">{t("homepage.hero.cta")}</Typography>
           </Button>
         </Box>
@@ -96,7 +90,7 @@ const Hero: React.FC = () => {
             src={heroCar}
             sx={{
               width: "800px",
-              height: "400px",
+              height: "412px",
               borderRadius: 0,
               marginTop: "-12rem",
               position: "absolute",
