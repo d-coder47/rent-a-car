@@ -8,7 +8,7 @@
     },
     "about": {
       "headline": "Sobre nosotros",
-      "subheadline": "V&H Inversiones es una empresa joven y dinámica con sede en São Vicente, Cabo Verde. Fundada con el objetivo de ofrecer soluciones de movilidad de excelencia, V&H Inversiones se destaca por su flota de vehículos que combinan confort, seguridad y estilo.",
+      "subheadline": "V&H Investimentos es una empresa joven y dinámica con sede en São Vicente, Cabo Verde. Fundada con el objetivo de ofrecer soluciones de movilidad de excelencia, V&H Investimentos se destaca por su flota de vehículos que combinan confort, seguridad y estilo.",
       "cta": "Ven a conocernos"
     },
     "services": {
@@ -33,11 +33,34 @@
       "title": "Lo que dicen nuestros clientes"
     },
     "faq": {
-      "title": "Preguntas Frecuentes"
+      "headline": "Preguntas Frecuentes",
+      "subheadline": "¿Busca respuestas sobre nuestros servicios de alquiler de coches? En V&H Investments, entendemos que el proceso de alquiler de coches a veces puede ser complicado. Por eso hemos recopilado una completa lista de preguntas frecuentes para ayudarle a encontrar la información que necesita.",
+      "content": [
+        {
+          "title": "¿Qué necesito para alquilar un coche?",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        },
+        {
+          "title": "¿Necesito mi propio seguro?",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        },
+        {
+          "title": "¿Pueden conducir otras personas el vehículo que he alquilado?",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        },
+        {
+          "title": "¿Cómo funciona la política de cancelación?",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        },
+        {
+          "title": "¿Qué ocurre si tengo un accidente?",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        }
+      ]
     },
     "engagement": {
       "title": "¡Alquila tu vehículo ahora",
-      "subheadline": "¿Listo para encontrar el vehículo de alquiler perfecto para tus necesidades? En V&H Inversiones, estamos aquí para ayudarte en cada paso. Solicita tu vehículo hoy mismo o contáctanos para saber más sobre nuestros servicios. Nos enorgullece ofrecer vehículos de alta calidad y un servicio excepcional a precios accesibles. No esperes, ¡comencemos ya!",
+      "subheadline": "¿Listo para encontrar el vehículo de alquiler perfecto para tus necesidades? En V&H Investimentos, estamos aquí para ayudarte en cada paso. Solicita tu vehículo hoy mismo o contáctanos para saber más sobre nuestros servicios. Nos enorgullece ofrecer vehículos de alta calidad y un servicio excepcional a precios accesibles. No esperes, ¡comencemos ya!",
       "cta": "Reserva tu vehículo",
       "startConversation": "o inicia una conversación"
     },

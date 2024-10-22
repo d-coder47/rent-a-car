@@ -5,9 +5,12 @@ import { FAQs } from "../../constants";
 import { Box, Typography } from "@mui/material";
 import { useState } from "react";
 import { ArrowDropDown } from "@mui/icons-material";
+import { useTranslation } from "react-i18next";
 
 export default function Questions() {
   const [expanded, setExpanded] = useState<number | false>(false);
+
+  const { t } = useTranslation();
 
   const handleChange = (panel: number) => {
     setExpanded((prevPanel) => (prevPanel === panel ? false : panel));
@@ -43,7 +46,9 @@ export default function Questions() {
               padding: { xs: "8px 0px ", md: "8px 16px" },
             }}
           >
-            <Typography variant="h5">{item.title}</Typography>
+            <Typography variant="h5">
+              {t(`homepage.faq.content.${index}.title`)}
+            </Typography>
           </AccordionSummary>
           <AccordionDetails
             sx={{ padding: { xs: "8px 0px 20px ", md: "8px 16px 16px" } }}

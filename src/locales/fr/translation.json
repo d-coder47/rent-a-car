@@ -8,7 +8,7 @@
     },
     "about": {
       "headline": "À propos de nous",
-      "subheadline": "V&H Investissements est une entreprise jeune et dynamique basée à São Vicente, Cap-Vert. Fondée dans le but d'offrir des solutions de mobilité d'excellence, V&H Investissements se distingue par sa flotte de véhicules alliant confort, sécurité et style.",
+      "subheadline": "V&H Investimentos est une entreprise jeune et dynamique basée à São Vicente, Cap-Vert. Fondée dans le but d'offrir des solutions de mobilité d'excellence, V&H Investimentos se distingue par sa flotte de véhicules alliant confort, sécurité et style.",
       "cta": "Venez nous rencontrer"
     },
     "services": {
@@ -33,11 +33,34 @@
       "title": "Ce que disent nos clients"
     },
     "faq": {
-      "title": "Questions Fréquemment Posées"
+      "headline": "Questions Fréquemment Posées",
+      "subheadline": "Vous cherchez des réponses sur nos services de location de voitures ? Chez V&H Investments, nous comprenons que le processus de location de voiture peut parfois être compliqué. C'est pourquoi nous avons dressé une liste complète des questions les plus fréquemment posées pour vous aider à trouver les informations dont vous avez besoin.",
+      "content": [
+        {
+          "title": "De quoi ai-je besoin pour louer une voiture ?",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        },
+        {
+          "title": "Ai-je besoin de ma propre assurance ?",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        },
+        {
+          "title": "D'autres personnes peuvent-elles conduire le véhicule que j'ai loué ?",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        },
+        {
+          "title": "Comment fonctionne la politique d'annulation ?",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        },
+        {
+          "title": "Que se passe-t-il en cas d'accident ?",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        }
+      ]
     },
     "engagement": {
       "title": "Louez votre véhicule maintenant",
-      "subheadline": "Prêt à trouver le véhicule de location parfait pour vos besoins ? Chez V&H Investissements, nous sommes là pour vous aider à chaque étape. Demandez votre véhicule dès aujourd'hui ou contactez-nous pour en savoir plus sur nos services. Nous sommes fiers d'offrir des véhicules de haute qualité et un service exceptionnel à des prix abordables. N'attendez pas – commençons dès maintenant !",
+      "subheadline": "Prêt à trouver le véhicule de location parfait pour vos besoins ? Chez V&H Investimentos, nous sommes là pour vous aider à chaque étape. Demandez votre véhicule dès aujourd'hui ou contactez-nous pour en savoir plus sur nos services. Nous sommes fiers d'offrir des véhicules de haute qualité et un service exceptionnel à des prix abordables. N'attendez pas – commençons dès maintenant !",
       "cta": "Réservez votre véhicule",
       "startConversation": "ou commencez une conversation"
     },
