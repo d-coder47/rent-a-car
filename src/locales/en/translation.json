@@ -96,5 +96,8 @@
     "exposicaoVeiculos": "Vehicle Exhibition",
     "servicos": "Services",
     "contacto": "Contact"
+  },
+  "social-media": {
+    "greeting": "Hi. I'm looking for more information. Could you assist me?"
   }
 }

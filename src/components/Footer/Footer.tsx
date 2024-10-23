@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
       link: "aboutus",
     },
     {
-      section: "Seviços",
+      section: t("homepage.services.headline"),
       link: "services",
     },
     {
@@ -59,15 +59,17 @@ const Footer: React.FC = () => {
   const socialContacts = [
     {
       icon: <Facebook fontSize="large" />,
-      url: "dummy",
+      url: "https://www.facebook.com/vehinvestimentos",
     },
     {
       icon: <Instagram fontSize="large" />,
-      url: "dummy",
+      url: "https://www.instagram.com/vh_investimentos_/",
     },
     {
       icon: <WhatsApp fontSize="large" />,
-      url: "dummy",
+      url: `https://api.whatsapp.com/send?phone=+2385935535&text=${t(
+        "social-media.greeting"
+      )}`,
     },
   ];
 
@@ -235,7 +237,9 @@ const Footer: React.FC = () => {
               }}
             >
               {socialContacts.map((item) => (
-                <Box>{item.icon}</Box>
+                <Link href={item.url} target="_blank" sx={{ color: "#000" }}>
+                  {item.icon}
+                </Link>
               ))}
             </Box>
           </Box>
