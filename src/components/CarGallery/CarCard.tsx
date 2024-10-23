@@ -7,7 +7,6 @@ import {
   CardHeader,
   CardMedia,
   Icon,
-  keyframes,
   Stack,
   Typography,
   useTheme,
@@ -23,24 +22,12 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
 
   const { t } = useTranslation();
 
-  const scaleUpCenter = keyframes`
- 0% {
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-  }
-  100% {
-    -webkit-transform: translateZ(160px);
-            transform: translateZ(160px);
-  }
-
-`;
-
   return (
     <Card
       sx={{
         height: "360px",
         "&:hover": {
-          // animation: `${scaleUpCenter} 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both`,
+          boxShadow: 20,
         },
       }}
     >
