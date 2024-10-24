@@ -1,4 +1,4 @@
-import { Box, Typography, Pagination } from "@mui/material";
+import { Box, Typography, Pagination, Tabs, Tab } from "@mui/material";
 import Layout from "../components/Layout/Layout";
 import { useTranslation } from "react-i18next";
 import car_image from "../assets/car_gallery/view5.jpg";
@@ -118,18 +118,247 @@ const Cars = () => {
       people_number: 4,
       price: 99.0,
     },
+    {
+      name: "Carro 13",
+      image_path: car_image,
+      fuel_type: "diesel",
+      tank_capacity: "85L",
+      cambio_type: "Automático",
+      people_number: 5,
+      price: 120.0,
+    },
+    {
+      name: "Carro 14",
+      image_path: car_image,
+      fuel_type: "diesel",
+      tank_capacity: "85L",
+      cambio_type: "Automático",
+      people_number: 5,
+      price: 120.0,
+    },
+    {
+      name: "Carro 15",
+      image_path: car_image,
+      fuel_type: "diesel",
+      tank_capacity: "85L",
+      cambio_type: "Automático",
+      people_number: 5,
+      price: 120.0,
+    },
+    {
+      name: "Carro 16",
+      image_path: car_image,
+      fuel_type: "diesel",
+      tank_capacity: "85L",
+      cambio_type: "Automático",
+      people_number: 5,
+      price: 120.0,
+    },
+    {
+      name: "Carro 17",
+      image_path: car_image,
+      fuel_type: "elétrico",
+      tank_capacity: "75L",
+      cambio_type: "Automático",
+      people_number: 4,
+      price: 150.0,
+    },
+    {
+      name: "Carro 18",
+      image_path: car_image,
+      fuel_type: "elétrico",
+      tank_capacity: "75L",
+      cambio_type: "Automático",
+      people_number: 4,
+      price: 150.0,
+    },
+    {
+      name: "Carro 19",
+      image_path: car_image,
+      fuel_type: "elétrico",
+      tank_capacity: "75L",
+      cambio_type: "Automático",
+      people_number: 4,
+      price: 150.0,
+    },
+    {
+      name: "Carro 20",
+      image_path: car_image,
+      fuel_type: "elétrico",
+      tank_capacity: "75L",
+      cambio_type: "Automático",
+      people_number: 4,
+      price: 150.0,
+    },
+    {
+      name: "Carro 21",
+      image_path: car_image,
+      fuel_type: "híbrido",
+      tank_capacity: "80L",
+      cambio_type: "Automático",
+      people_number: 5,
+      price: 130.0,
+    },
+    {
+      name: "Carro 22",
+      image_path: car_image,
+      fuel_type: "híbrido",
+      tank_capacity: "80L",
+      cambio_type: "Automático",
+      people_number: 5,
+      price: 130.0,
+    },
+    {
+      name: "Carro 23",
+      image_path: car_image,
+      fuel_type: "híbrido",
+      tank_capacity: "80L",
+      cambio_type: "Automático",
+      people_number: 5,
+      price: 130.0,
+    },
+    {
+      name: "Carro 24",
+      image_path: car_image,
+      fuel_type: "híbrido",
+      tank_capacity: "80L",
+      cambio_type: "Automático",
+      people_number: 5,
+      price: 130.0,
+    },
+    {
+      name: "Carro 25",
+      image_path: car_image,
+      fuel_type: "híbrido",
+      tank_capacity: "80L",
+      cambio_type: "Automático",
+      people_number: 5,
+      price: 130.0,
+    },
+    {
+      name: "Carro 26",
+      image_path: car_image,
+      fuel_type: "híbrido",
+      tank_capacity: "80L",
+      cambio_type: "Automático",
+      people_number: 5,
+      price: 130.0,
+    },
+    {
+      name: "Carro 27",
+      image_path: car_image,
+      fuel_type: "gasolina",
+      tank_capacity: "90L",
+      cambio_type: "Manual",
+      people_number: 4,
+      price: 99.0,
+    },
+    {
+      name: "Carro 28",
+      image_path: car_image,
+      fuel_type: "gasolina",
+      tank_capacity: "90L",
+      cambio_type: "Manual",
+      people_number: 4,
+      price: 99.0,
+    },
+    {
+      name: "Carro 29",
+      image_path: car_image,
+      fuel_type: "gasolina",
+      tank_capacity: "90L",
+      cambio_type: "Manual",
+      people_number: 4,
+      price: 99.0,
+    },
+    {
+      name: "Carro 30",
+      image_path: car_image,
+      fuel_type: "gasolina",
+      tank_capacity: "90L",
+      cambio_type: "Manual",
+      people_number: 4,
+      price: 99.0,
+    },
+    {
+      name: "Carro 31",
+      image_path: car_image,
+      fuel_type: "diesel",
+      tank_capacity: "85L",
+      cambio_type: "Automático",
+      people_number: 5,
+      price: 120.0,
+    },
+    {
+      name: "Carro 32",
+      image_path: car_image,
+      fuel_type: "diesel",
+      tank_capacity: "85L",
+      cambio_type: "Automático",
+      people_number: 5,
+      price: 120.0,
+    },
+    {
+      name: "Carro 33",
+      image_path: car_image,
+      fuel_type: "diesel",
+      tank_capacity: "85L",
+      cambio_type: "Automático",
+      people_number: 5,
+      price: 120.0,
+    },
+    {
+      name: "Carro 34",
+      image_path: car_image,
+      fuel_type: "diesel",
+      tank_capacity: "85L",
+      cambio_type: "Automático",
+      people_number: 5,
+      price: 120.0,
+    },
+    {
+      name: "Carro 35",
+      image_path: car_image,
+      fuel_type: "diesel",
+      tank_capacity: "85L",
+      cambio_type: "Automático",
+      people_number: 5,
+      price: 120.0,
+    },
+    {
+      name: "Carro 36",
+      image_path: car_image,
+      fuel_type: "diesel",
+      tank_capacity: "85L",
+      cambio_type: "Automático",
+      people_number: 5,
+      price: 120.0,
+    },
   ];
 
   const [page, setPage] = useState(1);
-  const itemsPerPage = 4;
+  const itemsPerPage = 8;
 
   const indexOfLastCar = page * itemsPerPage;
   const indexOfFirstCar = indexOfLastCar - itemsPerPage;
   const currentCars = cars.slice(indexOfFirstCar, indexOfLastCar);
 
+  const [tabValue, setTabValue] = useState(0);
+
   const handlePageChange = (_event: ChangeEvent<unknown>, value: number) => {
     setPage(value);
   };
+
+  const handleTabChange = (_event: React.SyntheticEvent, newValue: number) => {
+    setTabValue(newValue);
+  };
+
+  function a11yProps(index: number) {
+    return {
+      id: `simple-tab-${index}`,
+      "aria-controls": `simple-tabpanel-${index}`,
+    };
+  }
 
   return (
     <Layout>
@@ -143,28 +372,56 @@ const Cars = () => {
           sx={{
             width: "93%",
             marginTop: "60px",
-            flexDirection: "column",
           }}
         >
-          <Box>
-            <Typography
-              sx={{
-                textAlign: "center",
-                color: "#000000",
-                marginTop: {
-                  xs: "30px",
-                  sm: "30px",
-                  md: "30px",
-                  lg: "0px",
-                  xl: "0px",
-                },
-                marginBottom: "50px",
-              }}
-              variant="h2"
+          <Typography textAlign="center" marginBottom="36px" variant="h2">
+            {t("menu.exposicaoVeiculos")}
+          </Typography>
+          <Box
+            sx={{
+              borderBottom: 1,
+              borderColor: "divider",
+              display: "flex",
+              justifyContent: "center",
+              marginBottom: "80px",
+              border: "none",
+            }}
+          >
+            <Tabs
+              value={tabValue}
+              onChange={handleTabChange}
+              aria-label="basic tabs example"
             >
-              {t("homepage.cars.avalailabe_to_reservation")}
-            </Typography>
+              <Tab
+                sx={{
+                  textTransform: "none",
+                }}
+                label={
+                  <Typography variant="body1">
+                    {t("homepage.cars.avalailabe_to_reservation")}
+                  </Typography>
+                }
+                {...a11yProps(0)}
+              />
+              <Tab
+                sx={{
+                  textTransform: "none",
+                }}
+                label={
+                  <Typography variant="body1">
+                    {t("homepage.cars.avalailabe_to_buy")}
+                  </Typography>
+                }
+                {...a11yProps(1)}
+              />
+            </Tabs>
+          </Box>
 
+          <Box
+            sx={{
+              display: tabValue === 0 ? "block" : "none",
+            }}
+          >
             <Grid
               container
               spacing={{ xs: 2, md: 3 }}
@@ -192,7 +449,7 @@ const Cars = () => {
               sx={{
                 display: "flex",
                 justifyContent: "center",
-                marginTop: "20px",
+                marginTop: "40px",
               }}
             >
               <Pagination
@@ -205,27 +462,9 @@ const Cars = () => {
           </Box>
           <Box
             sx={{
-              marginTop: "80px",
+              display: tabValue === 1 ? "block" : "none",
             }}
           >
-            <Typography
-              sx={{
-                textAlign: "center",
-                color: "#000000",
-                marginTop: {
-                  xs: "30px",
-                  sm: "30px",
-                  md: "30px",
-                  lg: "0px",
-                  xl: "0px",
-                },
-                marginBottom: "50px",
-              }}
-              variant="h2"
-            >
-              {t("homepage.cars.avalailabe_to_buy")}
-            </Typography>
-
             <Grid
               container
               spacing={{ xs: 2, md: 3 }}
