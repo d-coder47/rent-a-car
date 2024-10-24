@@ -8,8 +8,12 @@ import { useNavigate } from "react-router-dom";
 import { scrollToView } from "../../constants";
 
 const Header: React.FC = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const { t } = useTranslation();
+
+  const goToStand = () => {
+    navigate("/cars");
+  };
 
   const menuItensStyle = {
     fontFamily: "Istok Web",
@@ -96,7 +100,9 @@ const Header: React.FC = () => {
             justifyContent: "space-between",
           }}
         >
-          <Button sx={menuItensStyle}>{t("menu.exposicaoVeiculos")}</Button>
+          <Button sx={menuItensStyle} onClick={goToStand}>
+            {t("menu.exposicaoVeiculos")}
+          </Button>
           <Button sx={menuItensStyle} onClick={() => scrollToView("services")}>
             {t("menu.servicos")}
           </Button>
