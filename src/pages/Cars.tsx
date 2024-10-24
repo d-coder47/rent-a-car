@@ -1,16 +1,11 @@
-import { Box, Typography } from "@mui/material";
-import PreHeader from "../components/Header/PreHeader";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
+import { Typography } from "@mui/material";
+import Layout from "../components/Layout/Layout";
 
 const Cars = () => {
   return (
-    <Box display="flex" flexDirection="column">
-      <PreHeader />
-      <Header />
+    <Layout>
       <Typography>Cars page</Typography>
-      <Footer />
-    </Box>
+    </Layout>
   );
 };
 

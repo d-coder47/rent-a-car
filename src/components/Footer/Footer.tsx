@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -10,9 +10,14 @@ import {
   Instagram,
 } from "@mui/icons-material";
 import { scrollToView } from "../../constants";
+import { useLocation } from "react-router-dom";
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
+
+  const location = useLocation();
+
+  const isHomePage = location.pathname === "/";
 
   const sections = [
     {
@@ -76,7 +81,7 @@ const Footer: React.FC = () => {
       <Box
         sx={{
           display: "flex",
-          height: "400px",
+          height: isHomePage ? "400px" : "100vh",
           width: "100%",
           flexDirection: {
             xs: "column",
@@ -100,7 +105,7 @@ const Footer: React.FC = () => {
               xl: "50%",
             },
             height: "100%",
-            display: "flex",
+            display: isHomePage ? "flex" : "none",
             flexDirection: "column",
             alignItems: "center",
           }}
@@ -168,7 +173,7 @@ const Footer: React.FC = () => {
               xl: "50%",
             },
             height: "100%",
-            display: "flex",
+            display: isHomePage ? "flex" : "none",
             flexDirection: "column",
             alignItems: "center",
           }}
@@ -207,12 +212,13 @@ const Footer: React.FC = () => {
             >
               {t("homepage.footer.entreEmContato")}
             </Typography>
-            {contacts.map((item) => (
+            {contacts.map((item, index) => (
               <Box
                 sx={{
                   display: "flex",
                   flexDirection: "row",
                 }}
+                key={index}
               >
                 {item.icon}
                 <Typography
@@ -234,8 +240,8 @@ const Footer: React.FC = () => {
                 width: "30%",
               }}
             >
-              {socialContacts.map((item) => (
-                <Box>{item.icon}</Box>
+              {socialContacts.map((item, index) => (
+                <Box key={index}>{item.icon}</Box>
               ))}
             </Box>
           </Box>

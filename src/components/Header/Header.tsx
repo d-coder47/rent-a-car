@@ -4,14 +4,20 @@ import LangSelector from "../LangSelector/LangSelector";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import BurguerMenu from "../BurguerMenu/BurguerMenu";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { scrollToView } from "../../constants";
 
 const Header: React.FC = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+
+  const location = useLocation();
+
+  const isHomePage = location.pathname === "/";
+
   const { t } = useTranslation();
 
   const menuItensStyle = {
+    display: isHomePage ? "flex" : "none",
     fontFamily: "Istok Web",
     fontStyle: "normal",
     fontWeight: 700,
@@ -93,7 +99,7 @@ const Header: React.FC = () => {
             },
             flexDirection: "row",
             alignItems: "center",
-            justifyContent: "space-between",
+            justifyContent: isHomePage ? "space-between" : "right",
           }}
         >
           <Button sx={menuItensStyle}>{t("menu.exposicaoVeiculos")}</Button>
