@@ -79,7 +79,11 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <Box>
+    <Box
+      sx={{
+        background: isHomePage ? "#ffffff" : "#f4f4f4",
+      }}
+    >
       <Box
         sx={{
           display: isHomePage ? "flex" : "none",
@@ -278,8 +282,8 @@ const Footer: React.FC = () => {
       <Box
         sx={{
           display: {
-            xs: "none",
-            sm: "none",
+            xs: isHomePage ? "none" : "flex",
+            sm: isHomePage ? "none" : "flex",
             md: "flex",
             lg: "flex",
             xl: "flex",

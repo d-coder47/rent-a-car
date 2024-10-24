@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import car_image from "../assets/car_gallery/view5.jpg";
 import CarCard from "../components/CarGallery/CarCard";
 import Grid from "@mui/material/Grid2";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 
 const Cars = () => {
   const { t } = useTranslation();
@@ -337,7 +337,7 @@ const Cars = () => {
   ];
 
   const [page, setPage] = useState(1);
-  const itemsPerPage = 8;
+  const [itemsPerPage, setIemsPerPage] = useState<number>(8);
 
   const indexOfLastCar = page * itemsPerPage;
   const indexOfFirstCar = indexOfLastCar - itemsPerPage;
@@ -360,12 +360,37 @@ const Cars = () => {
     };
   }
 
+  useEffect(() => {
+    const handleResize = () => {
+      const windowWidth = window.innerWidth;
+
+      if (windowWidth <= 1200) {
+        setIemsPerPage(4);
+      }
+
+      if (windowWidth <= 600) {
+        setIemsPerPage(3);
+      }
+
+      if (windowWidth > 1200) {
+        setIemsPerPage(8);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <Layout>
       <Box
         sx={{
           display: "flex",
           justifyContent: "center",
+          background: "#f4f4f4",
         }}
       >
         <Box
@@ -492,7 +517,7 @@ const Cars = () => {
               sx={{
                 display: "flex",
                 justifyContent: "center",
-                marginTop: "20px",
+                marginTop: "40px",
               }}
             >
               <Pagination

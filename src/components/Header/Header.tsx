@@ -46,6 +46,7 @@ const Header: React.FC = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        background: isHomePage ? "#ffffff" : "#f4f4f4",
       }}
     >
       <Box
