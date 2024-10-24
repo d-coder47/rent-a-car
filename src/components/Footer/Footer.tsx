@@ -82,8 +82,8 @@ const Footer: React.FC = () => {
     <Box>
       <Box
         sx={{
-          display: "flex",
-          height: isHomePage ? "400px" : "100vh",
+          display: isHomePage ? "flex" : "none",
+          height: "400px",
           width: "100%",
           flexDirection: {
             xs: "column",
