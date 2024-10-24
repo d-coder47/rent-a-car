@@ -16,6 +16,10 @@ const Header: React.FC = () => {
 
   const { t } = useTranslation();
 
+  const goToStand = () => {
+    navigate("/cars");
+  };
+
   const menuItensStyle = {
     display: isHomePage ? "flex" : "none",
     fontFamily: "Istok Web",
@@ -102,7 +106,9 @@ const Header: React.FC = () => {
             justifyContent: isHomePage ? "space-between" : "right",
           }}
         >
-          <Button sx={menuItensStyle}>{t("menu.exposicaoVeiculos")}</Button>
+          <Button sx={menuItensStyle} onClick={goToStand}>
+            {t("menu.exposicaoVeiculos")}
+          </Button>
           <Button sx={menuItensStyle} onClick={() => scrollToView("services")}>
             {t("menu.servicos")}
           </Button>
