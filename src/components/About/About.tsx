@@ -74,10 +74,35 @@ const About: React.FC = () => {
           {" "}
           {t("homepage.about.headline")}
         </Typography>
-        <Box display="flex">
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: {
+              xs: "column",
+              sm: "column",
+              md: "row",
+              lg: "row",
+              xl: "row",
+            },
+
+            alignItems: {
+              xs: "center",
+              sm: "center",
+              md: "normal",
+              lg: "normal",
+              xl: "normal",
+            },
+          }}
+        >
           <Box
             sx={{
-              width: "60%",
+              width: {
+                xs: "93%",
+                sm: "93%",
+                md: "60%",
+                lg: "60%",
+                xl: "60%",
+              },
               height: {
                 xs: "100%",
                 sm: "100%",
@@ -95,6 +120,7 @@ const About: React.FC = () => {
 
               display: "flex",
               alignItems: "center",
+
               flexDirection: "column",
             }}
           >
