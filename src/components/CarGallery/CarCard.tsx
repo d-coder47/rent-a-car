@@ -26,6 +26,9 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
     <Card
       sx={{
         height: "360px",
+        "&:hover": {
+          boxShadow: 20,
+        },
       }}
     >
       <CardHeader
@@ -48,7 +51,7 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
-          marginTop: "25px",
+          marginTop: type === "reservation" ? "25px" : "60px",
         }}
       >
         <Stack direction="row" alignItems="center" gap={0.5}>
@@ -103,7 +106,7 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
       <CardActions>
         <Box
           sx={{
-            display: "flex",
+            display: type === "reservation" ? "flex" : "none",
             flexDirection: "row",
             justifyContent: "space-between",
             width: "100%",
@@ -127,37 +130,25 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
             <Typography variant="body1"> {t("homepage.cars.day")}</Typography>
           </Box>
 
-          {type === "reservation" ? (
-            <Button
-              variant="contained"
-              sx={{
-                height: "35px",
-                textAlign: "center",
-                color: "#000000",
+          <Button
+            variant="contained"
+            sx={{
+              height: "35px",
+              textAlign: "center",
+              color: "#000000",
 
-                textTransform: "none",
-                "&:hover": {
-                  backgroundColor: theme.palette.secondary.main,
-                  color: "#ffffff !important",
-                },
-              }}
-              disableElevation={true}
-            >
-              <Typography variant="body2">
-                {t("homepage.cars.reservation")}
-              </Typography>
-            </Button>
-          ) : (
-            <Typography
-              variant="body1"
-              sx={{
-                color: theme.palette.primary.main,
-                fontWeight: 700,
-              }}
-            >
-              {t("homepage.cars.for_sale")}
+              textTransform: "none",
+              "&:hover": {
+                backgroundColor: theme.palette.secondary.main,
+                color: "#ffffff !important",
+              },
+            }}
+            disableElevation={true}
+          >
+            <Typography variant="body2">
+              {t("homepage.cars.reservation")}
             </Typography>
-          )}
+          </Button>
         </Box>
       </CardActions>
     </Card>

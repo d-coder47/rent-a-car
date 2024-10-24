@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CarCard from "./CarCard";
 import car_image from "../../assets/car_gallery/view5.jpg";
 import { ICarGallery } from "../../interfaces";
 import { Box, Button, Typography, useTheme } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const cars = [
   {
@@ -86,6 +87,39 @@ const CarGallery: React.FC<ICarGallery> = ({ type }) => {
   const theme = useTheme();
 
   const { t } = useTranslation();
+
+  const navigate = useNavigate();
+
+  const handleSeeMoreClick = () => {
+    navigate("/cars");
+  };
+
+  const [galleryLimit, setGalleryLimit] = useState<number>(cars.length);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const windowWidth = window.innerWidth;
+
+      if (windowWidth <= 1200) {
+        setGalleryLimit(4);
+      }
+
+      if (windowWidth <= 600) {
+        setGalleryLimit(3);
+      }
+
+      if (windowWidth > 1200) {
+        setGalleryLimit(8);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid
@@ -95,14 +129,14 @@ const CarGallery: React.FC<ICarGallery> = ({ type }) => {
         rowSpacing={8}
         columnSpacing={6}
       >
-        {cars.map((car, index) => (
+        {cars.slice(0, galleryLimit).map((car, index) => (
           <Grid
             key={index}
             size={{
               xs: 12,
               sm: 6,
-              md: 4,
-              lg: 4,
+              md: 6,
+              lg: 3,
               xl: 3,
             }}
           >
@@ -133,6 +167,7 @@ const CarGallery: React.FC<ICarGallery> = ({ type }) => {
             },
           }}
           disableElevation={true}
+          onClick={handleSeeMoreClick}
         >
           <Typography variant="body1">{t("homepage.cars.see_more")}</Typography>
         </Button>
