@@ -97,8 +97,8 @@ const About: React.FC = () => {
           <Box
             sx={{
               width: {
-                xs: "93%",
-                sm: "93%",
+                xs: "90%",
+                sm: "90%",
                 md: "60%",
                 lg: "60%",
                 xl: "60%",
@@ -138,8 +138,14 @@ const About: React.FC = () => {
               alt="About Us"
               variant="square"
               sx={{
-                width: { xs: "450px" },
-                height: { xs: "450px" },
+                width: {
+                  xs: "360px",
+                  sm: "365px",
+                  md: "450xp",
+                  lg: "450xp",
+                  xl: "450px",
+                },
+                height: "450px",
               }}
             />
           </Box>

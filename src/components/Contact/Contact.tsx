@@ -11,6 +11,13 @@ const Contact = () => {
       sx={{
         display: "flex",
         flexWrap: "wrap",
+        marginTop: {
+          xs: "30px",
+          sm: "30px",
+          md: "30px",
+          lg: "80px",
+          xl: "80px",
+        },
       }}
     >
       <Box display="flex" justifyContent="center" width={{ xs: "100%" }}>
@@ -37,6 +44,13 @@ const Contact = () => {
         </Box>
         <Box
           width={{ xs: "100%", sm: "100%", md: "50%", lg: "50%", xl: "50%" }}
+          height={{
+            xs: "400px",
+            sm: "400px",
+            md: "auto",
+            lg: "auto",
+            xl: "auto",
+          }}
         >
           <Box
             component="iframe"
