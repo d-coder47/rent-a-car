@@ -22,3 +22,29 @@ export interface ICarCard {
   car: ICar;
   type: string;
 }
+
+export interface IReservationInfo {
+  name: string;
+  email: string;
+  phone: string;
+  identificationDoc: {
+    front: string;
+    back: string;
+  };
+}
+
+export interface IFieldsErrors {
+  name: string;
+  email: string;
+  phone: string;
+  identificationDoc: {
+    front: string;
+    back: string;
+  };
+}
+
+export interface IStep {
+  reservationValues: IReservationInfo;
+  fieldsErrors: IFieldsErrors;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
