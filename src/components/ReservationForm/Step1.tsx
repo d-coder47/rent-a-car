@@ -74,7 +74,7 @@ const Step1: React.FC<IStep> = ({
                 variant="outlined"
                 autoComplete="off"
                 name="phone"
-                value={reservationValues.name}
+                value={reservationValues.phone}
                 onChange={handleChange}
                 sx={{
                   width: "450px",

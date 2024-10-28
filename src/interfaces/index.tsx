@@ -31,6 +31,10 @@ export interface IReservationInfo {
     front: string;
     back: string;
   };
+  driverLicence: {
+    front: string;
+    back: string;
+  };
 }
 
 export interface IFieldsErrors {
@@ -38,6 +42,10 @@ export interface IFieldsErrors {
   email: string;
   phone: string;
   identificationDoc: {
+    front: string;
+    back: string;
+  };
+  driverLicence: {
     front: string;
     back: string;
   };

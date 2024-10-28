@@ -19,6 +19,10 @@ const ReservationForm = () => {
       front: frontID,
       back: backID,
     },
+    driverLicence: {
+      front: frontID,
+      back: backID,
+    },
   });
 
   const [fieldsErrors, setFieldsErros] = useState<IFieldsErrors>({
@@ -26,6 +30,10 @@ const ReservationForm = () => {
     email: "",
     phone: "",
     identificationDoc: {
+      front: "",
+      back: "",
+    },
+    driverLicence: {
       front: "",
       back: "",
     },
@@ -104,6 +112,54 @@ const ReservationForm = () => {
         },
       }));
     }
+
+    if (name === "driveLicFront" && e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
+
+      const image = URL.createObjectURL(file);
+
+      setReservationInfo((prevState) => ({
+        ...prevState,
+        driverLicence: {
+          ...prevState.driverLicence,
+          front: image,
+        },
+      }));
+    }
+
+    if (name === "driveLicBack" && e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
+
+      const image = URL.createObjectURL(file);
+
+      setReservationInfo((prevState) => ({
+        ...prevState,
+        driverLicence: {
+          ...prevState.driverLicence,
+          back: image,
+        },
+      }));
+    }
+
+    if (reservationInfo.driverLicence.front !== frontID) {
+      setFieldsErros((prevState) => ({
+        ...prevState,
+        driverLicence: {
+          ...prevState.driverLicence,
+          front: "",
+        },
+      }));
+    }
+
+    if (reservationInfo.driverLicence.back !== backID) {
+      setFieldsErros((prevState) => ({
+        ...prevState,
+        driverLicence: {
+          ...prevState.driverLicence,
+          back: "",
+        },
+      }));
+    }
   };
 
   const handleSubmit = () => {
@@ -138,6 +194,26 @@ const ReservationForm = () => {
         ...prevState,
         identificationDoc: {
           ...prevState.identificationDoc,
+          back: "Document back side image is required",
+        },
+      }));
+    }
+
+    if (reservationInfo.driverLicence.front === frontID) {
+      setFieldsErros((prevState) => ({
+        ...prevState,
+        driverLicence: {
+          ...prevState.driverLicence,
+          front: "Document front side image is required",
+        },
+      }));
+    }
+
+    if (reservationInfo.driverLicence.back === backID) {
+      setFieldsErros((prevState) => ({
+        ...prevState,
+        driverLicence: {
+          ...prevState.driverLicence,
           back: "Document back side image is required",
         },
       }));

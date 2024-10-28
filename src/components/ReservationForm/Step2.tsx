@@ -151,6 +151,100 @@ const Step2: React.FC<IStep> = ({
             </Grid>
           </Grid>
         </Box>
+
+        <Box sx={{ marginTop: "60px" }}>
+          <Grid
+            container
+            spacing={{ xs: 2, md: 3 }}
+            columns={12}
+            rowSpacing={3}
+            columnSpacing={6}
+          >
+            <Grid size={12}>
+              <Typography>Carta de condução</Typography>
+            </Grid>
+
+            <Grid size={6}>
+              <InputLabel shrink={false} htmlFor={"frontImage"}>
+                <Typography>Frente</Typography>
+              </InputLabel>
+              <Avatar
+                src={reservationValues.driverLicence.front}
+                sx={{
+                  width: "60%",
+                  height: "auto",
+                  borderRadius: 0,
+                  marginTop: "10px",
+                  marginBottom: "20px",
+                }}
+              />
+              <Typography
+                sx={{
+                  color: "red",
+                  display:
+                    fieldsErrors.driverLicence.front !== "" ? "block" : "none",
+                }}
+              >
+                {fieldsErrors.driverLicence.front}
+              </Typography>
+              <Button
+                component="label"
+                role={undefined}
+                variant="contained"
+                tabIndex={-1}
+                startIcon={<CloudUpload />}
+              >
+                Upload file
+                <VisuallyHiddenInput
+                  type="file"
+                  onChange={handleChange}
+                  name="driveLicFront"
+                  accept="image/*"
+                />
+              </Button>
+            </Grid>
+
+            <Grid size={6}>
+              <InputLabel shrink={false} htmlFor={"backImage"}>
+                <Typography>Verso</Typography>
+              </InputLabel>
+              <Avatar
+                src={reservationValues.driverLicence.back}
+                sx={{
+                  width: "60%",
+                  height: "auto",
+                  borderRadius: 0,
+                  marginTop: "10px",
+                  marginBottom: "20px",
+                }}
+              />
+              <Typography
+                sx={{
+                  color: "red",
+                  display:
+                    fieldsErrors.driverLicence.back !== "" ? "block" : "none",
+                }}
+              >
+                {fieldsErrors.driverLicence.back}
+              </Typography>
+              <Button
+                component="label"
+                role={undefined}
+                variant="contained"
+                tabIndex={-1}
+                startIcon={<CloudUpload />}
+              >
+                Upload file
+                <VisuallyHiddenInput
+                  type="file"
+                  onChange={handleChange}
+                  name="driveLicBack"
+                  accept="image/*"
+                />
+              </Button>
+            </Grid>
+          </Grid>
+        </Box>
       </Box>
     </Box>
   );

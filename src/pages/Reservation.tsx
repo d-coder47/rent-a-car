@@ -11,7 +11,7 @@ const Reservation = () => {
           display: "flex",
           alignItems: "center",
           background: "#f4f4f4",
-          height: "100vh",
+          height: "100%",
           width: "100%",
           flexDirection: "column",
         }}
