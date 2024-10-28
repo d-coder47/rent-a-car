@@ -258,8 +258,7 @@ const ReservationForm = () => {
             "&:hover": {
               backgroundColor: theme.palette.secondary.dark,
             },
-            width: "40%",
-            alignSelf: "start",
+
             marginTop: "1rem",
             textTransform: "none",
           }}
