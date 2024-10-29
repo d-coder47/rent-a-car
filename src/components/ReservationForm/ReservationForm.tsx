@@ -7,6 +7,7 @@ import { IFieldsErrors, IReservationInfo } from "../../interfaces";
 import frontID from "../../assets/reservation/frontID.png";
 import backID from "../../assets/reservation/backID.png";
 import Step3 from "./Step3";
+import Step4 from "./Step4";
 
 const ReservationForm = () => {
   const theme = useTheme();
@@ -28,6 +29,8 @@ const ReservationForm = () => {
       id: "",
       name: "",
     },
+    price: "",
+    days: "",
   });
 
   const [fieldsErrors, setFieldsErros] = useState<IFieldsErrors>({
@@ -43,6 +46,8 @@ const ReservationForm = () => {
       back: "",
     },
     vehicle: "",
+    price: "",
+    days: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -286,6 +291,12 @@ const ReservationForm = () => {
         />
 
         <Step3
+          reservationValues={reservationInfo}
+          fieldsErrors={fieldsErrors}
+          handleChange={handleChange}
+        />
+
+        <Step4
           reservationValues={reservationInfo}
           fieldsErrors={fieldsErrors}
           handleChange={handleChange}

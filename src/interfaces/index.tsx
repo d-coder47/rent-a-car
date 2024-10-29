@@ -39,6 +39,8 @@ export interface IReservationInfo {
     id: string;
     name: string;
   };
+  price: string;
+  days: string;
 }
 
 export interface IFieldsErrors {
@@ -54,6 +56,8 @@ export interface IFieldsErrors {
     back: string;
   };
   vehicle: string;
+  price: string;
+  days: string;
 }
 
 export interface ISelectedVehicle {
