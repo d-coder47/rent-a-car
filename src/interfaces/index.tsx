@@ -39,8 +39,8 @@ export interface IReservationInfo {
     id: string;
     name: string;
   };
-  price: string;
-  days: string;
+  price: number;
+  days: number;
 }
 
 export interface IFieldsErrors {

@@ -55,10 +55,11 @@ const Step4: React.FC<IStep> = ({
                 variant="outlined"
                 name="days"
                 type="number"
-                value={reservationValues.name}
-                error={fieldsErrors.name !== ""}
-                helperText={fieldsErrors.name}
+                value={reservationValues.days}
+                error={fieldsErrors.days !== ""}
+                helperText={fieldsErrors.days}
                 onChange={handleChange}
+                InputProps={{ inputProps: { min: 0 } }}
                 autoComplete="off"
                 sx={{
                   width: "450px",
@@ -67,20 +68,20 @@ const Step4: React.FC<IStep> = ({
             </Grid>
 
             <Grid size={6}>
-              <InputLabel shrink={false} htmlFor={"username"}>
-                <Typography>Preço</Typography>
-              </InputLabel>
-              <TextField
-                id="outlined-basic"
-                variant="outlined"
-                autoComplete="off"
-                name="price"
-                value={reservationValues.phone}
-                onChange={handleChange}
+              <Box
                 sx={{
-                  width: "450px",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  alignItems: "flex-end",
+
+                  height: "100%",
                 }}
-              />
+              >
+                <Typography variant="h5">Preço da reserva:</Typography>
+
+                <Typography>{reservationValues.price}</Typography>
+              </Box>
             </Grid>
           </Grid>
         </Box>

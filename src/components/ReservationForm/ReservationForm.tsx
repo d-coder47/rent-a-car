@@ -29,8 +29,8 @@ const ReservationForm = () => {
       id: "",
       name: "",
     },
-    price: "",
-    days: "",
+    price: 0,
+    days: 0,
   });
 
   const [fieldsErrors, setFieldsErros] = useState<IFieldsErrors>({
@@ -51,7 +51,7 @@ const ReservationForm = () => {
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+    const { name, value, valueAsNumber } = e.target;
 
     let parsedValue: {
       id: string;
@@ -66,7 +66,14 @@ const ReservationForm = () => {
       }));
     }
 
-    if (name !== "vehicle") {
+    if (name === "days") {
+      setReservationInfo((prevReservationInfo) => ({
+        ...prevReservationInfo,
+        [name]: valueAsNumber,
+      }));
+    }
+
+    if (name !== "vehicle" && name !== "days") {
       setReservationInfo((prevReservationInfo) => ({
         ...prevReservationInfo,
         [name]: value,
@@ -95,6 +102,13 @@ const ReservationForm = () => {
       setFieldsErros((prevFieldErrors) => ({
         ...prevFieldErrors,
         ["vehicle"]: "",
+      }));
+    }
+
+    if (name === "days" && valueAsNumber !== 0) {
+      setFieldsErros((prevFieldErrors) => ({
+        ...prevFieldErrors,
+        ["days"]: "",
       }));
     }
 
@@ -209,6 +223,13 @@ const ReservationForm = () => {
       setFieldsErros((prevFieldErrors) => ({
         ...prevFieldErrors,
         ["email"]: "Email is required",
+      }));
+    }
+
+    if (reservationInfo.days === 0) {
+      setFieldsErros((prevFieldErrors) => ({
+        ...prevFieldErrors,
+        ["days"]: "The number of days is required",
       }));
     }
 
