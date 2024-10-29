@@ -35,6 +35,10 @@ export interface IReservationInfo {
     front: string;
     back: string;
   };
+  vehicle: {
+    id: string;
+    name: string;
+  };
 }
 
 export interface IFieldsErrors {
@@ -49,6 +53,12 @@ export interface IFieldsErrors {
     front: string;
     back: string;
   };
+  vehicle: string;
+}
+
+export interface ISelectedVehicle {
+  name: string;
+  image: string;
 }
 
 export interface IStep {

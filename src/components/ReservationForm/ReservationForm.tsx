@@ -6,6 +6,7 @@ import { useState } from "react";
 import { IFieldsErrors, IReservationInfo } from "../../interfaces";
 import frontID from "../../assets/reservation/frontID.png";
 import backID from "../../assets/reservation/backID.png";
+import Step3 from "./Step3";
 
 const ReservationForm = () => {
   const theme = useTheme();
@@ -23,6 +24,10 @@ const ReservationForm = () => {
       front: frontID,
       back: backID,
     },
+    vehicle: {
+      id: "",
+      name: "",
+    },
   });
 
   const [fieldsErrors, setFieldsErros] = useState<IFieldsErrors>({
@@ -37,15 +42,31 @@ const ReservationForm = () => {
       front: "",
       back: "",
     },
+    vehicle: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
-    setReservationInfo((prevReservationInfo) => ({
-      ...prevReservationInfo,
-      [name]: value,
-    }));
+    let parsedValue: {
+      id: string;
+      name: string;
+    };
+
+    if (name === "vehicle") {
+      parsedValue = JSON.parse(value);
+      setReservationInfo((prevReservationInfo) => ({
+        ...prevReservationInfo,
+        [name]: parsedValue,
+      }));
+    }
+
+    if (name !== "vehicle") {
+      setReservationInfo((prevReservationInfo) => ({
+        ...prevReservationInfo,
+        [name]: value,
+      }));
+    }
 
     if (name === "email") {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -62,6 +83,13 @@ const ReservationForm = () => {
       setFieldsErros((prevFieldErrors) => ({
         ...prevFieldErrors,
         ["name"]: "",
+      }));
+    }
+
+    if (name === "vehicle" && value !== "") {
+      setFieldsErros((prevFieldErrors) => ({
+        ...prevFieldErrors,
+        ["vehicle"]: "",
       }));
     }
 
@@ -179,6 +207,13 @@ const ReservationForm = () => {
       }));
     }
 
+    if (reservationInfo.vehicle.name === "") {
+      setFieldsErros((prevFieldErrors) => ({
+        ...prevFieldErrors,
+        ["vehicle"]: "Vehicle is required",
+      }));
+    }
+
     if (reservationInfo.identificationDoc.front === frontID) {
       setFieldsErros((prevState) => ({
         ...prevState,
@@ -245,6 +280,12 @@ const ReservationForm = () => {
           handleChange={handleChange}
         />
         <Step2
+          reservationValues={reservationInfo}
+          fieldsErrors={fieldsErrors}
+          handleChange={handleChange}
+        />
+
+        <Step3
           reservationValues={reservationInfo}
           fieldsErrors={fieldsErrors}
           handleChange={handleChange}
