@@ -30,9 +30,6 @@ const Car = () => {
         display="flex"
         justifyContent="center"
         height="100%"
-        sx={{
-          backgroundColor: "gray",
-        }}
       >
         <Box
           component="iframe"
@@ -107,7 +104,7 @@ const Car = () => {
           className="single-car-price-box"
           display="flex"
           justifyContent="space-between"
-          margin="auto 1rem 1rem 0"
+          margin="auto 1rem 1rem 1rem"
           sx={{
             boxShadow: 5,
             padding: ".5rem 1rem",
