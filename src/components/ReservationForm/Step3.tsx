@@ -129,9 +129,7 @@ const Step3: React.FC<IStep> = ({
                   value={carName}
                   onChange={handleSelectChange}
                   displayEmpty
-                  input={
-                    <OutlinedInput id="select-multiple-chip" label="Chip" />
-                  }
+                  input={<OutlinedInput id="select-multiple-chip" />}
                   error={fieldsErrors.vehicle !== ""}
                   renderValue={(selected) => (
                     <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
