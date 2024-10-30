@@ -5,7 +5,6 @@ import Step2 from "./Step2";
 import { useState } from "react";
 import { IFieldsErrors, IReservationInfo, IVehicle } from "../../interfaces";
 import frontID from "../../assets/reservation/frontID.png";
-import backID from "../../assets/reservation/backID.png";
 import Step3 from "./Step3";
 import Step4 from "./Step4";
 
@@ -18,12 +17,12 @@ const ReservationForm = () => {
     email: "",
     phone: "",
     identificationDoc: {
-      front: frontID,
-      back: backID,
+      filePath: frontID,
+      fileType: "",
     },
     driverLicence: {
-      front: frontID,
-      back: backID,
+      filePath: frontID,
+      fileType: "",
     },
     vehicle: [
       {
@@ -39,14 +38,8 @@ const ReservationForm = () => {
     name: "",
     email: "",
     phone: "",
-    identificationDoc: {
-      front: "",
-      back: "",
-    },
-    driverLicence: {
-      front: "",
-      back: "",
-    },
+    identificationDoc: "",
+    driverLicence: "",
     vehicle: "",
     price: "",
     days: "",
@@ -112,99 +105,41 @@ const ReservationForm = () => {
       }));
     }
 
-    if (name === "idFront" && e.target.files && e.target.files[0]) {
+    if (name === "identificationDoc" && e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
 
-      const image = URL.createObjectURL(file);
+      const path = URL.createObjectURL(file);
 
       setReservationInfo((prevState) => ({
         ...prevState,
         identificationDoc: {
-          ...prevState.identificationDoc,
-          front: image,
+          filePath: path,
+          fileType: file.type,
         },
       }));
-    }
 
-    if (name === "idBack" && e.target.files && e.target.files[0]) {
-      const file = e.target.files[0];
-
-      const image = URL.createObjectURL(file);
-
-      setReservationInfo((prevState) => ({
-        ...prevState,
-        identificationDoc: {
-          ...prevState.identificationDoc,
-          back: image,
-        },
-      }));
-    }
-
-    if (reservationInfo.identificationDoc.front !== frontID) {
       setFieldsErros((prevState) => ({
         ...prevState,
-        identificationDoc: {
-          ...prevState.identificationDoc,
-          front: "",
-        },
+        identificationDoc: "",
       }));
     }
 
-    if (reservationInfo.identificationDoc.back !== backID) {
-      setFieldsErros((prevState) => ({
-        ...prevState,
-        identificationDoc: {
-          ...prevState.identificationDoc,
-          back: "",
-        },
-      }));
-    }
-
-    if (name === "driveLicFront" && e.target.files && e.target.files[0]) {
+    if (name === "driveLic" && e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
 
-      const image = URL.createObjectURL(file);
+      const path = URL.createObjectURL(file);
 
       setReservationInfo((prevState) => ({
         ...prevState,
         driverLicence: {
-          ...prevState.driverLicence,
-          front: image,
+          filePath: path,
+          fileType: file.type,
         },
       }));
-    }
 
-    if (name === "driveLicBack" && e.target.files && e.target.files[0]) {
-      const file = e.target.files[0];
-
-      const image = URL.createObjectURL(file);
-
-      setReservationInfo((prevState) => ({
-        ...prevState,
-        driverLicence: {
-          ...prevState.driverLicence,
-          back: image,
-        },
-      }));
-    }
-
-    if (reservationInfo.driverLicence.front !== frontID) {
       setFieldsErros((prevState) => ({
         ...prevState,
-        driverLicence: {
-          ...prevState.driverLicence,
-          front: "",
-        },
-      }));
-    }
-
-    if (reservationInfo.driverLicence.back !== backID) {
-      setFieldsErros((prevState) => ({
-        ...prevState,
-        driverLicence: {
-          ...prevState.driverLicence,
-          back: "",
-        },
+        driverLicence: "",
       }));
     }
   };
@@ -240,43 +175,17 @@ const ReservationForm = () => {
       }));
     }
 
-    if (reservationInfo.identificationDoc.front === frontID) {
+    if (reservationInfo.identificationDoc.filePath === frontID) {
       setFieldsErros((prevState) => ({
         ...prevState,
-        identificationDoc: {
-          ...prevState.identificationDoc,
-          front: "Document front side image is required",
-        },
+        identificationDoc: "Identification document  is required",
       }));
     }
 
-    if (reservationInfo.identificationDoc.back === backID) {
+    if (reservationInfo.driverLicence.filePath === frontID) {
       setFieldsErros((prevState) => ({
         ...prevState,
-        identificationDoc: {
-          ...prevState.identificationDoc,
-          back: "Document back side image is required",
-        },
-      }));
-    }
-
-    if (reservationInfo.driverLicence.front === frontID) {
-      setFieldsErros((prevState) => ({
-        ...prevState,
-        driverLicence: {
-          ...prevState.driverLicence,
-          front: "Document front side image is required",
-        },
-      }));
-    }
-
-    if (reservationInfo.driverLicence.back === backID) {
-      setFieldsErros((prevState) => ({
-        ...prevState,
-        driverLicence: {
-          ...prevState.driverLicence,
-          back: "Document back side image is required",
-        },
+        driverLicence: "Driver licence document is required",
       }));
     }
   };

@@ -33,12 +33,12 @@ export interface IReservationInfo {
   email: string;
   phone: string;
   identificationDoc: {
-    front: string;
-    back: string;
+    filePath: string;
+    fileType: string;
   };
   driverLicence: {
-    front: string;
-    back: string;
+    filePath: string;
+    fileType: string;
   };
   vehicle: IVehicle[];
   price: number;
@@ -49,14 +49,8 @@ export interface IFieldsErrors {
   name: string;
   email: string;
   phone: string;
-  identificationDoc: {
-    front: string;
-    back: string;
-  };
-  driverLicence: {
-    front: string;
-    back: string;
-  };
+  identificationDoc: string;
+  driverLicence: string;
   vehicle: string;
   price: string;
   days: string;
