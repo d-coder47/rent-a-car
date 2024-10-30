@@ -16,19 +16,20 @@ const SelectedVehicleCard: React.FC<ISelectedVehicle> = ({ name, image }) => {
   return (
     <Card
       sx={{
-        height: "360px",
+        height: "250px",
+        width: "100%",
         boxShadow: 4,
       }}
     >
       <CardHeader
         title={name}
-        titleTypographyProps={{ variant: "h5" }}
+        titleTypographyProps={{ variant: "body2" }}
         subheaderTypographyProps={{ variant: "body2" }}
       />
       <CardMedia
         component="img"
         sx={{
-          height: "180px",
+          height: "120px",
           display: "flex",
           justifyContent: "center",
         }}
@@ -51,7 +52,7 @@ const SelectedVehicleCard: React.FC<ISelectedVehicle> = ({ name, image }) => {
               height: "35px",
               textAlign: "center",
               color: "#000000",
-              marginTop: "40px",
+              marginTop: "10px",
               textTransform: "none",
               "&:hover": {
                 backgroundColor: theme.palette.secondary.main,

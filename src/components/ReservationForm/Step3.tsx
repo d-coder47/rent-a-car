@@ -6,11 +6,14 @@ import {
   MenuItem,
   FormControl,
   SelectChangeEvent,
+  OutlinedInput,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import { IStep } from "../../interfaces";
+import { IStep, IVehicle } from "../../interfaces";
 import car_image from "../../assets/car_gallery/view5.jpg";
 import SelectedVehicleCard from "./SelectedVehicleCard";
+import { useState } from "react";
+import Chip from "@mui/material/Chip";
 
 const Step3: React.FC<IStep> = ({
   reservationValues,
@@ -22,27 +25,61 @@ const Step3: React.FC<IStep> = ({
     { id: 2, name: "Car Model B", image: car_image },
     { id: 3, name: "Car Model C", image: car_image },
     { id: 4, name: "Car Model D", image: car_image },
+    { id: 5, name: "Car Model E", image: car_image },
+    { id: 6, name: "Car Model F", image: car_image },
+    { id: 7, name: "Car Model G", image: car_image },
+    { id: 8, name: "Car Model H", image: car_image },
   ];
 
-  const handleSelectChange = (e: SelectChangeEvent<string>) => {
+  const [carName, setCarName] = useState<string[]>([]);
+
+  const handleSelectChange = (e: SelectChangeEvent<typeof carName>) => {
     const { value } = e.target;
 
-    const selectedCar = vehicleOptions.find((item) => item.name === value);
+    const splitedData = typeof value === "string" ? value.split(",") : value;
 
-    if (!selectedCar) return;
+    const selectedCars = vehicleOptions.filter((item) =>
+      splitedData.includes(item.name)
+    );
+
+    if (!selectedCars) return;
+
+    setCarName(splitedData);
+
+    const updatedValue = selectedCars.map((item) => ({
+      id: item.id,
+      name: item.name,
+    }));
 
     const modifiedEvent = {
       ...e,
       target: {
         ...e.target,
-        value: JSON.stringify({
-          id: selectedCar.id,
-          name: selectedCar.name,
-        }),
+        value: JSON.stringify(updatedValue),
       },
     };
 
     handleChange(modifiedEvent as React.ChangeEvent<HTMLInputElement>);
+  };
+
+  const handleGridSize = (vehicles: IVehicle[], defaultSize: number) => {
+    let size = defaultSize;
+
+    const length = vehicles.length;
+
+    if (length === 1) {
+      size = 12;
+    }
+
+    if (length === 2) {
+      size = 6;
+    }
+
+    if (length === 3) {
+      size = 4;
+    }
+
+    return size;
   };
 
   return (
@@ -88,10 +125,21 @@ const Step3: React.FC<IStep> = ({
                 <Select
                   id="vehicle"
                   name="vehicle"
-                  value={reservationValues.vehicle.name}
+                  multiple
+                  value={carName}
                   onChange={handleSelectChange}
                   displayEmpty
+                  input={
+                    <OutlinedInput id="select-multiple-chip" label="Chip" />
+                  }
                   error={fieldsErrors.vehicle !== ""}
+                  renderValue={(selected) => (
+                    <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                      {selected.map((value) => (
+                        <Chip key={value} label={value} />
+                      ))}
+                    </Box>
+                  )}
                 >
                   {vehicleOptions.map((vehicle) => (
                     <MenuItem key={vehicle.id} value={vehicle.name}>
@@ -101,7 +149,7 @@ const Step3: React.FC<IStep> = ({
                           alt={vehicle.name}
                           style={{ width: 30, height: 30, marginRight: 10 }}
                         />
-                        <Typography>{vehicle.name}</Typography>
+                        <Typography variant="body1">{vehicle.name}</Typography>
                       </Box>
                     </MenuItem>
                   ))}
@@ -112,17 +160,38 @@ const Step3: React.FC<IStep> = ({
               </FormControl>
             </Grid>
 
+            <Grid size={6} />
+
             <Grid
-              size={6}
+              container
+              spacing={{ xs: 2, md: 3 }}
+              columns={12}
+              rowSpacing={8}
+              columnSpacing={6}
               sx={{
                 display:
-                  reservationValues.vehicle.name !== "" ? "block" : "none",
+                  reservationValues.vehicle.length !== 0 ? "flex" : "none",
+                flexDirection: "row",
               }}
             >
-              <SelectedVehicleCard
-                name={reservationValues.vehicle.name}
-                image={car_image}
-              />
+              {reservationValues.vehicle.map((car, index) => (
+                <Grid
+                  key={index}
+                  size={{
+                    xs: handleGridSize(reservationValues.vehicle, 12),
+                    sm: handleGridSize(reservationValues.vehicle, 6),
+                    md: handleGridSize(reservationValues.vehicle, 6),
+                    lg: handleGridSize(reservationValues.vehicle, 3),
+                    xl: handleGridSize(reservationValues.vehicle, 3),
+                  }}
+                >
+                  <SelectedVehicleCard
+                    name={car.name}
+                    image={car_image}
+                    key={index}
+                  />
+                </Grid>
+              ))}
             </Grid>
           </Grid>
         </Box>

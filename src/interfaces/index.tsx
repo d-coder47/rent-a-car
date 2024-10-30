@@ -23,6 +23,11 @@ export interface ICarCard {
   type: string;
 }
 
+export interface IVehicle {
+  id: string;
+  name: string;
+}
+
 export interface IReservationInfo {
   name: string;
   email: string;
@@ -35,10 +40,7 @@ export interface IReservationInfo {
     front: string;
     back: string;
   };
-  vehicle: {
-    id: string;
-    name: string;
-  };
+  vehicle: IVehicle[];
   price: number;
   days: number;
 }

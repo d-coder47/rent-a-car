@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import { useState } from "react";
-import { IFieldsErrors, IReservationInfo } from "../../interfaces";
+import { IFieldsErrors, IReservationInfo, IVehicle } from "../../interfaces";
 import frontID from "../../assets/reservation/frontID.png";
 import backID from "../../assets/reservation/backID.png";
 import Step3 from "./Step3";
@@ -25,10 +25,12 @@ const ReservationForm = () => {
       front: frontID,
       back: backID,
     },
-    vehicle: {
-      id: "",
-      name: "",
-    },
+    vehicle: [
+      {
+        id: "",
+        name: "",
+      },
+    ],
     price: 0,
     days: 0,
   });
@@ -53,13 +55,11 @@ const ReservationForm = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, valueAsNumber } = e.target;
 
-    let parsedValue: {
-      id: string;
-      name: string;
-    };
+    let parsedValue: IVehicle[];
 
     if (name === "vehicle") {
       parsedValue = JSON.parse(value);
+
       setReservationInfo((prevReservationInfo) => ({
         ...prevReservationInfo,
         [name]: parsedValue,
@@ -233,7 +233,7 @@ const ReservationForm = () => {
       }));
     }
 
-    if (reservationInfo.vehicle.name === "") {
+    if (reservationInfo.vehicle.length === 0) {
       setFieldsErros((prevFieldErrors) => ({
         ...prevFieldErrors,
         ["vehicle"]: "Vehicle is required",
