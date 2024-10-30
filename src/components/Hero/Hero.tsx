@@ -11,7 +11,6 @@ import { useTranslation } from "react-i18next";
 import heroImage from "../../assets/heroImage.jpg";
 import heroCar from "../../assets/heroCar.png";
 import { useNavigate } from "react-router-dom";
-import zIndex from "@mui/material/styles/zIndex";
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
