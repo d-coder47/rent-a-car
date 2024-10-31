@@ -23,10 +23,10 @@ const Car = () => {
   };
 
   return (
-    <Grid2 container height="100vh">
+    <Grid2 container display="flex" flexWrap="wrap" height="100vh">
       <Box
         id="car-3d"
-        width={{ xl: "80%" }}
+        flexBasis={{ xs: "100%", lg: "75%", xl: "80%" }}
         display="flex"
         justifyContent="center"
         height="100%"
@@ -38,7 +38,7 @@ const Car = () => {
           allowFullScreen
           sx={{
             width: "100%",
-            height: "720px",
+            height: "auto",
             border: "none",
             overflow: "hidden",
           }}
@@ -50,20 +50,37 @@ const Car = () => {
         flexDirection="column"
         alignItems="center"
         gap="2rem"
-        marginTop="4rem"
-        width={{ xl: "20%" }}
+        marginTop={{ xs: "1rem", lg: "4rem" }}
+        flexBasis={{ xs: "100%", md: "100%", lg: "25%", xl: "20%" }}
       >
         <Typography variant="h2">
           {info["Brand-Name"] + " " + info.Model}
         </Typography>
         <Typography
           variant="body2"
-          sx={{ textAlign: "justify", padding: "0 1rem" }}
+          sx={{
+            textAlign: "justify",
+            padding: { xs: "0 4rem", lg: "0 1.5rem" },
+          }}
         >
           {info.Description}
         </Typography>
-        <Typography variant="h3">Detalhes</Typography>
-        <List sx={{ marginTop: "-2rem" }}>
+        <Typography
+          variant="h3"
+          sx={{
+            alignSelf: { xs: "start", lg: "center" },
+            marginLeft: { xs: "4rem", lg: "1.5rem" },
+          }}
+        >
+          Detalhes
+        </Typography>
+        <List
+          sx={{
+            marginTop: "-2rem",
+            alignSelf: { xs: "start", lg: "center" },
+            marginLeft: { xs: "4rem", lg: "1.5rem" },
+          }}
+        >
           <ListItem sx={{ padding: "0 1rem" }}>
             <ListItemText
               primary={
