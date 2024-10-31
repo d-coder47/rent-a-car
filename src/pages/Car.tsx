@@ -7,8 +7,13 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
+import Layout from "../components/Layout/Layout";
+import { FOOTER_HEIGHT, HEADER_HEIGHT, PRE_HEADER_HEIGHT } from "../constants";
 
 const Car = () => {
+  const { t } = useTranslation();
+
   const info = {
     "Brand-Name": "Subaru",
     Model: "Ascent",
@@ -23,115 +28,125 @@ const Car = () => {
   };
 
   return (
-    <Grid2 container display="flex" flexWrap="wrap" height="100vh">
-      <Box
-        id="car-3d"
-        flexBasis={{ xs: "100%", lg: "75%", xl: "80%" }}
+    <Layout>
+      <Grid2
+        container
         display="flex"
-        justifyContent="center"
-        height="100%"
+        flexWrap="wrap"
+        height={`calc(100vh - ${PRE_HEADER_HEIGHT + HEADER_HEIGHT})`}
+        sx={{
+          backgroundColor: "#f4f4f4",
+        }}
       >
         <Box
-          component="iframe"
-          src="https://reisdanilson47.sirv.com/Subaru/Subaru.spin"
-          title="Car in 3D"
-          allowFullScreen
-          sx={{
-            width: "100%",
-            height: "auto",
-            border: "none",
-            overflow: "hidden",
-          }}
-        />
-      </Box>
-      <Box
-        id="car-info"
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
-        gap="2rem"
-        marginTop={{ xs: "1rem", lg: "4rem" }}
-        flexBasis={{ xs: "100%", md: "100%", lg: "25%", xl: "20%" }}
-      >
-        <Typography variant="h2">
-          {info["Brand-Name"] + " " + info.Model}
-        </Typography>
-        <Typography
-          variant="body2"
-          sx={{
-            textAlign: "justify",
-            padding: { xs: "0 4rem", lg: "0 1.5rem" },
-          }}
-        >
-          {info.Description}
-        </Typography>
-        <Typography
-          variant="h3"
-          sx={{
-            alignSelf: { xs: "start", lg: "center" },
-            marginLeft: { xs: "4rem", lg: "1.5rem" },
-          }}
-        >
-          Detalhes
-        </Typography>
-        <List
-          sx={{
-            marginTop: "-2rem",
-            alignSelf: { xs: "start", lg: "center" },
-            marginLeft: { xs: "4rem", lg: "1.5rem" },
-          }}
-        >
-          <ListItem sx={{ padding: "0 1rem" }}>
-            <ListItemText
-              primary={
-                <Typography variant="body2">• Subaru Ascent 2020</Typography>
-              }
-            />
-          </ListItem>
-          <ListItem sx={{ padding: "0 1rem" }}>
-            <ListItemText
-              primary={
-                <Typography variant="body2">
-                  • Motor 2360c.c/ cm3, 4 cilindros
-                </Typography>
-              }
-            />
-          </ListItem>
-          <ListItem sx={{ padding: "0 1rem" }}>
-            <ListItemText
-              primary={<Typography variant="body2">• 7 assentos</Typography>}
-            />
-          </ListItem>
-          <ListItem sx={{ padding: "0 1rem" }}>
-            <ListItemText
-              primary={
-                <Typography variant="body2">
-                  • Transmissão Automática
-                </Typography>
-              }
-            />
-          </ListItem>
-          <ListItem sx={{ padding: "0 1rem" }}>
-            <ListItemText
-              primary={<Typography variant="body2">• Gasolina</Typography>}
-            />
-          </ListItem>
-        </List>
-        <Box
-          className="single-car-price-box"
+          id="car-3d"
+          flexBasis={{ xs: "100%", lg: "75%", xl: "80%" }}
           display="flex"
-          justifyContent="space-between"
-          margin="auto 1rem 1rem 1rem"
-          sx={{
-            boxShadow: 5,
-            padding: ".5rem 1rem",
-          }}
+          justifyContent="center"
+          height="auto"
         >
-          <Typography variant="h3">€19,100</Typography>
-          <Button variant="contained">Alugar</Button>
+          <Box
+            component="iframe"
+            src="https://reisdanilson47.sirv.com/Subaru/Subaru.spin"
+            title="Car in 3D"
+            allowFullScreen
+            sx={{
+              width: "100%",
+              height: "auto",
+              border: "none",
+              overflow: "hidden",
+            }}
+          />
         </Box>
-      </Box>
-    </Grid2>
+        <Box
+          id="car-info"
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          gap="2rem"
+          marginTop={{ xs: "1rem", lg: "4rem" }}
+          flexBasis={{ xs: "100%", md: "100%", lg: "25%", xl: "20%" }}
+        >
+          <Typography variant="h2">
+            {info["Brand-Name"] + " " + info.Model}
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{
+              textAlign: "justify",
+              padding: { xs: "0 4rem", lg: "0 1.5rem" },
+            }}
+          >
+            {info.Description}
+          </Typography>
+          <Typography
+            variant="h3"
+            sx={{
+              alignSelf: { xs: "start", lg: "center" },
+              marginLeft: { xs: "4rem", lg: "1.5rem" },
+            }}
+          >
+            {t("single-car.details")}
+          </Typography>
+          <List
+            sx={{
+              marginTop: "-2rem",
+              alignSelf: { xs: "start", lg: "center" },
+              marginLeft: { xs: "4rem", lg: "1.5rem" },
+            }}
+          >
+            <ListItem sx={{ padding: "0 1rem" }}>
+              <ListItemText
+                primary={
+                  <Typography variant="body2">• Subaru Ascent 2020</Typography>
+                }
+              />
+            </ListItem>
+            <ListItem sx={{ padding: "0 1rem" }}>
+              <ListItemText
+                primary={
+                  <Typography variant="body2">
+                    • Motor 2360c.c/ cm3, 4 cilindros
+                  </Typography>
+                }
+              />
+            </ListItem>
+            <ListItem sx={{ padding: "0 1rem" }}>
+              <ListItemText
+                primary={<Typography variant="body2">• 7 assentos</Typography>}
+              />
+            </ListItem>
+            <ListItem sx={{ padding: "0 1rem" }}>
+              <ListItemText
+                primary={
+                  <Typography variant="body2">
+                    • Transmissão Automática
+                  </Typography>
+                }
+              />
+            </ListItem>
+            <ListItem sx={{ padding: "0 1rem" }}>
+              <ListItemText
+                primary={<Typography variant="body2">• Gasolina</Typography>}
+              />
+            </ListItem>
+          </List>
+          <Box
+            className="single-car-price-box"
+            display="flex"
+            justifyContent="space-between"
+            margin="auto 1rem 1rem 1rem"
+            sx={{
+              boxShadow: 5,
+              padding: ".5rem 1rem",
+            }}
+          >
+            <Typography variant="h3">€19,100</Typography>
+            <Button variant="contained">{t("single-car.rent")}</Button>
+          </Box>
+        </Box>
+      </Grid2>
+    </Layout>
   );
 };
 
