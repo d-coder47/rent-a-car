@@ -98,5 +98,9 @@
   },
   "social-media": {
     "greeting": "Hola. Estoy buscando más información. ¿Podría ayudarme?"
+  },
+  "single-car": {
+    "details": "Detalles",
+    "rent": "Alquilar"
   }
 }
