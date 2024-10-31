@@ -135,6 +135,7 @@ const Car = () => {
             className="single-car-price-box"
             display="flex"
             justifyContent="space-between"
+            alignItems="center"
             margin="auto 1rem 1rem 1rem"
             sx={{
               boxShadow: 5,
@@ -142,7 +143,9 @@ const Car = () => {
             }}
           >
             <Typography variant="h3">€19,100</Typography>
-            <Button variant="contained">{t("single-car.rent")}</Button>
+            <Button variant="contained" sx={{ textTransform: "unset" }}>
+              <Typography variant="body1">{t("single-car.rent")}</Typography>
+            </Button>
           </Box>
         </Box>
       </Grid2>
