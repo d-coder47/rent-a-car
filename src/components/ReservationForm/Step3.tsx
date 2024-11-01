@@ -168,7 +168,7 @@ const Step3: React.FC<IStep> = ({
               columnSpacing={6}
               sx={{
                 display:
-                  reservationValues.vehicle.length === 1 ? "none" : "flex",
+                  reservationValues.vehicle[0].name === "" ? "none" : "flex",
                 flexDirection: "row",
               }}
             >
