@@ -14,12 +14,15 @@ import car_image from "../../assets/car_gallery/view5.jpg";
 import SelectedVehicleCard from "./SelectedVehicleCard";
 import { useState } from "react";
 import Chip from "@mui/material/Chip";
+import { useTranslation } from "react-i18next";
 
 const Step3: React.FC<IStep> = ({
   reservationValues,
   fieldsErrors,
   handleChange,
 }) => {
+  const { t } = useTranslation();
+
   const vehicleOptions = [
     { id: 1, name: "Car Model A", image: car_image },
     { id: 2, name: "Car Model B", image: car_image },
@@ -93,7 +96,9 @@ const Step3: React.FC<IStep> = ({
       }}
     >
       <Box>
-        <Typography variant="h5">Escolha o seu veículo</Typography>
+        <Typography variant="h5">
+          {t("reservationForm.chooseVehicleTitle")}
+        </Typography>
 
         <Box
           sx={{
@@ -104,9 +109,11 @@ const Step3: React.FC<IStep> = ({
           }}
         >
           <Typography variant="body2">
-            Por favor, escolha o veículo que pretende reservar.
+            {t("reservationForm.chooseVehicleInstructions")}
           </Typography>
-          <Typography variant="body2">Passo 3 de 4</Typography>
+          <Typography variant="body2">
+            {t("reservationForm.stepIndicator3")}
+          </Typography>
         </Box>
 
         <Box sx={{ marginTop: "30px" }}>
@@ -125,7 +132,7 @@ const Step3: React.FC<IStep> = ({
                   fontFamily: "Istok Web, Roboto, Arial, sans-serif",
                 }}
               >
-                <Typography>Veículo</Typography>
+                <Typography> {t("reservationForm.vehicleLabel")}</Typography>
               </InputLabel>
               <FormControl sx={{ width: "450px" }}>
                 <Select

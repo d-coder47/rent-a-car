@@ -1,12 +1,14 @@
 import { Box, InputLabel, TextField, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import { IStep } from "../../interfaces";
+import { useTranslation } from "react-i18next";
 
 const Step1: React.FC<IStep> = ({
   reservationValues,
   fieldsErrors,
   handleChange,
 }) => {
+  const { t } = useTranslation();
   return (
     <Box
       sx={{
@@ -18,7 +20,9 @@ const Step1: React.FC<IStep> = ({
       }}
     >
       <Box>
-        <Typography variant="h5">Informações de faturamento</Typography>
+        <Typography variant="h5">
+          {t("reservationForm.billingInformationTitle")}
+        </Typography>
 
         <Box
           sx={{
@@ -29,9 +33,11 @@ const Step1: React.FC<IStep> = ({
           }}
         >
           <Typography variant="body2">
-            Por favor, insira suas informações de faturamento.
+            {t("reservationForm.billingInformationInstructions")}
           </Typography>
-          <Typography variant="body2">Passo 1 de 4</Typography>
+          <Typography variant="body2">
+            {t("reservationForm.stepIndicator1")}
+          </Typography>
         </Box>
 
         <Box
@@ -54,7 +60,7 @@ const Step1: React.FC<IStep> = ({
                   fontFamily: "Istok Web, Roboto, Arial, sans-serif",
                 }}
               >
-                <Typography>Nome</Typography>
+                <Typography> {t("reservationForm.nameLabel")}</Typography>
               </InputLabel>
               <TextField
                 id="outlined-basic"
@@ -90,7 +96,7 @@ const Step1: React.FC<IStep> = ({
                   fontFamily: "Istok Web, Roboto, Arial, sans-serif",
                 }}
               >
-                <Typography>Número de Telefone</Typography>
+                <Typography>{t("reservationForm.phoneLabel")}</Typography>
               </InputLabel>
               <TextField
                 id="outlined-basic"
@@ -113,7 +119,7 @@ const Step1: React.FC<IStep> = ({
                   fontFamily: "Istok Web, Roboto, Arial, sans-serif",
                 }}
               >
-                <Typography>E-mail</Typography>
+                <Typography>{t("reservationForm.emailLabel")}</Typography>
               </InputLabel>
               <TextField
                 id="outlined-basic"

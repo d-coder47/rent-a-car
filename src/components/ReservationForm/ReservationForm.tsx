@@ -10,7 +10,7 @@ import Step4 from "./Step4";
 
 const ReservationForm = () => {
   const theme = useTheme();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const [reservationInfo, setReservationInfo] = useState<IReservationInfo>({
     name: "",
@@ -80,9 +80,7 @@ const ReservationForm = () => {
 
       setFieldsErros((prevFieldErrors) => ({
         ...prevFieldErrors,
-        [name]: !emailRegex.test(value)
-          ? "Please enter a valid email address"
-          : "",
+        [name]: !emailRegex.test(value) ? t("reservationForm.emailError") : "",
       }));
     }
 
@@ -154,45 +152,89 @@ const ReservationForm = () => {
     if (reservationInfo.name === "") {
       setFieldsErros((prevFieldErrors) => ({
         ...prevFieldErrors,
-        ["name"]: "Name is required",
+        ["name"]: t("reservationForm.nameRequired"),
       }));
     }
 
     if (reservationInfo.email === "") {
       setFieldsErros((prevFieldErrors) => ({
         ...prevFieldErrors,
-        ["email"]: "Email is required",
+        ["email"]: t("reservationForm.emailRequired"),
       }));
     }
 
     if (reservationInfo.days === 0) {
       setFieldsErros((prevFieldErrors) => ({
         ...prevFieldErrors,
-        ["days"]: "The number of days is required",
+        ["days"]: t("reservationForm.daysRequired"),
       }));
     }
 
     if (reservationInfo.vehicle[0].name === "") {
       setFieldsErros((prevFieldErrors) => ({
         ...prevFieldErrors,
-        ["vehicle"]: "Vehicle is required",
+        ["vehicle"]: t("reservationForm.vehicleRequired"),
       }));
     }
 
     if (reservationInfo.identificationDoc.filePath === frontID) {
       setFieldsErros((prevState) => ({
         ...prevState,
-        identificationDoc: "Identification document  is required",
+        identificationDoc: t("reservationForm.idRequired"),
       }));
     }
 
     if (reservationInfo.driverLicence.filePath === frontID) {
       setFieldsErros((prevState) => ({
         ...prevState,
-        driverLicence: "Driver licence document is required",
+        driverLicence: t("reservationForm.driverLicenceRequired"),
       }));
     }
   };
+
+  i18n.on("languageChanged", (language) => {
+    if (reservationInfo.name === "") {
+      setFieldsErros((prevFieldErrors) => ({
+        ...prevFieldErrors,
+        ["name"]: t("reservationForm.nameRequired"),
+      }));
+    }
+
+    if (reservationInfo.email === "") {
+      setFieldsErros((prevFieldErrors) => ({
+        ...prevFieldErrors,
+        ["email"]: t("reservationForm.emailRequired"),
+      }));
+    }
+
+    if (reservationInfo.days === 0) {
+      setFieldsErros((prevFieldErrors) => ({
+        ...prevFieldErrors,
+        ["days"]: t("reservationForm.daysRequired"),
+      }));
+    }
+
+    if (reservationInfo.vehicle[0].name === "") {
+      setFieldsErros((prevFieldErrors) => ({
+        ...prevFieldErrors,
+        ["vehicle"]: t("reservationForm.vehicleRequired"),
+      }));
+    }
+
+    if (reservationInfo.identificationDoc.filePath === frontID) {
+      setFieldsErros((prevState) => ({
+        ...prevState,
+        identificationDoc: t("reservationForm.idRequired"),
+      }));
+    }
+
+    if (reservationInfo.driverLicence.filePath === frontID) {
+      setFieldsErros((prevState) => ({
+        ...prevState,
+        driverLicence: t("reservationForm.driverLicenceRequired"),
+      }));
+    }
+  });
 
   return (
     <Box

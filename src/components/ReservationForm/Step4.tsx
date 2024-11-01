@@ -1,12 +1,15 @@
 import { Box, InputLabel, TextField, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import { IStep } from "../../interfaces";
+import { useTranslation } from "react-i18next";
 
 const Step4: React.FC<IStep> = ({
   reservationValues,
   fieldsErrors,
   handleChange,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <Box
       sx={{
@@ -18,7 +21,9 @@ const Step4: React.FC<IStep> = ({
       }}
     >
       <Box>
-        <Typography variant="h5">Informações da reserva</Typography>
+        <Typography variant="h5">
+          {t("reservationForm.reservationInfoTitle")}
+        </Typography>
 
         <Box
           sx={{
@@ -29,9 +34,11 @@ const Step4: React.FC<IStep> = ({
           }}
         >
           <Typography variant="body2">
-            Por favor, insira as informações da reserva.
+            {t("reservationForm.reservationInfoInstructions")}
           </Typography>
-          <Typography variant="body2">Passo 4 de 4</Typography>
+          <Typography variant="body2">
+            {t("reservationForm.stepIndicator4")}
+          </Typography>
         </Box>
 
         <Box
@@ -54,7 +61,7 @@ const Step4: React.FC<IStep> = ({
                   fontFamily: "Istok Web, Roboto, Arial, sans-serif",
                 }}
               >
-                <Typography>Dias</Typography>
+                <Typography> {t("reservationForm.daysLabel")}</Typography>
               </InputLabel>
               <TextField
                 id="outlined-basic"
@@ -94,7 +101,9 @@ const Step4: React.FC<IStep> = ({
                   height: "100%",
                 }}
               >
-                <Typography variant="h5">Preço da reserva:</Typography>
+                <Typography variant="h5">
+                  {t("reservationForm.reservationPriceTitle")}
+                </Typography>
 
                 <Typography variant="h3">
                   {"€" + reservationValues.price}

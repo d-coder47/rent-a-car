@@ -10,12 +10,15 @@ import {
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import { IStep } from "../../interfaces";
+import { useTranslation } from "react-i18next";
 
 const Step2: React.FC<IStep> = ({
   reservationValues,
   fieldsErrors,
   handleChange,
 }) => {
+  const { t } = useTranslation();
+
   const VisuallyHiddenInput = styled("input")({
     clip: "rect(0 0 0 0)",
     clipPath: "inset(50%)",
@@ -39,7 +42,9 @@ const Step2: React.FC<IStep> = ({
       }}
     >
       <Box>
-        <Typography variant="h5">Documentos</Typography>
+        <Typography variant="h5">
+          {t("reservationForm.documentsTitle")}
+        </Typography>
 
         <Box
           sx={{
@@ -50,9 +55,11 @@ const Step2: React.FC<IStep> = ({
           }}
         >
           <Typography variant="body2">
-            Por favor, insira as imagens dos seus documentos de identificação.
+            {t("reservationForm.documentsInstructions")}
           </Typography>
-          <Typography variant="body2">Passo 2 de 4</Typography>
+          <Typography variant="body2">
+            {t("reservationForm.stepIndicator2")}
+          </Typography>
         </Box>
 
         <Box sx={{ marginTop: "30px", height: "256px" }}>
@@ -71,7 +78,9 @@ const Step2: React.FC<IStep> = ({
                   fontFamily: "Istok Web, Roboto, Arial, sans-serif",
                 }}
               >
-                <Typography>Documento de identificação</Typography>
+                <Typography>
+                  {t("reservationForm.identificationDocLabel")}
+                </Typography>
               </InputLabel>
               <Avatar
                 src={reservationValues.identificationDoc.filePath}
@@ -146,7 +155,9 @@ const Step2: React.FC<IStep> = ({
                   fontFamily: "Istok Web, Roboto, Arial, sans-serif",
                 }}
               >
-                <Typography>Carta de condução</Typography>
+                <Typography>
+                  {t("reservationForm.driverLicenceLabel")}
+                </Typography>
               </InputLabel>
               <Avatar
                 src={reservationValues.driverLicence.filePath}

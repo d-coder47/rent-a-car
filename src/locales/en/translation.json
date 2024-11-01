@@ -99,5 +99,34 @@
   },
   "social-media": {
     "greeting": "Hi. I'm looking for more information. Could you assist me?"
+  },
+  "reservationForm": {
+    "billingInformationTitle": "Billing Information",
+    "billingInformationInstructions": "Please enter your billing information.",
+    "stepIndicator1": "Step 1 of 4",
+    "nameLabel": "Name",
+    "phoneLabel": "Phone Number",
+    "emailLabel": "Email",
+    "documentsTitle": "Documents",
+    "documentsInstructions": "Please upload images of your identification documents.",
+    "stepIndicator2": "Step 2 of 4",
+    "identificationDocLabel": "Identification Document",
+    "driverLicenceLabel": "Driver's License",
+    "chooseVehicleTitle": "Choose Your Vehicle",
+    "chooseVehicleInstructions": "Please select the vehicle you wish to reserve.",
+    "stepIndicator3": "Step 3 of 4",
+    "vehicleLabel": "Vehicle",
+    "reservationInfoTitle": "Reservation Information",
+    "reservationInfoInstructions": "Please enter the reservation information.",
+    "stepIndicator4": "Step 4 of 4",
+    "daysLabel": "Days",
+    "reservationPriceTitle": "Reservation Price:",
+    "nameRequired": "Name is required",
+    "emailRequired": "Email is required",
+    "daysRequired": "The number of days is required",
+    "vehicleRequired": "Vehicle information is required",
+    "idRequired": "Identification document is required",
+    "driverLicenceRequired": "Driver's license is required",
+    "emailError": "Please enter a valid email"
   }
 }
