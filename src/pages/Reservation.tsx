@@ -2,8 +2,10 @@ import { Box, Typography } from "@mui/material";
 
 import Layout from "../components/Layout/Layout";
 import ReservationForm from "../components/ReservationForm/ReservationForm";
+import { useTranslation } from "react-i18next";
 
 const Reservation = () => {
+  const { t } = useTranslation();
   return (
     <Layout>
       <Box
@@ -17,7 +19,7 @@ const Reservation = () => {
         }}
       >
         <Typography textAlign="center" marginBottom="36px" variant="h2">
-          Reserva seu veículo
+          {t("reservationForm.reserveVehicle")}
         </Typography>
 
         <ReservationForm />

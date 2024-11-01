@@ -100,6 +100,7 @@
     "greeting": "Salut, je suis à la recherche de plus d'informations. Pouvez-vous m'aider?"
   },
   "reservationForm": {
+    "reserveVehicle": "Réservez votre véhicule",
     "billingInformationTitle": "Informations de facturation",
     "billingInformationInstructions": "Veuillez saisir vos informations de facturation.",
     "stepIndicator1": "Étape 1 sur 4",

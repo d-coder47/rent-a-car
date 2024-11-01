@@ -101,6 +101,7 @@
     "greeting": "Hi. I'm looking for more information. Could you assist me?"
   },
   "reservationForm": {
+    "reserveVehicle": "Reserve your vehicle",
     "billingInformationTitle": "Billing Information",
     "billingInformationInstructions": "Please enter your billing information.",
     "stepIndicator1": "Step 1 of 4",
