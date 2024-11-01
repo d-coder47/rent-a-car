@@ -172,7 +172,7 @@ const ReservationForm = () => {
       }));
     }
 
-    if (reservationInfo.vehicle.length === 0) {
+    if (reservationInfo.vehicle[0].name === "") {
       setFieldsErros((prevFieldErrors) => ({
         ...prevFieldErrors,
         ["vehicle"]: "Vehicle is required",

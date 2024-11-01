@@ -47,7 +47,13 @@ const Step4: React.FC<IStep> = ({
             columnSpacing={6}
           >
             <Grid size={6}>
-              <InputLabel shrink={false} htmlFor={"username"}>
+              <InputLabel
+                shrink={false}
+                htmlFor={"username"}
+                sx={{
+                  fontFamily: "Istok Web, Roboto, Arial, sans-serif",
+                }}
+              >
                 <Typography>Dias</Typography>
               </InputLabel>
               <TextField
@@ -63,6 +69,16 @@ const Step4: React.FC<IStep> = ({
                 autoComplete="off"
                 sx={{
                   width: "450px",
+                  "& .MuiFormHelperText-root.Mui-error": {
+                    color: "red",
+                    fontWeight: 400,
+                    lineHeight: 1.5,
+                    fontSize: "16px",
+                    fontFamily: "Istok Web, Roboto, Arial, sans-serif",
+                  },
+                  "& .MuiInputBase-input": {
+                    fontFamily: "Istok Web, Roboto, Arial, sans-serif",
+                  },
                 }}
               />
             </Grid>

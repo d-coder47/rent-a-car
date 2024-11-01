@@ -64,7 +64,13 @@ const Step2: React.FC<IStep> = ({
             columnSpacing={6}
           >
             <Grid size={6}>
-              <InputLabel shrink={false} htmlFor={"frontImage"}>
+              <InputLabel
+                shrink={false}
+                htmlFor={"frontImage"}
+                sx={{
+                  fontFamily: "Istok Web, Roboto, Arial, sans-serif",
+                }}
+              >
                 <Typography>Documento de identificação</Typography>
               </InputLabel>
               <Avatar
@@ -106,6 +112,7 @@ const Step2: React.FC<IStep> = ({
               </Box>
 
               <Typography
+                variant="body2"
                 sx={{
                   color: "red",
                   display:
@@ -132,7 +139,13 @@ const Step2: React.FC<IStep> = ({
             </Grid>
 
             <Grid size={6}>
-              <InputLabel shrink={false} htmlFor={"frontImage"}>
+              <InputLabel
+                shrink={false}
+                htmlFor={"frontImage"}
+                sx={{
+                  fontFamily: "Istok Web, Roboto, Arial, sans-serif",
+                }}
+              >
                 <Typography>Carta de condução</Typography>
               </InputLabel>
               <Avatar
@@ -174,6 +187,7 @@ const Step2: React.FC<IStep> = ({
               </Box>
 
               <Typography
+                variant="body2"
                 sx={{
                   color: "red",
                   display: fieldsErrors.driverLicence !== "" ? "block" : "none",

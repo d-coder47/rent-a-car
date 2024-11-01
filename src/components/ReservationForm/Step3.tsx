@@ -118,7 +118,13 @@ const Step3: React.FC<IStep> = ({
             columnSpacing={6}
           >
             <Grid size={6}>
-              <InputLabel shrink={false} htmlFor="vehicle">
+              <InputLabel
+                shrink={false}
+                htmlFor="vehicle"
+                sx={{
+                  fontFamily: "Istok Web, Roboto, Arial, sans-serif",
+                }}
+              >
                 <Typography>Veículo</Typography>
               </InputLabel>
               <FormControl sx={{ width: "450px" }}>
@@ -152,7 +158,13 @@ const Step3: React.FC<IStep> = ({
                     </MenuItem>
                   ))}
                 </Select>
-                <Typography variant="caption" color="error">
+                <Typography
+                  color="error"
+                  variant="body2"
+                  sx={{
+                    color: "red",
+                  }}
+                >
                   {fieldsErrors.vehicle}
                 </Typography>
               </FormControl>

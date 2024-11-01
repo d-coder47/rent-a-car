@@ -47,7 +47,13 @@ const Step1: React.FC<IStep> = ({
             columnSpacing={6}
           >
             <Grid size={6}>
-              <InputLabel shrink={false} htmlFor={"username"}>
+              <InputLabel
+                shrink={false}
+                htmlFor={"username"}
+                sx={{
+                  fontFamily: "Istok Web, Roboto, Arial, sans-serif",
+                }}
+              >
                 <Typography>Nome</Typography>
               </InputLabel>
               <TextField
@@ -61,12 +67,29 @@ const Step1: React.FC<IStep> = ({
                 autoComplete="off"
                 sx={{
                   width: "450px",
+
+                  "& .MuiFormHelperText-root.Mui-error": {
+                    color: "red",
+                    fontWeight: 400,
+                    lineHeight: 1.5,
+                    fontSize: "16px",
+                    fontFamily: "Istok Web, Roboto, Arial, sans-serif",
+                  },
+                  "& .MuiInputBase-input": {
+                    fontFamily: "Istok Web, Roboto, Arial, sans-serif",
+                  },
                 }}
               />
             </Grid>
 
             <Grid size={6}>
-              <InputLabel shrink={false} htmlFor={"username"}>
+              <InputLabel
+                shrink={false}
+                htmlFor={"username"}
+                sx={{
+                  fontFamily: "Istok Web, Roboto, Arial, sans-serif",
+                }}
+              >
                 <Typography>Número de Telefone</Typography>
               </InputLabel>
               <TextField
@@ -83,7 +106,13 @@ const Step1: React.FC<IStep> = ({
             </Grid>
 
             <Grid size={6}>
-              <InputLabel shrink={false} htmlFor={"username"}>
+              <InputLabel
+                shrink={false}
+                htmlFor={"username"}
+                sx={{
+                  fontFamily: "Istok Web, Roboto, Arial, sans-serif",
+                }}
+              >
                 <Typography>E-mail</Typography>
               </InputLabel>
               <TextField
@@ -93,6 +122,18 @@ const Step1: React.FC<IStep> = ({
                 name="email"
                 sx={{
                   width: "450px",
+
+                  "& .MuiFormHelperText-root.Mui-error": {
+                    color: "red",
+                    fontWeight: 400,
+                    lineHeight: 1.5,
+                    fontSize: "16px",
+                    fontFamily: "Istok Web, Roboto, Arial, sans-serif",
+                  },
+                  "& .MuiInputBase-input": {
+                    color: fieldsErrors.name ? "red" : "inherit",
+                    fontFamily: "Istok Web, Roboto, Arial, sans-serif",
+                  },
                 }}
                 value={reservationValues.email}
                 onChange={handleChange}
