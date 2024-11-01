@@ -81,7 +81,7 @@ const Step4: React.FC<IStep> = ({
                 <Typography variant="h5">Preço da reserva:</Typography>
 
                 <Typography variant="h3">
-                  {"$" + reservationValues.price}
+                  {"€" + reservationValues.price}
                 </Typography>
               </Box>
             </Grid>
