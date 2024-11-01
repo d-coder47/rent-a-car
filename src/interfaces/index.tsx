@@ -35,10 +35,12 @@ export interface IReservationInfo {
   identificationDoc: {
     filePath: string;
     fileType: string;
+    fileName: string;
   };
   driverLicence: {
     filePath: string;
     fileType: string;
+    fileName: string;
   };
   vehicle: IVehicle[];
   price: number;

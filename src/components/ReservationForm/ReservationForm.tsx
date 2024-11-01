@@ -19,10 +19,12 @@ const ReservationForm = () => {
     identificationDoc: {
       filePath: frontID,
       fileType: "",
+      fileName: "",
     },
     driverLicence: {
       filePath: frontID,
       fileType: "",
+      fileName: "",
     },
     vehicle: [
       {
@@ -115,6 +117,7 @@ const ReservationForm = () => {
         identificationDoc: {
           filePath: path,
           fileType: file.type,
+          fileName: file.name,
         },
       }));
 
@@ -134,6 +137,7 @@ const ReservationForm = () => {
         driverLicence: {
           filePath: path,
           fileType: file.type,
+          fileName: file.name,
         },
       }));
 

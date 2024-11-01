@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { CloudUpload } from "@mui/icons-material";
 import {
   Avatar,
@@ -55,7 +55,7 @@ const Step2: React.FC<IStep> = ({
           <Typography variant="body2">Passo 2 de 4</Typography>
         </Box>
 
-        <Box sx={{ marginTop: "30px" }}>
+        <Box sx={{ marginTop: "30px", height: "256px" }}>
           <Grid
             container
             spacing={{ xs: 2, md: 3 }}
@@ -70,8 +70,9 @@ const Step2: React.FC<IStep> = ({
               <Avatar
                 src={reservationValues.identificationDoc.filePath}
                 sx={{
-                  width: "60%",
-                  height: "auto",
+                  width: "245px",
+                  maxHeight: "131px",
+                  minHeight: "131px",
                   borderRadius: 0,
                   marginTop: "10px",
                   marginBottom: "20px",
@@ -83,6 +84,26 @@ const Step2: React.FC<IStep> = ({
                       : "none",
                 }}
               />
+
+              <Box
+                sx={{
+                  display:
+                    reservationValues.identificationDoc.fileType ===
+                    "application/pdf"
+                      ? "flex"
+                      : "none",
+
+                  width: "60%",
+                  height: "62%",
+                  marginTop: "10px",
+                  marginBottom: "20px",
+                  alignItems: "center",
+                }}
+              >
+                <Typography variant="body1">
+                  {reservationValues.identificationDoc.fileName}
+                </Typography>
+              </Box>
 
               <Typography
                 sx={{
@@ -117,8 +138,9 @@ const Step2: React.FC<IStep> = ({
               <Avatar
                 src={reservationValues.driverLicence.filePath}
                 sx={{
-                  width: "60%",
-                  height: "auto",
+                  width: "245px",
+                  maxHeight: "131px",
+                  minHeight: "131px",
                   borderRadius: 0,
                   marginTop: "10px",
                   marginBottom: "20px",
@@ -130,6 +152,27 @@ const Step2: React.FC<IStep> = ({
                       : "none",
                 }}
               />
+
+              <Box
+                sx={{
+                  display:
+                    reservationValues.driverLicence.fileType ===
+                    "application/pdf"
+                      ? "flex"
+                      : "none",
+
+                  width: "60%",
+                  height: "62%",
+                  marginTop: "10px",
+                  marginBottom: "20px",
+                  alignItems: "center",
+                }}
+              >
+                <Typography variant="body1">
+                  {reservationValues.driverLicence.fileName}
+                </Typography>
+              </Box>
+
               <Typography
                 sx={{
                   color: "red",
