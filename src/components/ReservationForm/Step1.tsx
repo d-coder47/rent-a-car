@@ -137,7 +137,6 @@ const Step1: React.FC<IStep> = ({
                     fontFamily: "Istok Web, Roboto, Arial, sans-serif",
                   },
                   "& .MuiInputBase-input": {
-                    color: fieldsErrors.name ? "red" : "inherit",
                     fontFamily: "Istok Web, Roboto, Arial, sans-serif",
                   },
                 }}

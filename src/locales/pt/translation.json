@@ -124,7 +124,7 @@
     "nameRequired": "Nome é obrigatório",
     "emailRequired": "Email é obrigatório",
     "daysRequired": "O número de dias é obrigatório",
-    "vehicleRequired": "As informações do veículo é obrigatorio",
+    "vehicleRequired": "As informações do veículo é obrigatório",
     "idRequired": "O documento de identificação é obrigatório",
     "driverLicenceRequired": "A carta de condução é obrigatória",
     "emailError": "Por favor, insira um email valido"

@@ -146,10 +146,22 @@ const ReservationForm = () => {
     }
   };
 
-  const handleSubmit = () => {
-    console.log("User Info:", reservationInfo);
+  const checkFieldsErrors = () => {
+    let hasError = false;
+
+    setFieldsErros({
+      name: "",
+      email: "",
+      phone: "",
+      identificationDoc: "",
+      driverLicence: "",
+      vehicle: "",
+      price: "",
+      days: "",
+    });
 
     if (reservationInfo.name === "") {
+      hasError = true;
       setFieldsErros((prevFieldErrors) => ({
         ...prevFieldErrors,
         ["name"]: t("reservationForm.nameRequired"),
@@ -157,6 +169,7 @@ const ReservationForm = () => {
     }
 
     if (reservationInfo.email === "") {
+      hasError = true;
       setFieldsErros((prevFieldErrors) => ({
         ...prevFieldErrors,
         ["email"]: t("reservationForm.emailRequired"),
@@ -164,6 +177,7 @@ const ReservationForm = () => {
     }
 
     if (reservationInfo.days === 0) {
+      hasError = true;
       setFieldsErros((prevFieldErrors) => ({
         ...prevFieldErrors,
         ["days"]: t("reservationForm.daysRequired"),
@@ -174,6 +188,7 @@ const ReservationForm = () => {
       reservationInfo?.vehicle[0]?.name === "" ||
       reservationInfo.vehicle.length === 0
     ) {
+      hasError = true;
       setFieldsErros((prevFieldErrors) => ({
         ...prevFieldErrors,
         ["vehicle"]: t("reservationForm.vehicleRequired"),
@@ -181,6 +196,7 @@ const ReservationForm = () => {
     }
 
     if (reservationInfo.identificationDoc.filePath === frontID) {
+      hasError = true;
       setFieldsErros((prevState) => ({
         ...prevState,
         identificationDoc: t("reservationForm.idRequired"),
@@ -188,55 +204,30 @@ const ReservationForm = () => {
     }
 
     if (reservationInfo.driverLicence.filePath === frontID) {
+      hasError = true;
       setFieldsErros((prevState) => ({
         ...prevState,
         driverLicence: t("reservationForm.driverLicenceRequired"),
       }));
+    }
+
+    return hasError;
+  };
+
+  const handleSubmit = () => {
+    const hasError = checkFieldsErrors();
+
+    if (hasError) {
+      console.log("can submit the form");
+    }
+
+    if (!hasError) {
+      console.log("Reservation Info:", reservationInfo);
     }
   };
 
-  i18n.on("languageChanged", (language) => {
-    if (reservationInfo.name === "") {
-      setFieldsErros((prevFieldErrors) => ({
-        ...prevFieldErrors,
-        ["name"]: t("reservationForm.nameRequired"),
-      }));
-    }
-
-    if (reservationInfo.email === "") {
-      setFieldsErros((prevFieldErrors) => ({
-        ...prevFieldErrors,
-        ["email"]: t("reservationForm.emailRequired"),
-      }));
-    }
-
-    if (reservationInfo.days === 0) {
-      setFieldsErros((prevFieldErrors) => ({
-        ...prevFieldErrors,
-        ["days"]: t("reservationForm.daysRequired"),
-      }));
-    }
-
-    if (reservationInfo.vehicle[0].name === "") {
-      setFieldsErros((prevFieldErrors) => ({
-        ...prevFieldErrors,
-        ["vehicle"]: t("reservationForm.vehicleRequired"),
-      }));
-    }
-
-    if (reservationInfo.identificationDoc.filePath === frontID) {
-      setFieldsErros((prevState) => ({
-        ...prevState,
-        identificationDoc: t("reservationForm.idRequired"),
-      }));
-    }
-
-    if (reservationInfo.driverLicence.filePath === frontID) {
-      setFieldsErros((prevState) => ({
-        ...prevState,
-        driverLicence: t("reservationForm.driverLicenceRequired"),
-      }));
-    }
+  i18n.on("languageChanged", (_language) => {
+    checkFieldsErrors();
   });
 
   return (
