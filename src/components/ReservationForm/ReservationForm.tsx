@@ -7,10 +7,13 @@ import { IFieldsErrors, IReservationInfo, IVehicle } from "../../interfaces";
 import frontID from "../../assets/reservation/frontID.png";
 import Step3 from "./Step3";
 import Step4 from "./Step4";
+import ReviewStep from "./ReviewStep";
 
 const ReservationForm = () => {
   const theme = useTheme();
   const { t, i18n } = useTranslation();
+
+  const [showRentalSummary, setShowRentalSummary] = useState<boolean>(false);
 
   const [reservationInfo, setReservationInfo] = useState<IReservationInfo>({
     name: "",
@@ -219,16 +222,28 @@ const ReservationForm = () => {
 
     if (hasError) {
       console.log("can submit the form");
+      setShowRentalSummary(false);
     }
 
     if (!hasError) {
       console.log("Reservation Info:", reservationInfo);
+      setShowRentalSummary(true);
     }
   };
 
   i18n.on("languageChanged", (_language) => {
     checkFieldsErrors();
   });
+
+  const handleReviewDetails = (clickType: string) => {
+    if (clickType === "editClick") {
+      console.log("edit");
+    }
+
+    if (clickType === "confirm") {
+      console.log("confirm details");
+    }
+  };
 
   return (
     <Box
@@ -242,7 +257,7 @@ const ReservationForm = () => {
         component="form"
         autoComplete="off"
         sx={{
-          display: "flex",
+          display: showRentalSummary ? "none" : "flex",
           flexDirection: "column",
           alignItems: "center",
           gap: "1.5rem",
@@ -272,6 +287,41 @@ const ReservationForm = () => {
           handleChange={handleChange}
         />
 
+        <Button
+          variant="contained"
+          sx={{
+            color: "#ffffff",
+            background: theme.palette.secondary.main,
+            "&:hover": {
+              backgroundColor: theme.palette.secondary.dark,
+            },
+
+            marginTop: "1rem",
+            textTransform: "none",
+          }}
+          onClick={handleSubmit}
+        >
+          <Typography variant="body1">
+            {t("homepage.contact.form.button")}
+          </Typography>
+        </Button>
+      </Box>
+
+      <Box
+        component="form"
+        autoComplete="off"
+        sx={{
+          display: showRentalSummary ? "flex" : "none",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "1.5rem",
+          width: "93%",
+        }}
+      >
+        <ReviewStep
+          handleReviewDetails={handleReviewDetails}
+          reservationDetails={reservationInfo}
+        />
         <Button
           variant="contained"
           sx={{

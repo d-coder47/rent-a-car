@@ -9,12 +9,13 @@ import {
   OutlinedInput,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import { IStep, IVehicle } from "../../interfaces";
-import car_image from "../../assets/car_gallery/view5.jpg";
+import { IStep } from "../../interfaces";
+import car_image from "../../assets/carCard.png";
 import SelectedVehicleCard from "./SelectedVehicleCard";
 import { useState } from "react";
 import Chip from "@mui/material/Chip";
 import { useTranslation } from "react-i18next";
+import { handleGridSize } from "./utils";
 
 const Step3: React.FC<IStep> = ({
   reservationValues,
@@ -63,26 +64,6 @@ const Step3: React.FC<IStep> = ({
     };
 
     handleChange(modifiedEvent as React.ChangeEvent<HTMLInputElement>);
-  };
-
-  const handleGridSize = (vehicles: IVehicle[], defaultSize: number) => {
-    let size = defaultSize;
-
-    const length = vehicles.length;
-
-    if (length === 1) {
-      size = 12;
-    }
-
-    if (length === 2) {
-      size = 6;
-    }
-
-    if (length === 3) {
-      size = 4;
-    }
-
-    return size;
   };
 
   return (

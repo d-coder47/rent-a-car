@@ -68,3 +68,8 @@ export interface IStep {
   fieldsErrors: IFieldsErrors;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
+
+export interface IReviewStep {
+  handleReviewDetails: (clickType: string) => void;
+  reservationDetails: IReservationInfo;
+}
