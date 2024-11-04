@@ -2,6 +2,7 @@ import { Box, InputLabel, TextField, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import { IStep } from "../../interfaces";
 import { useTranslation } from "react-i18next";
+import { MuiTelInput } from "mui-tel-input";
 
 const Step1: React.FC<IStep> = ({
   reservationValues,
@@ -9,6 +10,14 @@ const Step1: React.FC<IStep> = ({
   handleChange,
 }) => {
   const { t } = useTranslation();
+
+  const handlePhoneChange = (value: string) => {
+    const syntheticEvent = {
+      target: { value, name: "phone" },
+    } as React.ChangeEvent<HTMLInputElement>;
+
+    handleChange(syntheticEvent);
+  };
   return (
     <Box
       sx={{
@@ -98,15 +107,28 @@ const Step1: React.FC<IStep> = ({
               >
                 <Typography>{t("reservationForm.phoneLabel")}</Typography>
               </InputLabel>
-              <TextField
-                id="outlined-basic"
+              <MuiTelInput
+                name="phone"
+                error={fieldsErrors.phone !== ""}
+                helperText={fieldsErrors.phone}
                 variant="outlined"
                 autoComplete="off"
-                name="phone"
+                defaultCountry="CV"
                 value={reservationValues.phone}
-                onChange={handleChange}
+                onChange={handlePhoneChange}
                 sx={{
                   width: "450px",
+
+                  "& .MuiFormHelperText-root.Mui-error": {
+                    color: "red",
+                    fontWeight: 400,
+                    lineHeight: 1.5,
+                    fontSize: "16px",
+                    fontFamily: "Istok Web, Roboto, Arial, sans-serif",
+                  },
+                  "& .MuiInputBase-input": {
+                    fontFamily: "Istok Web, Roboto, Arial, sans-serif",
+                  },
                 }}
               />
             </Grid>

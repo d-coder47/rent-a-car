@@ -128,6 +128,7 @@
     "vehicleRequired": "Vehicle information is required",
     "idRequired": "Identification document is required",
     "driverLicenceRequired": "Driver's license is required",
-    "emailError": "Please enter a valid email"
+    "emailError": "Please enter a valid email",
+    "phoneRequired": "The phone number is required"
   }
 }

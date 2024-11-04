@@ -127,6 +127,7 @@
     "vehicleRequired": "La información del vehículo es obligatoria",
     "idRequired": "El documento de identificación es obligatorio",
     "driverLicenceRequired": "La licencia de conducir es obligatoria",
-    "emailError": "Por favor, ingrese un correo electrónico válido"
+    "emailError": "Por favor, ingrese un correo electrónico válido",
+    "phoneRequired": "El número de teléfono es obligatorio"
   }
 }

@@ -171,6 +171,14 @@ const ReservationForm = () => {
       }));
     }
 
+    if (reservationInfo.phone === "") {
+      hasError = true;
+      setFieldsErros((prevFieldErrors) => ({
+        ...prevFieldErrors,
+        ["phone"]: t("reservationForm.phoneRequired"),
+      }));
+    }
+
     if (reservationInfo.email === "") {
       hasError = true;
       setFieldsErros((prevFieldErrors) => ({
@@ -231,13 +239,13 @@ const ReservationForm = () => {
     }
   };
 
-  i18n.on("languageChanged", (_language) => {
+  i18n.on("languageChanged", () => {
     checkFieldsErrors();
   });
 
   const handleReviewDetails = (clickType: string) => {
     if (clickType === "editClick") {
-      console.log("edit");
+      setShowRentalSummary(false);
     }
 
     if (clickType === "confirm") {
@@ -318,28 +326,49 @@ const ReservationForm = () => {
           width: "93%",
         }}
       >
-        <ReviewStep
-          handleReviewDetails={handleReviewDetails}
-          reservationDetails={reservationInfo}
-        />
-        <Button
-          variant="contained"
-          sx={{
-            color: "#ffffff",
-            background: theme.palette.secondary.main,
-            "&:hover": {
-              backgroundColor: theme.palette.secondary.dark,
-            },
+        <ReviewStep reservationDetails={reservationInfo} />
 
-            marginTop: "1rem",
-            textTransform: "none",
+        <Box
+          sx={{
+            width: "15%",
+            display: "flex",
+            justifyContent: "space-between",
           }}
-          onClick={handleSubmit}
         >
-          <Typography variant="body1">
-            {t("homepage.contact.form.button")}
-          </Typography>
-        </Button>
+          <Button
+            variant="contained"
+            sx={{
+              color: "#ffffff",
+              background: theme.palette.primary.main,
+              "&:hover": {
+                backgroundColor: theme.palette.primary.dark,
+              },
+
+              marginTop: "1rem",
+              textTransform: "none",
+            }}
+            onClick={() => handleReviewDetails("editClick")}
+          >
+            <Typography variant="body1">Editar</Typography>
+          </Button>
+
+          <Button
+            variant="contained"
+            sx={{
+              color: "#ffffff",
+              background: theme.palette.secondary.main,
+              "&:hover": {
+                backgroundColor: theme.palette.secondary.dark,
+              },
+
+              marginTop: "1rem",
+              textTransform: "none",
+            }}
+            onClick={() => handleReviewDetails("confirm")}
+          >
+            <Typography variant="body1">Confirmar</Typography>
+          </Button>
+        </Box>
       </Box>
     </Box>
   );

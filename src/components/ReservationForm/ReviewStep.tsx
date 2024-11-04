@@ -5,10 +5,7 @@ import { IReviewStep } from "../../interfaces";
 import car_image from "../../assets/carCard.png";
 import { handleGridSize } from "./utils";
 
-const ReviewStep: React.FC<IReviewStep> = ({
-  handleReviewDetails,
-  reservationDetails,
-}) => {
+const ReviewStep: React.FC<IReviewStep> = ({ reservationDetails }) => {
   const { t } = useTranslation();
 
   const theme = useTheme();
@@ -17,7 +14,7 @@ const ReviewStep: React.FC<IReviewStep> = ({
     <Box
       sx={{
         background: "#ffffff",
-        width: "600px",
+        width: "900px",
         height: "100%",
         borderRadius: "12px",
         padding: "30px 20px",
@@ -195,7 +192,15 @@ const ReviewStep: React.FC<IReviewStep> = ({
                 justifyContent: "space-between",
               }}
             >
-              <Grid size={4}>
+              <Grid
+                size={4}
+                sx={{
+                  display: "flex",
+                  justifyContent: "right",
+                  width: "100%",
+                  marginTop: "30px",
+                }}
+              >
                 <Box
                   sx={{
                     width: "250px",

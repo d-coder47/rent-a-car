@@ -70,6 +70,5 @@ export interface IStep {
 }
 
 export interface IReviewStep {
-  handleReviewDetails: (clickType: string) => void;
   reservationDetails: IReservationInfo;
 }
