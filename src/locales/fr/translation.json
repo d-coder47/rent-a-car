@@ -129,5 +129,9 @@
     "driverLicenceRequired": "Le permis de conduire est obligatoire",
     "emailError": "Veuillez saisir un email valide",
     "phoneRequired": "Le numéro de téléphone est obligatoire"
+  },
+  "single-car": {
+    "details": "Détails",
+    "rent": "Location"
   }
 }

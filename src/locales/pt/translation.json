@@ -129,5 +129,9 @@
     "driverLicenceRequired": "A carta de condução é obrigatória",
     "emailError": "Por favor, insira um email valido",
     "phoneRequired": "O número de telefone é obrigatório"
+  },
+  "single-car": {
+    "details": "Detalhes",
+    "rent": "Alugar"
   }
 }

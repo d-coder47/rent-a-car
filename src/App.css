@@ -23,3 +23,9 @@
     padding: 0 15px;
   }
 }
+
+.single-car-price-box {
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: fill-available;
+}

@@ -130,5 +130,9 @@
     "driverLicenceRequired": "Driver's license is required",
     "emailError": "Please enter a valid email",
     "phoneRequired": "The phone number is required"
+  },
+  "single-car": {
+    "details": "Details",
+    "rent": "Rent"
   }
 }

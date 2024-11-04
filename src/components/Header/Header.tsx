@@ -5,7 +5,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import BurguerMenu from "../BurguerMenu/BurguerMenu";
 import { useLocation, useNavigate } from "react-router-dom";
-import { scrollToView } from "../../constants";
+import { HEADER_HEIGHT, scrollToView } from "../../constants";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
@@ -41,7 +41,7 @@ const Header: React.FC = () => {
   return (
     <Box
       sx={{
-        height: "90px",
+        height: HEADER_HEIGHT,
         width: "100%",
         display: "flex",
         alignItems: "center",

@@ -53,3 +53,6 @@ export const scrollToView = (item: string) => {
     elementToScrollTo.scrollIntoView({ behavior: "smooth" });
   }
 };
+
+export const PRE_HEADER_HEIGHT = "50px";
+export const HEADER_HEIGHT = "90px";

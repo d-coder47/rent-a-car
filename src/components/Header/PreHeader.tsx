@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { EmailOutlined, PhoneAndroidOutlined } from "@mui/icons-material";
 import React from "react";
+import { PRE_HEADER_HEIGHT } from "../../constants";
 
 const PreHeader: React.FC = () => {
   const typographyStyle = {
@@ -22,7 +23,7 @@ const PreHeader: React.FC = () => {
     <Box
       id="top"
       sx={{
-        height: "50px",
+        height: PRE_HEADER_HEIGHT,
         width: "100%",
         display: {
           xs: "none",
