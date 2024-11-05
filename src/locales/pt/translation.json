@@ -128,7 +128,14 @@
     "idRequired": "O documento de identificação é obrigatório",
     "driverLicenceRequired": "A carta de condução é obrigatória",
     "emailError": "Por favor, insira um email valido",
-    "phoneRequired": "O número de telefone é obrigatório"
+    "phoneRequired": "O número de telefone é obrigatório",
+    "confirmReservationDetails": "Por favor, confirme todos os detalhes da sua reserva antes de prosseguir.",
+    "totalCostTitle": "Custo total da reserva",
+    "numberOfDays": "Número de dias",
+    "reservationDetailsTitle": "Detalhes da reserva",
+    "confirm": "Confirmar",
+    "edit": "Editar",
+    "uploadFile": "Carregar ficheiro"
   },
   "single-car": {
     "details": "Detalhes",

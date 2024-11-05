@@ -21,7 +21,9 @@ const ReviewStep: React.FC<IReviewStep> = ({ reservationDetails }) => {
       }}
     >
       <Box>
-        <Typography variant="h5">Detalhes da reserva</Typography>
+        <Typography variant="h5">
+          {t("reservationForm.reservationDetailsTitle")}
+        </Typography>
 
         <Box
           sx={{
@@ -32,8 +34,7 @@ const ReviewStep: React.FC<IReviewStep> = ({ reservationDetails }) => {
           }}
         >
           <Typography variant="body2">
-            Por favor, confirme todos os detalhes da sua reserva antes de
-            prosseguir.
+            {t("reservationForm.confirmReservationDetails")}
           </Typography>
         </Box>
 
@@ -57,7 +58,7 @@ const ReviewStep: React.FC<IReviewStep> = ({ reservationDetails }) => {
                   fontFamily: "Istok Web, Roboto, Arial, sans-serif",
                 }}
               >
-                <Typography>Nome</Typography>
+                <Typography>{t("reservationForm.nameLabel")}</Typography>
               </InputLabel>
 
               <Typography
@@ -78,7 +79,7 @@ const ReviewStep: React.FC<IReviewStep> = ({ reservationDetails }) => {
                   fontFamily: "Istok Web, Roboto, Arial, sans-serif",
                 }}
               >
-                <Typography>Email</Typography>
+                <Typography>{t("reservationForm.emailLabel")}</Typography>
               </InputLabel>
 
               <Typography
@@ -104,7 +105,7 @@ const ReviewStep: React.FC<IReviewStep> = ({ reservationDetails }) => {
                   fontFamily: "Istok Web, Roboto, Arial, sans-serif",
                 }}
               >
-                <Typography>Telefone</Typography>
+                <Typography>{t("reservationForm.phoneLabel")}</Typography>
               </InputLabel>
 
               <Typography
@@ -125,7 +126,7 @@ const ReviewStep: React.FC<IReviewStep> = ({ reservationDetails }) => {
                   fontFamily: "Istok Web, Roboto, Arial, sans-serif",
                 }}
               >
-                <Typography>Veículo</Typography>
+                <Typography>{t("reservationForm.vehicleLabel")}</Typography>
               </InputLabel>
             </Grid>
             <Grid
@@ -219,7 +220,7 @@ const ReviewStep: React.FC<IReviewStep> = ({ reservationDetails }) => {
                       marginBottom: "10px",
                     }}
                   >
-                    Custo total da reserva
+                    {t("reservationForm.totalCostTitle")}
                   </Typography>
                   <Box
                     sx={{
@@ -230,7 +231,7 @@ const ReviewStep: React.FC<IReviewStep> = ({ reservationDetails }) => {
                     }}
                   >
                     <Typography variant="body2" sx={{ fontWeight: 700 }}>
-                      Número de dias:
+                      {t("reservationForm.numberOfDays")}
                     </Typography>
 
                     <Typography variant="body2" sx={{ fontWeight: 700 }}>

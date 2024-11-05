@@ -349,7 +349,7 @@ const ReservationForm = () => {
             }}
             onClick={() => handleReviewDetails("editClick")}
           >
-            <Typography variant="body1">Editar</Typography>
+            <Typography variant="body1">{t("reservationForm.edit")}</Typography>
           </Button>
 
           <Button
@@ -366,7 +366,9 @@ const ReservationForm = () => {
             }}
             onClick={() => handleReviewDetails("confirm")}
           >
-            <Typography variant="body1">Confirmar</Typography>
+            <Typography variant="body1">
+              {t("reservationForm.confirm")}
+            </Typography>
           </Button>
         </Box>
       </Box>

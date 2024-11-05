@@ -137,7 +137,7 @@ const Step2: React.FC<IStep> = ({
                 tabIndex={-1}
                 startIcon={<CloudUpload />}
               >
-                Upload file
+                {t("reservationForm.uploadFile")}
                 <VisuallyHiddenInput
                   type="file"
                   onChange={handleChange}
@@ -213,7 +213,7 @@ const Step2: React.FC<IStep> = ({
                 tabIndex={-1}
                 startIcon={<CloudUpload />}
               >
-                Upload file
+                {t("reservationForm.uploadFile")}
                 <VisuallyHiddenInput
                   type="file"
                   onChange={handleChange}

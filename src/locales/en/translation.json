@@ -129,7 +129,14 @@
     "idRequired": "Identification document is required",
     "driverLicenceRequired": "Driver's license is required",
     "emailError": "Please enter a valid email",
-    "phoneRequired": "The phone number is required"
+    "phoneRequired": "The phone number is required",
+    "confirmReservationDetails": "Please confirm all your reservation details before proceeding.",
+    "totalCostTitle": "Total reservation cost",
+    "numberOfDays": "Number of days",
+    "reservationDetailsTitle": "Reservation details",
+    "confirm": "Confirm",
+    "edit": "Edit",
+    "uploadFile": "Upload file"
   },
   "single-car": {
     "details": "Details",
