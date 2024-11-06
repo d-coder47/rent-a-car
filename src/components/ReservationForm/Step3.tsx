@@ -91,6 +91,13 @@ const Step3: React.FC<IStep> = ({
           sx={{
             width: "97%",
             display: "flex",
+            flexDirection: {
+              xs: "column",
+              sm: "column",
+              md: "row",
+              lg: "row",
+              xl: "row",
+            },
             justifyContent: "space-between",
             marginTop: "15px",
           }}
@@ -111,7 +118,7 @@ const Step3: React.FC<IStep> = ({
             rowSpacing={3}
             columnSpacing={6}
           >
-            <Grid size={6}>
+            <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }}>
               <InputLabel
                 shrink={false}
                 htmlFor="vehicle"
@@ -121,7 +128,17 @@ const Step3: React.FC<IStep> = ({
               >
                 <Typography> {t("reservationForm.vehicleLabel")}</Typography>
               </InputLabel>
-              <FormControl sx={{ width: "450px" }}>
+              <FormControl
+                sx={{
+                  width: {
+                    xs: "90%",
+                    sm: "90%",
+                    md: "300px",
+                    lg: "450px",
+                    xl: "450px",
+                  },
+                }}
+              >
                 <Select
                   id="vehicle"
                   name="vehicle"

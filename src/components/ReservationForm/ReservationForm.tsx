@@ -270,6 +270,13 @@ const ReservationForm = () => {
           alignItems: "center",
           gap: "1.5rem",
           width: "93%",
+          height: {
+            xs: "100%",
+            sm: "100%",
+            md: "auto",
+            lg: "auto",
+            xl: "auto",
+          },
         }}
       >
         <Step1

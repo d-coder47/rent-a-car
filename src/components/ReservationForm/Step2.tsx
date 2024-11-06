@@ -42,7 +42,7 @@ const Step2: React.FC<IStep> = ({
           lg: "1000px",
           xl: "1000px",
         },
-        height: "100%",
+        height: "613px",
         borderRadius: "12px",
         padding: "30px 20px",
       }}
@@ -56,6 +56,13 @@ const Step2: React.FC<IStep> = ({
           sx={{
             width: "97%",
             display: "flex",
+            flexDirection: {
+              xs: "column",
+              sm: "column",
+              md: "row",
+              lg: "row",
+              xl: "row",
+            },
             justifyContent: "space-between",
             marginTop: "15px",
           }}
@@ -68,7 +75,12 @@ const Step2: React.FC<IStep> = ({
           </Typography>
         </Box>
 
-        <Box sx={{ marginTop: "30px", height: "256px" }}>
+        <Box
+          sx={{
+            marginTop: "30px",
+            height: "256px",
+          }}
+        >
           <Grid
             container
             spacing={{ xs: 2, md: 3 }}
@@ -76,7 +88,7 @@ const Step2: React.FC<IStep> = ({
             rowSpacing={3}
             columnSpacing={6}
           >
-            <Grid size={6}>
+            <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }}>
               <InputLabel
                 shrink={false}
                 htmlFor={"frontImage"}
@@ -153,7 +165,7 @@ const Step2: React.FC<IStep> = ({
               </Button>
             </Grid>
 
-            <Grid size={6}>
+            <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }}>
               <InputLabel
                 shrink={false}
                 htmlFor={"frontImage"}
