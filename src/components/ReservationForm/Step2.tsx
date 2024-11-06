@@ -35,7 +35,13 @@ const Step2: React.FC<IStep> = ({
     <Box
       sx={{
         background: "#ffffff",
-        width: "1000px",
+        width: {
+          xs: "90%",
+          sm: "90%",
+          md: "90%",
+          lg: "1000px",
+          xl: "1000px",
+        },
         height: "100%",
         borderRadius: "12px",
         padding: "30px 20px",

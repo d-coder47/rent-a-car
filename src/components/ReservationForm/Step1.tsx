@@ -22,7 +22,13 @@ const Step1: React.FC<IStep> = ({
     <Box
       sx={{
         background: "#ffffff",
-        width: "1000px",
+        width: {
+          xs: "90%",
+          sm: "90%",
+          md: "90%",
+          lg: "1000px",
+          xl: "1000px",
+        },
         height: "100%",
         borderRadius: "12px",
         padding: "30px 20px",
@@ -61,7 +67,7 @@ const Step1: React.FC<IStep> = ({
             rowSpacing={3}
             columnSpacing={6}
           >
-            <Grid size={6}>
+            <Grid size={{ xs: 12, sm: 6, md: 6, lg: 6, xl: 6 }}>
               <InputLabel
                 shrink={false}
                 htmlFor={"username"}
@@ -81,8 +87,13 @@ const Step1: React.FC<IStep> = ({
                 onChange={handleChange}
                 autoComplete="off"
                 sx={{
-                  width: "450px",
-
+                  width: {
+                    xs: "90%",
+                    sm: "250px",
+                    md: "300px",
+                    lg: "450px",
+                    xl: "450px",
+                  },
                   "& .MuiFormHelperText-root.Mui-error": {
                     color: "red",
                     fontWeight: 400,
@@ -97,7 +108,7 @@ const Step1: React.FC<IStep> = ({
               />
             </Grid>
 
-            <Grid size={6}>
+            <Grid size={{ xs: 12, sm: 6, md: 6, lg: 6, xl: 6 }}>
               <InputLabel
                 shrink={false}
                 htmlFor={"username"}
@@ -117,7 +128,13 @@ const Step1: React.FC<IStep> = ({
                 value={reservationValues.phone}
                 onChange={handlePhoneChange}
                 sx={{
-                  width: "450px",
+                  width: {
+                    xs: "90%",
+                    sm: "250px",
+                    md: "300px",
+                    lg: "450px",
+                    xl: "450px",
+                  },
 
                   "& .MuiFormHelperText-root.Mui-error": {
                     color: "red",
@@ -133,7 +150,7 @@ const Step1: React.FC<IStep> = ({
               />
             </Grid>
 
-            <Grid size={6}>
+            <Grid size={{ xs: 12, sm: 6, md: 6, lg: 6, xl: 6 }}>
               <InputLabel
                 shrink={false}
                 htmlFor={"username"}
@@ -149,8 +166,13 @@ const Step1: React.FC<IStep> = ({
                 autoComplete="off"
                 name="email"
                 sx={{
-                  width: "450px",
-
+                  width: {
+                    xs: "90%",
+                    sm: "250px",
+                    md: "300px",
+                    lg: "450px",
+                    xl: "450px",
+                  },
                   "& .MuiFormHelperText-root.Mui-error": {
                     color: "red",
                     fontWeight: 400,
