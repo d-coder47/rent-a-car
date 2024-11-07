@@ -1,11 +1,14 @@
 import { Box, Button, Typography, useTheme } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const Engagement: React.FC = () => {
   const { t } = useTranslation();
 
   const theme = useTheme();
+
+  const navigate = useNavigate();
 
   return (
     <Box
@@ -71,6 +74,7 @@ const Engagement: React.FC = () => {
             color: "#FFFFFF",
           },
         }}
+        onClick={() => navigate("/reservation")}
       >
         <Typography variant="body1">{t("homepage.engagement.cta")}</Typography>
       </Button>

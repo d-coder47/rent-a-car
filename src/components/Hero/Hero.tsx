@@ -10,11 +10,14 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import heroImage from "../../assets/heroImage.jpg";
 import heroCar from "../../assets/heroCar.png";
+import { useNavigate } from "react-router-dom";
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
 
   const theme = useTheme();
+
+  const navigate = useNavigate();
 
   const typographyStyle = {
     headline: {
@@ -33,6 +36,7 @@ const Hero: React.FC = () => {
       color: "#ffffff",
       marginTop: "50px",
       textTransform: "none",
+      zIndex: 10000,
       background: theme.palette.secondary.main,
       "&:hover": {
         backgroundColor: theme.palette.secondary.dark,
@@ -67,7 +71,11 @@ const Hero: React.FC = () => {
             {t("homepage.hero.subheadline")}
           </Typography>
 
-          <Button variant="contained" sx={typographyStyle.cta}>
+          <Button
+            variant="contained"
+            sx={typographyStyle.cta}
+            onClick={() => navigate("/reservation")}
+          >
             <Typography variant="body1">{t("homepage.hero.cta")}</Typography>
           </Button>
         </Box>
