@@ -42,7 +42,6 @@ const Step2: React.FC<IStep> = ({
           lg: "1000px",
           xl: "1000px",
         },
-        height: "613px",
         borderRadius: "12px",
         padding: "30px 20px",
       }}

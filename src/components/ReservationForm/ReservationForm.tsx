@@ -337,7 +337,14 @@ const ReservationForm = () => {
 
         <Box
           sx={{
-            width: "15%",
+            width: {
+              xs: "58%",
+              sm: "45%",
+              md: "25%",
+              lg: "20%",
+              xl: "15%",
+            },
+
             display: "flex",
             justifyContent: "space-between",
           }}
