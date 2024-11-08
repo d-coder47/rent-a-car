@@ -66,6 +66,27 @@ const Step3: React.FC<IStep> = ({
     handleChange(modifiedEvent as React.ChangeEvent<HTMLInputElement>);
   };
 
+  const closeCardClick = (value: string) => {
+    const filteredCars = carName.filter((item) => item !== value);
+
+    setCarName(filteredCars);
+
+    const selectedCars = vehicleOptions.filter((item) =>
+      filteredCars.includes(item.name)
+    );
+
+    const updatedValue = selectedCars.map((item) => ({
+      id: item.id,
+      name: item.name,
+    }));
+
+    const syntheticEvent = {
+      target: { value: JSON.stringify(updatedValue), name: "vehicle" },
+    } as React.ChangeEvent<HTMLInputElement>;
+
+    handleChange(syntheticEvent);
+  };
+
   return (
     <Box
       sx={{
@@ -209,6 +230,7 @@ const Step3: React.FC<IStep> = ({
                     name={car.name}
                     image={car_image}
                     key={index}
+                    closeCardClick={closeCardClick}
                   />
                 </Grid>
               ))}
