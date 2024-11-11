@@ -11,8 +11,18 @@ export interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <Box display="flex" flexDirection="column">
-      <PreHeader />
-      <Header />
+      <Box
+        sx={{
+          position: "fixed",
+          width: "100vw",
+          zIndex: 1001,
+          marginBottom: "10px",
+        }}
+      >
+        <PreHeader />
+        <Header />
+      </Box>
+
       {children}
       <Footer />
     </Box>

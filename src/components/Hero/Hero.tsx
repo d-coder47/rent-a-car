@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
       color: "#ffffff",
       marginTop: "50px",
       textTransform: "none",
-      zIndex: 10000,
+      zIndex: 1000,
       background: theme.palette.secondary.main,
       "&:hover": {
         backgroundColor: theme.palette.secondary.dark,
@@ -52,6 +52,7 @@ const Hero: React.FC = () => {
           display: "flex",
           alignItems: "center",
           flexDirection: "column",
+          marginTop: "100px",
         }}
       >
         <Box
