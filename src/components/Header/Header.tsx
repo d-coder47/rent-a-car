@@ -1,4 +1,4 @@
-import { Avatar, Box, Button } from "@mui/material";
+import { Avatar, Box, Button, Link } from "@mui/material";
 import Logo from "../../assets/logo.png";
 import LangSelector from "../LangSelector/LangSelector";
 import React from "react";
@@ -66,25 +66,32 @@ const Header: React.FC = () => {
         }}
       >
         <Box>
-          <Avatar
-            alt="logo"
-            src={Logo}
+          <Link
+            component="button"
+            variant="body2"
             onClick={() => {
               navigate("/");
             }}
-            sx={{
-              width: {
-                xs: "70%",
-                sm: "70%",
-                md: "80%",
-                lg: "90%",
-                xl: "90%",
-              },
-              height: "auto",
-              borderRadius: "0px",
-              cursor: "pointer",
-            }}
-          />
+          >
+            <Avatar
+              alt="logo"
+              src={Logo}
+              onClick={() => {
+                navigate("/");
+              }}
+              sx={{
+                width: {
+                  xs: "70%",
+                  sm: "70%",
+                  md: "80%",
+                  lg: "90%",
+                  xl: "90%",
+                },
+                height: "auto",
+                borderRadius: "0px",
+              }}
+            />
+          </Link>
         </Box>
         <Box
           sx={{
