@@ -14,7 +14,13 @@ const ReviewStep: React.FC<IReviewStep> = ({ reservationDetails }) => {
     <Box
       sx={{
         background: "#ffffff",
-        width: "900px",
+        width: {
+          xs: "80%",
+          sm: "90%",
+          md: "90%",
+          lg: "1000px",
+          xl: "1000px",
+        },
         height: "100%",
         borderRadius: "12px",
         padding: "30px 20px",
@@ -50,7 +56,7 @@ const ReviewStep: React.FC<IReviewStep> = ({ reservationDetails }) => {
             rowSpacing={3}
             columnSpacing={6}
           >
-            <Grid size={4}>
+            <Grid size={{ xs: 12, sm: 6, md: 4, lg: 4, xl: 4 }}>
               <InputLabel
                 shrink={false}
                 htmlFor={"username"}
@@ -71,7 +77,7 @@ const ReviewStep: React.FC<IReviewStep> = ({ reservationDetails }) => {
               </Typography>
             </Grid>
 
-            <Grid size={4}>
+            <Grid size={{ xs: 12, sm: 6, md: 4, lg: 4, xl: 4 }}>
               <InputLabel
                 shrink={false}
                 htmlFor={"username"}
@@ -93,7 +99,7 @@ const ReviewStep: React.FC<IReviewStep> = ({ reservationDetails }) => {
             </Grid>
 
             <Grid
-              size={4}
+              size={{ xs: 12, sm: 6, md: 4, lg: 4, xl: 4 }}
               sx={{
                 display: reservationDetails.phone === "" ? "none" : "block",
               }}

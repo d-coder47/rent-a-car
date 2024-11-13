@@ -66,6 +66,7 @@ export interface IFieldsErrors {
 export interface ISelectedVehicle {
   name: string;
   image: string;
+  closeCardClick: (value: string) => void;
 }
 
 export interface IStep {
