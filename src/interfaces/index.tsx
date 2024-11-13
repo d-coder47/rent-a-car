@@ -10,12 +10,17 @@ export interface ICarGallery {
 
 export interface ICar {
   name: string;
-  image_path: string;
-  fuel_type: string;
-  tank_capacity: string;
-  cambio_type: string;
-  people_number: number;
-  price: number;
+  model: string;
+  year: number;
+  seats: number;
+  motor: string;
+  fuel: string;
+  transmission: string;
+  availableToRent: boolean;
+  availableToSell: boolean;
+  priceToRent: string;
+  priceToSell: string;
+  image: string;
 }
 
 export interface ICarCard {

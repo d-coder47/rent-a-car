@@ -65,7 +65,12 @@
       "reservation": "Book",
       "for_sale": "For sale",
       "day": "day",
-      "see_more": "See more"
+      "see_more": "See more",
+      "buy": "Buy",
+      "automatic": "Automatic",
+      "manual": "Manual",
+      "gasoline": "Gasoline",
+      "diesel": "Diesel"
     },
     "contact": {
       "headline": "Contact us",

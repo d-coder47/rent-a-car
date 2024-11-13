@@ -1,348 +1,355 @@
 import { Box, Typography, Pagination, Tabs, Tab } from "@mui/material";
 import Layout from "../components/Layout/Layout";
 import { useTranslation } from "react-i18next";
-import car_image from "../assets/car_gallery/view5.jpg";
 import CarCard from "../components/CarGallery/CarCard";
 import Grid from "@mui/material/Grid2";
 import { ChangeEvent, useEffect, useState } from "react";
+import { CARS } from "../constants";
 
 const Cars = () => {
   const { t } = useTranslation();
 
-  const cars = [
-    {
-      name: "Carro 1",
-      image_path: car_image,
-      fuel_type: "gasolina",
-      tank_capacity: "90L",
-      cambio_type: "Manual",
-      people_number: 4,
-      price: 99.0,
-    },
-    {
-      name: "Carro 2",
-      image_path: car_image,
-      fuel_type: "gasolina",
-      tank_capacity: "90L",
-      cambio_type: "Manual",
-      people_number: 4,
-      price: 99.0,
-    },
-    {
-      name: "Carro 3",
-      image_path: car_image,
-      fuel_type: "gasolina",
-      tank_capacity: "90L",
-      cambio_type: "Manual",
-      people_number: 4,
-      price: 99.0,
-    },
-    {
-      name: "Carro 4",
-      image_path: car_image,
-      fuel_type: "gasolina",
-      tank_capacity: "90L",
-      cambio_type: "Manual",
-      people_number: 4,
-      price: 99.0,
-    },
-    {
-      name: "Carro 5",
-      image_path: car_image,
-      fuel_type: "gasolina",
-      tank_capacity: "90L",
-      cambio_type: "Manual",
-      people_number: 4,
-      price: 99.0,
-    },
-    {
-      name: "Carro 6",
-      image_path: car_image,
-      fuel_type: "gasolina",
-      tank_capacity: "90L",
-      cambio_type: "Manual",
-      people_number: 4,
-      price: 99.0,
-    },
-    {
-      name: "Carro 7",
-      image_path: car_image,
-      fuel_type: "gasolina",
-      tank_capacity: "90L",
-      cambio_type: "Manual",
-      people_number: 4,
-      price: 99.0,
-    },
-    {
-      name: "Carro 8",
-      image_path: car_image,
-      fuel_type: "gasolina",
-      tank_capacity: "90L",
-      cambio_type: "Manual",
-      people_number: 4,
-      price: 99.0,
-    },
-    {
-      name: "Carro 9",
-      image_path: car_image,
-      fuel_type: "gasolina",
-      tank_capacity: "90L",
-      cambio_type: "Manual",
-      people_number: 4,
-      price: 99.0,
-    },
-    {
-      name: "Carro 10",
-      image_path: car_image,
-      fuel_type: "gasolina",
-      tank_capacity: "90L",
-      cambio_type: "Manual",
-      people_number: 4,
-      price: 99.0,
-    },
-    {
-      name: "Carro 11",
-      image_path: car_image,
-      fuel_type: "gasolina",
-      tank_capacity: "90L",
-      cambio_type: "Manual",
-      people_number: 4,
-      price: 99.0,
-    },
-    {
-      name: "Carro 12",
-      image_path: car_image,
-      fuel_type: "gasolina",
-      tank_capacity: "90L",
-      cambio_type: "Manual",
-      people_number: 4,
-      price: 99.0,
-    },
-    {
-      name: "Carro 13",
-      image_path: car_image,
-      fuel_type: "diesel",
-      tank_capacity: "85L",
-      cambio_type: "Automático",
-      people_number: 5,
-      price: 120.0,
-    },
-    {
-      name: "Carro 14",
-      image_path: car_image,
-      fuel_type: "diesel",
-      tank_capacity: "85L",
-      cambio_type: "Automático",
-      people_number: 5,
-      price: 120.0,
-    },
-    {
-      name: "Carro 15",
-      image_path: car_image,
-      fuel_type: "diesel",
-      tank_capacity: "85L",
-      cambio_type: "Automático",
-      people_number: 5,
-      price: 120.0,
-    },
-    {
-      name: "Carro 16",
-      image_path: car_image,
-      fuel_type: "diesel",
-      tank_capacity: "85L",
-      cambio_type: "Automático",
-      people_number: 5,
-      price: 120.0,
-    },
-    {
-      name: "Carro 17",
-      image_path: car_image,
-      fuel_type: "elétrico",
-      tank_capacity: "75L",
-      cambio_type: "Automático",
-      people_number: 4,
-      price: 150.0,
-    },
-    {
-      name: "Carro 18",
-      image_path: car_image,
-      fuel_type: "elétrico",
-      tank_capacity: "75L",
-      cambio_type: "Automático",
-      people_number: 4,
-      price: 150.0,
-    },
-    {
-      name: "Carro 19",
-      image_path: car_image,
-      fuel_type: "elétrico",
-      tank_capacity: "75L",
-      cambio_type: "Automático",
-      people_number: 4,
-      price: 150.0,
-    },
-    {
-      name: "Carro 20",
-      image_path: car_image,
-      fuel_type: "elétrico",
-      tank_capacity: "75L",
-      cambio_type: "Automático",
-      people_number: 4,
-      price: 150.0,
-    },
-    {
-      name: "Carro 21",
-      image_path: car_image,
-      fuel_type: "híbrido",
-      tank_capacity: "80L",
-      cambio_type: "Automático",
-      people_number: 5,
-      price: 130.0,
-    },
-    {
-      name: "Carro 22",
-      image_path: car_image,
-      fuel_type: "híbrido",
-      tank_capacity: "80L",
-      cambio_type: "Automático",
-      people_number: 5,
-      price: 130.0,
-    },
-    {
-      name: "Carro 23",
-      image_path: car_image,
-      fuel_type: "híbrido",
-      tank_capacity: "80L",
-      cambio_type: "Automático",
-      people_number: 5,
-      price: 130.0,
-    },
-    {
-      name: "Carro 24",
-      image_path: car_image,
-      fuel_type: "híbrido",
-      tank_capacity: "80L",
-      cambio_type: "Automático",
-      people_number: 5,
-      price: 130.0,
-    },
-    {
-      name: "Carro 25",
-      image_path: car_image,
-      fuel_type: "híbrido",
-      tank_capacity: "80L",
-      cambio_type: "Automático",
-      people_number: 5,
-      price: 130.0,
-    },
-    {
-      name: "Carro 26",
-      image_path: car_image,
-      fuel_type: "híbrido",
-      tank_capacity: "80L",
-      cambio_type: "Automático",
-      people_number: 5,
-      price: 130.0,
-    },
-    {
-      name: "Carro 27",
-      image_path: car_image,
-      fuel_type: "gasolina",
-      tank_capacity: "90L",
-      cambio_type: "Manual",
-      people_number: 4,
-      price: 99.0,
-    },
-    {
-      name: "Carro 28",
-      image_path: car_image,
-      fuel_type: "gasolina",
-      tank_capacity: "90L",
-      cambio_type: "Manual",
-      people_number: 4,
-      price: 99.0,
-    },
-    {
-      name: "Carro 29",
-      image_path: car_image,
-      fuel_type: "gasolina",
-      tank_capacity: "90L",
-      cambio_type: "Manual",
-      people_number: 4,
-      price: 99.0,
-    },
-    {
-      name: "Carro 30",
-      image_path: car_image,
-      fuel_type: "gasolina",
-      tank_capacity: "90L",
-      cambio_type: "Manual",
-      people_number: 4,
-      price: 99.0,
-    },
-    {
-      name: "Carro 31",
-      image_path: car_image,
-      fuel_type: "diesel",
-      tank_capacity: "85L",
-      cambio_type: "Automático",
-      people_number: 5,
-      price: 120.0,
-    },
-    {
-      name: "Carro 32",
-      image_path: car_image,
-      fuel_type: "diesel",
-      tank_capacity: "85L",
-      cambio_type: "Automático",
-      people_number: 5,
-      price: 120.0,
-    },
-    {
-      name: "Carro 33",
-      image_path: car_image,
-      fuel_type: "diesel",
-      tank_capacity: "85L",
-      cambio_type: "Automático",
-      people_number: 5,
-      price: 120.0,
-    },
-    {
-      name: "Carro 34",
-      image_path: car_image,
-      fuel_type: "diesel",
-      tank_capacity: "85L",
-      cambio_type: "Automático",
-      people_number: 5,
-      price: 120.0,
-    },
-    {
-      name: "Carro 35",
-      image_path: car_image,
-      fuel_type: "diesel",
-      tank_capacity: "85L",
-      cambio_type: "Automático",
-      people_number: 5,
-      price: 120.0,
-    },
-    {
-      name: "Carro 36",
-      image_path: car_image,
-      fuel_type: "diesel",
-      tank_capacity: "85L",
-      cambio_type: "Automático",
-      people_number: 5,
-      price: 120.0,
-    },
-  ];
+  // const cars = [
+  //   {
+  //     name: "Carro 1",
+  //     image_path: car_image,
+  //     fuel_type: "gasolina",
+  //     tank_capacity: "90L",
+  //     cambio_type: "Manual",
+  //     people_number: 4,
+  //     price: 99.0,
+  //   },
+  //   {
+  //     name: "Carro 2",
+  //     image_path: car_image,
+  //     fuel_type: "gasolina",
+  //     tank_capacity: "90L",
+  //     cambio_type: "Manual",
+  //     people_number: 4,
+  //     price: 99.0,
+  //   },
+  //   {
+  //     name: "Carro 3",
+  //     image_path: car_image,
+  //     fuel_type: "gasolina",
+  //     tank_capacity: "90L",
+  //     cambio_type: "Manual",
+  //     people_number: 4,
+  //     price: 99.0,
+  //   },
+  //   {
+  //     name: "Carro 4",
+  //     image_path: car_image,
+  //     fuel_type: "gasolina",
+  //     tank_capacity: "90L",
+  //     cambio_type: "Manual",
+  //     people_number: 4,
+  //     price: 99.0,
+  //   },
+  //   {
+  //     name: "Carro 5",
+  //     image_path: car_image,
+  //     fuel_type: "gasolina",
+  //     tank_capacity: "90L",
+  //     cambio_type: "Manual",
+  //     people_number: 4,
+  //     price: 99.0,
+  //   },
+  //   {
+  //     name: "Carro 6",
+  //     image_path: car_image,
+  //     fuel_type: "gasolina",
+  //     tank_capacity: "90L",
+  //     cambio_type: "Manual",
+  //     people_number: 4,
+  //     price: 99.0,
+  //   },
+  //   {
+  //     name: "Carro 7",
+  //     image_path: car_image,
+  //     fuel_type: "gasolina",
+  //     tank_capacity: "90L",
+  //     cambio_type: "Manual",
+  //     people_number: 4,
+  //     price: 99.0,
+  //   },
+  //   {
+  //     name: "Carro 8",
+  //     image_path: car_image,
+  //     fuel_type: "gasolina",
+  //     tank_capacity: "90L",
+  //     cambio_type: "Manual",
+  //     people_number: 4,
+  //     price: 99.0,
+  //   },
+  //   {
+  //     name: "Carro 9",
+  //     image_path: car_image,
+  //     fuel_type: "gasolina",
+  //     tank_capacity: "90L",
+  //     cambio_type: "Manual",
+  //     people_number: 4,
+  //     price: 99.0,
+  //   },
+  //   {
+  //     name: "Carro 10",
+  //     image_path: car_image,
+  //     fuel_type: "gasolina",
+  //     tank_capacity: "90L",
+  //     cambio_type: "Manual",
+  //     people_number: 4,
+  //     price: 99.0,
+  //   },
+  //   {
+  //     name: "Carro 11",
+  //     image_path: car_image,
+  //     fuel_type: "gasolina",
+  //     tank_capacity: "90L",
+  //     cambio_type: "Manual",
+  //     people_number: 4,
+  //     price: 99.0,
+  //   },
+  //   {
+  //     name: "Carro 12",
+  //     image_path: car_image,
+  //     fuel_type: "gasolina",
+  //     tank_capacity: "90L",
+  //     cambio_type: "Manual",
+  //     people_number: 4,
+  //     price: 99.0,
+  //   },
+  //   {
+  //     name: "Carro 13",
+  //     image_path: car_image,
+  //     fuel_type: "diesel",
+  //     tank_capacity: "85L",
+  //     cambio_type: "Automático",
+  //     people_number: 5,
+  //     price: 120.0,
+  //   },
+  //   {
+  //     name: "Carro 14",
+  //     image_path: car_image,
+  //     fuel_type: "diesel",
+  //     tank_capacity: "85L",
+  //     cambio_type: "Automático",
+  //     people_number: 5,
+  //     price: 120.0,
+  //   },
+  //   {
+  //     name: "Carro 15",
+  //     image_path: car_image,
+  //     fuel_type: "diesel",
+  //     tank_capacity: "85L",
+  //     cambio_type: "Automático",
+  //     people_number: 5,
+  //     price: 120.0,
+  //   },
+  //   {
+  //     name: "Carro 16",
+  //     image_path: car_image,
+  //     fuel_type: "diesel",
+  //     tank_capacity: "85L",
+  //     cambio_type: "Automático",
+  //     people_number: 5,
+  //     price: 120.0,
+  //   },
+  //   {
+  //     name: "Carro 17",
+  //     image_path: car_image,
+  //     fuel_type: "elétrico",
+  //     tank_capacity: "75L",
+  //     cambio_type: "Automático",
+  //     people_number: 4,
+  //     price: 150.0,
+  //   },
+  //   {
+  //     name: "Carro 18",
+  //     image_path: car_image,
+  //     fuel_type: "elétrico",
+  //     tank_capacity: "75L",
+  //     cambio_type: "Automático",
+  //     people_number: 4,
+  //     price: 150.0,
+  //   },
+  //   {
+  //     name: "Carro 19",
+  //     image_path: car_image,
+  //     fuel_type: "elétrico",
+  //     tank_capacity: "75L",
+  //     cambio_type: "Automático",
+  //     people_number: 4,
+  //     price: 150.0,
+  //   },
+  //   {
+  //     name: "Carro 20",
+  //     image_path: car_image,
+  //     fuel_type: "elétrico",
+  //     tank_capacity: "75L",
+  //     cambio_type: "Automático",
+  //     people_number: 4,
+  //     price: 150.0,
+  //   },
+  //   {
+  //     name: "Carro 21",
+  //     image_path: car_image,
+  //     fuel_type: "híbrido",
+  //     tank_capacity: "80L",
+  //     cambio_type: "Automático",
+  //     people_number: 5,
+  //     price: 130.0,
+  //   },
+  //   {
+  //     name: "Carro 22",
+  //     image_path: car_image,
+  //     fuel_type: "híbrido",
+  //     tank_capacity: "80L",
+  //     cambio_type: "Automático",
+  //     people_number: 5,
+  //     price: 130.0,
+  //   },
+  //   {
+  //     name: "Carro 23",
+  //     image_path: car_image,
+  //     fuel_type: "híbrido",
+  //     tank_capacity: "80L",
+  //     cambio_type: "Automático",
+  //     people_number: 5,
+  //     price: 130.0,
+  //   },
+  //   {
+  //     name: "Carro 24",
+  //     image_path: car_image,
+  //     fuel_type: "híbrido",
+  //     tank_capacity: "80L",
+  //     cambio_type: "Automático",
+  //     people_number: 5,
+  //     price: 130.0,
+  //   },
+  //   {
+  //     name: "Carro 25",
+  //     image_path: car_image,
+  //     fuel_type: "híbrido",
+  //     tank_capacity: "80L",
+  //     cambio_type: "Automático",
+  //     people_number: 5,
+  //     price: 130.0,
+  //   },
+  //   {
+  //     name: "Carro 26",
+  //     image_path: car_image,
+  //     fuel_type: "híbrido",
+  //     tank_capacity: "80L",
+  //     cambio_type: "Automático",
+  //     people_number: 5,
+  //     price: 130.0,
+  //   },
+  //   {
+  //     name: "Carro 27",
+  //     image_path: car_image,
+  //     fuel_type: "gasolina",
+  //     tank_capacity: "90L",
+  //     cambio_type: "Manual",
+  //     people_number: 4,
+  //     price: 99.0,
+  //   },
+  //   {
+  //     name: "Carro 28",
+  //     image_path: car_image,
+  //     fuel_type: "gasolina",
+  //     tank_capacity: "90L",
+  //     cambio_type: "Manual",
+  //     people_number: 4,
+  //     price: 99.0,
+  //   },
+  //   {
+  //     name: "Carro 29",
+  //     image_path: car_image,
+  //     fuel_type: "gasolina",
+  //     tank_capacity: "90L",
+  //     cambio_type: "Manual",
+  //     people_number: 4,
+  //     price: 99.0,
+  //   },
+  //   {
+  //     name: "Carro 30",
+  //     image_path: car_image,
+  //     fuel_type: "gasolina",
+  //     tank_capacity: "90L",
+  //     cambio_type: "Manual",
+  //     people_number: 4,
+  //     price: 99.0,
+  //   },
+  //   {
+  //     name: "Carro 31",
+  //     image_path: car_image,
+  //     fuel_type: "diesel",
+  //     tank_capacity: "85L",
+  //     cambio_type: "Automático",
+  //     people_number: 5,
+  //     price: 120.0,
+  //   },
+  //   {
+  //     name: "Carro 32",
+  //     image_path: car_image,
+  //     fuel_type: "diesel",
+  //     tank_capacity: "85L",
+  //     cambio_type: "Automático",
+  //     people_number: 5,
+  //     price: 120.0,
+  //   },
+  //   {
+  //     name: "Carro 33",
+  //     image_path: car_image,
+  //     fuel_type: "diesel",
+  //     tank_capacity: "85L",
+  //     cambio_type: "Automático",
+  //     people_number: 5,
+  //     price: 120.0,
+  //   },
+  //   {
+  //     name: "Carro 34",
+  //     image_path: car_image,
+  //     fuel_type: "diesel",
+  //     tank_capacity: "85L",
+  //     cambio_type: "Automático",
+  //     people_number: 5,
+  //     price: 120.0,
+  //   },
+  //   {
+  //     name: "Carro 35",
+  //     image_path: car_image,
+  //     fuel_type: "diesel",
+  //     tank_capacity: "85L",
+  //     cambio_type: "Automático",
+  //     people_number: 5,
+  //     price: 120.0,
+  //   },
+  //   {
+  //     name: "Carro 36",
+  //     image_path: car_image,
+  //     fuel_type: "diesel",
+  //     tank_capacity: "85L",
+  //     cambio_type: "Automático",
+  //     people_number: 5,
+  //     price: 120.0,
+  //   },
+  // ];
 
   const [page, setPage] = useState(1);
   const [itemsPerPage, setIemsPerPage] = useState<number>(8);
+  const [cars, setCars] = useState(
+    CARS.filter((car) => car.availableToRent === true)
+  );
 
   const indexOfLastCar = page * itemsPerPage;
   const indexOfFirstCar = indexOfLastCar - itemsPerPage;
-  const currentCars = cars.slice(indexOfFirstCar, indexOfLastCar);
-
+  const isLarger = cars.length > itemsPerPage;
+  const currentCars = cars.slice(
+    isLarger ? indexOfFirstCar : 0,
+    indexOfLastCar
+  );
+  console.log({ cars, currentCars });
   const [tabValue, setTabValue] = useState(0);
 
   const handlePageChange = (_event: ChangeEvent<unknown>, value: number) => {
@@ -351,6 +358,13 @@ const Cars = () => {
 
   const handleTabChange = (_event: React.SyntheticEvent, newValue: number) => {
     setTabValue(newValue);
+
+    const newCars = CARS.filter((car) =>
+      newValue === 0
+        ? car.availableToRent === true
+        : car.availableToSell === true
+    );
+    setCars(newCars);
   };
 
   function a11yProps(index: number) {
@@ -454,20 +468,25 @@ const Cars = () => {
               rowSpacing={8}
               columnSpacing={6}
             >
-              {currentCars.map((car, index) => (
-                <Grid
-                  key={index}
-                  size={{
-                    xs: 12,
-                    sm: 6,
-                    md: 6,
-                    lg: 3,
-                    xl: 3,
-                  }}
-                >
-                  <CarCard key={index} car={car} type="reservation" />
-                </Grid>
-              ))}
+              {currentCars
+                .filter((car) => {
+                  const availableToRent = car.availableToRent === true;
+                  return availableToRent;
+                })
+                .map((car, index) => (
+                  <Grid
+                    key={index}
+                    size={{
+                      xs: 12,
+                      sm: 6,
+                      md: 6,
+                      lg: 3,
+                      xl: 3,
+                    }}
+                  >
+                    <CarCard key={index} car={car} type="reservation" />
+                  </Grid>
+                ))}
             </Grid>
 
             <Box
@@ -478,7 +497,11 @@ const Cars = () => {
               }}
             >
               <Pagination
-                count={Math.ceil(cars.length / itemsPerPage)}
+                count={
+                  Math.ceil(currentCars.length / itemsPerPage) === 0
+                    ? 1
+                    : Math.ceil(currentCars.length / itemsPerPage)
+                }
                 page={page}
                 onChange={handlePageChange}
                 color="primary"
@@ -497,20 +520,25 @@ const Cars = () => {
               rowSpacing={8}
               columnSpacing={6}
             >
-              {currentCars.map((car, index) => (
-                <Grid
-                  key={index}
-                  size={{
-                    xs: 12,
-                    sm: 6,
-                    md: 6,
-                    lg: 3,
-                    xl: 3,
-                  }}
-                >
-                  <CarCard key={index} car={car} type="buy" />
-                </Grid>
-              ))}
+              {currentCars
+                .filter((car) => {
+                  const availableToSell = car.availableToSell === true;
+                  return availableToSell;
+                })
+                .map((car, index) => (
+                  <Grid
+                    key={index}
+                    size={{
+                      xs: 12,
+                      sm: 6,
+                      md: 6,
+                      lg: 3,
+                      xl: 3,
+                    }}
+                  >
+                    <CarCard key={index} car={car} type="buy" />
+                  </Grid>
+                ))}
             </Grid>
 
             <Box
@@ -521,7 +549,11 @@ const Cars = () => {
               }}
             >
               <Pagination
-                count={Math.ceil(cars.length / itemsPerPage)}
+                count={
+                  Math.ceil(currentCars.length / itemsPerPage) === 0
+                    ? 1
+                    : Math.ceil(currentCars.length / itemsPerPage)
+                }
                 page={page}
                 onChange={handlePageChange}
                 color="primary"

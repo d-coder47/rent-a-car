@@ -6,82 +6,83 @@ import { Box, Button, Typography, useTheme } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { CARS } from "../../constants";
 
-const cars = [
-  {
-    name: "Carro 1",
-    image_path: car_image,
-    fuel_type: "gasolina",
-    tank_capacity: "90L",
-    cambio_type: "Manual",
-    people_number: 4,
-    price: 99.0,
-  },
-  {
-    name: "Carro 2",
-    image_path: car_image,
-    fuel_type: "gasolina",
-    tank_capacity: "90L",
-    cambio_type: "Manual",
-    people_number: 4,
-    price: 99.0,
-  },
-  {
-    name: "Carro 3",
-    image_path: car_image,
-    fuel_type: "gasolina",
-    tank_capacity: "90L",
-    cambio_type: "Manual",
-    people_number: 4,
-    price: 99.0,
-  },
-  {
-    name: "Carro 4",
-    image_path: car_image,
-    fuel_type: "gasolina",
-    tank_capacity: "90L",
-    cambio_type: "Manual",
-    people_number: 4,
-    price: 99.0,
-  },
+// const cars = [
+//   {
+//     name: "Carro 1",
+//     image_path: car_image,
+//     fuel_type: "gasolina",
+//     tank_capacity: "90L",
+//     cambio_type: "Manual",
+//     people_number: 4,
+//     price: 99.0,
+//   },
+//   {
+//     name: "Carro 2",
+//     image_path: car_image,
+//     fuel_type: "gasolina",
+//     tank_capacity: "90L",
+//     cambio_type: "Manual",
+//     people_number: 4,
+//     price: 99.0,
+//   },
+//   {
+//     name: "Carro 3",
+//     image_path: car_image,
+//     fuel_type: "gasolina",
+//     tank_capacity: "90L",
+//     cambio_type: "Manual",
+//     people_number: 4,
+//     price: 99.0,
+//   },
+//   {
+//     name: "Carro 4",
+//     image_path: car_image,
+//     fuel_type: "gasolina",
+//     tank_capacity: "90L",
+//     cambio_type: "Manual",
+//     people_number: 4,
+//     price: 99.0,
+//   },
 
-  {
-    name: "Carro 5",
-    image_path: car_image,
-    fuel_type: "gasolina",
-    tank_capacity: "90L",
-    cambio_type: "Manual",
-    people_number: 4,
-    price: 99.0,
-  },
-  {
-    name: "Carro 6",
-    image_path: car_image,
-    fuel_type: "gasolina",
-    tank_capacity: "90L",
-    cambio_type: "Manual",
-    people_number: 4,
-    price: 99.0,
-  },
-  {
-    name: "Carro 7",
-    image_path: car_image,
-    fuel_type: "gasolina",
-    tank_capacity: "90L",
-    cambio_type: "Manual",
-    people_number: 4,
-    price: 99.0,
-  },
-  {
-    name: "Carro 8",
-    image_path: car_image,
-    fuel_type: "gasolina",
-    tank_capacity: "90L",
-    cambio_type: "Manual",
-    people_number: 4,
-    price: 99.0,
-  },
-];
+//   {
+//     name: "Carro 5",
+//     image_path: car_image,
+//     fuel_type: "gasolina",
+//     tank_capacity: "90L",
+//     cambio_type: "Manual",
+//     people_number: 4,
+//     price: 99.0,
+//   },
+//   {
+//     name: "Carro 6",
+//     image_path: car_image,
+//     fuel_type: "gasolina",
+//     tank_capacity: "90L",
+//     cambio_type: "Manual",
+//     people_number: 4,
+//     price: 99.0,
+//   },
+//   {
+//     name: "Carro 7",
+//     image_path: car_image,
+//     fuel_type: "gasolina",
+//     tank_capacity: "90L",
+//     cambio_type: "Manual",
+//     people_number: 4,
+//     price: 99.0,
+//   },
+//   {
+//     name: "Carro 8",
+//     image_path: car_image,
+//     fuel_type: "gasolina",
+//     tank_capacity: "90L",
+//     cambio_type: "Manual",
+//     people_number: 4,
+//     price: 99.0,
+//   },
+// ];
 
 const CarGallery: React.FC<ICarGallery> = ({ type }) => {
   const theme = useTheme();
@@ -94,7 +95,7 @@ const CarGallery: React.FC<ICarGallery> = ({ type }) => {
     navigate("/cars");
   };
 
-  const [galleryLimit, setGalleryLimit] = useState<number>(cars.length);
+  const [galleryLimit, setGalleryLimit] = useState<number>(8);
 
   useEffect(() => {
     const handleResize = () => {
@@ -129,7 +130,7 @@ const CarGallery: React.FC<ICarGallery> = ({ type }) => {
         rowSpacing={8}
         columnSpacing={6}
       >
-        {cars.slice(0, galleryLimit).map((car, index) => (
+        {CARS.slice(0, galleryLimit).map((car, index) => (
           <Grid
             key={index}
             size={{

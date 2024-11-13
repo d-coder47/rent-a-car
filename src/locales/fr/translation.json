@@ -65,7 +65,12 @@
       "reservation": "Réserver",
       "for_sale": "À vendre",
       "day": "jour",
-      "see_more": "Voir plus"
+      "see_more": "Voir plus",
+      "buy": "Acheter",
+      "automatic": "Automatique",
+      "manual": "manuelle",
+      "gasoline": "Essence",
+      "diesel": "Diesel"
     },
     "contact": {
       "headline": "Contactez nous",

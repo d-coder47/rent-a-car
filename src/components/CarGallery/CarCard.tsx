@@ -19,31 +19,33 @@ import { useTranslation } from "react-i18next";
 
 const CarCard: React.FC<ICarCard> = ({ car, type }) => {
   const theme = useTheme();
-
   const { t } = useTranslation();
+
+  const price = car.priceToRent.length > 0 ? car.priceToRent : car.priceToSell;
+  const isCarForRent = car.priceToRent.length > 0;
 
   return (
     <Card
       sx={{
-        height: "360px",
         "&:hover": {
           boxShadow: 20,
         },
       }}
     >
       <CardHeader
-        title={car.name}
+        title={car.name + " " + car.model + " " + car.year}
         titleTypographyProps={{ variant: "h5" }}
         subheaderTypographyProps={{ variant: "body2" }}
       />
       <CardMedia
         component="img"
         sx={{
-          height: "150px",
           display: "flex",
           justifyContent: "center",
+          objectFit: "contain",
+          aspectRatio: "3/2",
         }}
-        image={car.image_path}
+        image={car.image}
         alt={car.name}
       />
       <CardContent
@@ -59,7 +61,7 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
           <Typography
             sx={{ color: "text.secondary", fontSize: 14, marginTop: "2px" }}
           >
-            {car.tank_capacity}
+            {t(`homepage.cars.${car.fuel}`)}
           </Typography>
         </Stack>
 
@@ -70,7 +72,7 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
           <Typography
             sx={{ color: "text.secondary", fontSize: 14, marginTop: "3px" }}
           >
-            {car.cambio_type}
+            {t(`homepage.cars.${car.transmission}`)}
           </Typography>
         </Stack>
 
@@ -87,7 +89,7 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
               variant="body2"
               sx={{ color: "text.secondary", fontSize: 14, marginTop: "2px" }}
             >
-              {car.people_number}
+              {car.seats}
             </Typography>
             <Typography
               variant="body2"
@@ -106,7 +108,7 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
       <CardActions>
         <Box
           sx={{
-            display: type === "reservation" ? "flex" : "none",
+            display: "flex",
             flexDirection: "row",
             justifyContent: "space-between",
             width: "100%",
@@ -125,9 +127,14 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
                 fontWeight: "700",
               }}
             >
-              {"$" + car.price + "/"}
+              {price}
             </Typography>
-            <Typography variant="body1"> {t("homepage.cars.day")}</Typography>
+            {isCarForRent ? (
+              <Typography variant="body1">
+                {" "}
+                {"/" + t("homepage.cars.day")}
+              </Typography>
+            ) : null}
           </Box>
 
           <Button
@@ -146,7 +153,9 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
             disableElevation={true}
           >
             <Typography variant="body2">
-              {t("homepage.cars.reservation")}
+              {isCarForRent
+                ? t("homepage.cars.reservation")
+                : t("homepage.cars.buy")}
             </Typography>
           </Button>
         </Box>
