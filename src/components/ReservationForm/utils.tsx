@@ -1,6 +1,6 @@
-import { IVehicle } from "../../interfaces";
+import { ICar } from "../../interfaces";
 
-export const handleGridSize = (vehicles: IVehicle[], defaultSize: number) => {
+export const handleGridSize = (vehicles: ICar[], defaultSize: number) => {
   let size = defaultSize;
 
   const length = vehicles.length;

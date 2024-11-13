@@ -52,6 +52,7 @@ export const HEADER_HEIGHT = "90px";
 
 export const CARS = [
   {
+    id: 1,
     name: "CHEVROLET",
     model: "TRAX LS",
     year: 2019,
@@ -66,6 +67,7 @@ export const CARS = [
     image: "/src/assets/cars/chevrolet_trax_2019_dark_grey.png",
   },
   {
+    id: 2,
     name: "JEEP",
     model: "RENAGADE SPORT 4X4",
     year: 2019,
@@ -80,6 +82,7 @@ export const CARS = [
     image: "/src/assets/cars/jeep_renegade_sport_2019_black.png",
   },
   {
+    id: 3,
     name: "FORD",
     model: "FUSION SE",
     year: 2018,
@@ -94,6 +97,7 @@ export const CARS = [
     image: "/src/assets/cars/ford_fusion_se_2018_light_grey.png",
   },
   {
+    id: 4,
     name: "CHEVROLET",
     model: "TRAX LT",
     year: 2020,
@@ -108,6 +112,7 @@ export const CARS = [
     image: "/src/assets/cars/chevrolet_trax_ls_2020_white.png",
   },
   {
+    id: 5,
     name: "JEEP",
     model: "COMPASS LATITUDE",
     year: 2021,
@@ -122,6 +127,7 @@ export const CARS = [
     image: "/src/assets/cars/jeep_compass_latitude_2021_black.png",
   },
   {
+    id: 6,
     name: "SURABU",
     model: "ASCENT",
     year: 2020,
@@ -136,6 +142,7 @@ export const CARS = [
     image: "/src/assets/cars/subaru_ascent_2020_white.jpg",
   },
   {
+    id: 7,
     name: "CHEVROLET",
     model: "TRAX LT AWD",
     year: 2019,
@@ -150,6 +157,7 @@ export const CARS = [
     image: "/src/assets/cars/chevrolet_trax_2019_dark_grey.png",
   },
   {
+    id: 8,
     name: "FIAT",
     model: "STRADA",
     year: 2023,
@@ -165,6 +173,7 @@ export const CARS = [
     image: "/src/assets/cars/fiat_strada_endurance_2023_grey.png",
   },
   {
+    id: 9,
     name: "FIAT",
     model: "STRADA",
     year: 2023,
@@ -180,6 +189,7 @@ export const CARS = [
     image: "/src/assets/cars/fiat_strada_endurance_2023_grey.png",
   },
   {
+    id: 10,
     name: "TOYOTA",
     model: "STARLET",
     year: 2024,
@@ -195,6 +205,7 @@ export const CARS = [
     image: "/src/assets/cars/toyota_starlet_2024_blue.png",
   },
   {
+    id: 11,
     name: "TOYOTA",
     model: "STARLET",
     year: 2024,
@@ -210,6 +221,7 @@ export const CARS = [
     image: "/src/assets/cars/toyota_starlet_2024_brown.png",
   },
   {
+    id: 12,
     name: "TOYOTA",
     model: "STARLET",
     year: 2024,
@@ -225,6 +237,7 @@ export const CARS = [
     image: "/src/assets/cars/toyota_starlet_2024_light_grey.png",
   },
   {
+    id: 13,
     name: "TOYOTA",
     model: "STARLET",
     year: 2024,

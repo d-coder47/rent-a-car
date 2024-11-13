@@ -9,13 +9,15 @@ import {
   OutlinedInput,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import { IStep } from "../../interfaces";
+import { ICar, IStep } from "../../interfaces";
 import car_image from "../../assets/carCard.png";
 import SelectedVehicleCard from "./SelectedVehicleCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Chip from "@mui/material/Chip";
 import { useTranslation } from "react-i18next";
 import { handleGridSize } from "./utils";
+import { useParams } from "react-router-dom";
+import { CARS } from "../../constants";
 
 const Step3: React.FC<IStep> = ({
   reservationValues,
@@ -23,19 +25,19 @@ const Step3: React.FC<IStep> = ({
   handleChange,
 }) => {
   const { t } = useTranslation();
-
-  const vehicleOptions = [
-    { id: 1, name: "Car Model A", image: car_image },
-    { id: 2, name: "Car Model B", image: car_image },
-    { id: 3, name: "Car Model C", image: car_image },
-    { id: 4, name: "Car Model D", image: car_image },
-    { id: 5, name: "Car Model E", image: car_image },
-    { id: 6, name: "Car Model F", image: car_image },
-    { id: 7, name: "Car Model G", image: car_image },
-    { id: 8, name: "Car Model H", image: car_image },
-  ];
+  const { id } = useParams<{ id?: string }>();
 
   const [carName, setCarName] = useState<string[]>([]);
+
+  const [vehicleOptions, setVehicleOptions] = useState<ICar[]>([]);
+
+  useEffect(() => {
+    if (CARS && vehicleOptions.length === 0) {
+      const data = CARS.filter((item) => item.availableToRent === true);
+
+      setVehicleOptions(data);
+    }
+  }, [CARS]);
 
   const handleSelectChange = (e: SelectChangeEvent<typeof carName>) => {
     const { value } = e.target;
@@ -43,23 +45,20 @@ const Step3: React.FC<IStep> = ({
     const splitedData = typeof value === "string" ? value.split(",") : value;
 
     const selectedCars = vehicleOptions.filter((item) =>
-      splitedData.includes(item.name)
+      splitedData.includes(item.id)
     );
+
+    console.log(splitedData);
 
     if (!selectedCars) return;
 
     setCarName(splitedData);
 
-    const updatedValue = selectedCars.map((item) => ({
-      id: item.id,
-      name: item.name,
-    }));
-
     const modifiedEvent = {
       ...e,
       target: {
         ...e.target,
-        value: JSON.stringify(updatedValue),
+        value: JSON.stringify(selectedCars),
       },
     };
 
@@ -177,7 +176,7 @@ const Step3: React.FC<IStep> = ({
                   )}
                 >
                   {vehicleOptions.map((vehicle) => (
-                    <MenuItem key={vehicle.id} value={vehicle.name}>
+                    <MenuItem key={vehicle.id} value={vehicle}>
                       <Box display="flex" alignItems="center">
                         <img
                           src={vehicle.image}

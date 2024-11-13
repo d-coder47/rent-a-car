@@ -11,7 +11,7 @@ const AppRoutes: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cars" element={<Cars />} />
-        <Route path="/reservation" element={<Reservation />} />
+        <Route path="/reservation/:id?" element={<Reservation />} />
         <Route path="/car" element={<Car />} />
       </Routes>
     </Router>

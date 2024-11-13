@@ -16,10 +16,13 @@ import { ICarCard } from "../../interfaces";
 import { LocalGasStation, People } from "@mui/icons-material";
 import GearShift from "../../assets/gearshift.svg";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const CarCard: React.FC<ICarCard> = ({ car, type }) => {
   const theme = useTheme();
   const { t } = useTranslation();
+
+  const navigate = useNavigate();
 
   const price = car.priceToRent.length > 0 ? car.priceToRent : car.priceToSell;
   const isCarForRent = car.priceToRent.length > 0;
@@ -139,6 +142,7 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
 
           <Button
             variant="contained"
+            onClick={() => navigate(`/reservation/${car.id}`)}
             sx={{
               height: "35px",
               textAlign: "center",

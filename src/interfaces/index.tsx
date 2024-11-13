@@ -9,6 +9,7 @@ export interface ICarGallery {
 }
 
 export interface ICar {
+  id: number;
   name: string;
   model: string;
   year: number;
@@ -20,17 +21,13 @@ export interface ICar {
   availableToSell: boolean;
   priceToRent: string;
   priceToSell: string;
+  securityDeposit: string;
   image: string;
 }
 
 export interface ICarCard {
   car: ICar;
   type: string;
-}
-
-export interface IVehicle {
-  id: string;
-  name: string;
 }
 
 export interface IReservationInfo {
@@ -47,7 +44,7 @@ export interface IReservationInfo {
     fileType: string;
     fileName: string;
   };
-  vehicle: IVehicle[];
+  vehicle: ICar[];
   price: number;
   days: number;
 }
