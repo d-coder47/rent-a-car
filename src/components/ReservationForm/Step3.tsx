@@ -10,7 +10,6 @@ import {
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import { ICar, IStep } from "../../interfaces";
-import car_image from "../../assets/carCard.png";
 import SelectedVehicleCard from "./SelectedVehicleCard";
 import { useEffect, useState } from "react";
 import Chip from "@mui/material/Chip";
@@ -27,38 +26,47 @@ const Step3: React.FC<IStep> = ({
   const { t } = useTranslation();
   const { id } = useParams<{ id?: string }>();
 
-  const [carName, setCarName] = useState<string[]>([]);
+  const [carId, setCarId] = useState<string[]>([]);
 
   const [vehicleOptions, setVehicleOptions] = useState<ICar[]>([]);
 
+  const [selectedCars, setSelectedCars] = useState<ICar[]>([]);
+
   useEffect(() => {
-    if (CARS && vehicleOptions.length === 0) {
-      const data = CARS.filter((item) => item.availableToRent === true);
+    if (!CARS || vehicleOptions.length > 0) return;
 
-      setVehicleOptions(data);
-    }
-  }, [CARS]);
+    const availableCars = CARS.filter(
+      (item): item is ICar => item.availableToRent
+    );
 
-  const handleSelectChange = (e: SelectChangeEvent<typeof carName>) => {
+    setVehicleOptions(availableCars);
+  }, [vehicleOptions.length]);
+
+  const getCarName = (id: string) => {
+    const car = selectedCars.find((item) => item.slug === id);
+    return car?.name;
+  };
+
+  const handleSelectChange = (e: SelectChangeEvent<string[]>) => {
     const { value } = e.target;
 
     const splitedData = typeof value === "string" ? value.split(",") : value;
 
-    const selectedCars = vehicleOptions.filter((item) =>
-      splitedData.includes(item.id)
+    const selectedCarsNewData = vehicleOptions.filter((vehicle) =>
+      splitedData.includes(vehicle.slug)
     );
 
-    console.log(splitedData);
+    setSelectedCars(selectedCarsNewData);
 
     if (!selectedCars) return;
 
-    setCarName(splitedData);
+    setCarId(splitedData);
 
     const modifiedEvent = {
       ...e,
       target: {
         ...e.target,
-        value: JSON.stringify(selectedCars),
+        value: JSON.stringify(selectedCarsNewData),
       },
     };
 
@@ -66,21 +74,18 @@ const Step3: React.FC<IStep> = ({
   };
 
   const closeCardClick = (value: string) => {
-    const filteredCars = carName.filter((item) => item !== value);
+    const filteredCars = carId.filter((item) => item !== value);
 
-    setCarName(filteredCars);
+    setCarId(filteredCars);
+
+    console.log(filteredCars);
 
     const selectedCars = vehicleOptions.filter((item) =>
       filteredCars.includes(item.name)
     );
 
-    const updatedValue = selectedCars.map((item) => ({
-      id: item.id,
-      name: item.name,
-    }));
-
     const syntheticEvent = {
-      target: { value: JSON.stringify(updatedValue), name: "vehicle" },
+      target: { value: JSON.stringify(selectedCars), name: "vehicle" },
     } as React.ChangeEvent<HTMLInputElement>;
 
     handleChange(syntheticEvent);
@@ -162,21 +167,21 @@ const Step3: React.FC<IStep> = ({
                   id="vehicle"
                   name="vehicle"
                   multiple
-                  value={carName}
+                  value={carId}
                   onChange={handleSelectChange}
                   displayEmpty
                   input={<OutlinedInput id="select-multiple-chip" />}
                   error={fieldsErrors.vehicle !== ""}
                   renderValue={(selected) => (
                     <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-                      {selected.map((value) => (
-                        <Chip key={value} label={value} />
+                      {selected.map((value, index) => (
+                        <Chip key={index} label={getCarName(value)} />
                       ))}
                     </Box>
                   )}
                 >
                   {vehicleOptions.map((vehicle) => (
-                    <MenuItem key={vehicle.id} value={vehicle}>
+                    <MenuItem key={vehicle.slug} value={vehicle.slug}>
                       <Box display="flex" alignItems="center">
                         <img
                           src={vehicle.image}
@@ -227,7 +232,7 @@ const Step3: React.FC<IStep> = ({
                 >
                   <SelectedVehicleCard
                     name={car.name}
-                    image={car_image}
+                    image={car.image}
                     key={index}
                     closeCardClick={closeCardClick}
                   />

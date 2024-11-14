@@ -9,7 +9,7 @@ export interface ICarGallery {
 }
 
 export interface ICar {
-  id: number;
+  slug: string;
   name: string;
   model: string;
   year: number;
