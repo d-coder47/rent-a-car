@@ -142,7 +142,7 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
 
           <Button
             variant="contained"
-            onClick={() => navigate(`/reservation/${car.id}`)}
+            onClick={() => navigate(`/reservation/${car.slug}`)}
             sx={{
               height: "35px",
               textAlign: "center",

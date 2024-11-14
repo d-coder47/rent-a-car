@@ -47,7 +47,7 @@ const SelectedVehicleCard: React.FC<ISelectedVehicle> = ({
           justifyContent: "center",
         }}
         image={vehicle.image}
-        alt={name}
+        alt={vehicle.name}
       />
 
       <CardActions>

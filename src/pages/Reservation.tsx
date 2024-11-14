@@ -16,6 +16,7 @@ const Reservation = () => {
           minHeight: "100vh",
           width: "100%",
           flexDirection: "column",
+          marginTop: "133px",
         }}
       >
         <Typography textAlign="center" marginBottom="36px" variant="h2">

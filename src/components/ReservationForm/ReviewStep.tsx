@@ -2,7 +2,6 @@ import { Avatar, Box, InputLabel, Typography, useTheme } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import { useTranslation } from "react-i18next";
 import { IReviewStep } from "../../interfaces";
-import car_image from "../../assets/carCard.png";
 import { handleGridSize } from "./utils";
 
 const ReviewStep: React.FC<IReviewStep> = ({ reservationDetails }) => {
@@ -169,7 +168,7 @@ const ReviewStep: React.FC<IReviewStep> = ({ reservationDetails }) => {
                       }}
                     >
                       <Avatar
-                        src={car_image}
+                        src={car.image}
                         sx={{
                           height: "120px",
                           width: "180px",
