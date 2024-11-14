@@ -1,23 +1,10 @@
-import { Box, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import CarGallery from "./CarGallery";
 
 const Gallery: React.FC = () => {
   const { t } = useTranslation();
-
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
-
-  function a11yProps(index: number) {
-    return {
-      id: `simple-tab-${index}`,
-      "aria-controls": `simple-tabpanel-${index}`,
-    };
-  }
 
   return (
     <Box
@@ -48,60 +35,7 @@ const Gallery: React.FC = () => {
           marginBottom: "20px",
         }}
       >
-        <Box
-          sx={{
-            borderBottom: 1,
-            borderColor: "divider",
-            display: "flex",
-            justifyContent: "center",
-            marginBottom: "80px",
-            border: "none",
-          }}
-        >
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            aria-label="basic tabs example"
-          >
-            <Tab
-              sx={{
-                textTransform: "none",
-              }}
-              label={
-                <Typography variant="body1">
-                  {t("homepage.cars.avalailabe_to_reservation")}
-                </Typography>
-              }
-              {...a11yProps(0)}
-            />
-            <Tab
-              sx={{
-                textTransform: "none",
-              }}
-              label={
-                <Typography variant="body1">
-                  {t("homepage.cars.avalailabe_to_buy")}
-                </Typography>
-              }
-              {...a11yProps(1)}
-            />
-          </Tabs>
-        </Box>
-        <Box
-          sx={{
-            display: value === 0 ? "flex" : "none",
-          }}
-        >
-          <CarGallery type="reservation" />
-        </Box>
-
-        <Box
-          sx={{
-            display: value === 1 ? "flex" : "none",
-          }}
-        >
-          <CarGallery type="buy" />
-        </Box>
+        <CarGallery />
       </Box>
     </Box>
   );
