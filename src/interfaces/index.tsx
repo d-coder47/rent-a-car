@@ -4,10 +4,6 @@ export interface IService {
   icon?: string;
 }
 
-export interface ICarGallery {
-  type: string;
-}
-
 export interface ICar {
   name: string;
   model: string;
@@ -77,4 +73,8 @@ export interface IStep {
 
 export interface IReviewStep {
   reservationDetails: IReservationInfo;
+}
+
+export interface ICarGallery {
+  showPagination?: boolean;
 }

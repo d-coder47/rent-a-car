@@ -67,7 +67,7 @@ export const CARS = [
   },
   {
     name: "JEEP",
-    model: "RENAGADE SPORT 4X4",
+    model: "RENEGADE SPORT",
     year: 2019,
     seats: 5,
     motor: "2360 C.C/Cm3, 4 Cilindros",
