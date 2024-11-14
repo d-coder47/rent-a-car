@@ -78,10 +78,8 @@ const Step3: React.FC<IStep> = ({
 
     setCarId(filteredCars);
 
-    console.log(filteredCars);
-
     const selectedCars = vehicleOptions.filter((item) =>
-      filteredCars.includes(item.name)
+      filteredCars.includes(item.slug)
     );
 
     const syntheticEvent = {
@@ -231,8 +229,7 @@ const Step3: React.FC<IStep> = ({
                   }}
                 >
                   <SelectedVehicleCard
-                    name={car.name}
-                    image={car.image}
+                    vehicle={car}
                     key={index}
                     closeCardClick={closeCardClick}
                   />

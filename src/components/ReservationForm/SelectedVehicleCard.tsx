@@ -13,8 +13,7 @@ import { ISelectedVehicle } from "../../interfaces";
 import { Close } from "@mui/icons-material";
 
 const SelectedVehicleCard: React.FC<ISelectedVehicle> = ({
-  name,
-  image,
+  vehicle,
   closeCardClick,
 }) => {
   const theme = useTheme();
@@ -28,13 +27,13 @@ const SelectedVehicleCard: React.FC<ISelectedVehicle> = ({
       }}
     >
       <CardHeader
-        title={name}
+        title={vehicle.name}
         titleTypographyProps={{ variant: "body2" }}
         subheaderTypographyProps={{ variant: "body2" }}
         action={
           <IconButton
             aria-label="close card"
-            onClick={() => closeCardClick(name)}
+            onClick={() => closeCardClick(vehicle.slug)}
           >
             <Close fontSize="small" />
           </IconButton>
@@ -47,7 +46,7 @@ const SelectedVehicleCard: React.FC<ISelectedVehicle> = ({
           display: "flex",
           justifyContent: "center",
         }}
-        image={image}
+        image={vehicle.image}
         alt={name}
       />
 

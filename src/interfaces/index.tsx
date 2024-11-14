@@ -61,8 +61,7 @@ export interface IFieldsErrors {
 }
 
 export interface ISelectedVehicle {
-  name: string;
-  image: string;
+  vehicle: ICar;
   closeCardClick: (value: string) => void;
 }
 
