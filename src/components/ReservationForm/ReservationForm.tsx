@@ -70,7 +70,6 @@ const ReservationForm = () => {
     if (name === "vehicle") {
       parsedValue = JSON.parse(value);
 
-      console.log(parsedValue);
       setReservationInfo((prevReservationInfo) => ({
         ...prevReservationInfo,
         [name]: parsedValue,

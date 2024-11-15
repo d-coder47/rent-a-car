@@ -32,6 +32,8 @@ const Step3: React.FC<IStep> = ({
 
   const [selectedCars, setSelectedCars] = useState<ICar[]>([]);
 
+  const [carFromRoute, setCarFromRoute] = useState<ICar[]>();
+
   useEffect(() => {
     if (!CARS || vehicleOptions.length > 0) return;
 
@@ -39,8 +41,24 @@ const Step3: React.FC<IStep> = ({
       (item): item is ICar => item.availableToRent
     );
 
+    if (id) {
+      const findCar = CARS.filter(
+        (item): item is ICar => item.slug === id.toString()
+      );
+
+      setCarFromRoute(findCar);
+      setCarId([id.toString()]);
+
+      setSelectedCars(findCar);
+
+      const syntheticEvent = {
+        target: { value: JSON.stringify(findCar), name: "vehicle" },
+      } as React.ChangeEvent<HTMLInputElement>;
+
+      handleChange(syntheticEvent);
+    }
     setVehicleOptions(availableCars);
-  }, [vehicleOptions.length]);
+  }, [vehicleOptions.length, id]);
 
   const getCarName = (id: string) => {
     const car = selectedCars.find((item) => item.slug === id);
@@ -55,6 +73,12 @@ const Step3: React.FC<IStep> = ({
     const selectedCarsNewData = vehicleOptions.filter((vehicle) =>
       splitedData.includes(vehicle.slug)
     );
+
+    if (id) {
+      const findCar = CARS.filter(
+        (item): item is ICar => item.slug === id.toString()
+      );
+    }
 
     setSelectedCars(selectedCarsNewData);
 
