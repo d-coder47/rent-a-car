@@ -74,13 +74,11 @@ const Step3: React.FC<IStep> = ({
       splitedData.includes(vehicle.slug)
     );
 
-    if (id) {
-      const findCar = CARS.filter(
-        (item): item is ICar => item.slug === id.toString()
-      );
+    if (id && carFromRoute) {
+      setSelectedCars(selectedCarsNewData.concat(carFromRoute));
+    } else {
+      setSelectedCars(selectedCarsNewData);
     }
-
-    setSelectedCars(selectedCarsNewData);
 
     if (!selectedCars) return;
 
