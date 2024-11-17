@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import { ISelectedVehicle } from "../../interfaces";
 import { Close } from "@mui/icons-material";
+import { useTranslation } from "react-i18next";
 
 const SelectedVehicleCard: React.FC<ISelectedVehicle> = ({
   vehicle,
@@ -18,10 +19,12 @@ const SelectedVehicleCard: React.FC<ISelectedVehicle> = ({
 }) => {
   const theme = useTheme();
 
+  const { t } = useTranslation();
+
   return (
     <Card
       sx={{
-        height: "250px",
+        height: "300px",
         width: "100%",
         boxShadow: 4,
       }}
@@ -39,10 +42,11 @@ const SelectedVehicleCard: React.FC<ISelectedVehicle> = ({
           </IconButton>
         }
       />
+
       <CardMedia
         component="img"
         sx={{
-          height: "120px",
+          height: "140px",
           display: "flex",
           justifyContent: "center",
         }}
@@ -54,11 +58,43 @@ const SelectedVehicleCard: React.FC<ISelectedVehicle> = ({
         <Box
           sx={{
             display: "flex",
-            flexDirection: "row",
+            flexDirection: "column",
             justifyContent: "center",
             width: "100%",
           }}
         >
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              width: "100%",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                width: "min-content",
+                justifyContent: "space-around",
+              }}
+            >
+              <Typography
+                variant="body2"
+                sx={{
+                  fontWeight: "700",
+                }}
+              >
+                {vehicle.priceToRent}
+              </Typography>
+
+              <Typography variant="body2">
+                {" "}
+                {"/" + t("homepage.cars.day")}
+              </Typography>
+            </Box>
+          </Box>
+
           <Button
             variant="contained"
             sx={{

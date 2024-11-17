@@ -128,7 +128,7 @@ export const CARS = [
   },
   {
     slug: "6",
-    name: "SURABU",
+    name: "SUBARU",
     model: "ASCENT",
     year: 2020,
     seats: 8,
