@@ -111,21 +111,40 @@ const Step4: React.FC<IStep> = ({
             <Grid size={{ xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }}>
               <Box
                 sx={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                  alignItems: "flex-end",
-
                   height: "100%",
                 }}
               >
-                <Typography variant="h5">
-                  {t("reservationForm.reservationPriceTitle")}
-                </Typography>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                    alignItems: "flex-end",
+                    height: "50%",
+                  }}
+                >
+                  <Typography variant="caption">
+                    O valor da reserva inclui um depósito de garantia de €200
+                    por veículo reservado.
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                    alignItems: "flex-end",
+                    height: "50%",
+                  }}
+                >
+                  <Typography variant="h5">
+                    {t("reservationForm.reservationPriceTitle")}
+                  </Typography>
 
-                <Typography variant="h3">
-                  {"€" + reservationValues.price}
-                </Typography>
+                  <Typography variant="h3">
+                    {"€" + reservationValues.price}
+                  </Typography>
+                </Box>
               </Box>
             </Grid>
           </Grid>
