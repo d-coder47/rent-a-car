@@ -233,6 +233,7 @@ const Step3: React.FC<IStep> = ({
               columns={12}
               rowSpacing={8}
               columnSpacing={6}
+              width="100%"
               sx={{
                 display:
                   reservationValues?.vehicle[0]?.name === "" ? "none" : "flex",
@@ -241,13 +242,12 @@ const Step3: React.FC<IStep> = ({
             >
               {reservationValues.vehicle.map((car, index) => (
                 <Grid
-                  key={index}
                   size={{
-                    xs: handleGridSize(reservationValues.vehicle, 12),
-                    sm: handleGridSize(reservationValues.vehicle, 6),
-                    md: handleGridSize(reservationValues.vehicle, 6),
-                    lg: handleGridSize(reservationValues.vehicle, 3),
-                    xl: handleGridSize(reservationValues.vehicle, 3),
+                    xs: 12,
+                    sm: 6,
+                    md: 6,
+                    lg: 3,
+                    xl: 3,
                   }}
                 >
                   <SelectedVehicleCard

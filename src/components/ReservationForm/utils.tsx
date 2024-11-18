@@ -6,7 +6,7 @@ export const handleGridSize = (vehicles: ICar[], defaultSize: number) => {
   const length = vehicles.length;
 
   if (length === 1) {
-    size = 12;
+    size = 3;
   }
 
   if (length === 2) {
