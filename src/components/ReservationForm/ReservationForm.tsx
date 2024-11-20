@@ -159,6 +159,30 @@ const ReservationForm = () => {
         driverLicence: "",
       }));
     }
+
+    if (reservationInfo.days > 0 && reservationInfo.vehicle.length !== 0) {
+      const data = reservationInfo.vehicle.map((vehicle) => {
+        const price = Number(vehicle.priceToRent.slice(1));
+        const securityDeposit = Number(vehicle?.securityDeposit?.slice(1));
+
+        return price * reservationInfo.days + securityDeposit;
+      });
+
+      const newPrice = data.reduce(
+        (accumulator, current) => accumulator + current
+      );
+      setReservationInfo((prevReservationInfo) => ({
+        ...prevReservationInfo,
+        ["price"]: newPrice,
+      }));
+    }
+
+    if (reservationInfo.days === 0) {
+      setReservationInfo((prevReservationInfo) => ({
+        ...prevReservationInfo,
+        ["price"]: 0,
+      }));
+    }
   };
 
   const checkFieldsErrors = () => {
@@ -264,32 +288,6 @@ const ReservationForm = () => {
       console.log("confirm details");
     }
   };
-
-  useEffect(() => {
-    if (reservationInfo.days > 0 && reservationInfo.vehicle.length !== 0) {
-      const data = reservationInfo.vehicle.map((vehicle) => {
-        const price = Number(vehicle.priceToRent.slice(1));
-        const securityDeposit = Number(vehicle?.securityDeposit?.slice(1));
-
-        return price * reservationInfo.days + securityDeposit;
-      });
-
-      const newPrice = data.reduce(
-        (accumulator, current) => accumulator + current
-      );
-      setReservationInfo((prevReservationInfo) => ({
-        ...prevReservationInfo,
-        ["price"]: newPrice,
-      }));
-    }
-
-    if (reservationInfo.days === 0) {
-      setReservationInfo((prevReservationInfo) => ({
-        ...prevReservationInfo,
-        ["price"]: 0,
-      }));
-    }
-  }, [reservationInfo]);
 
   return (
     <Box

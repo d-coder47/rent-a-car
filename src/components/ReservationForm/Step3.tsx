@@ -14,7 +14,6 @@ import SelectedVehicleCard from "./SelectedVehicleCard";
 import { useEffect, useState } from "react";
 import Chip from "@mui/material/Chip";
 import { useTranslation } from "react-i18next";
-import { handleGridSize } from "./utils";
 import { useParams } from "react-router-dom";
 import { CARS } from "../../constants";
 
@@ -242,6 +241,7 @@ const Step3: React.FC<IStep> = ({
             >
               {reservationValues.vehicle.map((car, index) => (
                 <Grid
+                  key={index}
                   size={{
                     xs: 12,
                     sm: 6,
