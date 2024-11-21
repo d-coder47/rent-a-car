@@ -2,7 +2,7 @@ import { Box, Button, Typography, useTheme } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Step1 from "./Step1";
 import Step2 from "./Step2";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { IFieldsErrors, IReservationInfo, ICar } from "../../interfaces";
 import frontID from "../../assets/reservation/frontID.png";
 import Step3 from "./Step3";
@@ -62,6 +62,32 @@ const ReservationForm = () => {
     days: "",
   });
 
+  const handleReservationPrice = (days: number, vehicles: ICar[]) => {
+    if (days > 0 && vehicles) {
+      const data = vehicles.map((vehicle) => {
+        const price = Number(vehicle.priceToRent.slice(1));
+        const securityDeposit = Number(vehicle?.securityDeposit?.slice(1));
+
+        return price * reservationInfo.days + securityDeposit;
+      });
+
+      const newPrice = data.reduce(
+        (accumulator, current) => accumulator + current
+      );
+      setReservationInfo((prevReservationInfo) => ({
+        ...prevReservationInfo,
+        ["price"]: newPrice,
+      }));
+    }
+
+    if (days === 0) {
+      setReservationInfo((prevReservationInfo) => ({
+        ...prevReservationInfo,
+        ["price"]: 0,
+      }));
+    }
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, valueAsNumber } = e.target;
 
@@ -70,6 +96,8 @@ const ReservationForm = () => {
     if (name === "vehicle") {
       parsedValue = JSON.parse(value);
 
+      handleReservationPrice(reservationInfo.days, parsedValue);
+
       setReservationInfo((prevReservationInfo) => ({
         ...prevReservationInfo,
         [name]: parsedValue,
@@ -77,6 +105,7 @@ const ReservationForm = () => {
     }
 
     if (name === "days") {
+      handleReservationPrice(valueAsNumber, reservationInfo.vehicle);
       setReservationInfo((prevReservationInfo) => ({
         ...prevReservationInfo,
         [name]: valueAsNumber,
@@ -157,30 +186,6 @@ const ReservationForm = () => {
       setFieldsErros((prevState) => ({
         ...prevState,
         driverLicence: "",
-      }));
-    }
-
-    if (reservationInfo.days > 0 && reservationInfo.vehicle.length !== 0) {
-      const data = reservationInfo.vehicle.map((vehicle) => {
-        const price = Number(vehicle.priceToRent.slice(1));
-        const securityDeposit = Number(vehicle?.securityDeposit?.slice(1));
-
-        return price * reservationInfo.days + securityDeposit;
-      });
-
-      const newPrice = data.reduce(
-        (accumulator, current) => accumulator + current
-      );
-      setReservationInfo((prevReservationInfo) => ({
-        ...prevReservationInfo,
-        ["price"]: newPrice,
-      }));
-    }
-
-    if (reservationInfo.days === 0) {
-      setReservationInfo((prevReservationInfo) => ({
-        ...prevReservationInfo,
-        ["price"]: 0,
       }));
     }
   };
