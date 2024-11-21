@@ -133,7 +133,8 @@ const Step2: React.FC<IStep> = ({
                       : "none",
 
                   width: "60%",
-                  height: "62%",
+                  maxHeight: "131px",
+                  minHeight: "131px",
                   marginTop: "10px",
                   marginBottom: "20px",
                   alignItems: "center",
@@ -208,9 +209,9 @@ const Step2: React.FC<IStep> = ({
                     "application/pdf"
                       ? "flex"
                       : "none",
-
                   width: "60%",
-                  height: "62%",
+                  maxHeight: "131px",
+                  minHeight: "131px",
                   marginTop: "10px",
                   marginBottom: "20px",
                   alignItems: "center",
