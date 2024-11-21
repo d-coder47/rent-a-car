@@ -63,7 +63,7 @@ const ReservationForm = () => {
   });
 
   const handleReservationPrice = (days: number, vehicles: ICar[]) => {
-    if (days > 0 && vehicles) {
+    if (days > 0 && vehicles.length > 0) {
       const data = vehicles.map((vehicle) => {
         const price = Number(vehicle.priceToRent.slice(1));
         const securityDeposit = Number(vehicle?.securityDeposit?.slice(1));
