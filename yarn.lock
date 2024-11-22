@@ -1643,6 +1643,11 @@
     event-source-polyfill "1.0.31"
     eventsource "2.0.2"
 
+"@sanity/image-url@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@sanity/image-url/-/image-url-1.1.0.tgz#f26905ef5bdd27165b0f04d8571eb75dc7cdf50a"
+  integrity sha512-JHumVRxzzaZAJyOimntdukA9TjjzsJiaiq/uUBdTknMLCNvtM6KQ5OCp6W5fIdY78uyFxtQjz+MPXwK8WBIxWg==
+
 "@sanity/telemetry@^0.7.7":
   version "0.7.9"
   resolved "https://registry.yarnpkg.com/@sanity/telemetry/-/telemetry-0.7.9.tgz#d8f0a65955021bf3adafccfeb6679a1b0bf52eb6"
@@ -3491,6 +3496,7 @@ regjsparser@^0.12.0:
     "@emotion/styled" "^11.13.0"
     "@mui/icons-material" "^6.1.0"
     "@mui/material" "^6.1.0"
+    "@sanity/cli" "^3.64.3"
     i18next "^23.15.1"
     mui-tel-input "^6.0.1"
     react "^18.3.1"
@@ -3498,7 +3504,7 @@ regjsparser@^0.12.0:
     react-i18next "^15.0.2"
     react-router-dom "^6.26.2"
     react-slick "^0.30.2"
-    rent-a-car "file:../../../AppData/Local/Yarn/Cache/v6/npm-rent-a-car-0.0.0-45023d6e-4836-40e8-8e7e-e171dbefd1dd-1732277563400/node_modules/rent-a-car"
+    rent-a-car "file:../../../AppData/Local/Yarn/Cache/v6/npm-rent-a-car-0.0.0-f049e9c1-e447-4e35-beef-633fbef936e1-1732284224406/node_modules/rent-a-car"
     slick-carousel "^1.8.1"
 
 resize-observer-polyfill@^1.5.0:

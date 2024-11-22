@@ -1,10 +1,21 @@
 import { Box, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import CarGallery from "./CarGallery";
+import { sanityClient } from "../../lib/client";
 
 const Gallery: React.FC = () => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const query = '*[_type == "product"]';
+      const products = await sanityClient.fetch(query);
+      console.log({ products });
+    };
+
+    getProducts();
+  }, []);
 
   return (
     <Box
