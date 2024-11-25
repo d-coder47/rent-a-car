@@ -9,7 +9,7 @@ const Gallery: React.FC = () => {
 
   useEffect(() => {
     const getProducts = async () => {
-      const query = '*[_type == "product"]';
+      const query = '*[_type == "car"]';
       const products = await sanityClient.fetch(query);
       console.log({ products });
     };
