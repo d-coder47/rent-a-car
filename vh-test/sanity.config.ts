@@ -5,9 +5,9 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'vh-test',
+  title: 'Database',
 
-  projectId: '8xpjg0gr',
+  projectId: '3n5tl1px',
   dataset: 'production',
 
   plugins: [structureTool(), visionTool()],
