@@ -124,8 +124,7 @@ const Step4: React.FC<IStep> = ({
                   }}
                 >
                   <Typography variant="caption">
-                    O valor da reserva inclui um depósito de garantia de €200
-                    por veículo reservado.
+                    {t("reservationForm.cautionInfo")}
                   </Typography>
                 </Box>
                 <Box
