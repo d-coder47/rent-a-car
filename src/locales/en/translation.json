@@ -142,7 +142,8 @@
     "confirm": "Confirm",
     "edit": "Edit",
     "uploadFile": "Upload file",
-    "cautionInfo": "The reservation amount includes a security deposit of €200 per reserved vehicle."
+    "cautionInfo": "The reservation amount includes a security deposit of €200 per reserved vehicle.",
+    "seeDetails": "See Details"
   },
   "single-car": {
     "details": "Details",

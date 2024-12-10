@@ -141,7 +141,8 @@
     "confirm": "Confirmar",
     "edit": "Editar",
     "uploadFile": "Subir archivo",
-    "cautionInfo": "El importe de la reserva incluye un depósito de garantía de 200 € por vehículo reservado."
+    "cautionInfo": "El importe de la reserva incluye un depósito de garantía de 200 € por vehículo reservado.",
+    "seeDetails": "Ver detalles"
   },
   "single-car": {
     "details": "Detalles",

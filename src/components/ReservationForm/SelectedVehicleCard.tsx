@@ -110,7 +110,9 @@ const SelectedVehicleCard: React.FC<ISelectedVehicle> = ({
             }}
             disableElevation={true}
           >
-            <Typography variant="body2">Ver detalhes</Typography>
+            <Typography variant="body2">
+              {t("reservationForm.seeDetails")}
+            </Typography>
           </Button>
         </Box>
       </CardActions>
