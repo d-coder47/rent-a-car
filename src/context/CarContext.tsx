@@ -21,7 +21,6 @@ export const CarProvider = ({ children }: CarProviderProps) => {
   const [cars, setCars] = useState<ICar[]>([]);
 
   const updateCars = (newCars: ICar[]) => {
-    console.log({ newCars });
     setCars(newCars);
   };
 

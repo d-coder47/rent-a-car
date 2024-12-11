@@ -1,27 +1,10 @@
 import { Box, Typography } from "@mui/material";
-import React, { useEffect } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import CarGallery from "./CarGallery";
-import { sanityClient } from "../../lib/client";
-import { useCar } from "../../context/CarContext";
 
 const Gallery: React.FC = () => {
   const { t } = useTranslation();
-  const { cars, updateCars } = useCar();
-
-  useEffect(() => {
-    const getCarsFromDatabase = async () => {
-      const query = '*[_type == "car"]';
-      const cars = await sanityClient.fetch(query);
-      updateCars(cars);
-      return cars;
-    };
-
-    if (cars?.length === 0) {
-      console.log("Getting cars...");
-      getCarsFromDatabase();
-    }
-  }, []);
 
   return (
     <Box

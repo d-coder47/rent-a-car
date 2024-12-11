@@ -14,10 +14,9 @@ import CarCard from "./CarCard";
 import { ICar, ICarGallery } from "../../interfaces";
 import { useNavigate } from "react-router-dom";
 import { useCar } from "../../context/CarContext";
-import { sanityClient } from "../../lib/client";
 
 const CarGallery = ({ showPagination = false }: ICarGallery) => {
-  const { cars, updateCars } = useCar();
+  const { cars } = useCar();
 
   const [page, setPage] = useState(1);
   const [itemsPerPage, setIemsPerPage] = useState<number>(8);
@@ -40,18 +39,8 @@ const CarGallery = ({ showPagination = false }: ICarGallery) => {
   );
 
   useEffect(() => {
-    const getCarsFromDatabase = async () => {
-      const query = '*[_type == "car"]';
-      const cars = await sanityClient.fetch(query);
-      updateCars(cars);
-      return cars;
-    };
-
-    if (cars?.length === 0) {
-      console.log("Getting cars...");
-      getCarsFromDatabase();
-    }
-  }, []);
+    setCars(cars || undefined);
+  }, [cars]);
 
   useEffect(() => {
     const handleResize = () => {

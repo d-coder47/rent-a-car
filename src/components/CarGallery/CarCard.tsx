@@ -18,6 +18,7 @@ import GearShift from "../../assets/gearshift.svg";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { urlFor } from "../../lib/client";
+import { formatPrice } from "../../utils";
 
 const CarCard: React.FC<ICarCard> = ({ car, type }) => {
   const theme = useTheme();
@@ -27,8 +28,8 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
 
   const price =
     car.priceToRent?.amount > 0
-      ? car.priceToRent.amount
-      : car.priceToSell.amount;
+      ? formatPrice(car.priceToRent.amount, car.priceToRent.currency)
+      : formatPrice(car.priceToSell.amount, car.priceToSell.currency);
   const isCarForRent = car.priceToRent?.amount > 0;
 
   return (
@@ -52,7 +53,6 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
           objectFit: "contain",
           aspectRatio: "3/2",
         }}
-        // image={car.image}
         image={urlFor(car.image).url()}
         alt={car.name}
       />
