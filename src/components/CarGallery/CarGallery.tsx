@@ -9,18 +9,21 @@ import {
   useTheme,
 } from "@mui/material";
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { CARS } from "../../constants";
 import { useTranslation } from "react-i18next";
 import CarCard from "./CarCard";
-import { ICarGallery } from "../../interfaces";
+import { ICar, ICarGallery } from "../../interfaces";
 import { useNavigate } from "react-router-dom";
+import { useCar } from "../../context/CarContext";
+import { sanityClient } from "../../lib/client";
 
 const CarGallery = ({ showPagination = false }: ICarGallery) => {
+  const { cars, updateCars } = useCar();
+
   const [page, setPage] = useState(1);
   const [itemsPerPage, setIemsPerPage] = useState<number>(8);
   const [tabValue, setTabValue] = useState(0);
-  const [cars, setCars] = useState(
-    CARS.filter((car) => car.availableToRent === true)
+  const [galleryCars, setCars] = useState(
+    cars?.filter((car: ICar) => car?.availableToRent === true)
   );
 
   const theme = useTheme();
@@ -29,12 +32,26 @@ const CarGallery = ({ showPagination = false }: ICarGallery) => {
 
   const indexOfLastCar = page * itemsPerPage;
   const indexOfFirstCar = indexOfLastCar - itemsPerPage;
-  const isLarger = cars.length > itemsPerPage;
+  const isLarger = cars?.length ? cars?.length > itemsPerPage : false;
 
-  const currentCars = cars.slice(
+  const currentCars = galleryCars?.slice(
     isLarger ? indexOfFirstCar : 0,
     indexOfLastCar
   );
+
+  useEffect(() => {
+    const getCarsFromDatabase = async () => {
+      const query = '*[_type == "car"]';
+      const cars = await sanityClient.fetch(query);
+      updateCars(cars);
+      return cars;
+    };
+
+    if (cars?.length === 0) {
+      console.log("Getting cars...");
+      getCarsFromDatabase();
+    }
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -67,7 +84,7 @@ const CarGallery = ({ showPagination = false }: ICarGallery) => {
   const handleTabChange = (_event: React.SyntheticEvent, newValue: number) => {
     setTabValue(newValue);
 
-    const newCars = CARS.filter((car) =>
+    const newCars = cars?.filter((car) =>
       newValue === 0
         ? car.availableToRent === true
         : car.availableToSell === true
@@ -141,11 +158,11 @@ const CarGallery = ({ showPagination = false }: ICarGallery) => {
           columnSpacing={6}
         >
           {currentCars
-            .filter((car) => {
+            ?.filter((car: ICar) => {
               const availableToRent = car.availableToRent === true;
               return availableToRent;
             })
-            .map((car, index) => (
+            .map((car: ICar, index: number) => (
               <Grid2
                 key={index}
                 size={{
@@ -171,9 +188,15 @@ const CarGallery = ({ showPagination = false }: ICarGallery) => {
           >
             <Pagination
               count={
-                Math.ceil(currentCars.length / itemsPerPage) === 0
+                Math.ceil(
+                  currentCars?.length ? currentCars?.length / itemsPerPage : 0
+                ) === 0
                   ? 1
-                  : Math.ceil(currentCars.length / itemsPerPage)
+                  : Math.ceil(
+                      currentCars?.length
+                        ? currentCars?.length / itemsPerPage
+                        : 0
+                    )
               }
               page={page}
               onChange={handlePageChange}
@@ -225,11 +248,11 @@ const CarGallery = ({ showPagination = false }: ICarGallery) => {
           columnSpacing={6}
         >
           {currentCars
-            .filter((car) => {
+            ?.filter((car: ICar) => {
               const availableToSell = car.availableToSell === true;
               return availableToSell;
             })
-            .map((car, index) => (
+            .map((car: ICar, index: number) => (
               <Grid2
                 key={index}
                 size={{
@@ -255,9 +278,15 @@ const CarGallery = ({ showPagination = false }: ICarGallery) => {
           >
             <Pagination
               count={
-                Math.ceil(currentCars.length / itemsPerPage) === 0
+                Math.ceil(
+                  currentCars?.length ? currentCars?.length / itemsPerPage : 0
+                ) === 0
                   ? 1
-                  : Math.ceil(currentCars.length / itemsPerPage)
+                  : Math.ceil(
+                      currentCars?.length
+                        ? currentCars?.length / itemsPerPage
+                        : 0
+                    )
               }
               page={page}
               onChange={handlePageChange}

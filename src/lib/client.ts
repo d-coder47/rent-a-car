@@ -1,5 +1,6 @@
 import { createClient, SanityClient } from "@sanity/client";
-// import imageUrlBuilder from "@sanity/image-url";
+import imageUrlBuilder from "@sanity/image-url";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 export const sanityClient: SanityClient = createClient({
   projectId: "3n5tl1px",
@@ -9,6 +10,6 @@ export const sanityClient: SanityClient = createClient({
   token: process.env.REACT_APP_SANITY_TOKEN,
 });
 
-// const builder = imageUrlBuilder(sanityClient);
+const builder = imageUrlBuilder(sanityClient);
 
-// export const urlFor = (source) => builder.image(source);
+export const urlFor = (source: SanityImageSource) => builder.image(source);

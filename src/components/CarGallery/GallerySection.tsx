@@ -3,18 +3,24 @@ import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import CarGallery from "./CarGallery";
 import { sanityClient } from "../../lib/client";
+import { useCar } from "../../context/CarContext";
 
 const Gallery: React.FC = () => {
   const { t } = useTranslation();
+  const { cars, updateCars } = useCar();
 
   useEffect(() => {
-    const getProducts = async () => {
+    const getCarsFromDatabase = async () => {
       const query = '*[_type == "car"]';
-      const products = await sanityClient.fetch(query);
-      console.log({ products });
+      const cars = await sanityClient.fetch(query);
+      updateCars(cars);
+      return cars;
     };
 
-    getProducts();
+    if (cars?.length === 0) {
+      console.log("Getting cars...");
+      getCarsFromDatabase();
+    }
   }, []);
 
   return (

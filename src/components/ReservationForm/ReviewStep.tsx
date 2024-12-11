@@ -3,6 +3,7 @@ import Grid from "@mui/material/Grid2";
 import { useTranslation } from "react-i18next";
 import { IReviewStep } from "../../interfaces";
 import { handleGridSize } from "./utils";
+import { urlFor } from "../../lib/client";
 
 const ReviewStep: React.FC<IReviewStep> = ({ reservationDetails }) => {
   const { t } = useTranslation();
@@ -168,7 +169,7 @@ const ReviewStep: React.FC<IReviewStep> = ({ reservationDetails }) => {
                       }}
                     >
                       <Avatar
-                        src={car.image}
+                        src={car.image ? urlFor(car.image).url() : ""}
                         sx={{
                           height: "120px",
                           width: "180px",

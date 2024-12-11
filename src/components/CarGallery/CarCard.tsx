@@ -17,6 +17,7 @@ import { LocalGasStation, People } from "@mui/icons-material";
 import GearShift from "../../assets/gearshift.svg";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import { urlFor } from "../../lib/client";
 
 const CarCard: React.FC<ICarCard> = ({ car, type }) => {
   const theme = useTheme();
@@ -24,8 +25,11 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
 
   const navigate = useNavigate();
 
-  const price = car.priceToRent.length > 0 ? car.priceToRent : car.priceToSell;
-  const isCarForRent = car.priceToRent.length > 0;
+  const price =
+    car.priceToRent?.amount > 0
+      ? car.priceToRent.amount
+      : car.priceToSell.amount;
+  const isCarForRent = car.priceToRent?.amount > 0;
 
   return (
     <Card
@@ -48,7 +52,8 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
           objectFit: "contain",
           aspectRatio: "3/2",
         }}
-        image={car.image}
+        // image={car.image}
+        image={urlFor(car.image).url()}
         alt={car.name}
       />
       <CardContent
@@ -142,7 +147,7 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
 
           <Button
             variant="contained"
-            onClick={() => navigate(`/reservation/${car.slug}`)}
+            onClick={() => navigate(`/reservation/${car.slug.current}`)}
             sx={{
               height: "35px",
               textAlign: "center",

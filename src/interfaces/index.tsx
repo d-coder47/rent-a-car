@@ -5,18 +5,18 @@ export interface IService {
 }
 
 export interface ICar {
-  slug: string;
+  description: string;
+  slug: { current: string };
   name: string;
   model: string;
   year: number;
   seats: number;
-  motor: string;
   fuel: string;
   transmission: string;
   availableToRent: boolean;
   availableToSell: boolean;
-  priceToRent: string;
-  priceToSell: string;
+  priceToRent: { amount: number; currency: string };
+  priceToSell: { amount: number; currency: string };
   securityDeposit?: string;
   image: string;
 }

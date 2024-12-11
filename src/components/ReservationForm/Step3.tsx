@@ -16,6 +16,7 @@ import Chip from "@mui/material/Chip";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import { CARS } from "../../constants";
+import { useCar } from "../../context/CarContext";
 
 const Step3: React.FC<IStep> = ({
   reservationValues,
@@ -24,6 +25,8 @@ const Step3: React.FC<IStep> = ({
 }) => {
   const { t } = useTranslation();
   const { id } = useParams<{ id?: string }>();
+
+  const { cars, updateCars } = useCar();
 
   const [carId, setCarId] = useState<string[]>([]);
 
@@ -34,15 +37,15 @@ const Step3: React.FC<IStep> = ({
   const [carFromRoute, setCarFromRoute] = useState<ICar[]>();
 
   useEffect(() => {
-    if (!CARS || vehicleOptions.length > 0) return;
+    if (!cars || vehicleOptions.length > 0) return;
 
-    const availableCars = CARS.filter(
+    const availableCars = cars.filter(
       (item): item is ICar => item.availableToRent
     );
 
     if (id) {
-      const findCar = CARS.filter(
-        (item): item is ICar => item.slug === id.toString()
+      const findCar = cars.filter(
+        (item): item is ICar => item.slug.current === id.toString()
       );
 
       setCarFromRoute(findCar);
@@ -60,7 +63,7 @@ const Step3: React.FC<IStep> = ({
   }, [vehicleOptions.length, id]);
 
   const getCarName = (id: string) => {
-    const car = selectedCars.find((item) => item.slug === id);
+    const car = selectedCars.find((item) => item.slug.current === id);
     return car?.name;
   };
 
@@ -70,7 +73,7 @@ const Step3: React.FC<IStep> = ({
     const splitedData = typeof value === "string" ? value.split(",") : value;
 
     const selectedCarsNewData = vehicleOptions.filter((vehicle) =>
-      splitedData.includes(vehicle.slug)
+      splitedData.includes(vehicle.slug.current)
     );
 
     if (id && carFromRoute) {
@@ -100,7 +103,7 @@ const Step3: React.FC<IStep> = ({
     setCarId(filteredCars);
 
     const selectedCars = vehicleOptions.filter((item) =>
-      filteredCars.includes(item.slug)
+      filteredCars.includes(item.slug.current)
     );
 
     const syntheticEvent = {
@@ -200,7 +203,10 @@ const Step3: React.FC<IStep> = ({
                   )}
                 >
                   {vehicleOptions.map((vehicle) => (
-                    <MenuItem key={vehicle.slug} value={vehicle.slug}>
+                    <MenuItem
+                      key={vehicle.slug.current}
+                      value={vehicle.slug.current}
+                    >
                       <Box display="flex" alignItems="center">
                         <img
                           src={vehicle.image}

@@ -7,8 +7,11 @@ import Engagement from "../components/Engagement/Engagement";
 import Contact from "../components/Contact/Contact";
 import Gallery from "../components/CarGallery/GallerySection";
 import Layout from "../components/Layout/Layout";
+import { useCar } from "../context/CarContext";
 
 const Home = () => {
+  const { cars } = useCar();
+  console.log({ cars });
   return (
     <Layout>
       <Hero />
