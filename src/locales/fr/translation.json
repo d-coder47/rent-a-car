@@ -140,7 +140,9 @@
     "reservationDetailsTitle": "Détails de la réservation",
     "confirm": "Confirmer",
     "edit": "Éditer",
-    "uploadFile": "Téléverser le fichier"
+    "uploadFile": "Téléverser le fichier",
+    "cautionInfo": "Le montant de la réservation inclut une caution de 200 € par véhicule réservé.",
+    "seeDetails": "Voir les détails"
   },
   "single-car": {
     "details": "Détails",
