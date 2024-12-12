@@ -1,13 +1,15 @@
 @font-face {
   font-family: "Istok Web";
-  src: local("Istok Web"),
+  src:
+    local("Istok Web"),
     url("./fonts/Istok_Web/IstokWeb-Regular.ttf") format("truetype");
   font-weight: normal;
 }
 
 @font-face {
   font-family: "Istok Web";
-  src: local("Istok Web Bold"),
+  src:
+    local("Istok Web Bold"),
     url("./fonts/Istok_Web/IstokWeb-Bold.ttf") format("truetype");
   font-weight: bold;
 }
@@ -28,4 +30,8 @@
   width: -webkit-fill-available;
   width: -moz-available;
   width: fill-available;
+}
+
+.portable-text-container {
+  font-family: "Istok Web", sans-serif;
 }
