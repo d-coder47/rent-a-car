@@ -1495,6 +1495,26 @@
   resolved "https://registry.npmjs.org/@popperjs/core/-/core-2.11.8.tgz"
   integrity sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==
 
+"@portabletext/react@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@portabletext/react/-/react-3.2.0.tgz#676ce1c7fc89ad574f6c1827eb02ec953ec5d630"
+  integrity sha512-BA216Z8yhb/eP24bfb09uiT0SVnQHTVZMPXf4MRBEZ+G8cMzZM/ab3tcp8owyp91+3kTKR0qSIpzYSKdm1Pakw==
+  dependencies:
+    "@portabletext/toolkit" "^2.0.16"
+    "@portabletext/types" "^2.0.13"
+
+"@portabletext/toolkit@^2.0.16":
+  version "2.0.16"
+  resolved "https://registry.yarnpkg.com/@portabletext/toolkit/-/toolkit-2.0.16.tgz#dbeff7ae2d86b3b6bb0e4ea586f5f65b91e51451"
+  integrity sha512-aBvnD8MscoAlEIuZBn0Aksd+oCuoMGFOT3CtHIgRBaac0Vu4YnnMUF45xo/B/T5vmwWcnDXoJEJdn+SKDg1m+A==
+  dependencies:
+    "@portabletext/types" "^2.0.13"
+
+"@portabletext/types@^2.0.13":
+  version "2.0.13"
+  resolved "https://registry.yarnpkg.com/@portabletext/types/-/types-2.0.13.tgz#7a4bf6dac30713fbe1b4bc01dc572af0af72955d"
+  integrity sha512-5xk5MSyQU9CrDho3Rsguj38jhijhD36Mk8S6mZo3huv6PM+t4M/5kJN2KFIxgvt4ONpvOEs1pVIZAV0cL0Vi+Q==
+
 "@remix-run/router@1.19.2":
   version "1.19.2"
   resolved "https://registry.npmjs.org/@remix-run/router/-/router-1.19.2.tgz"
@@ -3496,7 +3516,9 @@ regjsparser@^0.12.0:
     "@emotion/styled" "^11.13.0"
     "@mui/icons-material" "^6.1.0"
     "@mui/material" "^6.1.0"
+    "@portabletext/react" "^3.2.0"
     "@sanity/cli" "^3.64.3"
+    "@sanity/image-url" "^1.1.0"
     i18next "^23.15.1"
     mui-tel-input "^6.0.1"
     react "^18.3.1"
@@ -3504,7 +3526,7 @@ regjsparser@^0.12.0:
     react-i18next "^15.0.2"
     react-router-dom "^6.26.2"
     react-slick "^0.30.2"
-    rent-a-car "file:../../../AppData/Local/Yarn/Cache/v6/npm-rent-a-car-0.0.0-f049e9c1-e447-4e35-beef-633fbef936e1-1732284224406/node_modules/rent-a-car"
+    rent-a-car "file:../../../AppData/Local/Yarn/Cache/v6/npm-rent-a-car-0.0.0-5a14764e-c108-45cd-b0d8-2a67bfa1d760-1734028914901/node_modules/rent-a-car"
     slick-carousel "^1.8.1"
 
 resize-observer-polyfill@^1.5.0:
