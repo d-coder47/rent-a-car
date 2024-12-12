@@ -31,18 +31,18 @@ const ReservationForm = () => {
     },
     vehicle: [
       {
-        slug: "",
+        slug: { current: "" },
         name: "",
+        description: "",
         model: "",
         year: 0,
         seats: 0,
-        motor: "",
         fuel: "",
         transmission: "",
         availableToRent: false,
         availableToSell: false,
-        priceToRent: "",
-        priceToSell: "",
+        priceToRent: { amount: 0, currency: "" },
+        priceToSell: { amount: 0, currency: "" },
         securityDeposit: "",
         image: "",
       },
@@ -65,8 +65,8 @@ const ReservationForm = () => {
   const handleReservationPrice = (days: number, vehicles: ICar[]) => {
     if (days > 0 && vehicles.length > 0) {
       const data = vehicles.map((vehicle) => {
-        const price = Number(vehicle.priceToRent.slice(1));
-        const securityDeposit = Number(vehicle?.securityDeposit?.slice(1));
+        const price = vehicle.priceToRent.amount;
+        const securityDeposit = 200;
 
         return price * reservationInfo.days + securityDeposit;
       });
