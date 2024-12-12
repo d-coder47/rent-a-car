@@ -15,8 +15,8 @@ import { useEffect, useState } from "react";
 import Chip from "@mui/material/Chip";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
-import { CARS } from "../../constants";
 import { useCar } from "../../context/CarContext";
+import { urlFor } from "../../lib/client";
 
 const Step3: React.FC<IStep> = ({
   reservationValues,
@@ -26,7 +26,7 @@ const Step3: React.FC<IStep> = ({
   const { t } = useTranslation();
   const { id } = useParams<{ id?: string }>();
 
-  const { cars, updateCars } = useCar();
+  const { cars } = useCar();
 
   const [carId, setCarId] = useState<string[]>([]);
 
@@ -60,7 +60,7 @@ const Step3: React.FC<IStep> = ({
       handleChange(syntheticEvent);
     }
     setVehicleOptions(availableCars);
-  }, [vehicleOptions.length, id]);
+  }, [vehicleOptions.length, id, cars]);
 
   const getCarName = (id: string) => {
     const car = selectedCars.find((item) => item.slug.current === id);
@@ -209,7 +209,7 @@ const Step3: React.FC<IStep> = ({
                     >
                       <Box display="flex" alignItems="center">
                         <img
-                          src={vehicle.image}
+                          src={urlFor(vehicle.image).url()}
                           alt={vehicle.name}
                           style={{ width: 30, height: 30, marginRight: 10 }}
                         />
@@ -232,38 +232,39 @@ const Step3: React.FC<IStep> = ({
 
             <Grid size={6} />
 
-            <Grid
-              container
-              spacing={{ xs: 2, md: 3 }}
-              columns={12}
-              rowSpacing={8}
-              columnSpacing={6}
-              width="100%"
-              sx={{
-                display:
-                  reservationValues?.vehicle[0]?.name === "" ? "none" : "flex",
-                flexDirection: "row",
-              }}
-            >
-              {reservationValues.vehicle.map((car, index) => (
-                <Grid
-                  key={index}
-                  size={{
-                    xs: 12,
-                    sm: 6,
-                    md: 6,
-                    lg: 3,
-                    xl: 3,
-                  }}
-                >
-                  <SelectedVehicleCard
-                    vehicle={car}
+            {reservationValues?.vehicle[0]?.name !== "" && (
+              <Grid
+                container
+                spacing={{ xs: 2, md: 3 }}
+                columns={12}
+                rowSpacing={8}
+                columnSpacing={6}
+                width="100%"
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                }}
+              >
+                {reservationValues.vehicle.map((car, index) => (
+                  <Grid
                     key={index}
-                    closeCardClick={closeCardClick}
-                  />
-                </Grid>
-              ))}
-            </Grid>
+                    size={{
+                      xs: 12,
+                      sm: 6,
+                      md: 6,
+                      lg: 3,
+                      xl: 3,
+                    }}
+                  >
+                    <SelectedVehicleCard
+                      vehicle={car}
+                      key={index}
+                      closeCardClick={closeCardClick}
+                    />
+                  </Grid>
+                ))}
+              </Grid>
+            )}
           </Grid>
         </Box>
       </Box>
