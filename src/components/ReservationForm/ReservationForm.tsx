@@ -8,13 +8,10 @@ import frontID from "../../assets/reservation/frontID.png";
 import Step3 from "./Step3";
 import Step4 from "./Step4";
 import ReviewStep from "./ReviewStep";
-import { paymentRequest } from "../../utils";
 
 const ReservationForm = () => {
   const theme = useTheme();
   const { t, i18n } = useTranslation();
-
-  const [fingerPrint, setFingerPrint] = useState<string>("");
 
   const [showRentalSummary, setShowRentalSummary] = useState<boolean>(false);
 
@@ -294,9 +291,6 @@ const ReservationForm = () => {
 
     if (clickType === "confirm") {
       console.log("confirm details => ", reservationInfo);
-      const res = paymentRequest(reservationInfo);
-      setFingerPrint(res);
-      console.log(res);
     }
   };
 
@@ -433,8 +427,6 @@ const ReservationForm = () => {
             </Typography>
           </Button>
         </Box>
-
-        <div dangerouslySetInnerHTML={{ __html: fingerPrint }}></div>
       </Box>
     </Box>
   );
