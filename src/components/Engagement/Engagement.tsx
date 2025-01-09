@@ -18,7 +18,7 @@ const Engagement: React.FC = () => {
         height: "100%",
         flexDirection: "column",
         alignItems: "center",
-        background: theme.palette.primary.main,
+        background: "#F4F4F4",
       }}
     >
       <Typography
