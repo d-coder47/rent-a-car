@@ -66,6 +66,13 @@ const Engagement: React.FC = () => {
             lg: "50px",
             xl: "50px",
           },
+          marginBottom: {
+            xs: "30px",
+            sm: "30px",
+            md: "30px",
+            lg: "50px",
+            xl: "50px",
+          },
           textTransform: "none",
           background: theme.palette.secondary.main,
           "&:hover": {
@@ -73,31 +80,20 @@ const Engagement: React.FC = () => {
             color: "#FFFFFF",
           },
         }}
-        onClick={() => navigate("/reservation")}
+        onClick={() =>
+          window.open(
+            `https://api.whatsapp.com/send?phone=+2385935535&text=${t(
+              "social-media.greeting"
+            )}`,
+            "_blank",
+            "noopener,noreferrer"
+          )
+        }
       >
-        <Typography variant="body1">{t("homepage.engagement.cta")}</Typography>
-      </Button>
-      <Link
-        href={`https://api.whatsapp.com/send?phone=+2385935535&text=${t(
-          "social-media.greeting"
-        )}`}
-        target="_blank"
-      >
-        <Typography
-          variant="body1"
-          sx={{
-            textAlign: "center",
-            textDecoration: "underline",
-            color: "#000000",
-            marginTop: "30px",
-            marginBottom: "80px",
-            cursor: "pointer",
-          }}
-          onClick={() => console.log("hello")}
-        >
+        <Typography variant="body1">
           {t("homepage.engagement.startConversation")}
         </Typography>
-      </Link>
+      </Button>
     </Box>
   );
 };

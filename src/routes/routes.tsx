@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import Cars from "../pages/Cars";
-import Reservation from "../pages/Reservation";
 import Car from "../pages/Car";
 import { sanityClient } from "../lib/client";
 import { useCar } from "../context/CarContext";
@@ -28,7 +27,6 @@ const AppRoutes: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cars" element={<Cars />} />
-        <Route path="/reservation/:id?" element={<Reservation />} />
         <Route path="/car/:slug" element={<Car />} />
       </Routes>
     </Router>

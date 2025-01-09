@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Card,
   CardActions,
   CardContent,
@@ -9,22 +8,18 @@ import {
   Icon,
   Stack,
   Typography,
-  useTheme,
 } from "@mui/material";
 import React from "react";
 import { ICarCard } from "../../interfaces";
 import { LocalGasStation, People } from "@mui/icons-material";
 import GearShift from "../../assets/gearshift.svg";
 import { useTranslation } from "react-i18next";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { urlFor } from "../../lib/client";
 import { formatPrice } from "../../utils";
 
 const CarCard: React.FC<ICarCard> = ({ car, type }) => {
-  const theme = useTheme();
   const { t } = useTranslation();
-
-  const navigate = useNavigate();
 
   const price =
     car.priceToRent?.amount > 0
@@ -150,31 +145,6 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
                 </Typography>
               ) : null}
             </Box>
-
-            <Button
-              variant="contained"
-              onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
-                e.preventDefault();
-                navigate(`/reservation/${car.slug.current}`);
-              }}
-              sx={{
-                height: "35px",
-                textAlign: "center",
-                color: "#000000",
-                textTransform: "none",
-                "&:hover": {
-                  backgroundColor: theme.palette.secondary.main,
-                  color: "#ffffff !important",
-                },
-              }}
-              disableElevation={true}
-            >
-              <Typography variant="body2">
-                {isCarForRent
-                  ? t("homepage.cars.reservation")
-                  : t("homepage.cars.buy")}
-              </Typography>
-            </Button>
           </Box>
         </CardActions>
       </Link>
