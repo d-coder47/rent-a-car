@@ -1,24 +1,18 @@
-import { Avatar, Box, Button, Link } from "@mui/material";
+import { Avatar, Box, Button, Typography } from "@mui/material";
 import Logo from "../../assets/logo.png";
 import LangSelector from "../LangSelector/LangSelector";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import BurguerMenu from "../BurguerMenu/BurguerMenu";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { HEADER_HEIGHT, scrollToView } from "../../constants";
 
 const Header: React.FC = () => {
-  const navigate = useNavigate();
-
   const location = useLocation();
 
   const isHomePage = location.pathname === "/";
 
   const { t } = useTranslation();
-
-  const goToStand = () => {
-    navigate("/cars");
-  };
 
   const menuItensStyle = {
     display: isHomePage ? "flex" : "none",
@@ -67,18 +61,16 @@ const Header: React.FC = () => {
       >
         <Box>
           <Link
-            component="button"
-            variant="body2"
-            onClick={() => {
-              navigate("/");
+            to={"/"}
+            rel="noopener noreferrer"
+            style={{
+              textDecoration: "none",
+              color: "inherit",
             }}
           >
             <Avatar
               alt="logo"
               src={Logo}
-              onClick={() => {
-                navigate("/");
-              }}
               sx={{
                 width: {
                   xs: "70%",
@@ -114,9 +106,37 @@ const Header: React.FC = () => {
             justifyContent: isHomePage ? "space-between" : "right",
           }}
         >
-          <Button sx={menuItensStyle} onClick={goToStand}>
-            {t("menu.exposicaoVeiculos")}
-          </Button>
+          <Link
+            to={"/cars"}
+            rel="noopener noreferrer"
+            style={{
+              display: isHomePage ? "flex" : "none",
+              textDecoration: "none",
+              color: "inherit",
+            }}
+          >
+            <Typography
+              sx={{
+                fontFamily: "Istok Web",
+                fontStyle: "normal",
+                fontWeight: 700,
+                fontSize: {
+                  xs: "17px",
+                  sm: "17px",
+                  md: "17px",
+                  lg: "17px",
+                  xl: "20px",
+                },
+                lineHeight: "29px",
+                textAlign: "right",
+                textTransform: "none",
+                color: "#000000",
+              }}
+            >
+              {t("menu.exposicaoVeiculos")}
+            </Typography>
+          </Link>
+
           <Button sx={menuItensStyle} onClick={() => scrollToView("services")}>
             {t("menu.servicos")}
           </Button>

@@ -43,7 +43,6 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
     >
       <Link
         to={`/car/${car.slug.current}`}
-        target="_blank"
         rel="noopener noreferrer"
         style={{ textDecoration: "none", color: "inherit" }}
       >
@@ -154,12 +153,14 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
 
             <Button
               variant="contained"
-              onClick={() => navigate(`/reservation/${car.slug.current}`)}
+              onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                e.preventDefault();
+                navigate(`/reservation/${car.slug.current}`);
+              }}
               sx={{
                 height: "35px",
                 textAlign: "center",
                 color: "#000000",
-
                 textTransform: "none",
                 "&:hover": {
                   backgroundColor: theme.palette.secondary.main,

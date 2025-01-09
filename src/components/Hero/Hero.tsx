@@ -72,12 +72,17 @@ const Hero: React.FC = () => {
             {t("homepage.hero.subheadline")}
           </Typography>
 
-          <Button
-            variant="contained"
-            sx={typographyStyle.cta}
-            onClick={() => navigate("/reservation")}
-          >
-            <Typography variant="body1">{t("homepage.hero.cta")}</Typography>
+          <Button variant="contained" sx={typographyStyle.cta}>
+            <a
+              href="/reservation"
+              rel="noopener noreferrer"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+              }}
+            >
+              <Typography variant="body1">{t("homepage.hero.cta")}</Typography>
+            </a>
           </Button>
         </Box>
       </Box>
