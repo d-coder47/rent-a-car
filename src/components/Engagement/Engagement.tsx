@@ -57,7 +57,6 @@ const Engagement: React.FC = () => {
         sx={{
           height: "50px",
           width: "250px",
-          borderRadius: "12px",
           textAlign: "justify",
           color: "#ffffff",
           marginTop: {

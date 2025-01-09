@@ -10,14 +10,11 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import heroImage from "../../assets/heroImage.jpg";
 import heroCar from "../../assets/heroCar.png";
-import { useNavigate } from "react-router-dom";
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
 
   const theme = useTheme();
-
-  const navigate = useNavigate();
 
   const typographyStyle = {
     headline: {
@@ -31,7 +28,6 @@ const Hero: React.FC = () => {
     },
     cta: {
       height: "50px",
-      borderRadius: "12px",
       textAlign: "justify",
       color: "#ffffff",
       marginTop: "50px",
