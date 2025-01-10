@@ -7,7 +7,6 @@ import {
   CardHeader,
   CardMedia,
   Icon,
-  IconButton,
   Stack,
   Tooltip,
   Typography,
@@ -15,7 +14,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import { ICarCard } from "../../interfaces";
-import { LocalGasStation, MoreVert, People } from "@mui/icons-material";
+import { LocalGasStation, People } from "@mui/icons-material";
 import GearShift from "../../assets/gearshift.svg";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
@@ -63,11 +62,6 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
               variant: "body1",
               fontWeight: "bold",
             }}
-            action={
-              <IconButton>
-                <MoreVert />
-              </IconButton>
-            }
           />
         </Tooltip>
 

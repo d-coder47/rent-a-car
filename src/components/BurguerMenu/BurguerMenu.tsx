@@ -7,24 +7,25 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
+  Typography,
 } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Menu, Close } from "@mui/icons-material";
 import LangSelector from "../LangSelector/LangSelector";
+import { scrollToView } from "../../constants";
+import { Link, useNavigate } from "react-router-dom";
 
 const BurguerMenu: React.FC = () => {
   const { t } = useTranslation();
 
   const [open, setOpen] = React.useState(false);
 
-  const items = [
-    t("menu.exposicaoVeiculos"),
-    t("menu.servicos"),
-    t("menu.contacto"),
-  ];
-
   const contactItems = ["vhinvestimentos20@gmail.com", "+238 593 55 35"];
+
+  const isHomePage = location.pathname === "/";
+
+  const navigate = useNavigate();
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);
@@ -61,16 +62,54 @@ const BurguerMenu: React.FC = () => {
         <Close onClick={toggleDrawer(false)} />
       </Box>
       <List>
-        {items.map((text) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemText
-                primary={text}
-                primaryTypographyProps={ListItemTextStyle}
-              />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <ListItem disablePadding>
+          <ListItemButton>
+            <Link
+              to={"/cars"}
+              rel="noopener noreferrer"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+              }}
+            >
+              <Typography sx={ListItemTextStyle}>
+                {t("menu.exposicaoVeiculos")}
+              </Typography>
+            </Link>
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem disablePadding>
+          <ListItemButton
+            onClick={() => {
+              navigate("/");
+              setTimeout(() => {
+                scrollToView("services");
+              }, 100);
+            }}
+          >
+            <ListItemText
+              primary={t("menu.servicos")}
+              slotProps={{ primary: ListItemTextStyle }}
+            />
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem disablePadding>
+          <ListItemButton
+            onClick={() => {
+              navigate("/");
+              setTimeout(() => {
+                scrollToView("contactus");
+              }, 100);
+            }}
+          >
+            <ListItemText
+              primary={t("menu.contacto")}
+              slotProps={{ primary: ListItemTextStyle }}
+            />
+          </ListItemButton>
+        </ListItem>
 
         <ListItem disablePadding>
           <ListItemButton>
@@ -89,7 +128,7 @@ const BurguerMenu: React.FC = () => {
             <ListItemButton>
               <ListItemText
                 primary={text}
-                primaryTypographyProps={ListItemTextStyle}
+                slotProps={{ primary: ListItemTextStyle }}
               />
             </ListItemButton>
           </ListItem>
