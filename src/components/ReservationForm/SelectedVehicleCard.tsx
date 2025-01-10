@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardMedia,
   IconButton,
+  Link,
   Typography,
   useTheme,
 } from "@mui/material";
@@ -117,9 +118,16 @@ const SelectedVehicleCard: React.FC<ISelectedVehicle> = ({
             }}
             disableElevation={true}
           >
-            <Typography variant="body2">
-              {t("reservationForm.seeDetails")}
-            </Typography>
+            <Link
+              href={`/car/${vehicle.slug.current}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <Typography variant="body2">
+                {t("reservationForm.seeDetails")}
+              </Typography>
+            </Link>
           </Button>
         </Box>
       </CardActions>

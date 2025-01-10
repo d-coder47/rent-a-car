@@ -23,8 +23,6 @@ const BurguerMenu: React.FC = () => {
 
   const contactItems = ["vhinvestimentos20@gmail.com", "+238 593 55 35"];
 
-  const isHomePage = location.pathname === "/";
-
   const navigate = useNavigate();
 
   const toggleDrawer = (newOpen: boolean) => () => {
