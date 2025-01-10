@@ -48,7 +48,6 @@ const Hero: React.FC = () => {
           display: "flex",
           alignItems: "center",
           flexDirection: "column",
-          marginTop: "100px",
         }}
       >
         <Box
