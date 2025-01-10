@@ -18,7 +18,6 @@ const Cars = () => {
         <Box
           sx={{
             width: "93%",
-            marginTop: "60px",
           }}
         >
           <Typography textAlign="center" marginBottom="36px" variant="h2">

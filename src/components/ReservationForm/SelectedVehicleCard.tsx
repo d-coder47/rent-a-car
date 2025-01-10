@@ -102,33 +102,36 @@ const SelectedVehicleCard: React.FC<ISelectedVehicle> = ({
               </Typography>
             </Box>
           </Box>
-
-          <Button
-            variant="contained"
+          <Link
+            href={`/car/${vehicle.slug.current}`}
+            target="_blank"
+            rel="noopener noreferrer"
             sx={{
-              height: "35px",
+              textDecoration: "none",
+              color: "inherit",
               textAlign: "center",
-              color: "#000000",
-              marginTop: "10px",
-              textTransform: "none",
-              "&:hover": {
-                backgroundColor: theme.palette.secondary.main,
-                color: "#ffffff !important",
-              },
             }}
-            disableElevation={true}
           >
-            <Link
-              href={`/car/${vehicle.slug.current}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none", color: "inherit" }}
+            <Button
+              variant="contained"
+              sx={{
+                height: "35px",
+                textAlign: "center",
+                color: "#000000",
+                marginTop: "10px",
+                textTransform: "none",
+                "&:hover": {
+                  backgroundColor: theme.palette.secondary.main,
+                  color: "#ffffff !important",
+                },
+              }}
+              disableElevation={true}
             >
               <Typography variant="body2">
                 {t("reservationForm.seeDetails")}
               </Typography>
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </Box>
       </CardActions>
     </Card>
