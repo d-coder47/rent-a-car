@@ -7,6 +7,7 @@ import {
   CardMedia,
   Icon,
   Stack,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import React from "react";
@@ -41,11 +42,24 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
         rel="noopener noreferrer"
         style={{ textDecoration: "none", color: "inherit" }}
       >
-        <CardHeader
-          title={car.name + " " + car.model + " " + car.year}
-          titleTypographyProps={{ variant: "h5" }}
-          subheaderTypographyProps={{ variant: "body2" }}
-        />
+        <Tooltip title={car.name + " " + car.model + " " + car.year}>
+          <CardHeader
+            sx={{
+              display: "flex",
+              overflow: "hidden",
+              "& .MuiCardHeader-content": {
+                overflow: "hidden",
+              },
+            }}
+            title={car.name + " " + car.model + " " + car.year}
+            titleTypographyProps={{
+              noWrap: true,
+              variant: "body1",
+              fontWeight: "bold",
+            }}
+          />
+        </Tooltip>
+
         <CardMedia
           component="img"
           sx={{

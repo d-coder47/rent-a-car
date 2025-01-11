@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import PreHeader from "../Header/PreHeader";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import { HEADER_HEIGHT, PRE_HEADER_HEIGHT } from "../../constants";
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -23,7 +24,25 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <Header />
       </Box>
 
-      {children}
+      <Box
+        sx={{
+          marginTop: {
+            xs: +HEADER_HEIGHT.replace("px", "") + "px",
+            sm: +HEADER_HEIGHT.replace("px", "") + "px",
+            md: +HEADER_HEIGHT.replace("px", "") + "px",
+            lg:
+              +HEADER_HEIGHT.replace("px", "") +
+              +PRE_HEADER_HEIGHT.replace("px", "") +
+              "px",
+            xl:
+              +HEADER_HEIGHT.replace("px", "") +
+              +PRE_HEADER_HEIGHT.replace("px", "") +
+              "px",
+          },
+        }}
+      >
+        {children}
+      </Box>
       <Footer />
     </Box>
   );

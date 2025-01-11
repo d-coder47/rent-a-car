@@ -1,13 +1,4 @@
-import {
-  Avatar,
-  Box,
-  Button,
-  Grid2,
-  List,
-  ListItem,
-  ListItemText,
-  Typography,
-} from "@mui/material";
+import { Avatar, Box, Button, Typography } from "@mui/material";
 import { PortableText } from "@portabletext/react";
 import { useTranslation } from "react-i18next";
 import Layout from "../components/Layout/Layout";
@@ -44,10 +35,6 @@ const Car = () => {
           display: "flex",
           justifyContent: "center",
           background: "#f4f4f4",
-          marginTop:
-            +HEADER_HEIGHT.replace("px", "") +
-            +PRE_HEADER_HEIGHT.replace("px", "") +
-            "px",
         }}
       >
         <Box
