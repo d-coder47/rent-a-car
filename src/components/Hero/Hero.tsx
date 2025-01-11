@@ -66,19 +66,6 @@ const Hero: React.FC = () => {
           <Typography variant="subtitle1" sx={typographyStyle.subheadline}>
             {t("homepage.hero.subheadline")}
           </Typography>
-
-          <Button variant="contained" sx={typographyStyle.cta}>
-            <a
-              href="/reservation"
-              rel="noopener noreferrer"
-              style={{
-                textDecoration: "none",
-                color: "inherit",
-              }}
-            >
-              <Typography variant="body1">{t("homepage.hero.cta")}</Typography>
-            </a>
-          </Button>
         </Box>
       </Box>
 
