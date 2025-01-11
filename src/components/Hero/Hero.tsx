@@ -101,12 +101,11 @@ const Hero: React.FC = () => {
               width: "800px",
               height: "412px",
               borderRadius: 0,
-              marginTop: "-12rem",
               position: "absolute",
               zIndex: 99,
               left: 0,
               right: 0,
-              margin: "-12rem auto 0 auto",
+              margin: "-9rem auto 0 auto",
             }}
           />
         </Slide>
