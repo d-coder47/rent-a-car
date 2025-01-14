@@ -22,7 +22,7 @@ export default function Questions() {
         height: "100%",
       }}
     >
-      {FAQs.map((item, index) => (
+      {FAQs.map((_item, index) => (
         <Accordion
           key={index}
           expanded={expanded === index + 1}

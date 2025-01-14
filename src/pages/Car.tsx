@@ -1,6 +1,5 @@
-import { Avatar, Box, Button, Typography } from "@mui/material";
+import { Avatar, Box, Typography } from "@mui/material";
 import { PortableText } from "@portabletext/react";
-import { useTranslation } from "react-i18next";
 import Layout from "../components/Layout/Layout";
 import { HEADER_HEIGHT, PRE_HEADER_HEIGHT } from "../constants";
 import { useCar } from "../context/CarContext";
@@ -11,7 +10,6 @@ import { urlFor } from "../lib/client";
 const Car = () => {
   const { slug } = useParams();
 
-  const { t } = useTranslation();
   const { cars } = useCar();
 
   const carData = cars?.find((car) => car.slug.current === slug);

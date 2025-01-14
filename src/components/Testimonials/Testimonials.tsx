@@ -3,7 +3,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+import Slider, { Settings } from "react-slick";
 import { FormatQuote, Star } from "@mui/icons-material";
 
 const Testimonials: React.FC = () => {
@@ -11,7 +11,7 @@ const Testimonials: React.FC = () => {
 
   const theme = useTheme();
 
-  const settings = {
+  const settings: Settings = {
     dots: false,
     infinite: true,
     slidesToShow: 3,
@@ -88,6 +88,8 @@ const Testimonials: React.FC = () => {
     },
   ];
 
+  const SliderComponent = Slider as any;
+
   return (
     <Box
       id="testimonials"
@@ -143,7 +145,7 @@ const Testimonials: React.FC = () => {
             width: "90%",
           }}
         >
-          <Slider {...settings}>
+          <SliderComponent {...settings}>
             {testimonials.map((item, index) => (
               <Box
                 key={index}
@@ -194,7 +196,7 @@ const Testimonials: React.FC = () => {
                 </Box>
               </Box>
             ))}
-          </Slider>
+          </SliderComponent>
         </Box>
       </Box>
     </Box>

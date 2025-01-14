@@ -1,3 +1,5 @@
+import { TypedObject } from "@portabletext/types";
+
 export interface IService {
   title: string;
   description: string;
@@ -5,7 +7,7 @@ export interface IService {
 }
 
 export interface ICar {
-  description: string;
+  description: TypedObject[];
   slug: { current: string };
   name: string;
   model: string;

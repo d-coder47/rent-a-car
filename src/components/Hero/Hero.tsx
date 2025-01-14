@@ -1,11 +1,4 @@
-import {
-  Avatar,
-  Box,
-  Button,
-  Slide,
-  Typography,
-  useTheme,
-} from "@mui/material";
+import { Avatar, Box, Slide, Typography, useTheme } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import heroImage from "../../assets/heroImage.jpg";
