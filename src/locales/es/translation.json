@@ -37,24 +37,20 @@
       "subheadline": "¿Busca respuestas sobre nuestros servicios de alquiler de coches? En V&H Investments, entendemos que el proceso de alquiler de coches a veces puede ser complicado. Por eso hemos recopilado una completa lista de preguntas frecuentes para ayudarle a encontrar la información que necesita.",
       "content": [
         {
-          "title": "¿Qué necesito para alquilar un coche?",
-          "description": "Para alquilar un vehículo, el cliente debe presentar una copia de su permiso de conducir y de su documento de identidad, así como haber sido titular del permiso durante más de dos años."
+          "title": "¿Qué se necesita para alquilar un vehículo?",
+          "description": "Para alquilar un vehículo, el cliente necesita entregar una copia de su licencia de conducir, un contacto y un documento de identificación, además de tener más de dos años con la licencia de conducir."
         },
         {
-          "title": "¿Necesito mi propio seguro?",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+          "title": "¿Otras personas pueden conducir el vehículo que alquilé?",
+          "description": "No. La única forma de que otra persona conduzca el vehículo es si la persona firmó el documento junto con quien alquiló el coche."
         },
         {
-          "title": "¿Pueden conducir otras personas el vehículo que he alquilado?",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+          "title": "¿Qué sucede si tengo un accidente?",
+          "description": "La persona es responsable de todos los daños."
         },
         {
-          "title": "¿Cómo funciona la política de cancelación?",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
-        },
-        {
-          "title": "¿Qué ocurre si tengo un accidente?",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+          "title": "¿Puedo entregar el coche sin el tanque lleno?",
+          "description": "No. El coche se entrega al cliente siempre con el tanque lleno y también debe ser devuelto con el tanque lleno."
         }
       ]
     },

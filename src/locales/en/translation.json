@@ -37,24 +37,20 @@
       "subheadline": "Looking for answers about our car rental services? At V&H Investimentos, we understand that the car rental process can sometimes be complicated. That's why we've compiled a comprehensive list of frequently asked questions to help you find the information you need.",
       "content": [
         {
-          "title": "What do I need to rent a car?",
-          "description": "To rent a vehicle, the customer needs to provide a copy of their driver's license and identification document, as well as having had their license for more than two years."
+          "title": "What is needed to rent a vehicle?",
+          "description": "To rent a vehicle, the customer needs to provide a copy of their driver's license, a contact, and an identification document, as well as have more than two years of driving experience."
         },
         {
-          "title": "Do I need my own insurance?",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
-        },
-        {
-          "title": "Can other people drive the vehicle I've rented?",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
-        },
-        {
-          "title": "How does the cancellation policy work?",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+          "title": "Can other people drive the vehicle I rented?",
+          "description": "No. The only way another person can drive the vehicle is if they have signed the document along with the person who rented the car."
         },
         {
           "title": "What happens if I have an accident?",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+          "description": "The person is responsible for all damages."
+        },
+        {
+          "title": "Can I return the car without a full tank?",
+          "description": "No. The car is always delivered to the customer with a full tank and must also be returned with a full tank."
         }
       ]
     },

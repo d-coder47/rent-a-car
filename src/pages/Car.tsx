@@ -175,9 +175,9 @@ const Car = () => {
             }}
           >
             <Typography variant="h3">{carPrice}</Typography>
-            <Button variant="contained" sx={{ textTransform: "unset" }}>
+            {/* <Button variant="contained" sx={{ textTransform: "unset" }}>
               <Typography variant="body1">{t("single-car.rent")}</Typography>
-            </Button>
+            </Button> */}
           </Box>
         </Box>
       </Box>
