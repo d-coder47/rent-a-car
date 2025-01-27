@@ -33,7 +33,7 @@ const ReservationForm = () => {
       {
         slug: { current: "" },
         name: "",
-        description: "",
+        description: [],
         model: "",
         year: 0,
         seats: 0,
