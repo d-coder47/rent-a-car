@@ -8,10 +8,13 @@ import frontID from "../../assets/reservation/frontID.png";
 import Step3 from "./Step3";
 import Step4 from "./Step4";
 import ReviewStep from "./ReviewStep";
+import axios from "axios";
 
 const ReservationForm = () => {
   const theme = useTheme();
   const { t, i18n } = useTranslation();
+
+  const apiUrl = import.meta.env.VITE_PAYMENT_API;
 
   const [showRentalSummary, setShowRentalSummary] = useState<boolean>(false);
 
@@ -275,7 +278,6 @@ const ReservationForm = () => {
     }
 
     if (!hasError) {
-      console.log("Reservation Info:", reservationInfo);
       setShowRentalSummary(true);
     }
   };
@@ -284,13 +286,33 @@ const ReservationForm = () => {
     checkFieldsErrors();
   });
 
-  const handleReviewDetails = (clickType: string) => {
+  const handleReviewDetails = async (clickType: string) => {
     if (clickType === "editClick") {
       setShowRentalSummary(false);
     }
 
     if (clickType === "confirm") {
+      console.log("hello");
       console.log("confirm details => ", reservationInfo);
+
+      const response = await axios.post(
+        `${apiUrl}/postback`,
+        {
+          amount: "1000",
+        },
+        {
+          withCredentials: true,
+        }
+      );
+
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(response.data, "text/html");
+      const form = doc.querySelector("form");
+
+      if (form) {
+        const actionUrl = form.action;
+        window.location.href = actionUrl; // Redirect user to payment gateway
+      }
     }
   };
 
@@ -403,7 +425,7 @@ const ReservationForm = () => {
               marginTop: "1rem",
               textTransform: "none",
             }}
-            onClick={() => handleReviewDetails("editClick")}
+            onClick={async () => await handleReviewDetails("editClick")}
           >
             <Typography variant="body1">{t("reservationForm.edit")}</Typography>
           </Button>
