@@ -307,11 +307,19 @@ const ReservationForm = () => {
 
       const parser = new DOMParser();
       const doc = parser.parseFromString(response.data, "text/html");
+      console.log({ form: doc.querySelector("form"), response: response.data });
       const form = doc.querySelector("form");
-
       if (form) {
-        const actionUrl = form.action;
-        window.location.href = actionUrl; // Redirect user to payment gateway
+        // const actionUrl = form.action;
+        // window.location.href = actionUrl; // Redirect user to payment gateway
+        const paymentForm = document.getElementById(
+          "payment-form"
+        ) as HTMLFormElement;
+        if (!paymentForm) return;
+        paymentForm.innerHTML = form.outerHTML;
+
+        console.log("here", paymentForm);
+        paymentForm.submit();
       }
     }
   };
@@ -398,6 +406,9 @@ const ReservationForm = () => {
         }}
       >
         <ReviewStep reservationDetails={reservationInfo} />
+        {/* <form id="payment-form">
+        </form> */}
+        <form id="payment-form"></form>
 
         <Box
           sx={{
