@@ -1,5 +1,6 @@
 import { Box, Button, Typography, useTheme } from "@mui/material";
 import { useTranslation } from "react-i18next";
+
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import { useState } from "react";
@@ -64,6 +65,20 @@ const ReservationForm = () => {
     price: "",
     days: "",
   });
+
+  const parsePhoneNumber = (phone: string) => {
+    // Remove spaces and special characters
+    const cleaned = phone.replace(/\D/g, "");
+
+    // Extract country code and subscriber number
+    const countryCode = cleaned.slice(0, 3);
+    const subscriberNumber = cleaned.slice(3);
+
+    return {
+      cc: countryCode,
+      subscriber: subscriberNumber,
+    };
+  };
 
   const handleReservationPrice = (days: number, vehicles: ICar[]) => {
     if (days > 0 && vehicles.length > 0) {
@@ -273,7 +288,6 @@ const ReservationForm = () => {
     const hasError = checkFieldsErrors();
 
     if (hasError) {
-      console.log("can submit the form");
       setShowRentalSummary(false);
     }
 
@@ -292,35 +306,31 @@ const ReservationForm = () => {
     }
 
     if (clickType === "confirm") {
-      console.log("hello");
-      console.log("confirm details => ", reservationInfo);
+      const parsedNumber = parsePhoneNumber(`${reservationInfo.phone}`);
 
       const response = await axios.post(
         `${apiUrl}/postback`,
         {
-          amount: "1000",
+          amount: `${reservationInfo.price}`,
+          languages: i18n.language,
+          mail: `${reservationInfo.email}`,
+          billAddrCountry: "620",
+          billAddrLine1: "Palmarejo",
+          billAddrPostCode: "000",
+          cc: `${parsedNumber.cc}`,
+          subscriber: `${parsedNumber.subscriber}`,
         },
         {
           withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
       );
 
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(response.data, "text/html");
-      console.log({ form: doc.querySelector("form"), response: response.data });
-      const form = doc.querySelector("form");
-      if (form) {
-        // const actionUrl = form.action;
-        // window.location.href = actionUrl; // Redirect user to payment gateway
-        const paymentForm = document.getElementById(
-          "payment-form"
-        ) as HTMLFormElement;
-        if (!paymentForm) return;
-        paymentForm.innerHTML = form.outerHTML;
-
-        console.log("here", paymentForm);
-        paymentForm.submit();
-      }
+      document.open();
+      document.write(response.data);
+      document.close();
     }
   };
 
