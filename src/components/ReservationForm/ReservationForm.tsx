@@ -314,9 +314,6 @@ const ReservationForm = () => {
           amount: `${reservationInfo.price}`,
           languages: i18n.language,
           mail: `${reservationInfo.email}`,
-          billAddrCountry: "620",
-          billAddrLine1: "Palmarejo",
-          billAddrPostCode: "000",
           cc: `${parsedNumber.cc}`,
           subscriber: `${parsedNumber.subscriber}`,
         },
@@ -328,9 +325,11 @@ const ReservationForm = () => {
         }
       );
 
-      document.open();
-      document.write(response.data);
-      document.close();
+      console.log(response.data);
+
+      // document.open();
+      // document.write(response.data);
+      // document.close();
     }
   };
 
