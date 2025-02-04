@@ -33,7 +33,7 @@ const ReservationForm = () => {
       {
         slug: { current: "" },
         name: "",
-        description: "",
+        description: [],
         model: "",
         year: 0,
         seats: 0,
@@ -290,7 +290,7 @@ const ReservationForm = () => {
     }
 
     if (clickType === "confirm") {
-      console.log("confirm details");
+      console.log("confirm details => ", reservationInfo);
     }
   };
 

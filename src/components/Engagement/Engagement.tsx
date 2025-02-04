@@ -1,4 +1,4 @@
-import { Box, Button, Typography, useTheme } from "@mui/material";
+import { Box, Button, Typography, useTheme, Link } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
@@ -18,7 +18,7 @@ const Engagement: React.FC = () => {
         height: "100%",
         flexDirection: "column",
         alignItems: "center",
-        background: theme.palette.primary.main,
+        background: "#F4F4F4",
       }}
     >
       <Typography
@@ -57,7 +57,6 @@ const Engagement: React.FC = () => {
         sx={{
           height: "50px",
           width: "250px",
-          borderRadius: "12px",
           textAlign: "justify",
           color: "#ffffff",
           marginTop: {
@@ -78,20 +77,27 @@ const Engagement: React.FC = () => {
       >
         <Typography variant="body1">{t("homepage.engagement.cta")}</Typography>
       </Button>
-      <Typography
-        variant="body1"
-        sx={{
-          textAlign: "center",
-          textDecoration: "underline",
-          color: "#000000",
-          marginTop: "30px",
-          marginBottom: "80px",
-          cursor: "pointer",
-        }}
-        onClick={() => console.log("hello")}
+      <Link
+        href={`https://api.whatsapp.com/send?phone=+2385935535&text=${t(
+          "social-media.greeting"
+        )}`}
+        target="_blank"
       >
-        {t("homepage.engagement.startConversation")}
-      </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            textAlign: "center",
+            textDecoration: "underline",
+            color: "#000000",
+            marginTop: "30px",
+            marginBottom: "80px",
+            cursor: "pointer",
+          }}
+          onClick={() => console.log("hello")}
+        >
+          {t("homepage.engagement.startConversation")}
+        </Typography>
+      </Link>
     </Box>
   );
 };

@@ -145,7 +145,7 @@ export default defineType({
               .error('Amount must be a non-negative number with up to 2 decimal places'),
         },
         {
-          name: 'security-deposit',
+          name: 'securityDeposit',
           title: 'Security Deposit',
           type: 'number',
           validation: (Rule) =>

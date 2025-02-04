@@ -2,9 +2,21 @@ import { Box, Typography } from "@mui/material";
 import Layout from "../components/Layout/Layout";
 import { useTranslation } from "react-i18next";
 import CarGallery from "../components/CarGallery/CarGallery";
+import { useEffect } from "react";
 
 const Cars = () => {
   const { t } = useTranslation();
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    scrollToTop();
+  });
 
   return (
     <Layout>
@@ -18,7 +30,6 @@ const Cars = () => {
         <Box
           sx={{
             width: "93%",
-            marginTop: "60px",
           }}
         >
           <Typography textAlign="center" marginBottom="36px" variant="h2">

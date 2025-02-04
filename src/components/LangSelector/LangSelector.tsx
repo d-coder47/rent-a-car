@@ -3,7 +3,6 @@ import {
   MenuItem,
   Select,
   SelectChangeEvent,
-  Typography,
   useTheme,
 } from "@mui/material";
 import React, { useState } from "react";
