@@ -22,7 +22,7 @@ export default function Questions() {
         height: "100%",
       }}
     >
-      {FAQs.map((item, index) => (
+      {FAQs.map((_item, index) => (
         <Accordion
           key={index}
           expanded={expanded === index + 1}
@@ -60,7 +60,7 @@ export default function Questions() {
               }}
             >
               <Typography variant="subtitle1" sx={{ color: "#666666" }}>
-                {item.description}
+                {t(`homepage.faq.content.${index}.description`)}
               </Typography>
             </Box>
           </AccordionDetails>

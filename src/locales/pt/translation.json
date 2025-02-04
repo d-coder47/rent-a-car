@@ -38,23 +38,19 @@
       "content": [
         {
           "title": "O que é preciso para alugar um veículo?",
-          "description": "Para alugar um veículo o cliente precisa de entregar uma cópia da sua carta de condução e de um documento de identificação, bem como de ter mais de dois anos com a carta de condução."
-        },
-        {
-          "title": "Preciso do meu próprio seguro?",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+          "description": "Para alugar um veículo o cliente precisa de entregar uma cópia da sua carta de condução, um contacto e um documento de identificação, bem como de ter mais de dois anos com a carta de condução."
         },
         {
           "title": "Outras pessoas podem dirigir o veículo que eu aluguei?",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
-        },
-        {
-          "title": "Como funciona a política de cancelamento?",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+          "description": "Não. A única forma de outra pessoa dirigir o veículo é se a pessoa assinou o documento juntamente com quem alugou o carro."
         },
         {
           "title": "O que acontece se eu tiver um acidente?",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+          "description": "A pessoa responsabiliza por todos os danos."
+        },
+        {
+          "title": "Posso entregar o carro sem estar com o tanque cheio?",
+          "description": "Não. O carro é entregue ao cliente sempre com o tanque cheio e também deve ser entregue com tanque cheio."
         }
       ]
     },
@@ -87,7 +83,7 @@
       "title": "Alugue seu veículo agora",
       "subheadline": "Pronto para encontrar o veículo de aluguel perfeito para as suas necessidades? Na V&H Investimentos, estamos aqui para ajudar você em cada etapa. Solicite seu veículo hoje mesmo ou entre em contato para saber mais sobre os nossos serviços. Temos orgulho em oferecer veículos de alta qualidade e um serviço excepcional a preços acessíveis. Não espere – vamos começar!",
       "cta": "Reserva seu veículo",
-      "startConversation": "ou inicie uma conversa"
+      "startConversation": "Inicie uma conversa"
     },
     "footer": {
       "linksRapidos": "Links rápidos",

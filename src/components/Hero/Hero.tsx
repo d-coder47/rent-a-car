@@ -10,14 +10,11 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import heroImage from "../../assets/heroImage.jpg";
 import heroCar from "../../assets/heroCar.png";
-import { useNavigate } from "react-router-dom";
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
 
   const theme = useTheme();
-
-  const navigate = useNavigate();
 
   const typographyStyle = {
     headline: {
@@ -31,7 +28,6 @@ const Hero: React.FC = () => {
     },
     cta: {
       height: "50px",
-      borderRadius: "12px",
       textAlign: "justify",
       color: "#ffffff",
       marginTop: "50px",
@@ -52,7 +48,6 @@ const Hero: React.FC = () => {
           display: "flex",
           alignItems: "center",
           flexDirection: "column",
-          marginTop: "100px",
         }}
       >
         <Box
@@ -72,12 +67,17 @@ const Hero: React.FC = () => {
             {t("homepage.hero.subheadline")}
           </Typography>
 
-          <Button
-            variant="contained"
-            sx={typographyStyle.cta}
-            onClick={() => navigate("/reservation")}
-          >
-            <Typography variant="body1">{t("homepage.hero.cta")}</Typography>
+          <Button variant="contained" sx={typographyStyle.cta}>
+            <a
+              href="/reservation"
+              rel="noopener noreferrer"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+              }}
+            >
+              <Typography variant="body1">{t("homepage.hero.cta")}</Typography>
+            </a>
           </Button>
         </Box>
       </Box>
@@ -101,12 +101,11 @@ const Hero: React.FC = () => {
               width: "800px",
               height: "412px",
               borderRadius: 0,
-              marginTop: "-12rem",
               position: "absolute",
               zIndex: 99,
               left: 0,
               right: 0,
-              margin: "-12rem auto 0 auto",
+              margin: "-9rem auto 0 auto",
             }}
           />
         </Slide>

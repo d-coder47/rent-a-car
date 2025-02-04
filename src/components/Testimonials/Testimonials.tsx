@@ -88,6 +88,8 @@ const Testimonials: React.FC = () => {
     },
   ];
 
+  const SliderComponent = Slider as any;
+
   return (
     <Box
       id="testimonials"
@@ -143,7 +145,7 @@ const Testimonials: React.FC = () => {
             width: "90%",
           }}
         >
-          <Slider {...settings}>
+          <SliderComponent {...settings}>
             {testimonials.map((item, index) => (
               <Box
                 key={index}
@@ -194,7 +196,7 @@ const Testimonials: React.FC = () => {
                 </Box>
               </Box>
             ))}
-          </Slider>
+          </SliderComponent>
         </Box>
       </Box>
     </Box>

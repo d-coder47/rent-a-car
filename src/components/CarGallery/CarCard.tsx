@@ -8,6 +8,7 @@ import {
   CardMedia,
   Icon,
   Stack,
+  Tooltip,
   Typography,
   useTheme,
 } from "@mui/material";
@@ -43,15 +44,27 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
     >
       <Link
         to={`/car/${car.slug.current}`}
-        target="_blank"
         rel="noopener noreferrer"
         style={{ textDecoration: "none", color: "inherit" }}
       >
-        <CardHeader
-          title={car.name + " " + car.model + " " + car.year}
-          titleTypographyProps={{ variant: "h5" }}
-          subheaderTypographyProps={{ variant: "body2" }}
-        />
+        <Tooltip title={car.name + " " + car.model + " " + car.year}>
+          <CardHeader
+            sx={{
+              display: "flex",
+              overflow: "hidden",
+              "& .MuiCardHeader-content": {
+                overflow: "hidden",
+              },
+            }}
+            title={car.name + " " + car.model + " " + car.year}
+            titleTypographyProps={{
+              noWrap: true,
+              variant: "body1",
+              fontWeight: "bold",
+            }}
+          />
+        </Tooltip>
+
         <CardMedia
           component="img"
           sx={{
@@ -154,12 +167,14 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
 
             <Button
               variant="contained"
-              onClick={() => navigate(`/reservation/${car.slug.current}`)}
+              onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                e.preventDefault();
+                navigate(`/reservation/${car.slug.current}`);
+              }}
               sx={{
                 height: "35px",
                 textAlign: "center",
                 color: "#000000",
-
                 textTransform: "none",
                 "&:hover": {
                   backgroundColor: theme.palette.secondary.main,
