@@ -325,11 +325,9 @@ const ReservationForm = () => {
         }
       );
 
-      console.log(response.data);
-
-      // document.open();
-      // document.write(response.data);
-      // document.close();
+      document.open();
+      document.write(response.data);
+      document.close();
     }
   };
 
