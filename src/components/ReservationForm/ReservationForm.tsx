@@ -1,4 +1,4 @@
-import { Box, Button, Typography, useTheme } from "@mui/material";
+import { Box, Button, Modal, Stack, Typography, useTheme } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 import Step1 from "./Step1";
@@ -10,6 +10,8 @@ import Step3 from "./Step3";
 import Step4 from "./Step4";
 import ReviewStep from "./ReviewStep";
 import axios from "axios";
+import { convertEurToCve, parsePhoneNumber } from "./utils";
+import { InfoOutlined } from "@mui/icons-material";
 
 const ReservationForm = () => {
   const theme = useTheme();
@@ -18,6 +20,9 @@ const ReservationForm = () => {
   const apiUrl = import.meta.env.VITE_PAYMENT_API;
 
   const [showRentalSummary, setShowRentalSummary] = useState<boolean>(false);
+
+  const [openConversionModal, setOpenConversionModal] =
+    useState<boolean>(false);
 
   const [reservationInfo, setReservationInfo] = useState<IReservationInfo>({
     name: "",
@@ -52,6 +57,7 @@ const ReservationForm = () => {
       },
     ],
     price: 0,
+    priceCVE: 0,
     days: 0,
   });
 
@@ -66,21 +72,7 @@ const ReservationForm = () => {
     days: "",
   });
 
-  const parsePhoneNumber = (phone: string) => {
-    // Remove spaces and special characters
-    const cleaned = phone.replace(/\D/g, "");
-
-    // Extract country code and subscriber number
-    const countryCode = cleaned.slice(0, 3);
-    const subscriberNumber = cleaned.slice(3);
-
-    return {
-      cc: countryCode,
-      subscriber: subscriberNumber,
-    };
-  };
-
-  const handleReservationPrice = (days: number, vehicles: ICar[]) => {
+  const handleReservationPrice = async (days: number, vehicles: ICar[]) => {
     if (days > 0 && vehicles.length > 0) {
       const data = vehicles.map((vehicle) => {
         const price = vehicle.priceToRent.amount;
@@ -92,9 +84,13 @@ const ReservationForm = () => {
       const newPrice = data.reduce(
         (accumulator, current) => accumulator + current
       );
+
+      const valuecve = await convertEurToCve(newPrice);
+
       setReservationInfo((prevReservationInfo) => ({
         ...prevReservationInfo,
         ["price"]: newPrice,
+        ["priceCVE"]: valuecve,
       }));
     }
 
@@ -284,7 +280,7 @@ const ReservationForm = () => {
     return hasError;
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const hasError = checkFieldsErrors();
 
     if (hasError) {
@@ -292,7 +288,7 @@ const ReservationForm = () => {
     }
 
     if (!hasError) {
-      setShowRentalSummary(true);
+      setOpenConversionModal(true);
     }
   };
 
@@ -311,7 +307,7 @@ const ReservationForm = () => {
       const response = await axios.post(
         `${apiUrl}/postback`,
         {
-          amount: `${reservationInfo.price}`,
+          amount: `${reservationInfo.priceCVE}`,
           languages: i18n.language,
           mail: `${reservationInfo.email}`,
           cc: `${parsedNumber.cc}`,
@@ -331,6 +327,10 @@ const ReservationForm = () => {
     }
   };
 
+  const handleClose = () => {
+    setOpenConversionModal(false);
+  };
+
   return (
     <Box
       sx={{
@@ -339,6 +339,7 @@ const ReservationForm = () => {
       display="flex"
       justifyContent="center"
     >
+      {/* Form to fill reservation infos */}
       <Box
         component="form"
         autoComplete="off"
@@ -401,6 +402,146 @@ const ReservationForm = () => {
         </Button>
       </Box>
 
+      {/* modal to alert about payment conversion to cve */}
+
+      <Modal
+        open={openConversionModal}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "55%",
+            bgcolor: "background.paper",
+            boxShadow: 24,
+            p: 4,
+          }}
+        >
+          <Stack
+            alignItems="center"
+            justifyContent="center"
+            direction="row"
+            gap={1}
+          >
+            <InfoOutlined
+              sx={{
+                width: "10%",
+                height: "10%",
+                color: theme.palette.primary.main,
+              }}
+            />
+          </Stack>
+          <Typography
+            variant="body1"
+            id="modal-modal-description"
+            sx={{ mt: 2 }}
+          >
+            {t("reservationForm.modalReservationText1")}
+          </Typography>
+
+          <Typography
+            variant="body1"
+            id="modal-modal-description"
+            sx={{ mt: 2 }}
+          >
+            {t("reservationForm.modalReservationText2")}
+          </Typography>
+
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "flex-end",
+            }}
+          >
+            <Typography variant="body1" sx={{ mt: 2, marginRight: "0.5rem" }}>
+              {t("reservationForm.modalReservationText3")}
+            </Typography>
+
+            <Typography variant="h3">{reservationInfo.priceCVE} CVE</Typography>
+          </Box>
+
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "30px",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: {
+                  xs: "column",
+                  sm: "column",
+                  md: "row",
+                  lg: "row",
+                  xl: "row",
+                },
+                justifyContent: {
+                  xs: "center",
+                  sm: "center",
+                  md: "space-between",
+                  lg: "space-between",
+                  xl: "space-between",
+                },
+                alignItems: "center",
+                width: "40%",
+              }}
+            >
+              <Button
+                variant="contained"
+                sx={{
+                  color: "#ffffff",
+                  background: theme.palette.primary.main,
+                  "&:hover": {
+                    backgroundColor: theme.palette.primary.dark,
+                  },
+                  textTransform: "none",
+                }}
+                onClick={() => handleClose()}
+              >
+                <Typography variant="body1">
+                  {t("reservationForm.cancel")}
+                </Typography>
+              </Button>
+
+              <Button
+                variant="contained"
+                sx={{
+                  color: "#ffffff",
+                  background: theme.palette.secondary.main,
+                  "&:hover": {
+                    backgroundColor: theme.palette.secondary.dark,
+                  },
+                  marginTop: {
+                    xs: "5px",
+                    sm: "5px",
+                    md: 0,
+                    lg: 0,
+                    xl: 0,
+                  },
+
+                  textTransform: "none",
+                }}
+                onClick={() => {
+                  handleClose();
+                  setShowRentalSummary(true);
+                }}
+              >
+                <Typography variant="body1">
+                  {t("reservationForm.continue")}
+                </Typography>
+              </Button>
+            </Box>
+          </Box>
+        </Box>
+      </Modal>
+
+      {/* review infos before submit payment */}
       <Box
         component="form"
         autoComplete="off"
@@ -413,9 +554,6 @@ const ReservationForm = () => {
         }}
       >
         <ReviewStep reservationDetails={reservationInfo} />
-        {/* <form id="payment-form">
-        </form> */}
-        <form id="payment-form"></form>
 
         <Box
           sx={{

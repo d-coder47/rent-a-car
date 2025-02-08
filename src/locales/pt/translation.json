@@ -122,6 +122,7 @@
     "stepIndicator4": "Passo 4 de 4",
     "daysLabel": "Dias",
     "reservationPriceTitle": "Preço da reserva:",
+    "reservationPriceCVE": "Preço da reserva (CVE):",
     "nameRequired": "Nome é obrigatório",
     "emailRequired": "Email é obrigatório",
     "daysRequired": "O número de dias é obrigatório",
@@ -138,7 +139,12 @@
     "edit": "Editar",
     "uploadFile": "Carregar ficheiro",
     "cautionInfo": "O valor da reserva inclui um depósito de garantia de €200 por veículo reservado.",
-    "seeDetails": "Ver Detalhes"
+    "seeDetails": "Ver Detalhes",
+    "modalReservationText1": "Por motivos logísticos, o preço da reserva será convertido e cobrado em Escudos Cabo-verdianos (CVE) utilizando a taxa de câmbio fixa de 1 EUR = 110.265 CVE.",
+    "modalReservationText2": "Caso tenha dúvidas, entre em contato com o suporte.",
+    "modalReservationText3": "Preço da reserva convertido:",
+    "continue": "Continuar",
+    "cancel": "Cancelar"
   },
   "single-car": {
     "details": "Detalhes",

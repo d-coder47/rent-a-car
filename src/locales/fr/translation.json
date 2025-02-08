@@ -122,6 +122,7 @@
     "stepIndicator4": "Étape 4 sur 4",
     "daysLabel": "Jours",
     "reservationPriceTitle": "Prix de la réservation :",
+    "reservationPriceCVE": "Prix de la réservation (CVE):",
     "nameRequired": "Le nom est obligatoire",
     "emailRequired": "L'email est obligatoire",
     "daysRequired": "Le nombre de jours est obligatoire",
@@ -138,7 +139,12 @@
     "edit": "Éditer",
     "uploadFile": "Téléverser le fichier",
     "cautionInfo": "Le montant de la réservation inclut une caution de 200 € par véhicule réservé.",
-    "seeDetails": "Voir les détails"
+    "seeDetails": "Voir les détails",
+    "modalReservationText1": "Pour des raisons logistiques, le prix de la réservation sera converti et facturé en Escudos Cap-Verdiens (CVE) en utilisant le taux de change fixe de 1 EUR = 110.265 CVE.",
+    "modalReservationText2": "Si vous avez des questions, veuillez contacter le support.",
+    "modalReservationText3": "Prix de la réservation converti :",
+    "continue": "Continuer",
+    "cancel": "Annuler"
   },
   "single-car": {
     "details": "Détails",

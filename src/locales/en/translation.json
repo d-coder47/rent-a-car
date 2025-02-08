@@ -123,6 +123,7 @@
     "stepIndicator4": "Step 4 of 4",
     "daysLabel": "Days",
     "reservationPriceTitle": "Reservation Price:",
+    "reservationPriceCVE": "Reservation Price (CVE):",
     "nameRequired": "Name is required",
     "emailRequired": "Email is required",
     "daysRequired": "The number of days is required",
@@ -139,7 +140,12 @@
     "edit": "Edit",
     "uploadFile": "Upload file",
     "cautionInfo": "The reservation amount includes a security deposit of €200 per reserved vehicle.",
-    "seeDetails": "See Details"
+    "seeDetails": "See Details",
+    "modalReservationText1": "For logistical reasons, the reservation price will be converted and charged in Cape Verdean Escudos (CVE) using the fixed exchange rate of 1 EUR = 110.265 CVE.",
+    "modalReservationText2": "If you have any questions, please contact support.",
+    "modalReservationText3": "Converted reservation price:",
+    "continue": "Continue",
+    "cancel": "Cancel"
   },
   "single-car": {
     "details": "Details",

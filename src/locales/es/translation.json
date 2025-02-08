@@ -122,6 +122,7 @@
     "stepIndicator4": "Paso 4 de 4",
     "daysLabel": "Días",
     "reservationPriceTitle": "Precio de la reserva:",
+    "reservationPriceCVE": "Precio de la reserva (CVE):",
     "nameRequired": "El nombre es obligatorio",
     "emailRequired": "El correo electrónico es obligatorio",
     "daysRequired": "El número de días es obligatorio",
@@ -138,7 +139,12 @@
     "edit": "Editar",
     "uploadFile": "Subir archivo",
     "cautionInfo": "El importe de la reserva incluye un depósito de garantía de 200 € por vehículo reservado.",
-    "seeDetails": "Ver detalles"
+    "seeDetails": "Ver detalles",
+    "modalReservationText1": "Por motivos logísticos, el precio de la reserva se convertirá y cobrará en Escudos Caboverdianos (CVE) utilizando el tipo de cambio fijo de 1 EUR = 110.265 CVE.",
+    "modalReservationText2": "Si tiene dudas, póngase en contacto con el soporte.",
+    "modalReservationText3": "Precio de la reserva convertido:",
+    "continue": "Continuar",
+    "cancel": "Cancelar"
   },
   "single-car": {
     "details": "Detalles",

@@ -210,8 +210,14 @@ const ReviewStep: React.FC<IReviewStep> = ({ reservationDetails }) => {
               >
                 <Box
                   sx={{
-                    width: "250px",
-                    height: "100px",
+                    width: "275px",
+                    height: {
+                      xs: "130px",
+                      sm: "130px",
+                      md: "110px",
+                      lg: "110px",
+                      xl: "110px",
+                    },
                     background: "#F4F4F4",
                     border: "2px solid #FE9E00",
                     borderRadius: "12px",
@@ -258,6 +264,23 @@ const ReviewStep: React.FC<IReviewStep> = ({ reservationDetails }) => {
 
                     <Typography variant="body2" sx={{ fontWeight: 700 }}>
                       {"€" + reservationDetails.price}
+                    </Typography>
+                  </Box>
+
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "row",
+                      justifyContent: "space-between",
+                      alignItems: "flex-end",
+                    }}
+                  >
+                    <Typography variant="body2" sx={{ fontWeight: 700 }}>
+                      {t("reservationForm.reservationPriceCVE")}
+                    </Typography>
+
+                    <Typography variant="body2" sx={{ fontWeight: 700 }}>
+                      {reservationDetails.priceCVE + " CVE"}
                     </Typography>
                   </Box>
                 </Box>

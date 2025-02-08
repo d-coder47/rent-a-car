@@ -44,6 +44,7 @@ export interface IReservationInfo {
   };
   vehicle: ICar[];
   price: number;
+  priceCVE: number;
   days: number;
 }
 
