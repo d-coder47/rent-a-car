@@ -50,7 +50,7 @@ const ReservationForm = () => {
         transmission: "",
         availableToRent: false,
         availableToSell: false,
-        priceToRent: { amount: 0, currency: "" },
+        priceToRent: { amount: 0, currency: "", securityDeposit: 0 },
         priceToSell: { amount: 0, currency: "" },
         securityDeposit: "",
         image: "",
@@ -76,9 +76,9 @@ const ReservationForm = () => {
     if (days > 0 && vehicles.length > 0) {
       const data = vehicles.map((vehicle) => {
         const price = vehicle.priceToRent.amount;
-        const securityDeposit = 200;
+        const securityDeposit = vehicle.priceToRent.securityDeposit;
 
-        return price * reservationInfo.days + securityDeposit;
+        return price * days + securityDeposit;
       });
 
       const newPrice = data.reduce(
@@ -95,6 +95,7 @@ const ReservationForm = () => {
     }
 
     if (days === 0) {
+      console.log("hello");
       setReservationInfo((prevReservationInfo) => ({
         ...prevReservationInfo,
         ["price"]: 0,
@@ -119,6 +120,7 @@ const ReservationForm = () => {
     }
 
     if (name === "days") {
+      console.log("valueAsNumber: ", valueAsNumber);
       handleReservationPrice(valueAsNumber, reservationInfo.vehicle);
       setReservationInfo((prevReservationInfo) => ({
         ...prevReservationInfo,

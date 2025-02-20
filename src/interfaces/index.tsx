@@ -17,7 +17,7 @@ export interface ICar {
   transmission: string;
   availableToRent: boolean;
   availableToSell: boolean;
-  priceToRent: { amount: number; currency: string };
+  priceToRent: { amount: number; currency: string; securityDeposit: number };
   priceToSell: { amount: number; currency: string };
   securityDeposit?: string;
   image: string;

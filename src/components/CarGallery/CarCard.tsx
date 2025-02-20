@@ -48,21 +48,23 @@ const CarCard: React.FC<ICarCard> = ({ car, type }) => {
         style={{ textDecoration: "none", color: "inherit" }}
       >
         <Tooltip title={car.name + " " + car.model + " " + car.year}>
-          <CardHeader
-            sx={{
-              display: "flex",
-              overflow: "hidden",
-              "& .MuiCardHeader-content": {
+          <>
+            <CardHeader
+              sx={{
+                display: "flex",
                 overflow: "hidden",
-              },
-            }}
-            title={car.name + " " + car.model + " " + car.year}
-            titleTypographyProps={{
-              noWrap: true,
-              variant: "body1",
-              fontWeight: "bold",
-            }}
-          />
+                "& .MuiCardHeader-content": {
+                  overflow: "hidden",
+                },
+              }}
+              title={car.name + " " + car.model + " " + car.year}
+              titleTypographyProps={{
+                noWrap: true,
+                variant: "body1",
+                fontWeight: "bold",
+              }}
+            />
+          </>
         </Tooltip>
 
         <CardMedia
