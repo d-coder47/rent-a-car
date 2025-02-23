@@ -95,7 +95,6 @@ const ReservationForm = () => {
     }
 
     if (days === 0) {
-      console.log("hello");
       setReservationInfo((prevReservationInfo) => ({
         ...prevReservationInfo,
         ["price"]: 0,
@@ -120,7 +119,6 @@ const ReservationForm = () => {
     }
 
     if (name === "days") {
-      console.log("valueAsNumber: ", valueAsNumber);
       handleReservationPrice(valueAsNumber, reservationInfo.vehicle);
       setReservationInfo((prevReservationInfo) => ({
         ...prevReservationInfo,
@@ -314,6 +312,9 @@ const ReservationForm = () => {
           mail: `${reservationInfo.email}`,
           cc: `${parsedNumber.cc}`,
           subscriber: `${parsedNumber.subscriber}`,
+          rentCar: reservationInfo.vehicle,
+          rentDays: `${reservationInfo.days}`,
+          clientName: reservationInfo.name,
         },
         {
           withCredentials: true,

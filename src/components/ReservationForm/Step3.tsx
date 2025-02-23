@@ -36,6 +36,20 @@ const Step3: React.FC<IStep> = ({
 
   const [carFromRoute, setCarFromRoute] = useState<ICar[]>();
 
+  const [refresh, setRefresh] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      setRefresh(true);
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, []);
+
   useEffect(() => {
     if (!cars || vehicleOptions.length > 0) return;
 
@@ -60,7 +74,7 @@ const Step3: React.FC<IStep> = ({
       handleChange(syntheticEvent);
     }
     setVehicleOptions(availableCars);
-  }, [vehicleOptions.length, id, cars]);
+  }, [vehicleOptions.length, id, cars, refresh]);
 
   const getCarName = (id: string) => {
     const car = selectedCars.find((item) => item.slug.current === id);
