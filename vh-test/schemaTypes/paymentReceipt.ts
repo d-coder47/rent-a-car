@@ -34,6 +34,24 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'driveLicence',
+      title: 'Drive Licence',
+      type: 'image',
+      options: {
+        hotspot: false, // Enables image cropping
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'identificationDoc',
+      title: 'Identification Document',
+      type: 'image',
+      options: {
+        hotspot: false, // Enables image cropping
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'receiptFile',
       title: 'Receipt File',
       type: 'file',

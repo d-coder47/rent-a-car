@@ -315,6 +315,8 @@ const ReservationForm = () => {
           rentCar: reservationInfo.vehicle,
           rentDays: `${reservationInfo.days}`,
           clientName: reservationInfo.name,
+          driveLicence: reservationInfo.driverLicence,
+          identificationDoc: reservationInfo.identificationDoc,
         },
         {
           withCredentials: true,
