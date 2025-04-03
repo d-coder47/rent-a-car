@@ -38,6 +38,8 @@ const ReservationForm = () => {
       fileType: "",
       fileName: "",
     },
+    identificationDocFile: null,
+    driverLicenseFile: null,
     vehicle: [
       {
         slug: { current: "" },
@@ -170,6 +172,11 @@ const ReservationForm = () => {
 
       setReservationInfo((prevState) => ({
         ...prevState,
+        identificationDocFile: file,
+      }));
+
+      setReservationInfo((prevState) => ({
+        ...prevState,
         identificationDoc: {
           filePath: path,
           fileType: file.type,
@@ -187,6 +194,11 @@ const ReservationForm = () => {
       const file = e.target.files[0];
 
       const path = URL.createObjectURL(file);
+
+      setReservationInfo((prevState) => ({
+        ...prevState,
+        driverLicenseFile: file,
+      }));
 
       setReservationInfo((prevState) => ({
         ...prevState,
@@ -304,31 +316,47 @@ const ReservationForm = () => {
     if (clickType === "confirm") {
       const parsedNumber = parsePhoneNumber(`${reservationInfo.phone}`);
 
-      const response = await axios.post(
-        `${apiUrl}/postback`,
-        {
-          amount: `${reservationInfo.priceCVE}`,
-          languages: i18n.language,
-          mail: `${reservationInfo.email}`,
-          cc: `${parsedNumber.cc}`,
-          subscriber: `${parsedNumber.subscriber}`,
-          rentCar: reservationInfo.vehicle,
-          rentDays: `${reservationInfo.days}`,
-          clientName: reservationInfo.name,
-          driveLicence: reservationInfo.driverLicence,
-          identificationDoc: reservationInfo.identificationDoc,
-        },
-        {
+      let formData = new FormData();
+      if (
+        reservationInfo.driverLicenseFile &&
+        reservationInfo.identificationDocFile
+      ) {
+        formData.append("driverLicenseFile", reservationInfo.driverLicenseFile);
+        formData.append(
+          "identificationDocFile",
+          reservationInfo.identificationDocFile
+        );
+        await axios.post(`${apiUrl}/image`, formData, {
           withCredentials: true,
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "multipart/form-data",
           },
-        }
-      );
+        });
 
-      document.open();
-      document.write(response.data);
-      document.close();
+        // const response = await axios.post(
+        //   `${apiUrl}/postback`,
+        //   {
+        //     amount: `${reservationInfo.priceCVE}`,
+        //     languages: i18n.language,
+        //     mail: `${reservationInfo.email}`,
+        //     cc: `${parsedNumber.cc}`,
+        //     subscriber: `${parsedNumber.subscriber}`,
+        //     rentCar: reservationInfo.vehicle,
+        //     rentDays: `${reservationInfo.days}`,
+        //     clientName: reservationInfo.name,
+        //   },
+        //   {
+        //     withCredentials: true,
+        //     headers: {
+        //       "Content-Type": "application/json",
+        //     },
+        //   }
+        // );
+
+        // document.open();
+        // document.write(response.data);
+        // document.close();
+      }
     }
   };
 

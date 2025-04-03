@@ -42,6 +42,8 @@ export interface IReservationInfo {
     fileType: string;
     fileName: string;
   };
+  driverLicenseFile: File | null;
+  identificationDocFile: File | null;
   vehicle: ICar[];
   price: number;
   priceCVE: number;
