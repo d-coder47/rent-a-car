@@ -333,29 +333,29 @@ const ReservationForm = () => {
           },
         });
 
-        // const response = await axios.post(
-        //   `${apiUrl}/postback`,
-        //   {
-        //     amount: `${reservationInfo.priceCVE}`,
-        //     languages: i18n.language,
-        //     mail: `${reservationInfo.email}`,
-        //     cc: `${parsedNumber.cc}`,
-        //     subscriber: `${parsedNumber.subscriber}`,
-        //     rentCar: reservationInfo.vehicle,
-        //     rentDays: `${reservationInfo.days}`,
-        //     clientName: reservationInfo.name,
-        //   },
-        //   {
-        //     withCredentials: true,
-        //     headers: {
-        //       "Content-Type": "application/json",
-        //     },
-        //   }
-        // );
+        const response = await axios.post(
+          `${apiUrl}/postback`,
+          {
+            amount: `${reservationInfo.priceCVE}`,
+            languages: i18n.language,
+            mail: `${reservationInfo.email}`,
+            cc: `${parsedNumber.cc}`,
+            subscriber: `${parsedNumber.subscriber}`,
+            rentCar: reservationInfo.vehicle,
+            rentDays: `${reservationInfo.days}`,
+            clientName: reservationInfo.name,
+          },
+          {
+            withCredentials: true,
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
 
-        // document.open();
-        // document.write(response.data);
-        // document.close();
+        document.open();
+        document.write(response.data);
+        document.close();
       }
     }
   };
