@@ -332,30 +332,34 @@ const ReservationForm = () => {
             "Content-Type": "multipart/form-data",
           },
         });
-
-        const response = await axios.post(
-          `${apiUrl}/postback`,
-          {
-            amount: `${reservationInfo.priceCVE}`,
-            languages: i18n.language,
-            mail: `${reservationInfo.email}`,
-            cc: `${parsedNumber.cc}`,
-            subscriber: `${parsedNumber.subscriber}`,
-            rentCar: reservationInfo.vehicle,
-            rentDays: `${reservationInfo.days}`,
-            clientName: reservationInfo.name,
-          },
-          {
-            withCredentials: true,
-            headers: {
-              "Content-Type": "application/json",
+        axios
+          .post(
+            `${apiUrl}/postback`,
+            {
+              amount: `${reservationInfo.priceCVE}`,
+              languages: i18n.language,
+              mail: `${reservationInfo.email}`,
+              cc: `${parsedNumber.cc}`,
+              subscriber: `${parsedNumber.subscriber}`,
+              rentCar: reservationInfo.vehicle,
+              rentDays: `${reservationInfo.days}`,
+              clientName: reservationInfo.name,
             },
-          }
-        );
-
-        document.open();
-        document.write(response.data);
-        document.close();
+            {
+              withCredentials: true,
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          )
+          .then((response) => {
+            document.open();
+            document.write(response.data);
+            document.close();
+          })
+          .catch((error) => {
+            console.log("hello", error);
+          });
       }
     }
   };
