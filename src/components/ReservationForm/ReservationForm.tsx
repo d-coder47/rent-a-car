@@ -366,8 +366,7 @@ const ReservationForm = () => {
               cc: `${parsedNumber.cc}`,
               subscriber: `${parsedNumber.subscriber}`,
               rentCar: reservationInfo.vehicle,
-              rentDays: 0,
-              // rentDays: `${reservationInfo.days}`,
+              rentDays: `${reservationInfo.days}`,
               clientName: reservationInfo.name,
             },
             {
