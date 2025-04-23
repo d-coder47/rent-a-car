@@ -1,4 +1,14 @@
-import { Box, Button, Modal, Stack, Typography, useTheme } from "@mui/material";
+import {
+  Alert,
+  Box,
+  Button,
+  Modal,
+  Snackbar,
+  SnackbarCloseReason,
+  Stack,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 import Step1 from "./Step1";
@@ -73,6 +83,9 @@ const ReservationForm = () => {
     price: "",
     days: "",
   });
+
+  const [open, setOpen] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>();
 
   const handleReservationPrice = async (days: number, vehicles: ICar[]) => {
     if (days > 0 && vehicles.length > 0) {
@@ -308,6 +321,17 @@ const ReservationForm = () => {
     checkFieldsErrors();
   });
 
+  const handleCloseToast = (
+    event?: React.SyntheticEvent | Event,
+    reason?: SnackbarCloseReason
+  ) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
   const handleReviewDetails = async (clickType: string) => {
     if (clickType === "editClick") {
       setShowRentalSummary(false);
@@ -342,7 +366,8 @@ const ReservationForm = () => {
               cc: `${parsedNumber.cc}`,
               subscriber: `${parsedNumber.subscriber}`,
               rentCar: reservationInfo.vehicle,
-              rentDays: `${reservationInfo.days}`,
+              rentDays: 0,
+              // rentDays: `${reservationInfo.days}`,
               clientName: reservationInfo.name,
             },
             {
@@ -358,7 +383,8 @@ const ReservationForm = () => {
             document.close();
           })
           .catch((error) => {
-            console.log("hello", error);
+            setOpen(true);
+            setErrorMessage(error.message);
           });
       }
     }
@@ -369,259 +395,56 @@ const ReservationForm = () => {
   };
 
   return (
-    <Box
-      sx={{
-        width: "100%",
-      }}
-      display="flex"
-      justifyContent="center"
-    >
-      {/* Form to fill reservation infos */}
+    <>
       <Box
-        component="form"
-        autoComplete="off"
         sx={{
-          display: showRentalSummary ? "none" : "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "1.5rem",
-          width: "93%",
-
-          height: {
-            xs: "100%",
-            sm: "100%",
-            md: "auto",
-            lg: "auto",
-            xl: "auto",
-          },
+          width: "100%",
         }}
+        display="flex"
+        justifyContent="center"
       >
-        <Step1
-          reservationValues={reservationInfo}
-          fieldsErrors={fieldsErrors}
-          handleChange={handleChange}
-        />
-        <Step2
-          reservationValues={reservationInfo}
-          fieldsErrors={fieldsErrors}
-          handleChange={handleChange}
-        />
-
-        <Step3
-          reservationValues={reservationInfo}
-          fieldsErrors={fieldsErrors}
-          handleChange={handleChange}
-        />
-
-        <Step4
-          reservationValues={reservationInfo}
-          fieldsErrors={fieldsErrors}
-          handleChange={handleChange}
-        />
-
-        <Button
-          variant="contained"
-          sx={{
-            color: "#ffffff",
-            background: theme.palette.secondary.main,
-            "&:hover": {
-              backgroundColor: theme.palette.secondary.dark,
-            },
-
-            marginTop: "1rem",
-            textTransform: "none",
-          }}
-          onClick={handleSubmit}
-        >
-          <Typography variant="body1">
-            {t("homepage.contact.form.button")}
-          </Typography>
-        </Button>
-      </Box>
-
-      {/* modal to alert about payment conversion to cve */}
-
-      <Modal
-        open={openConversionModal}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
+        {/* Form to fill reservation infos */}
         <Box
+          component="form"
+          autoComplete="off"
           sx={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "55%",
-            bgcolor: "background.paper",
-            boxShadow: 24,
-            p: 4,
-          }}
-        >
-          <Stack
-            alignItems="center"
-            justifyContent="center"
-            direction="row"
-            gap={1}
-          >
-            <InfoOutlined
-              sx={{
-                width: "10%",
-                height: "10%",
-                color: theme.palette.primary.main,
-              }}
-            />
-          </Stack>
-          <Typography
-            variant="body1"
-            id="modal-modal-description"
-            sx={{ mt: 2 }}
-          >
-            {t("reservationForm.modalReservationText1")}
-          </Typography>
+            display: showRentalSummary ? "none" : "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "1.5rem",
+            width: "93%",
 
-          <Typography
-            variant="body1"
-            id="modal-modal-description"
-            sx={{ mt: 2 }}
-          >
-            {t("reservationForm.modalReservationText2")}
-          </Typography>
-
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "flex-end",
-            }}
-          >
-            <Typography variant="body1" sx={{ mt: 2, marginRight: "0.5rem" }}>
-              {t("reservationForm.modalReservationText3")}
-            </Typography>
-
-            <Typography variant="h3">{reservationInfo.priceCVE} CVE</Typography>
-          </Box>
-
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              marginTop: "30px",
-            }}
-          >
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: {
-                  xs: "column",
-                  sm: "column",
-                  md: "row",
-                  lg: "row",
-                  xl: "row",
-                },
-                justifyContent: {
-                  xs: "center",
-                  sm: "center",
-                  md: "space-between",
-                  lg: "space-between",
-                  xl: "space-between",
-                },
-                alignItems: "center",
-                width: "40%",
-              }}
-            >
-              <Button
-                variant="contained"
-                sx={{
-                  color: "#ffffff",
-                  background: theme.palette.primary.main,
-                  "&:hover": {
-                    backgroundColor: theme.palette.primary.dark,
-                  },
-                  textTransform: "none",
-                }}
-                onClick={() => handleClose()}
-              >
-                <Typography variant="body1">
-                  {t("reservationForm.cancel")}
-                </Typography>
-              </Button>
-
-              <Button
-                variant="contained"
-                sx={{
-                  color: "#ffffff",
-                  background: theme.palette.secondary.main,
-                  "&:hover": {
-                    backgroundColor: theme.palette.secondary.dark,
-                  },
-                  marginTop: {
-                    xs: "5px",
-                    sm: "5px",
-                    md: 0,
-                    lg: 0,
-                    xl: 0,
-                  },
-
-                  textTransform: "none",
-                }}
-                onClick={() => {
-                  handleClose();
-                  setShowRentalSummary(true);
-                }}
-              >
-                <Typography variant="body1">
-                  {t("reservationForm.continue")}
-                </Typography>
-              </Button>
-            </Box>
-          </Box>
-        </Box>
-      </Modal>
-
-      {/* review infos before submit payment */}
-      <Box
-        component="form"
-        autoComplete="off"
-        sx={{
-          display: showRentalSummary ? "flex" : "none",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "1.5rem",
-          width: "93%",
-        }}
-      >
-        <ReviewStep reservationDetails={reservationInfo} />
-
-        <Box
-          sx={{
-            width: {
-              xs: "58%",
-              sm: "45%",
-              md: "25%",
-              lg: "20%",
-              xl: "15%",
+            height: {
+              xs: "100%",
+              sm: "100%",
+              md: "auto",
+              lg: "auto",
+              xl: "auto",
             },
-
-            display: "flex",
-            justifyContent: "space-between",
           }}
         >
-          <Button
-            variant="contained"
-            sx={{
-              color: "#ffffff",
-              background: theme.palette.primary.main,
-              "&:hover": {
-                backgroundColor: theme.palette.primary.dark,
-              },
+          <Step1
+            reservationValues={reservationInfo}
+            fieldsErrors={fieldsErrors}
+            handleChange={handleChange}
+          />
+          <Step2
+            reservationValues={reservationInfo}
+            fieldsErrors={fieldsErrors}
+            handleChange={handleChange}
+          />
 
-              marginTop: "1rem",
-              textTransform: "none",
-            }}
-            onClick={async () => await handleReviewDetails("editClick")}
-          >
-            <Typography variant="body1">{t("reservationForm.edit")}</Typography>
-          </Button>
+          <Step3
+            reservationValues={reservationInfo}
+            fieldsErrors={fieldsErrors}
+            handleChange={handleChange}
+          />
+
+          <Step4
+            reservationValues={reservationInfo}
+            fieldsErrors={fieldsErrors}
+            handleChange={handleChange}
+          />
 
           <Button
             variant="contained"
@@ -635,15 +458,240 @@ const ReservationForm = () => {
               marginTop: "1rem",
               textTransform: "none",
             }}
-            onClick={() => handleReviewDetails("confirm")}
+            onClick={handleSubmit}
           >
             <Typography variant="body1">
-              {t("reservationForm.confirm")}
+              {t("homepage.contact.form.button")}
             </Typography>
           </Button>
         </Box>
+
+        {/* modal to alert about payment conversion to cve */}
+
+        <Modal
+          open={openConversionModal}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box
+            sx={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: "55%",
+              bgcolor: "background.paper",
+              boxShadow: 24,
+              p: 4,
+            }}
+          >
+            <Stack
+              alignItems="center"
+              justifyContent="center"
+              direction="row"
+              gap={1}
+            >
+              <InfoOutlined
+                sx={{
+                  width: "10%",
+                  height: "10%",
+                  color: theme.palette.primary.main,
+                }}
+              />
+            </Stack>
+            <Typography
+              variant="body1"
+              id="modal-modal-description"
+              sx={{ mt: 2 }}
+            >
+              {t("reservationForm.modalReservationText1")}
+            </Typography>
+
+            <Typography
+              variant="body1"
+              id="modal-modal-description"
+              sx={{ mt: 2 }}
+            >
+              {t("reservationForm.modalReservationText2")}
+            </Typography>
+
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "flex-end",
+              }}
+            >
+              <Typography variant="body1" sx={{ mt: 2, marginRight: "0.5rem" }}>
+                {t("reservationForm.modalReservationText3")}
+              </Typography>
+
+              <Typography variant="h3">
+                {reservationInfo.priceCVE} CVE
+              </Typography>
+            </Box>
+
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "30px",
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: {
+                    xs: "column",
+                    sm: "column",
+                    md: "row",
+                    lg: "row",
+                    xl: "row",
+                  },
+                  justifyContent: {
+                    xs: "center",
+                    sm: "center",
+                    md: "space-between",
+                    lg: "space-between",
+                    xl: "space-between",
+                  },
+                  alignItems: "center",
+                  width: "40%",
+                }}
+              >
+                <Button
+                  variant="contained"
+                  sx={{
+                    color: "#ffffff",
+                    background: theme.palette.primary.main,
+                    "&:hover": {
+                      backgroundColor: theme.palette.primary.dark,
+                    },
+                    textTransform: "none",
+                  }}
+                  onClick={() => handleClose()}
+                >
+                  <Typography variant="body1">
+                    {t("reservationForm.cancel")}
+                  </Typography>
+                </Button>
+
+                <Button
+                  variant="contained"
+                  sx={{
+                    color: "#ffffff",
+                    background: theme.palette.secondary.main,
+                    "&:hover": {
+                      backgroundColor: theme.palette.secondary.dark,
+                    },
+                    marginTop: {
+                      xs: "5px",
+                      sm: "5px",
+                      md: 0,
+                      lg: 0,
+                      xl: 0,
+                    },
+
+                    textTransform: "none",
+                  }}
+                  onClick={() => {
+                    handleClose();
+                    setShowRentalSummary(true);
+                  }}
+                >
+                  <Typography variant="body1">
+                    {t("reservationForm.continue")}
+                  </Typography>
+                </Button>
+              </Box>
+            </Box>
+          </Box>
+        </Modal>
+
+        {/* review infos before submit payment */}
+        <Box
+          component="form"
+          autoComplete="off"
+          sx={{
+            display: showRentalSummary ? "flex" : "none",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "1.5rem",
+            width: "93%",
+          }}
+        >
+          <ReviewStep reservationDetails={reservationInfo} />
+
+          <Box
+            sx={{
+              width: {
+                xs: "58%",
+                sm: "45%",
+                md: "25%",
+                lg: "20%",
+                xl: "15%",
+              },
+
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
+            <Button
+              variant="contained"
+              sx={{
+                color: "#ffffff",
+                background: theme.palette.primary.main,
+                "&:hover": {
+                  backgroundColor: theme.palette.primary.dark,
+                },
+
+                marginTop: "1rem",
+                textTransform: "none",
+              }}
+              onClick={async () => await handleReviewDetails("editClick")}
+            >
+              <Typography variant="body1">
+                {t("reservationForm.edit")}
+              </Typography>
+            </Button>
+
+            <Button
+              variant="contained"
+              sx={{
+                color: "#ffffff",
+                background: theme.palette.secondary.main,
+                "&:hover": {
+                  backgroundColor: theme.palette.secondary.dark,
+                },
+
+                marginTop: "1rem",
+                textTransform: "none",
+              }}
+              onClick={() => handleReviewDetails("confirm")}
+            >
+              <Typography variant="body1">
+                {t("reservationForm.confirm")}
+              </Typography>
+            </Button>
+          </Box>
+        </Box>
       </Box>
-    </Box>
+
+      <Snackbar
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleCloseToast}
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      >
+        <Alert
+          onClose={handleCloseToast}
+          severity="error"
+          variant="filled"
+          sx={{ width: "100%" }}
+        >
+          {errorMessage}
+        </Alert>
+      </Snackbar>
+    </>
   );
 };
 
