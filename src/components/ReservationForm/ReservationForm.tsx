@@ -316,7 +316,7 @@ const ReservationForm = () => {
     if (clickType === "confirm") {
       const parsedNumber = parsePhoneNumber(`${reservationInfo.phone}`);
 
-      let formData = new FormData();
+      const formData = new FormData();
       if (
         reservationInfo.driverLicenseFile &&
         reservationInfo.identificationDocFile
