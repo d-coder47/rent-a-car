@@ -10,7 +10,7 @@ import {
   Instagram,
 } from "@mui/icons-material";
 import { scrollToView } from "../../constants";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -18,6 +18,8 @@ const Footer: React.FC = () => {
   const location = useLocation();
 
   const isHomePage = location.pathname === "/";
+
+  const navigate = useNavigate();
 
   const sections = [
     {
@@ -238,6 +240,92 @@ const Footer: React.FC = () => {
                 </Typography>
               </Box>
             ))}
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-around",
+                width: "30%",
+              }}
+            >
+              {socialContacts.map((item, index) => (
+                <Link
+                  href={item.url}
+                  key={index}
+                  target="_blank"
+                  sx={{ color: "#000" }}
+                >
+                  {item.icon}
+                </Link>
+              ))}
+            </Box>
+          </Box>
+        </Box>
+
+        <Box
+          sx={{
+            width: {
+              xs: "100%",
+              sm: "100%",
+              md: "50%",
+              lg: "50%",
+              xl: "50%",
+            },
+            height: "100%",
+            display: isHomePage ? "flex" : "none",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: {
+                xs: "column",
+                sm: "column",
+                md: "column",
+                lg: "column",
+                xl: "column",
+              },
+              alignItems: {
+                xs: "center",
+                sm: "center",
+                md: "flex-start",
+                lg: "flex-start",
+                xl: "flex-start",
+              },
+            }}
+          >
+            <Typography
+              variant="h3"
+              sx={{
+                marginTop: {
+                  xs: "30px",
+                  sm: "30px",
+                  md: "30px",
+                  lg: "80px",
+                  xl: "80px",
+                },
+                marginBottom: "20px",
+              }}
+            >
+              Pagamento
+            </Typography>
+
+            <Typography
+              variant="body1"
+              onClick={() => navigate("/payment-methods")}
+              sx={{
+                marginBottom: "20px",
+                cursor: "pointer",
+                "&:hover": {
+                  textDecoration: "underline",
+                },
+              }}
+            >
+              Métodos de Pagamento
+            </Typography>
+
             <Box
               sx={{
                 display: "flex",
