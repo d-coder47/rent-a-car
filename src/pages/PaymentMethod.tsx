@@ -3,6 +3,9 @@ import {
   AccordionDetails,
   AccordionSummary,
   Box,
+  List,
+  ListItem,
+  ListItemText,
   Typography,
 } from "@mui/material";
 import Layout from "../components/Layout/Layout";
@@ -33,59 +36,90 @@ const PaymentMethods = () => {
   const faqItems = [
     {
       id: "panel1",
-      question: "Quais as formas de pagamento?",
+      question: "Formas de pagamento",
       answer: (
         <>
           <Typography variant="body1">
-            Aceitamos um total de 4 opções de pagamento:
+            Aceitamos quatro formas de pagamento:
           </Typography>
 
-          <Typography variant="body1">1.Transferência Nacional;</Typography>
-          <Typography variant="body1">
-            2.Pagamento no momento da reserva caso for presencial;
-          </Typography>
-          <Typography variant="body1">
-            3.Cartão de crédito e débito virtual;
-          </Typography>
-          <Typography variant="body1">
-            4.Cartão de crédito e débito internacional;
-          </Typography>
+          <Box
+            sx={{
+              paddingLeft: "30px",
+            }}
+          >
+            <Typography variant="body1">
+              1.Transferência bancária nacional;
+            </Typography>
+            <Typography variant="body1">
+              2.Pagamento presencial no momento da reserva;
+            </Typography>
+            <Typography variant="body1">
+              3.Cartão de crédito ou débito virtual;
+            </Typography>
+            <Typography variant="body1">
+              4.Cartão de crédito ou débito internacional.
+            </Typography>
+          </Box>
         </>
       ),
     },
     {
       id: "panel2",
-      question:
-        "Qual o prazo para aprovação dos pagamentos realizados no cartão de credito?",
+      question: "Pagamento presencial",
       answer: (
-        <p>
-          Todas as compras realizadas no cartão de crédito são aprovados
-          imediatamente se os dados estiverem correctos. É enviado um e-mail com
-          o recibo de confirmação da compra, é essencial que confirme os dados
-          para que o seu pagamento não seja cancelado.
-        </p>
+        <Typography variant="body1">
+          Neste caso, no momento do pagamento, será disponibilizado um terminal
+          de pagamento automático (POS), permitindo o uso de cartões aceites
+          pela rede Vinti4. Se preferir, o pagamento também poderá ser feito em
+          dinheiro.
+        </Typography>
       ),
     },
     {
       id: "panel3",
-      question: "Posso alterar a forma de pagamento?",
+      question: "Cartões aceitos no pagamento online",
       answer: (
-        <p>
-          Infelizmente, se o seu pedido já foi finalizado, não será possível
-          realizar alterações.
-        </p>
+        <>
+          <Typography variant="body1">
+            Aceitamos todos os cartões compatíveis com a rede Vinti4, incluindo:
+            Cartão Vinti4 Visa American Express (AmEx) Mastercard:
+          </Typography>
+
+          <Box
+            sx={{
+              paddingLeft: "30px",
+            }}
+          >
+            <Typography variant="body1">1.Cartão Vinti4;</Typography>
+            <Typography variant="body1">2.Visa;</Typography>
+            <Typography variant="body1">3.American Express (AmEx);</Typography>
+            <Typography variant="body1">4.Mastercard.</Typography>
+          </Box>
+        </>
       ),
     },
-
     {
-      id: "panel6",
-      question:
-        "Estou com dificuldades em realizar o pagamento. O que eu faço?",
+      id: "panel4",
+      question: "Prazo para aprovação dos pagamentos com cartão de crédito",
       answer: (
-        <p>
-          Entre em contato com o nosso suporte ao cliente para podermos
-          auxiliá-lo.
-        </p>
+        <Typography variant="body1">
+          Os pagamentos realizados com cartão de crédito são aprovados
+          imediatamente, desde que os dados estejam corretos. Um e-mail com o
+          recibo de confirmação do pagamento será enviado automaticamente.
+          Recomendamos que verifique atentamente todas as informações antes de
+          concluir o pagamento, para evitar possíveis cancelamentos.
+        </Typography>
+      ),
+    },
+    {
+      id: "panel5",
+      question: "Dificuldades em realizar o pagamento online",
+      answer: (
+        <Typography variant="body1">
+          Entre em contato com a nossa equipa de suporte para que possamos
+          ajudá-lo(a) o mais rápido possível.
+        </Typography>
       ),
     },
   ];
@@ -94,10 +128,10 @@ const PaymentMethods = () => {
       <Box
         sx={{
           display: "flex",
-          justifyContent: "center",
           alignItems: "center",
           background: "#f4f4f4",
           flexDirection: "column",
+          height: "100%",
         }}
       >
         <Box
@@ -141,11 +175,69 @@ const PaymentMethods = () => {
               </Accordion>
             ))}
 
-            <Box mt={12} textAlign="center">
-              <Typography variant="body2" color="text.secondary">
-                Para outras dúvidas relacionadas a pagamentos, entre em contato
-                com nosso suporte ao cliente.
+            <Box
+              sx={{
+                marginTop: "50px",
+              }}
+            >
+              <Typography
+                variant="h3"
+                textAlign="center"
+                gutterBottom
+                fontWeight="bold"
+              >
+                O compromisso da V&amp;H INVESTIMENTOS com a segurança nos
+                pagamentos
               </Typography>
+
+              <Typography variant="body1">
+                Na <strong>V&amp;H INVESTIMENTOS</strong>, acreditamos que
+                segurança e confiança são fundamentais na hora de realizar
+                pagamentos online. Por isso, adotamos tecnologias de ponta para
+                proteger cada transação.
+              </Typography>
+
+              <Typography variant="h6" gutterBottom>
+                Contamos com os seguintes certificados e medidas de segurança:
+              </Typography>
+
+              <List>
+                <ListItem>
+                  <ListItemText primary="* Certificado Internacional SSL e Google reCAPTCHA 3.0 de última geração" />
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary="* SISP/Vinti4: tecnologia OTP (One Time Password) para garantir os mais altos padrões de segurança" />
+                </ListItem>
+              </List>
+
+              <Typography variant="h6" gutterBottom sx={{ mt: 4 }}>
+                Como funciona a proteção OTP (One Time Password) na prática?
+              </Typography>
+
+              <List>
+                <ListItem>
+                  <ListItemText primary="1. Ao selecionar a opção 'Pagamento Online', você será redirecionado para o portal da SISP." />
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary="2. Lá, deverá inserir os dados do seu cartão Vinti4, Visa, AmEx ou Mastercard." />
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary="3. A SISP enviará um código OTP via SMS ou e-mail para verificar sua identidade." />
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary="4. Após inserir o código, válido por uma única vez, o pagamento será concluído com sucesso." />
+                </ListItem>
+              </List>
+
+              <Box mt={4}>
+                <Typography variant="body1" color="text.secondary">
+                  <strong>Importante:</strong> A{" "}
+                  <strong>V&amp;H INVESTIMENTOS</strong> não armazena nenhuma
+                  informação do seu cartão. Todos os pagamentos são processados
+                  com total segurança diretamente nos servidores da{" "}
+                  <strong>SISP/Vinti4</strong>.
+                </Typography>
+              </Box>
             </Box>
           </Box>
         </Box>

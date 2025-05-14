@@ -7,6 +7,7 @@ import Car from "../pages/Car";
 import { sanityClient } from "../lib/client";
 import { useCar } from "../context/CarContext";
 import PaymentMethods from "../pages/PaymentMethod";
+import Refunds from "../pages/Refunds";
 
 const AppRoutes: React.FC = () => {
   const { cars, updateCars } = useCar();
@@ -32,6 +33,7 @@ const AppRoutes: React.FC = () => {
         <Route path="/reservation/:id?" element={<Reservation />} />
         <Route path="/car/:slug" element={<Car />} />
         <Route path="/payment-methods" element={<PaymentMethods />} />
+        <Route path="/refunds-and-returns" element={<Refunds />} />
       </Routes>
     </Router>
   );

@@ -309,7 +309,7 @@ const Footer: React.FC = () => {
                 marginBottom: "20px",
               }}
             >
-              Pagamento
+              Pagamento e Reembolso
             </Typography>
 
             <Typography
@@ -326,25 +326,19 @@ const Footer: React.FC = () => {
               Métodos de Pagamento
             </Typography>
 
-            <Box
+            <Typography
+              variant="body1"
+              onClick={() => navigate("/refunds-and-returns")}
               sx={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-around",
-                width: "30%",
+                marginBottom: "20px",
+                cursor: "pointer",
+                "&:hover": {
+                  textDecoration: "underline",
+                },
               }}
             >
-              {socialContacts.map((item, index) => (
-                <Link
-                  href={item.url}
-                  key={index}
-                  target="_blank"
-                  sx={{ color: "#000" }}
-                >
-                  {item.icon}
-                </Link>
-              ))}
-            </Box>
+              Política de Entrega e Devolução
+            </Typography>
           </Box>
         </Box>
 
