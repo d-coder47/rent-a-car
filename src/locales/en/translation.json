@@ -150,5 +150,64 @@
   "single-car": {
     "details": "Details",
     "rent": "Rent"
+  },
+  "payment-method": {
+    "paymentMethodsTitle": "Payment Methods",
+    "faq": {
+      "panel1": {
+        "question": "Payment methods",
+        "answer": {
+          "intro": "We accept four forms of payment:",
+          "options1": "1. National bank transfer",
+          "options2": "2. On-site payment at the time of booking",
+          "options3": "3. Virtual credit or debit card",
+          "options4": "4. International credit or debit card"
+        }
+      },
+      "panel2": {
+        "question": "On-site payment",
+        "answer": "In this case, an automatic payment terminal (POS) will be available, allowing the use of cards accepted by the Vinti4 network. If preferred, payment may also be made in cash."
+      },
+      "panel3": {
+        "question": "Cards accepted for online payment",
+        "answer": {
+          "intro": "We accept all cards compatible with the Vinti4 network, including:",
+          "cards1": "1. Vinti4 Card",
+          "cards2": "2. Visa",
+          "cards3": "3. American Express (AmEx)",
+          "cards4": "4. Mastercard"
+        }
+      },
+      "panel4": {
+        "question": "Approval time for credit card payments",
+        "answer": "Payments made with credit cards are approved immediately, provided the details are correct. A confirmation receipt will be sent via email automatically. We recommend checking all information carefully before completing the payment to avoid cancellations."
+      },
+      "panel5": {
+        "question": "Trouble making online payment",
+        "answer": "Please contact our support team so we can assist you as quickly as possible."
+      }
+    },
+    "vhSecurity": {
+      "title": "V&H INVESTIMENTOS' Commitment to Payment Security",
+      "intro": "At V&H INVESTIMENTOS, we believe that security and trust are essential when making online payments. That's why we use cutting-edge technologies to protect every transaction.",
+      "certsTitle": "We use the following certificates and security measures:",
+      "certs1": "International SSL Certificate and Google reCAPTCHA 3.0",
+      "certs2": "* SISP/Vinti4: OTP (One Time Password) technology to ensure the highest security standards",
+      "otpTitle": "* How does OTP (One Time Password) protection work in practice?",
+      "otpSteps1": "1. When selecting 'Online Payment', you will be redirected to the SISP portal.",
+      "otpSteps2": "2. There, you must enter your Vinti4, Visa, AmEx, or Mastercard card details.",
+      "otpSteps3": "3. SISP will send an OTP code via SMS or email to verify your identity.",
+      "otpSteps4s": "4. After entering the code, which is valid for one time only, the payment will be completed successfully.",
+      "disclaimer": "Important: V&H INVESTIMENTOS does not store any of your card information. All payments are securely processed directly on SISP/Vinti4 servers."
+    }
+  },
+  "refunds": {
+    "title": "Product and/or Service Delivery and Return Policy",
+    "intro": "At V&H INVESTIMENTOS, we value transparency and customer satisfaction. That’s why we have established clear guidelines for the delivery and return of services, ensuring a safe and efficient experience.",
+    "section1Title": "1. Service Provision (Rent a Car)",
+    "section1Points1": "• Reservation Confirmation: Reservations made in person will be confirmed upon payment of 50% of the total amount. Online reservations will only be confirmed after full payment of the reservation amount.",
+    "section1Points2": "• Delivery will be made according to the rental start date and may occur at the airport, port, hotel, or another location previously agreed upon with the customer.",
+    "section2Title": "2. Customer Support",
+    "section2Text": "In case of doubts or situations not covered by this policy, our team is available to provide the necessary support and find the best solution for each case."
   }
 }

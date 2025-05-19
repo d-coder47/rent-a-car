@@ -36,11 +36,11 @@ const PaymentMethods = () => {
   const faqItems = [
     {
       id: "panel1",
-      question: "Formas de pagamento",
+      question: t("payment-method.faq.panel1.question"),
       answer: (
         <>
           <Typography variant="body1">
-            Aceitamos quatro formas de pagamento:
+            {t("payment-method.faq.panel1.answer.intro")}
           </Typography>
 
           <Box
@@ -49,16 +49,16 @@ const PaymentMethods = () => {
             }}
           >
             <Typography variant="body1">
-              1.Transferência bancária nacional;
+              {t("payment-method.faq.panel1.answer.options1")}
             </Typography>
             <Typography variant="body1">
-              2.Pagamento presencial no momento da reserva;
+              {t("payment-method.faq.panel1.answer.options2")}
             </Typography>
             <Typography variant="body1">
-              3.Cartão de crédito ou débito virtual;
+              {t("payment-method.faq.panel1.answer.options3")}
             </Typography>
             <Typography variant="body1">
-              4.Cartão de crédito ou débito internacional.
+              {t("payment-method.faq.panel1.answer.options4")}
             </Typography>
           </Box>
         </>
@@ -66,24 +66,20 @@ const PaymentMethods = () => {
     },
     {
       id: "panel2",
-      question: "Pagamento presencial",
+      question: t("payment-method.faq.panel2.question"),
       answer: (
         <Typography variant="body1">
-          Neste caso, no momento do pagamento, será disponibilizado um terminal
-          de pagamento automático (POS), permitindo o uso de cartões aceites
-          pela rede Vinti4. Se preferir, o pagamento também poderá ser feito em
-          dinheiro.
+          {t("payment-method.faq.panel2.answer")}
         </Typography>
       ),
     },
     {
       id: "panel3",
-      question: "Cartões aceitos no pagamento online",
+      question: t("payment-method.faq.panel3.question"),
       answer: (
         <>
           <Typography variant="body1">
-            Aceitamos todos os cartões compatíveis com a rede Vinti4, incluindo:
-            Cartão Vinti4 Visa American Express (AmEx) Mastercard:
+            {t("payment-method.faq.panel3.answer.intro")}
           </Typography>
 
           <Box
@@ -91,34 +87,38 @@ const PaymentMethods = () => {
               paddingLeft: "30px",
             }}
           >
-            <Typography variant="body1">1.Cartão Vinti4;</Typography>
-            <Typography variant="body1">2.Visa;</Typography>
-            <Typography variant="body1">3.American Express (AmEx);</Typography>
-            <Typography variant="body1">4.Mastercard.</Typography>
+            <Typography variant="body1">
+              {t("payment-method.faq.panel3.answer.cards1")}
+            </Typography>
+            <Typography variant="body1">
+              {t("payment-method.faq.panel3.answer.cards2")}
+            </Typography>
+            <Typography variant="body1">
+              {t("payment-method.faq.panel3.answer.cards3")}
+            </Typography>
+            <Typography variant="body1">
+              {" "}
+              {t("payment-method.faq.panel3.answer.cards4")}
+            </Typography>
           </Box>
         </>
       ),
     },
     {
       id: "panel4",
-      question: "Prazo para aprovação dos pagamentos com cartão de crédito",
+      question: t("payment-method.faq.panel4.question"),
       answer: (
         <Typography variant="body1">
-          Os pagamentos realizados com cartão de crédito são aprovados
-          imediatamente, desde que os dados estejam corretos. Um e-mail com o
-          recibo de confirmação do pagamento será enviado automaticamente.
-          Recomendamos que verifique atentamente todas as informações antes de
-          concluir o pagamento, para evitar possíveis cancelamentos.
+          {t("payment-method.faq.panel4.answer")}
         </Typography>
       ),
     },
     {
       id: "panel5",
-      question: "Dificuldades em realizar o pagamento online",
+      question: t("payment-method.faq.panel5.question"),
       answer: (
         <Typography variant="body1">
-          Entre em contato com a nossa equipa de suporte para que possamos
-          ajudá-lo(a) o mais rápido possível.
+          {t("payment-method.faq.panel5.answer")}
         </Typography>
       ),
     },
@@ -143,7 +143,7 @@ const PaymentMethods = () => {
           }}
         >
           <Typography textAlign="center" marginBottom="36px" variant="h2">
-            Métodos de Pagamento
+            {t("payment-method.paymentMethodsTitle")}
           </Typography>
 
           <Box
@@ -186,56 +186,60 @@ const PaymentMethods = () => {
                 gutterBottom
                 fontWeight="bold"
               >
-                O compromisso da V&amp;H INVESTIMENTOS com a segurança nos
-                pagamentos
+                {t("payment-method.vhSecurity.title")}
               </Typography>
 
               <Typography variant="body1">
-                Na <strong>V&amp;H INVESTIMENTOS</strong>, acreditamos que
-                segurança e confiança são fundamentais na hora de realizar
-                pagamentos online. Por isso, adotamos tecnologias de ponta para
-                proteger cada transação.
+                {t("payment-method.vhSecurity.intro")}
               </Typography>
 
               <Typography variant="h6" gutterBottom>
-                Contamos com os seguintes certificados e medidas de segurança:
+                {t("payment-method.vhSecurity.certsTitle")}
               </Typography>
 
               <List>
                 <ListItem>
-                  <ListItemText primary="* Certificado Internacional SSL e Google reCAPTCHA 3.0 de última geração" />
+                  <ListItemText
+                    primary={t("payment-method.vhSecurity.certs1")}
+                  />
                 </ListItem>
                 <ListItem>
-                  <ListItemText primary="* SISP/Vinti4: tecnologia OTP (One Time Password) para garantir os mais altos padrões de segurança" />
+                  <ListItemText
+                    primary={t("payment-method.vhSecurity.certs2")}
+                  />
                 </ListItem>
               </List>
 
               <Typography variant="h6" gutterBottom sx={{ mt: 4 }}>
-                Como funciona a proteção OTP (One Time Password) na prática?
+                {t("payment-method.vhSecurity.otpTitle")}
               </Typography>
 
               <List>
                 <ListItem>
-                  <ListItemText primary="1. Ao selecionar a opção 'Pagamento Online', você será redirecionado para o portal da SISP." />
+                  <ListItemText
+                    primary={t("payment-method.vhSecurity.otpSteps1")}
+                  />
                 </ListItem>
                 <ListItem>
-                  <ListItemText primary="2. Lá, deverá inserir os dados do seu cartão Vinti4, Visa, AmEx ou Mastercard." />
+                  <ListItemText
+                    primary={t("payment-method.vhSecurity.otpSteps2")}
+                  />
                 </ListItem>
                 <ListItem>
-                  <ListItemText primary="3. A SISP enviará um código OTP via SMS ou e-mail para verificar sua identidade." />
+                  <ListItemText
+                    primary={t("payment-method.vhSecurity.otpSteps3")}
+                  />
                 </ListItem>
                 <ListItem>
-                  <ListItemText primary="4. Após inserir o código, válido por uma única vez, o pagamento será concluído com sucesso." />
+                  <ListItemText
+                    primary={t("payment-method.vhSecurity.otpSteps4")}
+                  />
                 </ListItem>
               </List>
 
               <Box mt={4}>
                 <Typography variant="body1" color="text.secondary">
-                  <strong>Importante:</strong> A{" "}
-                  <strong>V&amp;H INVESTIMENTOS</strong> não armazena nenhuma
-                  informação do seu cartão. Todos os pagamentos são processados
-                  com total segurança diretamente nos servidores da{" "}
-                  <strong>SISP/Vinti4</strong>.
+                  {t("payment-method.vhSecurity.disclaimer")}
                 </Typography>
               </Box>
             </Box>

@@ -25,7 +25,8 @@ const Refunds = () => {
           alignItems: "center",
           background: "#f4f4f4",
           flexDirection: "column",
-          height: "100%",
+          height: "100vh",
+          // height: "100%",
         }}
       >
         <Box
@@ -37,7 +38,7 @@ const Refunds = () => {
           }}
         >
           <Typography textAlign="center" marginBottom="36px" variant="h2">
-            Política de Entrega e Devolução de Produtos e/ou Serviços
+            {t("refunds.title")}
           </Typography>
 
           <Box
@@ -45,29 +46,24 @@ const Refunds = () => {
               width: "80%",
             }}
           >
-            <Typography variant="body1">
-              Na <strong>V&amp;H INVESTIMENTOS</strong>, valorizamos a
-              transparência e a satisfação dos nossos clientes. Por isso,
-              estabelecemos diretrizes claras para entrega e devolução de
-              serviços, garantindo uma experiência segura e eficiente.
-            </Typography>
+            <Typography variant="body1">{t("refunds.intro")}</Typography>
 
             <Typography variant="h6" gutterBottom sx={{ mt: 4 }}>
-              1. Prestação de Serviços (Rent a Car)
+              {t("refunds.section1Title")}
             </Typography>
             <List>
               <ListItem>
-                <ListItemText primary="• Confirmação de Reserva: A reserva de viaturas será confirmada mediante o pagamento antecipado ou sinal, conforme acordado." />
+                <ListItemText primary={t("refunds.section1Points1")} />
               </ListItem>
               <ListItem>
-                <ListItemText primary="• Entrega da Viatura: O cliente deverá apresentar os documentos exigidos e cumprir os requisitos mínimos para levantamento da viatura." />
+                <ListItemText primary={t("refunds.section1Points2")} />
               </ListItem>
-              <ListItem>
+              {/* <ListItem>
                 <ListItemText primary="• Cancelamento de Reservas: Cancelamentos devem ser comunicados com pelo menos 24 horas de antecedência. Em caso de não comparência ou aviso tardio, poderá haver cobrança parcial ou total do valor da reserva." />
-              </ListItem>
+              </ListItem> */}
             </List>
 
-            <Typography variant="h6" gutterBottom sx={{ mt: 4 }}>
+            {/* <Typography variant="h6" gutterBottom sx={{ mt: 4 }}>
               2. Reembolsos
             </Typography>
             <List>
@@ -77,16 +73,12 @@ const Refunds = () => {
               <ListItem>
                 <ListItemText primary="• Despesas de Envio: Custos de envio não são reembolsáveis, exceto em casos de erro comprovado por parte da V&amp;H INVESTIMENTOS." />
               </ListItem>
-            </List>
+            </List> */}
 
             <Typography variant="h6" gutterBottom sx={{ mt: 4 }}>
-              3. Suporte ao Cliente
+              {t("refunds.section2Title")}
             </Typography>
-            <Typography variant="body1">
-              Em caso de dúvidas ou situações não previstas nesta política, a
-              nossa equipa está disponível para oferecer o suporte necessário e
-              encontrar a melhor solução para cada caso.
-            </Typography>
+            <Typography variant="body1">{t("refunds.section2Text")}</Typography>
           </Box>
         </Box>
       </Box>

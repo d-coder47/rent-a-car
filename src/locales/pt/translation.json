@@ -149,5 +149,64 @@
   "single-car": {
     "details": "Detalhes",
     "rent": "Alugar"
+  },
+  "payment-method": {
+    "paymentMethodsTitle": "Métodos de Pagamento",
+    "faq": {
+      "panel1": {
+        "question": "Formas de pagamento",
+        "answer": {
+          "intro": "Aceitamos quatro formas de pagamento:",
+          "options1": "1.Transferência bancária nacional",
+          "options2": "2.Pagamento presencial no momento da reserva",
+          "options3": "3.Cartão de crédito ou débito virtual",
+          "options4": "4.Cartão de crédito ou débito internacional"
+        }
+      },
+      "panel2": {
+        "question": "Pagamento presencial",
+        "answer": "Neste caso, no momento do pagamento, será disponibilizado um terminal de pagamento automático (POS), permitindo o uso de cartões aceites pela rede Vinti4. Se preferir, o pagamento também poderá ser feito em dinheiro."
+      },
+      "panel3": {
+        "question": "Cartões aceitos no pagamento online",
+        "answer": {
+          "intro": "Aceitamos todos os cartões compatíveis com a rede Vinti4, incluindo:",
+          "cards1": "1.Cartão Vinti4",
+          "cards2": "2.Visa",
+          "cards3": "3.American Express (AmEx)",
+          "cards4": "4.Mastercard"
+        }
+      },
+      "panel4": {
+        "question": "Prazo para aprovação dos pagamentos com cartão de crédito",
+        "answer": "Os pagamentos realizados com cartão de crédito são aprovados imediatamente, desde que os dados estejam corretos. Um e-mail com o recibo de confirmação do pagamento será enviado automaticamente. Recomendamos que verifique atentamente todas as informações antes de concluir o pagamento, para evitar possíveis cancelamentos."
+      },
+      "panel5": {
+        "question": "Dificuldades em realizar o pagamento online",
+        "answer": "Entre em contato com a nossa equipa de suporte para que possamos ajudá-lo(a) o mais rápido possível."
+      }
+    },
+    "vhSecurity": {
+      "title": "O compromisso da V&H INVESTIMENTOS com a segurança nos pagamentos",
+      "intro": "Na V&H INVESTIMENTOS, acreditamos que segurança e confiança são fundamentais na hora de realizar pagamentos online. Por isso, adotamos tecnologias de ponta para proteger cada transação.",
+      "certsTitle": "Contamos com os seguintes certificados e medidas de segurança:",
+      "certs1": "* Certificado Internacional SSL e Google reCAPTCHA 3.0 de última geração",
+      "certs2": "* SISP/Vinti4: tecnologia OTP (One Time Password) para garantir os mais altos padrões de segurança",
+      "otpTitle": "Como funciona a proteção OTP (One Time Password) na prática?",
+      "otpSteps1": "1. Ao selecionar a opção 'Pagamento Online', você será redirecionado para o portal da SISP.",
+      "otpSteps2": "2. Lá, deverá inserir os dados do seu cartão Vinti4, Visa, AmEx ou Mastercard.",
+      "otpSteps3": "3. A SISP enviará um código OTP via SMS ou e-mail para verificar sua identidade.",
+      "otpSteps4": "4. Após inserir o código, válido por uma única vez, o pagamento será concluído com sucesso.",
+      "disclaimer": "Importante: A V&H INVESTIMENTOS não armazena nenhuma informação do seu cartão. Todos os pagamentos são processados com total segurança diretamente nos servidores da SISP/Vinti4."
+    }
+  },
+  "refunds": {
+    "title": "Política de Entrega e Devolução de Produtos e/ou Serviços",
+    "intro": "Na V&H INVESTIMENTOS, valorizamos a transparência e a satisfação dos nossos clientes. Por isso, estabelecemos diretrizes claras para entrega e devolução de serviços, garantindo uma experiência segura e eficiente.",
+    "section1Title": "1. Prestação de Serviços (Rent a Car)",
+    "section1Points1": "• Confirmação de Reserva: Reservas realizadas presencialmente serão confirmadas mediante o pagamento de 50% do valor total. Já as reservas feitas online só serão confirmadas após o pagamento integral do valor da reserva.",
+    "section1Points2": "• A entrega será feita conforme a data de início do aluguer e pode ocorrer no aeroporto, porto, hotel ou outro local previamente combinado com o cliente.",
+    "section2Title": "2. Suporte ao Cliente",
+    "section2Text": "Em caso de dúvidas ou situações não previstas nesta política, a nossa equipa está disponível para oferecer o suporte necessário e encontrar a melhor solução para cada caso."
   }
 }

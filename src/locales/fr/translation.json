@@ -149,5 +149,64 @@
   "single-car": {
     "details": "Détails",
     "rent": "Location"
+  },
+  "payment-method": {
+    "paymentMethodsTitle": "Méthodes de paiement",
+    "faq": {
+      "panel1": {
+        "question": "Modes de paiement",
+        "answer": {
+          "intro": "Nous acceptons quatre modes de paiement :",
+          "options1": "1. Virement bancaire national",
+          "options2": "2. Paiement en personne au moment de la réservation",
+          "options3": "3. Carte de crédit ou de débit virtuelle",
+          "options4": "4. Carte de crédit ou de débit internationale"
+        }
+      },
+      "panel2": {
+        "question": "Paiement en personne",
+        "answer": "Dans ce cas, un terminal de paiement automatique (TPE) sera mis à disposition, permettant l'utilisation des cartes acceptées par le réseau Vinti4. Si vous préférez, le paiement peut également être effectué en espèces."
+      },
+      "panel3": {
+        "question": "Cartes acceptées pour les paiements en ligne",
+        "answer": {
+          "intro": "Nous acceptons toutes les cartes compatibles avec le réseau Vinti4, y compris :",
+          "cards1": "1. Carte Vinti4",
+          "cards2": "2. Visa",
+          "cards3": "3. American Express (AmEx)",
+          "cards4": "4 .Mastercard"
+        }
+      },
+      "panel4": {
+        "question": "Délai d'approbation des paiements par carte de crédit",
+        "answer": "Les paiements par carte de crédit sont approuvés immédiatement, à condition que les informations soient correctes. Un e-mail de confirmation du paiement sera envoyé automatiquement. Nous vous recommandons de vérifier attentivement toutes les informations avant de finaliser le paiement afin d'éviter toute annulation."
+      },
+      "panel5": {
+        "question": "Difficultés à effectuer le paiement en ligne",
+        "answer": "Veuillez contacter notre équipe d'assistance pour que nous puissions vous aider dès que possible."
+      }
+    },
+    "vhSecurity": {
+      "title": "L'engagement de V&H INVESTIMENTOS pour la sécurité des paiements",
+      "intro": "Chez V&H INVESTIMENTOS, nous croyons que la sécurité et la confiance sont essentielles lors des paiements en ligne. C'est pourquoi nous utilisons des technologies de pointe pour protéger chaque transaction.",
+      "certsTitle": "Nous disposons des certificats et mesures de sécurité suivants :",
+      "certs1": "* Certificat SSL international et Google reCAPTCHA 3.0 de dernière génération",
+      "certs2": "* SISP/Vinti4 : technologie OTP (mot de passe à usage unique) garantissant les plus hauts standards de sécurité",
+      "otpTitle": "Comment fonctionne la protection OTP (mot de passe à usage unique) en pratique ?",
+      "otpSteps1": "1. En sélectionnant l'option 'Paiement en ligne', vous serez redirigé vers le portail SISP.",
+      "otpSteps2": "2. Vous devrez alors entrer les données de votre carte Vinti4, Visa, AmEx ou Mastercard.",
+      "otpSteps3": "3. Le SISP vous enverra un code OTP par SMS ou e-mail pour vérifier votre identité.",
+      "otpSteps4": "4. Après avoir saisi le code, valable une seule fois, le paiement sera finalisé avec succès.",
+      "disclaimer": "Important : V&H INVESTIMENTOS ne stocke aucune information de votre carte. Tous les paiements sont traités en toute sécurité directement sur les serveurs de SISP/Vinti4."
+    }
+  },
+  "refunds": {
+    "title": "Politique de Livraison et de Retour des Produits et/ou Services",
+    "intro": "Chez V&H INVESTIMENTOS, nous valorisons la transparence et la satisfaction de nos clients. C’est pourquoi nous avons établi des directives claires pour la livraison et le retour des services, garantissant une expérience sûre et efficace.",
+    "section1Title": "1. Prestation de Services (Location de Voitures)",
+    "section1Points1": "• Confirmation de Réservation : Les réservations effectuées en personne seront confirmées après le paiement de 50 % du montant total. Les réservations en ligne ne seront confirmées qu'après le paiement intégral du montant de la réservation.",
+    "section1Points2": "• La livraison sera effectuée à la date de début de la location et pourra avoir lieu à l’aéroport, au port, à l’hôtel ou à tout autre lieu préalablement convenu avec le client.",
+    "section2Title": "2. Service Client",
+    "section2Text": "En cas de doute ou de situation non prévue par cette politique, notre équipe est disponible pour fournir l’assistance nécessaire et trouver la meilleure solution pour chaque cas."
   }
 }
