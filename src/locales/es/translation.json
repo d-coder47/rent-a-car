@@ -89,7 +89,10 @@
       "linksRapidos": "Enlaces Rápidos",
       "entreEmContato": "Contáctanos",
       "copyright": "© Copyright 2024 V&H Investimentos",
-      "home": "Inicio"
+      "home": "Inicio",
+      "payment_refund": "Pago y Reembolso",
+      "payment_method": "Métodos de Pago",
+      "refund_method": "Política de Entrega y Devolución"
     }
   },
   "menu": {

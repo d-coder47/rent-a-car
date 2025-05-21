@@ -89,7 +89,10 @@
       "linksRapidos": "Quick Links",
       "entreEmContato": "Contact Us",
       "copyright": "© Copyright 2024 V&H Investimentos",
-      "home": "Home"
+      "home": "Home",
+      "payment_refund": "Payment and Refund",
+      "payment_method": "Payment Methods",
+      "refund_method": "Shipping and Return Policy"
     }
   },
 

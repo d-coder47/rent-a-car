@@ -1,4 +1,4 @@
-import { Box, Link, Typography } from "@mui/material";
+import { Avatar, Box, Link, Typography } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -11,6 +11,7 @@ import {
 } from "@mui/icons-material";
 import { scrollToView } from "../../constants";
 import { useLocation, useNavigate } from "react-router-dom";
+import PaymentLogo from "../../assets/payment_logos/paymentLogo.png";
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -309,7 +310,7 @@ const Footer: React.FC = () => {
                 marginBottom: "20px",
               }}
             >
-              Pagamento e Reembolso
+              {t("homepage.footer.payment_refund")}
             </Typography>
 
             <Typography
@@ -323,7 +324,7 @@ const Footer: React.FC = () => {
                 },
               }}
             >
-              Métodos de Pagamento
+              {t("homepage.footer.payment_method")}
             </Typography>
 
             <Typography
@@ -337,8 +338,33 @@ const Footer: React.FC = () => {
                 },
               }}
             >
-              Política de Entrega e Devolução
+              {t("homepage.footer.refund_method")}
             </Typography>
+
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-around",
+                width: "100%",
+              }}
+            >
+              <Avatar
+                alt="payment_logo"
+                src={PaymentLogo}
+                sx={{
+                  width: {
+                    xs: "150px",
+                    sm: "150px",
+                    md: "150px",
+                    lg: "200px",
+                    xl: "200px",
+                  },
+                  height: "auto",
+                  borderRadius: "0px",
+                }}
+              />
+            </Box>
           </Box>
         </Box>
 
