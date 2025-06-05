@@ -210,7 +210,8 @@
     "section1Title": "1. Service Provision (Rent a Car)",
     "section1Points1": "• Reservation Confirmation: Reservations made in person will be confirmed upon payment of 50% of the total amount. Online reservations will only be confirmed after full payment of the reservation amount.",
     "section1Points2": "• Delivery will be made according to the rental start date and may occur at the airport, port, hotel, or another location previously agreed upon with the customer.",
-    "section2Title": "2. Customer Support",
-    "section2Text": "In case of doubts or situations not covered by this policy, our team is available to provide the necessary support and find the best solution for each case."
+    "section1Points3": "• Reservation Cancellation: To cancel a reservation, please contact our support team so we can assist you as quickly as possible. You may also go directly to our facility.",
+    "section2Title": "2. Refunds",
+    "section2Text": "• Refund Timeframe: Refunds are issued only 7 days after payment confirmation."
   }
 }

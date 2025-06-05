@@ -58,27 +58,19 @@ const Refunds = () => {
               <ListItem>
                 <ListItemText primary={t("refunds.section1Points2")} />
               </ListItem>
-              {/* <ListItem>
-                <ListItemText primary="• Cancelamento de Reservas: Cancelamentos devem ser comunicados com pelo menos 24 horas de antecedência. Em caso de não comparência ou aviso tardio, poderá haver cobrança parcial ou total do valor da reserva." />
-              </ListItem> */}
+              <ListItem>
+                <ListItemText primary={t("refunds.section1Points3")} />
+              </ListItem>
             </List>
-
-            {/* <Typography variant="h6" gutterBottom sx={{ mt: 4 }}>
-              2. Reembolsos
-            </Typography>
-            <List>
-              <ListItem>
-                <ListItemText primary="• Prazo para Reembolso: Uma vez aprovada a devolução, o reembolso será processado no prazo de até 10 dias úteis, pelo mesmo método de pagamento utilizado na compra." />
-              </ListItem>
-              <ListItem>
-                <ListItemText primary="• Despesas de Envio: Custos de envio não são reembolsáveis, exceto em casos de erro comprovado por parte da V&amp;H INVESTIMENTOS." />
-              </ListItem>
-            </List> */}
 
             <Typography variant="h6" gutterBottom sx={{ mt: 4 }}>
               {t("refunds.section2Title")}
             </Typography>
-            <Typography variant="body1">{t("refunds.section2Text")}</Typography>
+            <List>
+              <ListItem>
+                <ListItemText primary={t("refunds.section2Text")} />
+              </ListItem>
+            </List>
           </Box>
         </Box>
       </Box>
