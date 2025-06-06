@@ -34,19 +34,6 @@ export const parsePhoneNumber = (phone: string) => {
   };
 };
 
-async function getLiveEurToCveRate() {
-  try {
-    const exchangeApiUrl = import.meta.env.VITE_EXCHANGE_RATE_API;
-
-    const response = await fetch(exchangeApiUrl);
-    const data = await response.json();
-    return data.rates.CVE; // Get CVE rate from API response
-  } catch (error) {
-    console.error("Error fetching exchange rate:", error);
-    return 110.265; // Fallback to fixed rate of EUR to CVE
-  }
-}
-
 export const convertEurToCve = (amountInEur: number) => {
   // const exchangeRate = await getLiveEurToCveRate();
   const exchangeRate = 110.265; // Fixed rate of EUR to CVE
